@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICAB Accounting – Exam Practice Portal</title>
+  <meta name="description"
+    content="Practice ICAEW Accounting MCQs with timed chapter exams and a comprehensive final exam. 650 questions across 13 chapters with instant feedback." />
+  <meta property="og:title" content="ICAB Accounting – Exam Practice Portal" />
+  <meta property="og:description"
+    content="Master every chapter with timed MCQ exams. 650 questions, instant feedback, and a comprehensive final exam." />
+  <meta property="og:type" content="website" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d1b2e;
+      --dark: #111827;
+      --blue: #1d4ed8;
+      --blue-light: #3b82f6;
+      --gold: #d4a017;
+      --gold-light: #f4c842;
+      --cream: #fdfaf4;
+      --gray: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --purple-light: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg,
+          var(--navy) 0%,
+          #1a2f50 60%,
+          #0f3460 100%);
+      padding: 60px 40px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(circle at 30% 50%,
+          rgba(212, 160, 23, 0.08) 0%,
+          transparent 50%),
+        radial-gradient(circle at 70% 20%,
+          rgba(59, 130, 246, 0.12) 0%,
+          transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212, 160, 23, 0.15);
+      border: 1px solid rgba(212, 160, 23, 0.4);
+      color: var(--gold-light);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 68px);
+      color: #fff;
+      font-weight: 900;
+      line-height: 1.1;
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 17px;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--card-bg);
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      padding: 20px 40px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 48px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+
+    .info-box h3 {
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .info-box ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+    }
+
+    .info-box ul li {
+      color: var(--gray);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-box ul li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* CHAPTER GRID */
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .chapter-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chapter-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(29, 78, 216, 0.1);
+      border-color: var(--blue-light);
+    }
+
+    .chapter-card:hover::before {
+      opacity: 1;
+    }
+
+    /* FINAL EXAM CARD */
+    .final-exam-card {
+      background: linear-gradient(135deg, var(--navy), #1a3a6e);
+      border: none;
+      border-radius: 20px;
+      padding: 36px;
+      text-decoration: none;
+      color: white;
+      display: block;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      grid-column: 1 / -1;
+      margin-top: 8px;
+    }
+
+    .final-exam-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(244, 200, 66, 0.08);
+      pointer-events: none;
+    }
+
+    .final-exam-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(13, 27, 46, 0.4);
+    }
+
+    .final-card-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .final-card-left {
+      flex: 1;
+    }
+
+    .final-badge {
+      display: inline-block;
+      background: rgba(244, 200, 66, 0.2);
+      border: 1px solid rgba(244, 200, 66, 0.4);
+      color: var(--gold-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .final-exam-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .final-exam-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .final-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .final-stat {
+      text-align: center;
+    }
+
+    .final-stat .n {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .final-stat .l {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .btn-final {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      border: none;
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: "DM Sans", sans-serif;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-final:hover {
+      opacity: 0.9;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .chapter-num {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      color: white;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--blue);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .time-tag {
+      background: #fef9c3;
+      color: #854d0e;
+    }
+
+    .chapter-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .chapter-card p {
+      color: var(--gray);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .card-footer {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn-start {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .btn-start:hover {
+      opacity: 0.9;
+    }
+
+    .pass-mark {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .pass-mark strong {
+      color: var(--green);
+    }
+
+    /* SECTION DIVIDER */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0 32px;
+    }
+
+    .section-divider h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 20px 60px;
+      }
+
+      .stat-item {
+        padding: 16px 20px;
+      }
+
+      .chapter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        flex-direction: column;
+      }
+
+      .final-card-inner {
+        flex-direction: column;
+      }
+
+      .btn-final {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <div class="hero-badge">📚 ICAEW 2019 Question Bank</div>
+    <h1>ICAB Accounting<br /><span>Exam Practice Portal</span></h1>
+    <p>
+      Master every chapter with timed MCQ exams. 50 questions per chapter,
+      instant feedback, and a comprehensive final exam.
+    </p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">13</div>
+      <div class="stat-label">Chapters</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">650</div>
+      <div class="stat-label">Questions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20</div>
+      <div class="stat-label">MCQs per Chapter Exam</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50</div>
+      <div class="stat-label">MCQs per Final Exam</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">Pass Mark</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="info-box">
+      <div class="info-icon">ℹ️</div>
+      <div>
+        <h3>How the Exams Work</h3>
+        <ul>
+          <li>20 questions randomly selected per chapter exam</li>
+          <li>1.5 minutes per question (30 min per chapter exam)</li>
+          <li>50 questions randomly selected for the final exam (75 min)</li>
+          <li>80% pass mark — timer auto-submits at zero</li>
+          <li>Instant results with detailed explanations</li>
+          <li>Questions reshuffled every attempt</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>Chapter Exams</h2>
+      <p>
+        Each exam draws 20 questions randomly from 50 per chapter. Questions
+        shuffle each attempt.
+      </p>
+    </div>
+
+    <div class="chapter-grid">
+      <a href="exam.html?chapter=1" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">1</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Introduction to Accounting</h3>
+        <p>
+          Capital vs revenue expenditure, IASB Conceptual Framework,
+          qualitative characteristics, going concern, ethics and professional
+          conduct.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=2" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">2</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>The Accounting Equation</h3>
+        <p>
+          Assets, liabilities and capital relationships, how transactions
+          affect the equation, definitions of elements of financial
+          statements.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=3" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">3</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Recording Financial Transactions</h3>
+        <p>
+          Source documents, petty cash imprest system, payroll accounting,
+          bank reconciliations, day books and ledgers.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=4" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">4</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Ledger Accounting and Double Entry</h3>
+        <p>
+          Double entry principles, VAT treatment, ledger accounts, trial
+          balance preparation and control accounts.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=5" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">5</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Preparing Basic Financial Statements</h3>
+        <p>
+          Statement of profit or loss, statement of financial position,
+          working capital, equity sections and profit margins.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=6" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">6</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Errors and Corrections</h3>
+        <p>
+          Types of errors, suspense accounts, journal entries for corrections,
+          bank reconciliations and effect on profit.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=7" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">7</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Cost of Sales and Inventories</h3>
+        <p>
+          IAS 2 inventory valuation, FIFO, weighted average cost, NRV, cost of
+          sales calculation and inventory write-downs.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=8" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">8</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Irrecoverable Debts and Allowance</h3>
+        <p>
+          Writing off bad debts, allowance for receivables, specific vs
+          general provisions, double entries and effect on profit.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=9" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">9</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Accruals and Prepayments</h3>
+        <p>
+          Accruals concept, prepayments, accrued income, deferred income and
+          calculating P&L expenses with opening/closing balances.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=10" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">10</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span><span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Non-Current Assets and Depreciation</h3>
+        <p>
+          IAS 16, straight-line vs reducing balance, disposal of assets,
+          revaluation, component accounting and carrying amounts.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <a href="exam.html?chapter=11" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">11</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span>
+            <span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Company Financial Statements</h3>
+        <p>
+          Preparation of company financial statements, statement of financial position,
+          statement of profit or loss, reserves, dividends, and key disclosures.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+      <a href="exam.html?chapter=12" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">12</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span>
+            <span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Financial Statements & Adjustments</h3>
+        <p>
+          Preparation of company financial statements, statement of financial position,
+          statement of profit or loss, reserves, dividends, and key disclosures.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+      <a href="exam.html?chapter=13" class="chapter-card">
+        <div class="card-top">
+          <div class="chapter-num">13</div>
+          <div class="card-meta">
+            <span class="tag">20 MCQs</span>
+            <span class="tag time-tag">30 min</span>
+          </div>
+        </div>
+        <h3>Statement of Cash Flows</h3>
+        <p>
+          Preparation of company financial statements, statement of financial position,
+          statement of profit or loss, reserves, dividends, and key disclosures.
+        </p>
+        <div class="card-footer">
+          <button class="btn-start">Start Exam →</button>
+          <span class="pass-mark">Pass: <strong>16/20</strong></span>
+        </div>
+      </a>
+
+      <!-- FINAL EXAM CARD -->
+      <a href="final-exam.html" class="final-exam-card">
+        <div class="final-card-inner">
+          <div class="final-card-left">
+            <div class="final-badge">🏆 Comprehensive Assessment</div>
+            <h3>Final Exam — All Chapters</h3>
+            <p>
+              Test your complete knowledge across all 13 chapters. 50
+              questions randomly selected from the full question bank of 650
+              questions.
+            </p>
+            <div class="final-stats">
+              <div class="final-stat">
+                <div class="n">50</div>
+                <div class="l">Questions</div>
+              </div>
+              <div class="final-stat">
+                <div class="n">75</div>
+                <div class="l">Minutes</div>
+              </div>
+              <div class="final-stat">
+                <div class="n">13</div>
+                <div class="l">Chapters</div>
+              </div>
+              <div class="final-stat">
+                <div class="n">80%</div>
+                <div class="l">Pass Mark</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-final">Start Final Exam →</button>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Accounting MCQ Exam Practice Portal Developed by Md Arman
+      Hossain</strong>
+    — Based on the ICAEW Question Bank for Exams in 2019.<br />
+    For educational purposes only. © ICAEW 2018 content adapted for practice
+    use.
+  </footer>
+</body>
+
+</html>

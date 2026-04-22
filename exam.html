@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICAB Accounting Exam</title>
+  <meta name="description"
+    content="Timed ICAEW Accounting chapter exam — 20 randomly selected MCQs with instant feedback and detailed explanations." />
+  <meta property="og:title" content="ICAB Accounting Chapter Exam" />
+  <meta property="og:description"
+    content="20 timed MCQs per chapter with instant feedback, explanations and full results review." />
+  <meta property="og:type" content="website" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0d1b2e;
+      --blue: #1d4ed8;
+      --blue-light: #3b82f6;
+      --gold: #d4a017;
+      --gold-light: #f4c842;
+      --cream: #fdfaf4;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .exam-header {
+      background: var(--navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 64px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .back-btn {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+      color: white;
+    }
+
+    .exam-title {
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .exam-title span {
+      color: var(--gold-light);
+    }
+
+    .timer-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timer {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 2px;
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .timer.warning {
+      color: #fbbf24;
+      animation: pulse 1s infinite;
+    }
+
+    .timer.danger {
+      color: #f87171;
+      animation: pulse 0.5s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.5
+      }
+    }
+
+    .timer-label {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* PROGRESS */
+    .progress-section {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .progress-bar-outer {
+      background: #e5e7eb;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .progress-bar-inner {
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.3s ease;
+    }
+
+    /* DOT NAV */
+    .dot-nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: white;
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s;
+      color: var(--gray);
+      position: relative;
+    }
+
+    .dot.current {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    .dot.answered {
+      border-color: #86efac;
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .dot.flagged {
+      border-color: #f59e0b;
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .dot.flagged::after {
+      content: '🚩';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .dot.current.flagged {
+      border-color: #f59e0b;
+      background: #f59e0b;
+      color: white;
+    }
+
+    .dot:hover:not(.current) {
+      border-color: var(--blue-light);
+    }
+
+    /* FLAG BUTTON */
+    .flag-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 2px solid #e5e7eb;
+      background: white;
+      color: #6b7280;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .flag-btn:hover {
+      border-color: #f59e0b;
+      color: #92400e;
+      background: #fffbeb;
+    }
+
+    .flag-btn.flagged {
+      border-color: #f59e0b;
+      background: #fffbeb;
+      color: #92400e;
+    }
+
+    .flag-btn.flagged .flag-label {
+      display: none;
+    }
+
+    .flag-btn.flagged .unflag-label {
+      display: inline;
+    }
+
+    .flag-btn .unflag-label {
+      display: none;
+    }
+
+    /* FLAG LEGEND */
+    .dot-legend {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 6px 24px 10px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+
+    .legend-dot.l-unanswered {
+      border-color: #e5e7eb;
+      background: white;
+    }
+
+    .legend-dot.l-answered {
+      border-color: #86efac;
+      background: #dcfce7;
+    }
+
+    .legend-dot.l-flagged {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+
+    .legend-dot.l-current {
+      border-color: var(--blue);
+      background: var(--blue);
+    }
+
+    /* EXAM BODY */
+    .exam-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 120px;
+    }
+
+    .question-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .question-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .q-number {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      border-radius: 10px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .q-text {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    /* OPTIONS */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      background: white;
+      width: 100%;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      color: #374151;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--blue-light);
+      background: #eff6ff;
+    }
+
+    .option-btn.selected {
+      border-color: var(--blue);
+      background: #eff6ff;
+    }
+
+    .option-btn.correct {
+      border-color: var(--green);
+      background: #f0fdf4;
+    }
+
+    .option-btn.incorrect {
+      border-color: var(--red);
+      background: #fef2f2;
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--green);
+      background: #f0fdf4;
+    }
+
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--gray);
+    }
+
+    .option-btn.selected .option-letter {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    .option-btn.incorrect .option-letter {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .option-btn.reveal-correct .option-letter {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    .option-text {
+      flex: 1;
+    }
+
+    /* EXPLANATION */
+    .explanation-box {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border-left: 4px solid;
+      display: none;
+    }
+
+    .explanation-box.correct-exp {
+      border-color: var(--green);
+      background: #f0fdf4;
+    }
+
+    .explanation-box.incorrect-exp {
+      border-color: var(--red);
+      background: #fef2f2;
+    }
+
+    .exp-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .correct-exp .exp-label {
+      color: var(--green);
+    }
+
+    .incorrect-exp .exp-label {
+      color: var(--red);
+    }
+
+    .exp-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    /* BOTTOM NAV */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+      z-index: 100;
+    }
+
+    .nav-btn {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .btn-prev {
+      background: white;
+      border: 2px solid var(--border);
+      color: var(--gray);
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      border-color: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: white;
+    }
+
+    .btn-next:hover {
+      opacity: 0.9;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      color: white;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    .answered-count {
+      font-size: 14px;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    .answered-count strong {
+      color: var(--navy);
+    }
+
+    /* RESULTS */
+    #results-page {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+      margin-bottom: 32px;
+    }
+
+    .result-emoji {
+      font-size: 72px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .result-verdict {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .result-verdict.pass {
+      color: var(--green);
+    }
+
+    .result-verdict.fail {
+      color: var(--red);
+    }
+
+    .result-score {
+      font-size: 64px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 20px 0;
+    }
+
+    .result-score span {
+      font-size: 28px;
+      color: var(--gray);
+    }
+
+    .result-pct {
+      font-size: 20px;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .result-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .result-stat {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .result-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .correct-stat .num {
+      color: var(--green);
+    }
+
+    .wrong-stat .num {
+      color: var(--red);
+    }
+
+    .time-stat .num {
+      color: var(--blue);
+    }
+
+    .result-stat .lbl {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    /* REVIEW */
+    .review-section {
+      margin-top: 32px;
+    }
+
+    .review-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .review-item {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.wrong-answer {
+      border-left: 4px solid var(--red);
+    }
+
+    .review-item.right-answer {
+      border-left: 4px solid var(--green);
+    }
+
+    .review-q-header {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .review-badge {
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .badge-correct {
+      background: #dcfce7;
+      color: var(--green);
+    }
+
+    .badge-wrong {
+      background: #fee2e2;
+      color: var(--red);
+    }
+
+    .review-q-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1f2937;
+      line-height: 1.55;
+    }
+
+    .review-answers {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .review-answer-line {
+      font-size: 13.5px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .your-answer {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .correct-answer-line {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .review-explanation {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .review-explanation strong {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    .action-retry {
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: white;
+    }
+
+    .action-home {
+      background: white;
+      border: 2px solid var(--border);
+      color: var(--navy);
+    }
+
+    .action-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      .question-card {
+        padding: 24px 18px;
+      }
+
+      .q-text {
+        font-size: 15px;
+      }
+
+      .result-card {
+        padding: 32px 20px;
+      }
+
+      .result-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .dot-nav {
+        gap: 4px;
+      }
+
+      .dot {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="exam-header">
+    <div class="header-left">
+      <a href="index.html" class="back-btn">← Back</a>
+      <div class="exam-title">Chapter <span id="header-chapter">–</span>: <span id="header-title">Loading...</span>
+      </div>
+    </div>
+    <div class="timer-block">
+      <div>
+        <div class="timer-label">Time Left</div>
+        <div class="timer" id="timer-display">30:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <div class="progress-info">
+      <span>Question <span id="current-q-num">1</span> of <span id="total-q">20</span></span>
+      <span id="answered-info">0 answered</span>
+    </div>
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner" id="progress-bar" style="width:5%"></div>
+    </div>
+  </div>
+
+  <div class="dot-nav" id="dot-nav"></div>
+  <div class="dot-legend">
+    <div class="legend-item">
+      <div class="legend-dot l-current"></div> Current
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot l-answered"></div> Answered
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot l-unanswered"></div> Unanswered
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot l-flagged"></div> 🚩 Flagged
+    </div>
+  </div>
+
+  <div class="exam-body" id="exam-body">
+    <div class="question-card" id="question-card">
+      <div class="question-header" style="justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div style="display:flex; align-items:flex-start; gap:16px; flex:1;">
+          <div class="q-number" id="q-num-badge">Q1</div>
+          <div class="q-text" id="q-text">Loading question...</div>
+        </div>
+        <button class="flag-btn" id="flag-btn" onclick="toggleFlag()">
+          <span class="flag-label">Flag</span><span class="unflag-label">Unflag</span>
+        </button>
+      </div>
+      <div class="options-list" id="options-list"></div>
+      <div class="explanation-box" id="explanation-box">
+        <div class="exp-label" id="exp-label">Explanation</div>
+        <div class="exp-text" id="exp-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav" id="bottom-nav">
+    <button class="nav-btn btn-prev" id="btn-prev" onclick="navigate(-1)">← Previous</button>
+    <div class="answered-count"><strong id="answered-count-nav">0</strong>/<span id="total-count-nav">20</span> answered
+    </div>
+    <button class="nav-btn btn-next" id="btn-next" onclick="navigate(1)">Next →</button>
+  </div>
+
+  <div id="results-page">
+    <div class="result-card">
+      <span class="result-emoji" id="result-emoji">🎉</span>
+      <div class="result-verdict" id="result-verdict">Congratulations!</div>
+      <div class="result-score" id="result-score">–/–</div>
+      <div class="result-pct" id="result-pct">–%</div>
+      <div class="result-stats">
+        <div class="result-stat correct-stat">
+          <div class="num" id="stat-correct">–</div>
+          <div class="lbl">✓ Correct</div>
+        </div>
+        <div class="result-stat wrong-stat">
+          <div class="num" id="stat-wrong">–</div>
+          <div class="lbl">✗ Incorrect</div>
+        </div>
+        <div class="result-stat time-stat">
+          <div class="num" id="stat-time">–</div>
+          <div class="lbl">⏱ Time Used</div>
+        </div>
+      </div>
+      <div class="result-actions">
+        <button class="action-btn action-retry" onclick="retryExam()">🔄 Retry This Exam</button>
+        <a href="index.html" class="action-btn action-home">🏠 All Chapters</a>
+      </div>
+    </div>
+    <div class="review-section">
+      <h2 id="review-title">📋 Answer Review</h2>
+      <div id="review-list"></div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script>
+    let chapterNum = 1;
+    let chapterData = null;
+    let examQuestions = [];
+    let userAnswers = [];
+    let flaggedQuestions = [];
+    let currentIndex = 0;
+    let timerInterval = null;
+    let timeLeft = 30 * 60; // 30 minutes = 1.5 min × 20 questions
+    let startTime = null;
+    let examSubmitted = false;
+    const EXAM_Q_COUNT = 20;
+    const MINUTES_PER_Q = 1.5;
+
+    function init() {
+      const params = new URLSearchParams(window.location.search);
+      chapterNum = parseInt(params.get('chapter')) || 1;
+      chapterData = questionBank[chapterNum];
+      if (!chapterData) { document.getElementById('q-text').textContent = 'Chapter not found.'; return; }
+      document.getElementById('header-chapter').textContent = chapterNum;
+      document.getElementById('header-title').textContent = chapterData.title;
+      document.title = `Ch.${chapterNum} – ICAEW Exam`;
+      setupExam();
+    }
+
+    function setupExam() {
+      const all = [...chapterData.questions];
+      shuffleArray(all);
+      examQuestions = all.slice(0, Math.min(EXAM_Q_COUNT, all.length));
+      userAnswers = new Array(examQuestions.length).fill(null);
+      flaggedQuestions = new Array(examQuestions.length).fill(false);
+      currentIndex = 0;
+      timeLeft = Math.round(examQuestions.length * MINUTES_PER_Q * 60);
+      examSubmitted = false;
+      startTime = Date.now();
+
+      document.getElementById('total-q').textContent = examQuestions.length;
+      document.getElementById('total-count-nav').textContent = examQuestions.length;
+
+      buildDotNav();
+      renderQuestion();
+      startTimer();
+
+      document.getElementById('exam-body').style.display = '';
+      document.getElementById('bottom-nav').style.display = '';
+      document.getElementById('results-page').style.display = 'none';
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    function buildDotNav() {
+      const nav = document.getElementById('dot-nav');
+      nav.innerHTML = '';
+      examQuestions.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' current' : '');
+        dot.textContent = i + 1;
+        dot.onclick = () => goTo(i);
+        dot.id = `dot-${i}`;
+        nav.appendChild(dot);
+      });
+    }
+
+    function updateDots() {
+      examQuestions.forEach((_, i) => {
+        const dot = document.getElementById(`dot-${i}`);
+        if (!dot) return;
+        dot.className = 'dot';
+        if (i === currentIndex) dot.classList.add('current');
+        else if (userAnswers[i] !== null) dot.classList.add('answered');
+        if (flaggedQuestions[i]) dot.classList.add('flagged');
+      });
+    }
+
+    function toggleFlag() {
+      if (examSubmitted) return;
+      flaggedQuestions[currentIndex] = !flaggedQuestions[currentIndex];
+      updateFlagBtn();
+      updateDots();
+    }
+
+    function updateFlagBtn() {
+      const btn = document.getElementById('flag-btn');
+      if (!btn) return;
+      btn.classList.toggle('flagged', flaggedQuestions[currentIndex]);
+    }
+
+    function renderQuestion() {
+      const q = examQuestions[currentIndex];
+      const total = examQuestions.length;
+      document.getElementById('q-num-badge').textContent = `Q${currentIndex + 1}`;
+      document.getElementById('q-text').textContent = q.q;
+      document.getElementById('current-q-num').textContent = currentIndex + 1;
+      const pct = ((currentIndex + 1) / total) * 100;
+      document.getElementById('progress-bar').style.width = pct + '%';
+      const numAnswered = userAnswers.filter(a => a !== null).length;
+      document.getElementById('answered-info').textContent = `${numAnswered} answered`;
+      document.getElementById('answered-count-nav').textContent = numAnswered;
+
+      const opts = document.getElementById('options-list');
+      opts.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D', 'E'];
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span class="option-text">${opt}</span>`;
+        btn.onclick = () => selectAnswer(i);
+        const ua = userAnswers[currentIndex];
+        if (ua !== null) {
+          if (i === q.answer) btn.classList.add('reveal-correct');
+          if (ua === i && ua !== q.answer) btn.classList.add('incorrect');
+          if (ua === i && ua === q.answer) { btn.classList.remove('reveal-correct'); btn.classList.add('correct'); }
+          btn.disabled = true;
+        }
+        opts.appendChild(btn);
+      });
+
+      const expBox = document.getElementById('explanation-box');
+      if (userAnswers[currentIndex] !== null) {
+        const isCorrect = userAnswers[currentIndex] === q.answer;
+        expBox.style.display = 'block';
+        expBox.className = 'explanation-box ' + (isCorrect ? 'correct-exp' : 'incorrect-exp');
+        document.getElementById('exp-label').textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+        document.getElementById('exp-text').textContent = q.explanation;
+      } else {
+        expBox.style.display = 'none';
+      }
+
+      updateFlagBtn();
+      document.getElementById('btn-prev').disabled = currentIndex === 0;
+      const isLast = currentIndex === total - 1;
+      const nextBtn = document.getElementById('btn-next');
+      if (isLast) {
+        nextBtn.textContent = 'Submit Exam';
+        nextBtn.className = 'nav-btn btn-submit';
+        nextBtn.onclick = () => confirmSubmit();
+      } else {
+        nextBtn.textContent = 'Next →';
+        nextBtn.className = 'nav-btn btn-next';
+        nextBtn.onclick = () => navigate(1);
+      }
+      updateDots();
+    }
+
+    function selectAnswer(optIdx) {
+      if (userAnswers[currentIndex] !== null) return;
+      userAnswers[currentIndex] = optIdx;
+      renderQuestion();
+    }
+
+    function navigate(dir) {
+      const newIdx = currentIndex + dir;
+      if (newIdx < 0 || newIdx >= examQuestions.length) return;
+      goTo(newIdx);
+    }
+
+    function goTo(idx) { currentIndex = idx; renderQuestion(); }
+
+    function confirmSubmit() {
+      const unanswered = userAnswers.filter(a => a === null).length;
+      const flagged = flaggedQuestions.filter(Boolean).length;
+      let msg = '';
+      if (unanswered > 0) msg += `${unanswered} unanswered question(s). `;
+      if (flagged > 0) msg += `${flagged} flagged question(s) still need review. `;
+      if (msg) {
+        const go = confirm(msg + 'Submit anyway?');
+        if (!go) return;
+      }
+      submitExam();
+    }
+
+    function submitExam() {
+      if (examSubmitted) return;
+      examSubmitted = true;
+      clearInterval(timerInterval);
+      showResults(Math.round((Date.now() - startTime) / 1000));
+    }
+
+    function showResults(timeUsed) {
+      document.getElementById('exam-body').style.display = 'none';
+      document.getElementById('bottom-nav').style.display = 'none';
+      document.getElementById('results-page').style.display = 'block';
+      let correct = 0;
+      examQuestions.forEach((q, i) => { if (userAnswers[i] === q.answer) correct++; });
+      const total = examQuestions.length;
+      const pct = Math.round((correct / total) * 100);
+      const passed = pct >= 80;
+      document.getElementById('result-emoji').textContent = passed ? '🎉' : '💪';
+      document.getElementById('result-verdict').textContent = passed ? 'Congratulations!' : 'You Can Do Better';
+      document.getElementById('result-verdict').className = 'result-verdict ' + (passed ? 'pass' : 'fail');
+      document.getElementById('result-score').innerHTML = `${correct}<span>/${total}</span>`;
+      document.getElementById('result-pct').textContent = `${pct}% — ${passed ? 'PASS ✓' : 'FAIL ✗'}`;
+      document.getElementById('stat-correct').textContent = correct;
+      document.getElementById('stat-wrong').textContent = total - correct;
+      document.getElementById('stat-time').textContent = formatTime(timeUsed);
+      const reviewList = document.getElementById('review-list');
+      reviewList.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D', 'E'];
+      let wrongCount = 0;
+      examQuestions.forEach((q, i) => {
+        const ua = userAnswers[i];
+        const isCorrect = ua === q.answer;
+        if (isCorrect) return;
+        wrongCount++;
+        const item = document.createElement('div');
+        item.className = 'review-item wrong-answer';
+        item.innerHTML = `
+      <div class="review-q-header">
+        <span class="review-badge badge-wrong">✗ Q${i + 1}</span>
+        ${flaggedQuestions[i] ? '<span class="review-badge" style="background:#fffbeb;color:#92400e;">🚩 Flagged</span>' : ''}
+        <span class="review-q-text">${q.q}</span>
+      </div>
+      <div class="review-answers">
+        ${ua !== null ? `<div class="review-answer-line your-answer"><span>✗ Your answer:</span><span><strong>${letters[ua]}.</strong> ${q.options[ua]}</span></div>` : `<div class="review-answer-line your-answer">✗ Not answered</div>`}
+        <div class="review-answer-line correct-answer-line"><span>✓ Correct:</span><span><strong>${letters[q.answer]}.</strong> ${q.options[q.answer]}</span></div>
+      </div>
+      <div class="review-explanation"><strong>💡 Explanation</strong>${q.explanation}</div>`;
+        reviewList.appendChild(item);
+      });
+      if (wrongCount === 0) {
+        reviewList.innerHTML = '<div class="review-item" style="text-align:center;padding:32px;color:#16a34a;font-size:18px;font-weight:600;">🌟 Perfect Score! All answers correct!</div>';
+        document.getElementById('review-title').textContent = '🌟 Perfect Score!';
+      } else {
+        document.getElementById('review-title').textContent = `📋 ${wrongCount} Answer${wrongCount > 1 ? 's' : ''} to Review`;
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) { clearInterval(timerInterval); alert('⏰ Time is up! Submitting automatically.'); submitExam(); }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      const el = document.getElementById('timer-display');
+      el.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      el.className = 'timer';
+      if (timeLeft <= 60) el.classList.add('danger');
+      else if (timeLeft <= 180) el.classList.add('warning');
+    }
+
+    function formatTime(secs) { return `${Math.floor(secs / 60)}m ${secs % 60}s`; }
+
+    function retryExam() {
+      document.getElementById('results-page').style.display = 'none';
+      setupExam();
+      window.scrollTo({ top: 0 });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (examSubmitted) return;
+      if (e.key === 'ArrowRight') navigate(1);
+      if (e.key === 'ArrowLeft') navigate(-1);
+      const keys = { '1': 0, '2': 1, '3': 2, '4': 3, 'a': 0, 'b': 1, 'c': 2, 'd': 3 };
+      if (keys[e.key.toLowerCase()] !== undefined && userAnswers[currentIndex] === null) {
+        selectAnswer(keys[e.key.toLowerCase()]);
+      }
+    });
+
+    init();
+  </script>
+</body>
+
+</html>

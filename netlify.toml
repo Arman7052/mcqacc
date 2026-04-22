@@ -1,0 +1,38 @@
+[build]
+  publish = "."
+
+# ─── Security & caching for all routes ───────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# ─── Long-cache the question bank (changes rarely) ───────────────────────────
+[[headers]]
+  for = "/questions.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"
+
+# ─── No-cache HTML pages so users always get the latest version ──────────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+
+# ─── Redirect bare domain root to index.html (explicit safety net) ───────────
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# ─── Friendly 404 fallback ───────────────────────────────────────────────────
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
