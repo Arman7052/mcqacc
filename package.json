@@ -1,0 +1,8 @@
+{
+  "name": "icab-accounting-portal",
+  "version": "1.0.0",
+  "description": "ICAB Accounting Exam Practice Portal",
+  "dependencies": {
+    "@netlify/blobs": "^7.0.0"
+  }
+}

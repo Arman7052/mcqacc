@@ -1,5 +1,9 @@
 [build]
   publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
 
 # ─── Security & caching for all routes ───────────────────────────────────────
 [[headers]]
@@ -24,6 +28,12 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
     Pragma = "no-cache"
+
+# ─── No-cache Netlify Functions responses ────────────────────────────────────
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 # ─── Redirect bare domain root to index.html (explicit safety net) ───────────
 [[redirects]]
