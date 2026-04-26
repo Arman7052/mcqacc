@@ -3,731 +3,795 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scenario Exam – ICAEW Accounting Ch 12 & 13</title>
-  <meta name="description" content="Full scenario-based ICAEW Accounting exam with complete company data, trial balances and adjustments displayed alongside questions." />
+  <title>Scenario Exam – ICAEW Accounting</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0d1b2e;
-      --blue: #1d4ed8;
-      --blue-light: #3b82f6;
-      --gold: #d4a017;
-      --gold-light: #f4c842;
-      --cream: #fdfaf4;
-      --gray: #6b7280;
-      --border: #e5e7eb;
-      --green: #16a34a;
-      --red: #dc2626;
-      --teal: #0d9488;
-      --teal-light: #14b8a6;
-      --purple: #7c3aed;
+      --navy:#0d1b2e; --gold:#d4a017; --gold-light:#f4c842;
+      --cream:#fdfaf4; --gray:#6b7280; --border:#e5e7eb;
+      --green:#16a34a; --red:#dc2626; --blue:#1d4ed8;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: #111827; min-height: 100vh; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#111827;min-height:100vh}
 
-    /* ── HEADER ─── */
-    .exam-header {
-      background: var(--navy); padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 100; height: 64px;
+    /* ── HEADER ────────────────────────────────────────────────── */
+    .hdr{
+      background:var(--navy);height:60px;padding:0 24px;
+      display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:300;
     }
-    .header-left { display: flex; align-items: center; gap: 16px; }
-    .back-btn {
-      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px;
-      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    .hdr-left{display:flex;align-items:center;gap:16px}
+    .back-lnk{
+      color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;
+      display:flex;align-items:center;gap:6px;transition:color .2s;
     }
-    .back-btn:hover { color: white; }
-    .exam-title { color: white; font-weight: 600; font-size: 15px; }
-    .exam-title span { color: var(--gold-light); }
-    .timer-block { display: flex; align-items: center; gap: 10px; }
-    .timer {
-      font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;
-      color: white; letter-spacing: 2px; min-width: 90px; text-align: center;
+    .back-lnk:hover{color:#fff}
+    .hdr-title{color:#fff;font-weight:600;font-size:15px}
+    .hdr-title em{color:var(--gold-light);font-style:normal}
+    .timer-wrap{display:flex;align-items:center;gap:8px}
+    .tmr-lbl{color:rgba(255,255,255,.45);font-size:11px;text-transform:uppercase;letter-spacing:1px;display:none}
+    #tmr{
+      font-family:'Playfair Display',serif;font-size:26px;font-weight:700;
+      color:#fff;letter-spacing:2px;min-width:84px;text-align:center;display:none;
     }
-    .timer.warning { color: #fbbf24; animation: pulse 1s infinite; }
-    .timer.danger  { color: #f87171; animation: pulse 0.5s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.5} }
-    .timer-label { color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    #tmr.warn{color:#fbbf24;animation:blink 1s infinite}
+    #tmr.danger{color:#f87171;animation:blink .5s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 
-    /* ── PROGRESS ─── */
-    .progress-section { background: white; border-bottom: 1px solid var(--border); padding: 12px 24px; }
-    .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; color: var(--gray); }
-    .progress-bar-outer { background: #e5e7eb; border-radius: 99px; height: 8px; overflow: hidden; }
-    .progress-bar-inner {
-      background: linear-gradient(90deg, var(--teal), var(--teal-light));
-      height: 100%; border-radius: 99px; transition: width 0.3s ease;
-    }
+    /* ── SCREEN MANAGEMENT ─────────────────────────────────────── */
+    .screen{display:none}
+    .screen.active{display:block}
 
-    /* ── MAIN LAYOUT ─── */
-    .main-layout {
-      display: grid; grid-template-columns: 380px 1fr;
-      gap: 0; min-height: calc(100vh - 64px - 44px);
+    /* ════════════════════════════════════════════════════════════
+       SCREEN 1 — PICKER
+    ════════════════════════════════════════════════════════════ */
+    .picker-hero{
+      background:linear-gradient(135deg,var(--navy),#1a3a6e);
+      padding:52px 32px 60px;text-align:center;color:#fff;
     }
+    .picker-hero h1{
+      font-family:'Playfair Display',serif;font-size:38px;font-weight:900;margin-bottom:12px;
+    }
+    .picker-hero h1 em{color:var(--gold-light);font-style:normal}
+    .picker-hero p{font-size:15px;color:rgba(255,255,255,.72);max-width:560px;margin:0 auto;line-height:1.7}
+    .hero-pills{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .hp{background:rgba(255,255,255,.1);border-radius:10px;padding:12px 20px;text-align:center;min-width:80px}
+    .hp .n{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
+    .hp .l{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
 
-    /* ── LEFT PANEL: Company Scenario ─── */
-    .scenario-panel {
-      background: #f0f4ff; border-right: 2px solid #c7d7fc;
-      overflow-y: auto; padding: 0;
-      position: sticky; top: 108px; height: calc(100vh - 108px);
+    .picker-body{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+    .ch-label{
+      font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray);
+      display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:12px;
+      border-bottom:1px solid var(--border);
     }
-    .scenario-header {
-      background: linear-gradient(135deg, var(--navy), #1a3a6b);
-      padding: 20px; color: white;
+    .ch-label span{
+      background:var(--navy);color:#fff;font-size:11px;font-weight:700;
+      padding:3px 10px;border-radius:20px;
     }
-    .scenario-chapter-badge {
-      display: inline-block; background: rgba(212,160,23,0.2);
-      border: 1px solid rgba(212,160,23,0.4); color: var(--gold-light);
-      font-size: 11px; padding: 3px 10px; border-radius: 20px;
-      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
-    }
-    .scenario-company-name {
-      font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
-      color: white; line-height: 1.2;
-    }
-    .scenario-year-end { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-    .scenario-intro { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 10px; line-height: 1.5; }
-
-    .scenario-body { padding: 16px; }
-
-    .section-label {
-      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-      color: var(--blue); margin: 16px 0 8px; display: flex; align-items: center; gap: 6px;
-    }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--blue); opacity: 0.2; }
-
-    /* Trial Balance Table */
-    .tb-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .tb-table th {
-      background: var(--navy); color: white; padding: 6px 8px; text-align: left; font-size: 11px;
-    }
-    .tb-table th:nth-child(2), .tb-table th:nth-child(3) { text-align: right; }
-    .tb-table td { padding: 5px 8px; border-bottom: 1px solid #e0e7ff; color: #1e293b; }
-    .tb-table td:nth-child(2), .tb-table td:nth-child(3) { text-align: right; font-family: monospace; }
-    .tb-table tr:nth-child(even) td { background: rgba(59,130,246,0.04); }
-    .tb-table tfoot td { font-weight: 700; border-top: 2px solid var(--navy); background: #f8faff; font-family: monospace; }
-    .tb-table tfoot td:first-child { font-weight: 700; }
-
-    /* SFP Comparison */
-    .sfp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .sfp-table th { background: #1e3a5f; color: white; padding: 5px 8px; text-align: right; font-size: 11px; }
-    .sfp-table th:first-child { text-align: left; }
-    .sfp-table td { padding: 4px 8px; border-bottom: 1px solid #e0e7ff; font-size: 12px; }
-    .sfp-table td:nth-child(2), .sfp-table td:nth-child(3) { text-align: right; font-family: monospace; color: #1e3a5f; }
-
-    /* Adjustments */
-    .adj-list { display: flex; flex-direction: column; gap: 8px; }
-    .adj-item {
-      background: white; border: 1px solid #dbeafe; border-left: 3px solid var(--blue);
-      border-radius: 6px; padding: 10px 12px;
-    }
-    .adj-num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 20px; height: 20px; background: var(--blue); color: white;
-      border-radius: 50%; font-size: 11px; font-weight: 700; flex-shrink: 0;
-      float: left; margin-right: 8px; margin-top: 1px;
-    }
-    .adj-text { font-size: 12px; color: #1e293b; line-height: 1.5; white-space: pre-line; }
-
-    /* ── RIGHT PANEL: Questions ─── */
-    .questions-panel { padding: 24px; overflow-y: auto; }
-
-    .company-nav {
-      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
-    }
-    .company-nav-btn {
-      padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
-      border: 1.5px solid var(--border); background: white; cursor: pointer;
-      transition: all 0.2s; color: var(--gray);
-    }
-    .company-nav-btn:hover { border-color: var(--blue); color: var(--blue); }
-    .company-nav-btn.active { background: var(--navy); border-color: var(--navy); color: white; }
-    .company-nav-btn.done { border-color: var(--green); color: var(--green); }
-
-    /* Chapter selector */
-    .chapter-tabs { display: flex; gap: 0; margin-bottom: 16px; }
-    .ch-tab {
-      flex: 1; padding: 10px; text-align: center; border: 1.5px solid var(--border);
-      background: white; cursor: pointer; font-size: 13px; font-weight: 500;
-      transition: all 0.2s; color: var(--gray);
-    }
-    .ch-tab:first-child { border-radius: 8px 0 0 8px; }
-    .ch-tab:last-child { border-radius: 0 8px 8px 0; }
-    .ch-tab.active { background: var(--navy); border-color: var(--navy); color: white; }
-
-    /* Questions */
-    .questions-heading {
-      font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
-      color: var(--navy); margin-bottom: 4px;
-    }
-    .questions-sub { font-size: 13px; color: var(--gray); margin-bottom: 20px; }
-
-    .q-card {
-      background: white; border: 1px solid var(--border); border-radius: 12px;
-      padding: 20px; margin-bottom: 16px; transition: box-shadow 0.2s;
-    }
-    .q-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-    .q-number {
-      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-      color: var(--teal); margin-bottom: 8px;
-    }
-    .q-text { font-size: 15px; font-weight: 500; color: #111827; line-height: 1.5; margin-bottom: 14px; }
-
-    .adj-refs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-    .adj-ref-tag {
-      font-size: 11px; background: #eff6ff; color: var(--blue);
-      border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 12px;
+    .cards-grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+      gap:18px;margin-bottom:44px;
     }
 
-    .options { display: flex; flex-direction: column; gap: 8px; }
-    .option-btn {
-      display: flex; align-items: center; gap: 12px; padding: 12px 16px;
-      border: 1.5px solid var(--border); border-radius: 8px; background: white;
-      cursor: pointer; text-align: left; font-size: 14px; color: #374151;
-      transition: all 0.15s; width: 100%;
+    .cc{
+      background:#fff;border-radius:18px;border:1.5px solid var(--border);
+      padding:24px;cursor:pointer;text-align:left;
+      transition:transform .22s,box-shadow .22s;
+      position:relative;overflow:hidden;
     }
-    .option-btn:hover:not(:disabled) { border-color: var(--blue-light); background: #eff6ff; }
-    .option-letter {
-      width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 12px; flex-shrink: 0; transition: all 0.15s;
+    .cc:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
+    .cc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .cc-icon{
+      width:50px;height:50px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;font-size:22px;
     }
-    .option-btn.correct { border-color: var(--green); background: #f0fdf4; }
-    .option-btn.correct .option-letter { background: var(--green); border-color: var(--green); color: white; }
-    .option-btn.wrong { border-color: var(--red); background: #fef2f2; }
-    .option-btn.wrong .option-letter { background: var(--red); border-color: var(--red); color: white; }
+    .cc-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .cc-tag{
+      font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;
+      border:1.5px solid var(--border);color:var(--gray);background:#f9fafb;
+    }
+    .cc-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:3px}
+    .cc-period{font-size:12px;color:var(--gray);margin-bottom:10px}
+    .cc-intro{font-size:13px;color:#374151;line-height:1.6;margin-bottom:16px}
+    .cc-prev{font-size:12.5px;font-weight:600;margin-bottom:14px}
+    .cc-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .cc-meta{font-size:12px;color:var(--gray)}
+    .cc-meta strong{color:var(--navy)}
+    .btn-start{
+      padding:9px 20px;border-radius:10px;border:none;color:#fff;
+      font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;
+      cursor:pointer;transition:opacity .2s;
+    }
+    .btn-start:hover{opacity:.85}
+    .cc-ribbon{
+      position:absolute;top:14px;right:14px;
+      font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff;
+      display:none;
+    }
+    .cc-ribbon.show{display:block}
 
-    .explanation {
-      margin-top: 14px; background: #f8faff; border: 1px solid #dbeafe;
-      border-left: 4px solid var(--blue); border-radius: 8px;
-      padding: 12px 16px; font-size: 13px; color: #1e3a5f; line-height: 1.6;
-      white-space: pre-line; display: none;
-    }
-    .explanation.show { display: block; }
-
-    /* ── RESULTS ─── */
-    .results-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
-      z-index: 200; align-items: center; justify-content: center;
-    }
-    .results-overlay.show { display: flex; }
-    .results-card {
-      background: white; border-radius: 20px; padding: 40px; max-width: 500px;
-      width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
-    .results-icon { font-size: 64px; margin-bottom: 16px; }
-    .results-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .results-score { font-size: 56px; font-weight: 700; color: var(--teal); margin: 16px 0; }
-    .results-label { font-size: 14px; color: var(--gray); margin-bottom: 24px; }
-    .results-breakdown { display: flex; gap: 16px; justify-content: center; margin-bottom: 28px; }
-    .breakdown-item { text-align: center; }
-    .breakdown-val { font-size: 24px; font-weight: 700; }
-    .breakdown-val.correct { color: var(--green); }
-    .breakdown-val.wrong   { color: var(--red); }
-    .breakdown-sub { font-size: 12px; color: var(--gray); }
-    .results-btn {
-      padding: 14px 32px; border-radius: 10px; font-size: 15px; font-weight: 600;
-      cursor: pointer; border: none; transition: all 0.2s;
-    }
-    .results-btn.primary { background: var(--navy); color: white; margin-right: 12px; }
-    .results-btn.primary:hover { background: #1a2f50; }
-    .results-btn.secondary { background: #f3f4f6; color: var(--navy); }
-    .results-btn.secondary:hover { background: #e5e7eb; }
-
-    /* ── BOTTOM NAV ─── */
-    .bottom-nav {
-      background: white; border-top: 1px solid var(--border);
-      padding: 10px 24px; display: flex; justify-content: space-between; align-items: center;
-    }
-    .nav-btn {
-      padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
-      cursor: pointer; border: 1.5px solid var(--border); background: white;
-      transition: all 0.2s; display: flex; align-items: center; gap: 8px;
-    }
-    .nav-btn:hover { border-color: var(--navy); color: var(--navy); }
-    .nav-btn.primary { background: var(--navy); border-color: var(--navy); color: white; }
-    .nav-btn.primary:hover { background: #1a2f50; }
-    .nav-btn:disabled { opacity: 0.4; cursor: default; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .main-layout { grid-template-columns: 1fr; }
-      .scenario-panel { position: relative; top: 0; height: auto; max-height: 400px; }
-    }
-    @media (max-width: 600px) {
-      .exam-header { padding: 0 12px; }
-      .questions-panel { padding: 12px; }
+    /* ════════════════════════════════════════════════════════════
+       SCREEN 2 — EXAM
+    ════════════════════════════════════════════════════════════ */
+    .exam-wrap{
+      display:grid;grid-template-columns:430px 1fr;
+      min-height:calc(100vh - 60px);
     }
 
-    /* Stats bar */
-    .stats-bar {
-      display: flex; gap: 16px; padding: 12px 24px; background: white;
-      border-bottom: 1px solid var(--border); font-size: 13px; flex-wrap: wrap;
+    /* LEFT */
+    .sc-panel{
+      background:#fff;border-right:1px solid var(--border);
+      position:sticky;top:60px;height:calc(100vh - 60px);
+      overflow-y:auto;scrollbar-width:thin;scrollbar-color:#d1d5db transparent;
     }
-    .stat-item { display: flex; align-items: center; gap: 6px; }
-    .stat-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .stat-dot.answered { background: var(--teal); }
-    .stat-dot.correct  { background: var(--green); }
-    .stat-dot.wrong    { background: var(--red); }
-    .stat-dot.unanswered { background: var(--border); border: 1px solid var(--gray); }
+    .sc-panel::-webkit-scrollbar{width:5px}
+    .sc-panel::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:3px}
+
+    .sc-hd{
+      padding:18px 22px 14px;border-bottom:1px solid var(--border);
+      position:sticky;top:0;background:#fff;z-index:10;
+    }
+    .sc-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px}
+    .sc-co{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:2px}
+    .sc-per{font-size:12px;color:var(--gray)}
+    .sc-intro{font-size:13px;color:#374151;line-height:1.6;padding:12px 22px;border-bottom:1px solid var(--border)}
+
+    .panel-sec{padding:12px 22px;border-bottom:1px solid var(--border)}
+    .panel-sec:last-child{border-bottom:none;padding-bottom:22px}
+    .psec-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:8px}
+
+    .tb{width:100%;border-collapse:collapse;font-size:11.5px}
+    .tb thead th{
+      font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+      color:var(--gray);padding:4px 5px;text-align:right;border-bottom:2px solid var(--border);
+    }
+    .tb thead th:first-child{text-align:left}
+    .tb tbody tr:nth-child(even){background:#f9fafb}
+    .tb td{padding:4px 5px;border-bottom:1px solid #f3f4f6;vertical-align:middle;line-height:1.4;color:#374151}
+    .tb td.num{text-align:right;font-family:monospace;white-space:nowrap;font-weight:500;color:#111827}
+    .tb td.num.cr{color:var(--blue)}
+
+    .adj-list{display:flex;flex-direction:column;gap:7px}
+    .adj-item{
+      display:flex;gap:9px;padding:9px 11px;
+      background:#f9fafb;border-radius:8px;border-left:3px solid #e5e7eb;
+      font-size:12px;line-height:1.55;color:#374151;
+    }
+    .adj-n{
+      width:20px;height:20px;border-radius:50%;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:10px;font-weight:700;color:#fff;margin-top:1px;
+    }
+
+    /* RIGHT */
+    .q-panel{padding:28px 32px 120px}
+    .qp-hd{margin-bottom:22px}
+    .qp-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .qp-meta{display:flex;gap:8px;flex-wrap:wrap}
+    .mpill{background:#f3f4f6;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--gray)}
+    .prog-bar{background:#e5e7eb;border-radius:99px;height:6px;margin-top:10px;overflow:hidden}
+    .prog-fill{height:100%;border-radius:99px;transition:width .3s}
+
+    .q-card{
+      background:#fff;border:1.5px solid var(--border);
+      border-radius:16px;padding:22px 24px;margin-bottom:18px;transition:border-color .2s;
+    }
+    .q-card.ok {border-color:#86efac}
+    .q-card.bad{border-color:#fca5a5}
+
+    .qc-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
+    .q-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;color:#fff;white-space:nowrap}
+    .flag-btn{
+      background:none;border:1.5px solid var(--border);border-radius:8px;
+      padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;
+      font-family:'DM Sans',sans-serif;color:var(--gray);transition:all .2s;
+    }
+    .flag-btn:hover,.flag-btn.on{border-color:#f59e0b;color:#92400e;background:#fffbeb}
+
+    .q-text{font-size:15px;font-weight:500;line-height:1.65;color:#1f2937;margin-bottom:14px}
+
+    .opts{display:flex;flex-direction:column;gap:8px}
+    .opt{
+      display:flex;align-items:flex-start;gap:11px;
+      padding:12px 15px;border:2px solid var(--border);border-radius:10px;
+      cursor:pointer;background:#fff;width:100%;text-align:left;
+      font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;
+      color:#374151;transition:all .15s;
+    }
+    .opt:hover:not(:disabled){border-color:#93c5fd;background:#eff6ff}
+    .opt:disabled{cursor:default}
+    .opt-lt{
+      width:24px;height:24px;border-radius:50%;border:2px solid #d1d5db;
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;font-weight:700;flex-shrink:0;color:var(--gray);transition:all .15s;
+    }
+    .opt.correct          {border-color:var(--green);background:#f0fdf4}
+    .opt.correct .opt-lt  {background:var(--green);border-color:var(--green);color:#fff}
+    .opt.wrong            {border-color:var(--red);background:#fef2f2}
+    .opt.wrong .opt-lt    {background:var(--red);border-color:var(--red);color:#fff}
+    .opt.reveal           {border-color:var(--green);background:#f0fdf4}
+    .opt.reveal .opt-lt   {border-color:var(--green);color:var(--green)}
+
+    .exp-box{
+      margin-top:12px;padding:13px 15px;border-radius:10px;
+      border-left:4px solid;font-size:13px;line-height:1.65;color:#374151;display:none;
+    }
+    .exp-box.ok-e {border-color:var(--green);background:#f0fdf4}
+    .exp-box.bad-e{border-color:var(--red);background:#fef2f2}
+    .exp-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px}
+    .ok-e .exp-lbl{color:var(--green)}
+    .bad-e .exp-lbl{color:var(--red)}
+
+    .sub-bar{
+      position:fixed;bottom:0;left:430px;right:0;
+      background:#fff;border-top:1px solid var(--border);
+      padding:14px 28px;display:flex;align-items:center;
+      justify-content:space-between;gap:12px;
+      box-shadow:0 -4px 24px rgba(0,0,0,.08);z-index:100;
+    }
+    .sb-info{font-size:13px;color:var(--gray)}
+    .sb-info strong{color:var(--navy)}
+    .btn-sub{
+      padding:10px 26px;border-radius:10px;border:none;
+      background:linear-gradient(135deg,var(--green),#22c55e);
+      color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;
+      cursor:pointer;transition:opacity .2s;
+    }
+    .btn-sub:hover{opacity:.9}
+
+    /* ════════════════════════════════════════════════════════════
+       SCREEN 3 — RESULTS
+    ════════════════════════════════════════════════════════════ */
+    .res-wrap{max-width:700px;margin:0 auto;padding:44px 24px 80px}
+    .res-hero{
+      background:linear-gradient(135deg,var(--navy),#1a3a6e);
+      border-radius:22px;padding:44px 36px;text-align:center;color:#fff;margin-bottom:28px;
+    }
+    .res-emoji{font-size:52px;margin-bottom:10px}
+    .res-verdict{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:8px}
+    .res-verdict.pass{color:#86efac}
+    .res-verdict.fail{color:#fca5a5}
+    .res-score{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;line-height:1}
+    .res-score span{font-size:32px;opacity:.6}
+    .res-pct{font-size:17px;opacity:.7;margin-top:6px}
+    .res-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .rstat{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 18px;text-align:center;min-width:80px}
+    .rstat .n{font-size:22px;font-weight:700}
+    .rstat .l{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+    .res-acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .btn-retry{
+      padding:12px 26px;border-radius:10px;border:none;
+      background:var(--gold);color:var(--navy);
+      font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;
+    }
+    .btn-retry:hover{background:var(--gold-light)}
+    .btn-back{
+      padding:12px 26px;border-radius:10px;
+      border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;
+      font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;
+    }
+    .btn-back:hover{background:rgba(255,255,255,.1)}
+
+    .review-box{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden}
+    .review-hd{padding:22px 26px;border-bottom:1px solid var(--border)}
+    .review-hd h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy)}
+    .ri{padding:22px 26px;border-bottom:1px solid var(--border)}
+    .ri:last-child{border-bottom:none}
+    .ri-q{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:11px;line-height:1.5}
+    .ri-row{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:9px 12px;border-radius:8px;margin-bottom:5px}
+    .ri-w{background:#fef2f2;color:var(--red)}
+    .ri-c{background:#f0fdf4;color:var(--green)}
+    .ri-exp{
+      background:#f9fafb;border-left:3px solid #0d9488;
+      padding:12px 14px;border-radius:0 8px 8px 0;
+      font-size:13px;line-height:1.65;color:#374151;margin-top:8px;
+    }
+    .ri-exp strong{display:block;margin-bottom:4px;color:var(--navy);font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+
+    /* MOBILE */
+    @media(max-width:900px){
+      .exam-wrap{grid-template-columns:1fr}
+      .sc-panel{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+      .sub-bar{left:0}
+      .q-panel{padding:20px 16px 110px}
+    }
+    @media(max-width:600px){
+      .picker-hero h1{font-size:26px}
+      .cards-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header class="exam-header">
-  <div class="header-left">
-    <a href="index.html" class="back-btn">← Home</a>
-    <div class="exam-title">ICAEW <span>Scenario Exam</span> – Ch 12 &amp; 13</div>
+<header class="hdr">
+  <div class="hdr-left">
+    <a href="index.html" class="back-lnk" id="back-lnk">← Portal</a>
+    <div class="hdr-title" id="hdr-title"><em>Scenario</em> Exam</div>
   </div>
-  <div class="timer-block">
-    <div>
-      <div class="timer-label">Time</div>
-      <div class="timer" id="timer">90:00</div>
-    </div>
+  <div class="timer-wrap">
+    <div class="tmr-lbl" id="tmr-lbl">Time Left</div>
+    <div id="tmr"></div>
   </div>
 </header>
 
-<!-- PROGRESS -->
-<div class="progress-section">
-  <div class="progress-info">
-    <span id="progressText">Question 0 of 0</span>
-    <span id="scoreText">Score: 0 / 0</span>
+<!-- ════════════════════ SCREEN 1 — PICKER ════════════════════ -->
+<div class="screen active" id="s-picker">
+  <div class="picker-hero">
+    <h1>📋 <em>Scenario</em> Exam</h1>
+    <p>Select a company. The full trial balance and all adjustments are shown on the left — answer every question in context, just like the real ICAEW exam. 40-minute timer per company.</p>
+    <div class="hero-pills">
+      <div class="hp"><div class="n">10</div><div class="l">Companies</div></div>
+      <div class="hp"><div class="n">70+</div><div class="l">Questions</div></div>
+      <div class="hp"><div class="n">40</div><div class="l">Min / Exam</div></div>
+      <div class="hp"><div class="n">70%</div><div class="l">Pass Mark</div></div>
+    </div>
   </div>
-  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:0%"></div></div>
+  <div class="picker-body">
+    <div class="ch-label"><span>Ch. 12</span> Company Financial Statements Under IFRS</div>
+    <div class="cards-grid" id="grid-12"></div>
+    <div class="ch-label"><span>Ch. 13</span> Statement of Cash Flows</div>
+    <div class="cards-grid" id="grid-13"></div>
+  </div>
 </div>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-dot correct"></div><span id="statCorrect">0 Correct</span></div>
-  <div class="stat-item"><div class="stat-dot wrong"></div><span id="statWrong">0 Wrong</span></div>
-  <div class="stat-item"><div class="stat-dot unanswered"></div><span id="statUnanswered">0 Remaining</span></div>
+<!-- ════════════════════ SCREEN 2 — EXAM ════════════════════ -->
+<div class="screen" id="s-exam">
+  <div class="exam-wrap">
+
+    <!-- LEFT: scenario data -->
+    <aside class="sc-panel" id="sc-panel">
+      <div class="sc-hd">
+        <div class="sc-tag" id="sc-tag">Chapter</div>
+        <div class="sc-co" id="sc-co">Company</div>
+        <div class="sc-per" id="sc-per">Period</div>
+      </div>
+      <p class="sc-intro" id="sc-intro"></p>
+
+      <div class="panel-sec">
+        <div class="psec-title">Trial Balance</div>
+        <table class="tb">
+          <thead><tr>
+            <th style="text-align:left;width:60%">Item</th>
+            <th>Dr £</th>
+            <th>Cr £</th>
+          </tr></thead>
+          <tbody id="tb-rows"></tbody>
+        </table>
+      </div>
+
+      <div class="panel-sec">
+        <div class="psec-title">Adjustments Required</div>
+        <div class="adj-list" id="adj-rows"></div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: questions -->
+    <section class="q-panel">
+      <div class="qp-hd">
+        <div class="qp-title" id="qp-title">Questions</div>
+        <div class="qp-meta">
+          <span class="mpill" id="pill-total">0 questions</span>
+          <span class="mpill" id="pill-ans">0 answered</span>
+          <span class="mpill" id="pill-flag" style="display:none">🚩 <span id="pfn">0</span> flagged</span>
+        </div>
+        <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+      </div>
+      <div id="q-list"></div>
+    </section>
+
+  </div>
+  <div class="sub-bar">
+    <div class="sb-info"><strong id="sb-ans">0</strong> / <strong id="sb-tot">0</strong> answered</div>
+    <button class="btn-sub" onclick="confirmSubmit()">Submit Exam →</button>
+  </div>
 </div>
 
-<!-- MAIN LAYOUT -->
-<div class="main-layout">
-
-  <!-- LEFT: Scenario Panel -->
-  <aside class="scenario-panel" id="scenarioPanel">
-    <div class="scenario-header">
-      <div class="scenario-chapter-badge" id="scenarioBadge">Chapter 12</div>
-      <div class="scenario-company-name" id="scenarioName">Loading…</div>
-      <div class="scenario-year-end" id="scenarioYearEnd"></div>
-      <div class="scenario-intro" id="scenarioIntro"></div>
+<!-- ════════════════════ SCREEN 3 — RESULTS ════════════════════ -->
+<div class="screen" id="s-results">
+  <div class="res-wrap">
+    <div class="res-hero">
+      <div class="res-emoji" id="r-emoji">🎉</div>
+      <div class="res-verdict" id="r-verdict"></div>
+      <div class="res-score" id="r-score">0<span>/0</span></div>
+      <div class="res-pct" id="r-pct"></div>
+      <div class="res-stats">
+        <div class="rstat"><div class="n" id="rs-c">0</div><div class="l">Correct</div></div>
+        <div class="rstat"><div class="n" id="rs-w">0</div><div class="l">Wrong</div></div>
+        <div class="rstat"><div class="n" id="rs-t">—</div><div class="l">Time Used</div></div>
+        <div class="rstat"><div class="n" id="rs-p">0%</div><div class="l">Score</div></div>
+      </div>
+      <div class="res-acts">
+        <button class="btn-retry" onclick="retryExam()">🔄 Retry This Company</button>
+        <button class="btn-back" onclick="goPickerFromResults()">← Pick Another Company</button>
+      </div>
     </div>
-    <div class="scenario-body">
-      <div id="tbSection"></div>
-      <div id="adjSection"></div>
+    <div class="review-box">
+      <div class="review-hd"><h3 id="review-hdg">📋 Review Answers</h3></div>
+      <div id="review-rows"></div>
     </div>
-  </aside>
-
-  <!-- RIGHT: Questions -->
-  <main class="questions-panel">
-    <!-- Chapter Tabs -->
-    <div class="chapter-tabs">
-      <button class="ch-tab active" id="tab12" onclick="selectChapter(12)">Chapter 12 – Financial Statements</button>
-      <button class="ch-tab" id="tab13" onclick="selectChapter(13)">Chapter 13 – Cash Flows</button>
-    </div>
-
-    <!-- Company Nav -->
-    <div class="company-nav" id="companyNav"></div>
-
-    <!-- Questions heading -->
-    <div class="questions-heading" id="questionsHeading">Questions</div>
-    <div class="questions-sub" id="questionsSub">Select a company to begin</div>
-
-    <!-- Question cards -->
-    <div id="questionCards"></div>
-  </main>
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <button class="nav-btn" id="prevCompanyBtn" onclick="prevCompany()" disabled>← Previous Company</button>
-  <button class="nav-btn primary" id="submitBtn" onclick="showResults()">Submit Exam</button>
-  <button class="nav-btn" id="nextCompanyBtn" onclick="nextCompany()">Next Company →</button>
-</div>
-
-<!-- RESULTS -->
-<div class="results-overlay" id="resultsOverlay">
-  <div class="results-card">
-    <div class="results-icon" id="resultsIcon">🎯</div>
-    <div class="results-title">Exam Complete</div>
-    <div class="results-score" id="resultsScore">0%</div>
-    <div class="results-label" id="resultsLabel">You answered 0 of 0 questions correctly</div>
-    <div class="results-breakdown">
-      <div class="breakdown-item"><div class="breakdown-val correct" id="bCorrect">0</div><div class="breakdown-sub">Correct</div></div>
-      <div class="breakdown-item"><div class="breakdown-val wrong" id="bWrong">0</div><div class="breakdown-sub">Wrong</div></div>
-      <div class="breakdown-item"><div class="breakdown-val" id="bSkipped" style="color:var(--gray)">0</div><div class="breakdown-sub">Skipped</div></div>
-    </div>
-    <button class="results-btn primary" onclick="reviewAnswers()">Review Answers</button>
-    <button class="results-btn secondary" onclick="restartExam()">Restart</button>
   </div>
 </div>
 
 <script src="scenario-questions.js"></script>
 <script>
-// ═══════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════
-let currentChapter = 12;
-let currentCompanyIdx = 0;
-let answers = {};          // key: "chap-compIdx-qIdx" → chosen option index
-let timerInterval = null;
-let totalSeconds = 90 * 60;
-let examSubmitted = false;
+/* ── constants ─────────────────────────────────────────── */
+const EXAM_SECS = 40 * 60;
+const LTR = ['A','B','C','D','E'];
 
-// ═══════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
+/* ── state ─────────────────────────────────────────────── */
+let activeSc  = null;
+let answers   = [];   // null | optIdx
+let flags     = [];   // bool
+let tmrSecs   = 0;
+let tmrInt    = null;
+let t0        = null;
+let submitted = false;
+let history   = {};   // history[scId] = { correct, total, pct }
+
+/* ── screen helper ─────────────────────────────────────── */
+function go(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0 });
+}
+
+/* ════════════════════════════════════════════════════════
+   SCREEN 1 — PICKER
+════════════════════════════════════════════════════════ */
+function buildPicker() {
+  document.getElementById('grid-12').innerHTML = '';
+  document.getElementById('grid-13').innerHTML = '';
+  scenarioCases.forEach(sc => {
+    document.getElementById(`grid-${sc.chapter}`).appendChild(makeCard(sc));
+  });
+}
+
+function makeCard(sc) {
+  const hist   = history[sc.id];
+  const done   = !!hist;
+  const passed = done && hist.pct >= 70;
+
+  const card = document.createElement('div');
+  card.className = 'cc';
+  card.style.borderTop = `4px solid ${sc.color}`;
+
+  card.innerHTML = `
+    <div class="cc-ribbon show" style="background:${done ? (passed ? 'var(--green)' : 'var(--red)') : 'transparent'};display:${done ? 'block' : 'none'}">
+      ${done ? (passed ? '✓ Pass' : '✗ Fail') : ''}
+    </div>
+    <div class="cc-top">
+      <div class="cc-icon" style="background:${sc.colorLight};color:${sc.color}">${sc.icon}</div>
+      <div class="cc-tags">
+        <span class="cc-tag">Ch. ${sc.chapter}</span>
+        <span class="cc-tag">${sc.questions.length} Qs</span>
+        <span class="cc-tag">40 min</span>
+      </div>
+    </div>
+    <div class="cc-name">${sc.company}</div>
+    <div class="cc-period">${sc.period}</div>
+    <div class="cc-intro">${sc.context.intro}</div>
+    ${done ? `<div class="cc-prev" style="color:${passed ? 'var(--green)' : 'var(--red)'}">
+      ${passed ? '✓' : '✗'} Last score: ${hist.correct}/${hist.total} &nbsp;(${hist.pct}%)
+    </div>` : ''}
+    <div class="cc-footer">
+      <div class="cc-meta">
+        TB rows: <strong>${sc.context.trialBalance.length}</strong> &nbsp;·&nbsp;
+        Adj: <strong>${sc.context.adjustments.length}</strong>
+      </div>
+      <button class="btn-start" style="background:${sc.color}"
+              onclick="startExam('${sc.id}')">
+        ${done ? 'Retry' : 'Start'} Exam →
+      </button>
+    </div>`;
+
+  return card;
+}
+
+/* ════════════════════════════════════════════════════════
+   SCREEN 2 — EXAM
+════════════════════════════════════════════════════════ */
+function startExam(scId) {
+  activeSc  = scenarioCases.find(s => s.id === scId);
+  answers   = new Array(activeSc.questions.length).fill(null);
+  flags     = new Array(activeSc.questions.length).fill(false);
+  submitted = false;
+  tmrSecs   = EXAM_SECS;
+  t0        = Date.now();
+
+  // header
+  setHeader(`<em>${activeSc.icon} ${activeSc.company}</em> — Scenario Exam`);
+  setBackBtn('← Companies', () => {
+    if (confirm('Leave exam? Progress will be lost.')) { stopTimer(); goPickerFromExam(); }
+  });
+  showTimer(true);
+
+  // render
+  renderPanel(activeSc);
+  renderQList(activeSc);
+  updateSubBar();
+  go('s-exam');
   startTimer();
-  selectChapter(12);
-});
-
-// ═══════════════════════════════════════════════════════════
-//  TIMER
-// ═══════════════════════════════════════════════════════════
-function startTimer() {
-  const el = document.getElementById('timer');
-  timerInterval = setInterval(() => {
-    if (examSubmitted) { clearInterval(timerInterval); return; }
-    totalSeconds--;
-    const m = Math.floor(totalSeconds / 60);
-    const s = totalSeconds % 60;
-    el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    el.className = 'timer' + (totalSeconds < 600 ? ' warning' : '') + (totalSeconds < 120 ? ' danger' : '');
-    if (totalSeconds <= 0) { clearInterval(timerInterval); showResults(); }
-  }, 1000);
 }
 
-// ═══════════════════════════════════════════════════════════
-//  CHAPTER SELECTION
-// ═══════════════════════════════════════════════════════════
-function selectChapter(ch) {
-  currentChapter = ch;
-  currentCompanyIdx = 0;
-  document.getElementById('tab12').classList.toggle('active', ch === 12);
-  document.getElementById('tab13').classList.toggle('active', ch === 13);
-  renderCompanyNav();
-  renderCompany(currentCompanyIdx);
-}
+/* scenario left panel */
+function renderPanel(sc) {
+  document.getElementById('sc-tag').textContent   = `Chapter ${sc.chapter}`;
+  document.getElementById('sc-tag').style.color   = sc.color;
+  document.getElementById('sc-co').textContent    = sc.company;
+  document.getElementById('sc-per').textContent   = sc.period;
+  document.getElementById('sc-intro').textContent = sc.context.intro;
 
-// ═══════════════════════════════════════════════════════════
-//  COMPANY NAV
-// ═══════════════════════════════════════════════════════════
-function renderCompanyNav() {
-  const companies = scenarioBank[currentChapter].companies;
-  const nav = document.getElementById('companyNav');
-  nav.innerHTML = '';
-  companies.forEach((c, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'company-nav-btn' + (i === currentCompanyIdx ? ' active' : '');
-    btn.textContent = c.name;
-    // Check if all questions answered
-    const allDone = c.questions.every((_, qi) => answers[`${currentChapter}-${i}-${qi}`] !== undefined);
-    if (allDone) btn.classList.add('done');
-    btn.onclick = () => { currentCompanyIdx = i; renderCompany(i); renderCompanyNav(); };
-    nav.appendChild(btn);
+  const tbody = document.getElementById('tb-rows');
+  tbody.innerHTML = '';
+  sc.context.trialBalance.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-size:11.5px">${r.item}</td>
+      <td class="num">${r.dr || ''}</td>
+      <td class="num cr">${r.cr || ''}</td>`;
+    tbody.appendChild(tr);
   });
-}
 
-// ═══════════════════════════════════════════════════════════
-//  RENDER COMPANY (scenario panel + questions)
-// ═══════════════════════════════════════════════════════════
-function renderCompany(idx) {
-  const company = scenarioBank[currentChapter].companies[idx];
-
-  // — Scenario panel header —
-  document.getElementById('scenarioBadge').textContent = `Chapter ${company.chapter}`;
-  document.getElementById('scenarioName').textContent = company.name;
-  document.getElementById('scenarioYearEnd').textContent = company.year_end ? `Year end: ${company.year_end}` : '';
-  document.getElementById('scenarioIntro').textContent = company.intro || '';
-
-  // — Trial Balance —
-  const tbSec = document.getElementById('tbSection');
-  if (company.trial_balance && company.trial_balance.length > 0) {
-    let tbHtml = `<div class="section-label">Trial Balance / Financial Data</div>`;
-    tbHtml += `<table class="tb-table">
-      <thead><tr><th>Account</th><th>Dr £</th><th>Cr £</th></tr></thead>
-      <tbody>`;
-    let totalDr = 0, totalCr = 0;
-    company.trial_balance.forEach(row => {
-      const dr = row.debit ? row.debit.toLocaleString() : '';
-      const cr = row.credit ? row.credit.toLocaleString() : '';
-      if (row.debit) totalDr += row.debit;
-      if (row.credit) totalCr += row.credit;
-      tbHtml += `<tr><td>${row.account}</td><td>${dr}</td><td>${cr}</td></tr>`;
-    });
-    tbHtml += `</tbody>`;
-    if (totalDr > 0) {
-      tbHtml += `<tfoot><tr><td>TOTAL</td><td>${totalDr.toLocaleString()}</td><td>${totalCr.toLocaleString()}</td></tr></tfoot>`;
-    }
-    tbHtml += `</table>`;
-    tbSec.innerHTML = tbHtml;
-  } else if (company.sfp_data && company.sfp_data.length > 0) {
-    // SFP comparison table
-    let sfpHtml = `<div class="section-label">Statements of Financial Position</div>`;
-    sfpHtml += `<table class="sfp-table">
-      <thead><tr><th>Item</th><th>Current Year £</th><th>Prior Year £</th></tr></thead>
-      <tbody>`;
-    company.sfp_data.forEach(row => {
-      sfpHtml += `<tr><td>${row.item}</td><td>${row.y2.toLocaleString()}</td><td>${row.y1.toLocaleString()}</td></tr>`;
-    });
-    sfpHtml += `</tbody></table>`;
-    tbSec.innerHTML = sfpHtml;
-  } else {
-    tbSec.innerHTML = '';
-  }
-
-  // If company has both tb AND sfp_data
-  if (company.sfp_data && company.sfp_data.length > 0 && company.trial_balance && company.trial_balance.length > 0) {
-    let sfpHtml = `<div class="section-label">Statements of Financial Position</div>`;
-    sfpHtml += `<table class="sfp-table">
-      <thead><tr><th>Item</th><th>Current £</th><th>Prior £</th></tr></thead><tbody>`;
-    company.sfp_data.forEach(row => {
-      sfpHtml += `<tr><td>${row.item}</td><td>${row.y2.toLocaleString()}</td><td>${row.y1.toLocaleString()}</td></tr>`;
-    });
-    sfpHtml += `</tbody></table>`;
-    tbSec.innerHTML += sfpHtml;
-  }
-
-  // — Adjustments —
-  const adjSec = document.getElementById('adjSection');
-  if (company.adjustments && company.adjustments.length > 0) {
-    let adjHtml = `<div class="section-label">Adjustments &amp; Additional Information</div><div class="adj-list">`;
-    company.adjustments.forEach(adj => {
-      adjHtml += `<div class="adj-item">
-        <span class="adj-num">${adj.number}</span>
-        <div class="adj-text">${escapeHtml(adj.text)}${adj.detail ? '\n' + escapeHtml(adj.detail) : ''}</div>
-      </div>`;
-    });
-    adjHtml += `</div>`;
-    adjSec.innerHTML = adjHtml;
-  } else {
-    adjSec.innerHTML = '';
-  }
-
-  // — Questions heading —
-  document.getElementById('questionsHeading').textContent = company.name + ' – Questions';
-  document.getElementById('questionsSub').textContent =
-    `${company.questions.length} question${company.questions.length !== 1 ? 's' : ''} · Use the scenario panel on the left for reference`;
-
-  // — Render question cards —
-  renderQuestions(company, idx);
-
-  // Update nav state
-  updateNavButtons();
-  updateStats();
-}
-
-// ═══════════════════════════════════════════════════════════
-//  RENDER QUESTIONS
-// ═══════════════════════════════════════════════════════════
-function renderQuestions(company, compIdx) {
-  const container = document.getElementById('questionCards');
-  container.innerHTML = '';
-
-  company.questions.forEach((q, qi) => {
-    const key = `${currentChapter}-${compIdx}-${qi}`;
-    const chosen = answers[key];
-    const revealed = examSubmitted || chosen !== undefined;
-
-    const card = document.createElement('div');
-    card.className = 'q-card';
-    card.id = `qcard-${qi}`;
-
-    // Adjustment references
-    let adjRefs = '';
-    if (q.adj_ref && q.adj_ref.length > 0) {
-      adjRefs = `<div class="adj-refs">` +
-        q.adj_ref.map(n => `<span class="adj-ref-tag">Adjustment ${n}</span>`).join('') +
-        `</div>`;
-    }
-
-    // Options HTML
-    let optionsHtml = '<div class="options">';
-    const letters = ['A','B','C','D'];
-    q.options.forEach((opt, oi) => {
-      let cls = 'option-btn';
-      if (revealed) {
-        if (oi === q.answer) cls += ' correct';
-        else if (chosen === oi && oi !== q.answer) cls += ' wrong';
-      }
-      optionsHtml += `<button class="${cls}" onclick="selectAnswer('${key}',${oi},${q.answer},${qi})"
-        ${revealed ? 'disabled' : ''}>
-        <span class="option-letter">${letters[oi]}</span>
-        <span>${escapeHtml(opt)}</span>
-      </button>`;
-    });
-    optionsHtml += '</div>';
-
-    const expStyle = revealed ? ' show' : '';
-    card.innerHTML = `
-      <div class="q-number">Q${qi + 1} of ${company.questions.length}</div>
-      <div class="q-text">${escapeHtml(q.q)}</div>
-      ${adjRefs}
-      ${optionsHtml}
-      <div class="explanation${expStyle}"><strong>📖 Explanation:</strong><br>${escapeHtml(q.explanation)}</div>
-    `;
-    container.appendChild(card);
+  const adjRows = document.getElementById('adj-rows');
+  adjRows.innerHTML = '';
+  sc.context.adjustments.forEach(a => {
+    const d = document.createElement('div');
+    d.className = 'adj-item';
+    d.style.borderLeftColor = sc.color + '90';
+    d.innerHTML = `
+      <div class="adj-n" style="background:${sc.color}">${a.num}</div>
+      <div>${a.text}</div>`;
+    adjRows.appendChild(d);
   });
+
+  document.getElementById('sc-panel').scrollTo({ top: 0 });
 }
 
-// ═══════════════════════════════════════════════════════════
-//  SELECT ANSWER
-// ═══════════════════════════════════════════════════════════
-function selectAnswer(key, chosen, correct, qi) {
-  if (answers[key] !== undefined || examSubmitted) return;
-  answers[key] = chosen;
+/* question list */
+function renderQList(sc) {
+  document.getElementById('qp-title').textContent = `${sc.company} — Questions`;
+  document.getElementById('pill-total').textContent = `${sc.questions.length} questions`;
 
-  // Update this card visually
-  const card = document.getElementById(`qcard-${qi}`);
-  const btns = card.querySelectorAll('.option-btn');
-  btns.forEach((btn, oi) => {
-    btn.disabled = true;
-    if (oi === correct) btn.classList.add('correct');
-    else if (oi === chosen && oi !== correct) btn.classList.add('wrong');
-  });
-  card.querySelector('.explanation').classList.add('show');
+  const list = document.getElementById('q-list');
+  list.innerHTML = '';
+  sc.questions.forEach((_, qi) => list.appendChild(makeQCard(sc, qi)));
 
-  updateStats();
   updateProgress();
-  renderCompanyNav();
 }
 
-// ═══════════════════════════════════════════════════════════
-//  STATS & PROGRESS
-// ═══════════════════════════════════════════════════════════
-function getAllQuestions() {
-  const all = [];
-  for (const [ch, chData] of Object.entries(scenarioBank)) {
-    chData.companies.forEach((c, ci) => {
-      c.questions.forEach((q, qi) => {
-        all.push({ ch: parseInt(ch), ci, qi, q });
-      });
-    });
-  }
-  return all;
-}
+function makeQCard(sc, qi) {
+  const q  = sc.questions[qi];
+  const ua = answers[qi];
+  const fl = flags[qi];
 
-function updateStats() {
-  const all = getAllQuestions();
-  let correct = 0, wrong = 0, answered = 0;
-  all.forEach(({ ch, ci, qi, q }) => {
-    const key = `${ch}-${ci}-${qi}`;
-    if (answers[key] !== undefined) {
-      answered++;
-      if (answers[key] === q.answer) correct++; else wrong++;
+  const card = document.createElement('div');
+  card.className = 'q-card' + (ua === null ? '' : ua === q.answer ? ' ok' : ' bad');
+  card.id = `qc${qi}`;
+
+  /* header row */
+  const hd = document.createElement('div');
+  hd.className = 'qc-hd';
+
+  const badge = document.createElement('div');
+  badge.className = 'q-badge';
+  badge.style.background = sc.color;
+  badge.textContent = `Q${qi + 1}`;
+
+  const fb = document.createElement('button');
+  fb.className = 'flag-btn' + (fl ? ' on' : '');
+  fb.innerHTML = `🚩 ${fl ? 'Unflag' : 'Flag'}`;
+  fb.onclick = () => toggleFlag(sc, qi);
+
+  hd.appendChild(badge);
+  hd.appendChild(fb);
+  card.appendChild(hd);
+
+  /* question text */
+  const qt = document.createElement('div');
+  qt.className = 'q-text';
+  qt.textContent = q.q;
+  card.appendChild(qt);
+
+  /* options */
+  const opts = document.createElement('div');
+  opts.className = 'opts';
+  q.options.forEach((opt, oi) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    if (ua !== null) {
+      btn.disabled = true;
+      if (oi === q.answer)              btn.classList.add('reveal');
+      if (oi === ua && ua !== q.answer) btn.classList.add('wrong');
+      if (oi === ua && ua === q.answer) { btn.classList.remove('reveal'); btn.classList.add('correct'); }
     }
+    btn.onclick = () => pickAnswer(sc, qi, oi);
+    btn.innerHTML = `<span class="opt-lt">${LTR[oi]}</span><span>${opt}</span>`;
+    opts.appendChild(btn);
   });
-  document.getElementById('statCorrect').textContent = correct + ' Correct';
-  document.getElementById('statWrong').textContent = wrong + ' Wrong';
-  document.getElementById('statUnanswered').textContent = (all.length - answered) + ' Remaining';
+  card.appendChild(opts);
+
+  /* explanation */
+  if (ua !== null) {
+    const cor = ua === q.answer;
+    const eb  = document.createElement('div');
+    eb.className = 'exp-box ' + (cor ? 'ok-e' : 'bad-e');
+    eb.style.display = 'block';
+    eb.innerHTML = `<div class="exp-lbl">${cor ? '✓ Correct!' : '✗ Incorrect'}</div>${q.explanation}`;
+    card.appendChild(eb);
+  }
+
+  return card;
+}
+
+function pickAnswer(sc, qi, oi) {
+  if (answers[qi] !== null) return;
+  answers[qi] = oi;
+  document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
+  setTimeout(() => {
+    document.getElementById(`qc${qi}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 40);
+  updateProgress();
+  updateSubBar();
+}
+
+function toggleFlag(sc, qi) {
+  flags[qi] = !flags[qi];
+  document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
+  updateProgress();
 }
 
 function updateProgress() {
-  const all = getAllQuestions();
-  const answered = all.filter(({ ch, ci, qi }) => answers[`${ch}-${ci}-${qi}`] !== undefined).length;
-  const pct = all.length ? Math.round(answered / all.length * 100) : 0;
-  document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressText').textContent = `${answered} of ${all.length} answered`;
-  const correct = all.filter(({ ch, ci, qi, q }) => answers[`${ch}-${ci}-${qi}`] === q.answer).length;
-  document.getElementById('scoreText').textContent = `Score: ${correct} / ${answered}`;
+  const total = activeSc.questions.length;
+  const done  = answers.filter(a => a !== null).length;
+  const fl    = flags.filter(Boolean).length;
+  const pct   = total ? (done / total) * 100 : 0;
+
+  document.getElementById('prog-fill').style.width      = pct + '%';
+  document.getElementById('prog-fill').style.background = activeSc.color;
+  document.getElementById('pill-ans').textContent       = `${done} / ${total} answered`;
+
+  const pf = document.getElementById('pill-flag');
+  pf.style.display = fl ? '' : 'none';
+  document.getElementById('pfn').textContent = fl;
 }
 
-// ═══════════════════════════════════════════════════════════
-//  NAVIGATION
-// ═══════════════════════════════════════════════════════════
-function prevCompany() {
-  const companies = scenarioBank[currentChapter].companies;
-  if (currentCompanyIdx > 0) {
-    currentCompanyIdx--;
-    renderCompany(currentCompanyIdx);
-    renderCompanyNav();
-  } else if (currentChapter === 13) {
-    selectChapter(12);
-    currentCompanyIdx = scenarioBank[12].companies.length - 1;
-    renderCompany(currentCompanyIdx);
-    renderCompanyNav();
-  }
+function updateSubBar() {
+  const total = activeSc ? activeSc.questions.length : 0;
+  const done  = answers.filter(a => a !== null).length;
+  document.getElementById('sb-ans').textContent = done;
+  document.getElementById('sb-tot').textContent = total;
 }
 
-function nextCompany() {
-  const companies = scenarioBank[currentChapter].companies;
-  if (currentCompanyIdx < companies.length - 1) {
-    currentCompanyIdx++;
-    renderCompany(currentCompanyIdx);
-    renderCompanyNav();
-  } else if (currentChapter === 12) {
-    selectChapter(13);
-    currentCompanyIdx = 0;
-    renderCompany(0);
-    renderCompanyNav();
-  }
+/* ── submit ─────────────────────────────────────────────── */
+function confirmSubmit() {
+  const unanswered = answers.filter(a => a === null).length;
+  const nFlags     = flags.filter(Boolean).length;
+  let msg = '';
+  if (unanswered) msg += `${unanswered} question(s) unanswered. `;
+  if (nFlags)     msg += `${nFlags} flagged question(s). `;
+  if (msg && !confirm(msg + 'Submit anyway?')) return;
+  doSubmit();
 }
 
-function updateNavButtons() {
-  const companies = scenarioBank[currentChapter].companies;
-  const isFirst = currentChapter === 12 && currentCompanyIdx === 0;
-  const isLast  = currentChapter === 13 && currentCompanyIdx === companies.length - 1;
-  document.getElementById('prevCompanyBtn').disabled = isFirst;
-  document.getElementById('nextCompanyBtn').disabled = isLast;
+function doSubmit() {
+  if (submitted) return;
+  submitted = true;
+  stopTimer();
+  showResults();
 }
 
-// ═══════════════════════════════════════════════════════════
-//  RESULTS
-// ═══════════════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════
+   SCREEN 3 — RESULTS
+════════════════════════════════════════════════════════ */
 function showResults() {
-  examSubmitted = true;
-  clearInterval(timerInterval);
-  const all = getAllQuestions();
-  let correct = 0, wrong = 0, skipped = 0;
-  all.forEach(({ ch, ci, qi, q }) => {
-    const key = `${ch}-${ci}-${qi}`;
-    if (answers[key] === undefined) skipped++;
-    else if (answers[key] === q.answer) correct++;
-    else wrong++;
+  const sc      = activeSc;
+  const total   = sc.questions.length;
+  const correct = sc.questions.filter((q, i) => answers[i] === q.answer).length;
+  const pct     = Math.round((correct / total) * 100);
+  const passed  = pct >= 70;
+  const elapsed = Math.round((Date.now() - t0) / 1000);
+
+  // save history
+  const prev = history[sc.id];
+  if (!prev || correct >= prev.correct) {
+    history[sc.id] = { correct, total, pct };
+  }
+
+  // header
+  setHeader(`Results — <em>${sc.icon} ${sc.company}</em>`);
+  setBackBtn('← Companies', () => goPickerFromResults());
+  showTimer(false);
+
+  // fill hero
+  document.getElementById('r-emoji').textContent   = passed ? '🎉' : '💪';
+  document.getElementById('r-verdict').textContent = passed ? 'Congratulations!' : 'Keep Practising';
+  document.getElementById('r-verdict').className   = 'res-verdict ' + (passed ? 'pass' : 'fail');
+  document.getElementById('r-score').innerHTML     = `${correct}<span>/${total}</span>`;
+  document.getElementById('r-pct').textContent     = `${pct}% — ${passed ? 'PASS ✓' : 'FAIL ✗'}`;
+  document.getElementById('rs-c').textContent      = correct;
+  document.getElementById('rs-w').textContent      = total - correct;
+  document.getElementById('rs-t').textContent      = fmtTime(elapsed);
+  document.getElementById('rs-p').textContent      = pct + '%';
+
+  // review
+  const rows = document.getElementById('review-rows');
+  rows.innerHTML = '';
+  let wrongs = 0;
+
+  sc.questions.forEach((q, i) => {
+    const ua = answers[i];
+    if (ua === q.answer) return;
+    wrongs++;
+    const d = document.createElement('div');
+    d.className = 'ri';
+    d.innerHTML = `
+      <div class="ri-q">Q${i + 1}. ${q.q}</div>
+      ${ua !== null
+        ? `<div class="ri-row ri-w">✗ Your answer: <strong>${LTR[ua]}. ${q.options[ua]}</strong></div>`
+        : `<div class="ri-row ri-w">✗ Not answered</div>`}
+      <div class="ri-row ri-c">✓ Correct: <strong>${LTR[q.answer]}. ${q.options[q.answer]}</strong></div>
+      <div class="ri-exp"><strong>💡 Explanation</strong>${q.explanation}</div>`;
+    rows.appendChild(d);
   });
-  const pct = Math.round(correct / all.length * 100);
 
-  document.getElementById('resultsIcon').textContent = pct >= 70 ? '🏆' : pct >= 50 ? '📚' : '💪';
-  document.getElementById('resultsScore').textContent = pct + '%';
-  document.getElementById('resultsLabel').textContent = `You answered ${correct} of ${all.length} questions correctly`;
-  document.getElementById('bCorrect').textContent = correct;
-  document.getElementById('bWrong').textContent = wrong;
-  document.getElementById('bSkipped').textContent = skipped;
-  document.getElementById('resultsOverlay').classList.add('show');
+  if (wrongs === 0) {
+    rows.innerHTML = '<div style="padding:32px;text-align:center;color:var(--green);font-size:17px;font-weight:600;">🌟 Perfect Score! Every answer correct.</div>';
+    document.getElementById('review-hdg').textContent = '🌟 Perfect Score!';
+  } else {
+    document.getElementById('review-hdg').textContent = `📋 ${wrongs} Answer${wrongs > 1 ? 's' : ''} to Review`;
+  }
+
+  go('s-results');
 }
 
-function reviewAnswers() {
-  document.getElementById('resultsOverlay').classList.remove('show');
-  // Re-render current company with all answers revealed
-  renderCompany(currentCompanyIdx);
+function retryExam()         { startExam(activeSc.id); }
+function goPickerFromResults(){ setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
+function goPickerFromExam()  { setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
+
+/* ── timer ──────────────────────────────────────────────── */
+function startTimer() {
+  stopTimer();
+  tickTimer();
+  tmrInt = setInterval(tickTimer, 1000);
+}
+function stopTimer() { clearInterval(tmrInt); tmrInt = null; }
+function tickTimer() {
+  tmrSecs = Math.max(0, tmrSecs - 1);
+  const m = Math.floor(tmrSecs / 60);
+  const s = tmrSecs % 60;
+  const el = document.getElementById('tmr');
+  el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  el.className = tmrSecs <= 60 ? 'danger' : tmrSecs <= 300 ? 'warn' : '';
+  if (tmrSecs === 0) { stopTimer(); alert('⏰ Time is up!'); doSubmit(); }
+}
+function showTimer(show) {
+  document.getElementById('tmr').style.display     = show ? 'block' : 'none';
+  document.getElementById('tmr-lbl').style.display = show ? 'block' : 'none';
 }
 
-function restartExam() {
-  answers = {};
-  examSubmitted = false;
-  totalSeconds = 90 * 60;
-  document.getElementById('resultsOverlay').classList.remove('show');
-  clearInterval(timerInterval);
-  startTimer();
-  selectChapter(12);
-  updateProgress();
+/* ── header helpers ─────────────────────────────────────── */
+function setHeader(html) {
+  document.getElementById('hdr-title').innerHTML = html;
+}
+function setBackBtn(label, fn) {
+  const el = document.getElementById('back-lnk');
+  el.textContent = label;
+  if (fn) {
+    el.href = '#';
+    el.onclick = (e) => { e.preventDefault(); fn(); };
+  } else {
+    el.href = 'index.html';
+    el.onclick = null;
+  }
 }
 
-// ═══════════════════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════════════════
-function escapeHtml(str) {
-  if (!str) return '';
-  return str
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;')
-    .replace(/\n/g, '<br>');
-}
+/* ── utils ─────────────────────────────────────────────── */
+function fmtTime(s) { return `${Math.floor(s/60)}m ${s%60}s`; }
+
+/* ── boot ───────────────────────────────────────────────── */
+buildPicker();
 </script>
 </body>
 </html>
