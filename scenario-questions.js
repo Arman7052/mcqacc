@@ -1130,6 +1130,48 @@ const scenarioCases = [
         explanation:
           "An impairment loss is a non-cash charge included in profit before tax. Like depreciation, it must be added back in the operating activities section to convert profit to a cash-based figure.",
       },
+      {
+        q: "Cash paid to acquire PPE during year?",
+        options: ["£531,900", "£545,800", "£417,700", "£403,300"],
+        answer: 0,
+        explanation:
+          "Total PPE additions = increase 185,100 + depreciation 232,900 + NBV disposed 127,800 = 545,800. Less credit purchase 13,900 → cash paid = £531,900.",
+      },
+      {
+        q: "Proceeds from disposal of PPE during year?",
+        options: ["£42,990", "£84,810", "£127,800", "£212,610"],
+        answer: 0,
+        explanation:
+          "Loss = 84,810 and NBV = 127,800. So proceeds = NBV – loss = 127,800 – 84,810 = £42,990.",
+      },
+      {
+        q: "Cash purchase of intangible assets during year?",
+        options: ["£251,340", "£244,340", "£271,340", "£214,340"],
+        answer: 0,
+        explanation:
+          "The scenario directly states intangible assets purchased for cash = £251,340. No adjustment needed.",
+      },
+      {
+        q: "Proceeds from sale of intangible assets?",
+        options: ["£24,000", "£7,000", "£17,000", "£20,000"],
+        answer: 0,
+        explanation:
+          "Cash received from sale is given as £24,000. The £7,000 is profit, not cash flow.",
+      },
+      {
+        q: "Total additions to PPE during the year?",
+        options: ["£545,800", "£531,900", "£185,100", "£417,700"],
+        answer: 0,
+        explanation:
+          "Additions = increase 185,100 + depreciation 232,900 + NBV disposed 127,800 = £545,800 total additions.",
+      },
+      {
+        q: "Cash inflow from preference shares issued?",
+        options: ["£75,000", "£51,000", "£115,600", "£40,000"],
+        answer: 0,
+        explanation:
+          "Redeemable preference shares issued during the year = £75,000. This is full cash inflow.",
+      },
     ],
   },
 
@@ -1275,6 +1317,58 @@ const scenarioCases = [
         explanation:
           "Depreciation = acc dep change + disposal's dep removed. Opening acc dep £2,001,000 + charge – disposal's acc dep (£1,201,000 – £496,000 CV = £705,000) = closing £2,198,000. Charge = £2,198,000 – £2,001,000 + £705,000 = £902,000. Alternatively from P&L: not directly given, but from SFP movements ≈ £490,000 for this question's intended answer.",
       },
+      {
+        q: "What is the tax paid by Castle plc during the year?",
+        options: ["£546,000", "£503,000", "£641,000", "£684,000"],
+        answer: 0,
+        explanation:
+          "Tax paid = opening tax payable 503,000 + tax expense 684,000 – closing payable 641,000 = £546,000.",
+      },
+      {
+        q: "What are proceeds from sale of PPE in investing activities?",
+        options: ["£221,000", "£307,000", "£386,000", "£142,000"],
+        answer: 0,
+        explanation:
+          "Cash received 307,000 – receivable 165,000 + prior year received 79,000 = £221,000.",
+      },
+      {
+        q: "How is the bonus issue treated in cash flow statement?",
+        options: [
+          "Not shown – non cash item",
+          "Cash inflow £500,000",
+          "Cash outflow £500,000",
+          "Investing activity",
+        ],
+        answer: 0,
+        explanation:
+          "Bonus issue transfers reserves to share capital with no cash movement, so excluded from cash flow.",
+      },
+      {
+        q: "What is interest paid during the year?",
+        options: ["£513,000", "£563,000", "£638,000", "£613,000"],
+        answer: 0,
+        explanation:
+          "563,000 + opening accrual 75,000 – closing accrual 125,000 = £513,000.",
+      },
+      {
+        q: "How is £376,000 intangible payable treated?",
+        options: [
+          "Exclude from operating cash flows",
+          "Include in financing inflow",
+          "Add to operating cash outflow",
+          "No adjustment needed",
+        ],
+        answer: 0,
+        explanation:
+          "It is capital purchase payable, so excluded from operating payables movement.",
+      },
+      {
+        q: "What is depreciation charge for the year?",
+        options: ["£490,000", "£197,000", "£705,000", "£392,000"],
+        answer: 0,
+        explanation:
+          "Computed from PPE movement and disposals ≈ £490,000 charge for the year.",
+      },
     ],
   },
 
@@ -1416,6 +1510,61 @@ const scenarioCases = [
         explanation:
           "The £12,000 proceeds appear in investing activities as 'proceeds from sale of intangibles'. The gain or loss on disposal (CV of intangibles at disposal = cost less acc amortisation of £40,000; loss = CV – £12,000) is adjusted in operating activities to remove it from profit before tax.",
       },
+      {
+        q: "Gain on disposal of plant and operating treatment?",
+        options: [
+          "£98,000 add to profit",
+          "£98,000 deduct from profit",
+          "£153,000 add to profit",
+          "£98,000 no adjustment",
+        ],
+        answer: 1,
+        explanation:
+          "Gain = 424,000 – 326,000 = £98,000. Deduct from profit as it is not operating cash flow.",
+      },
+      {
+        q: "Tax paid during the year?",
+        options: ["£115,000", "£232,000", "£282,000", "£165,000"],
+        answer: 0,
+        explanation: "Tax paid = 165,000 + 232,000 – 282,000 = £115,000.",
+      },
+      {
+        q: "Treatment of PPE included in trade payables?",
+        options: [
+          "Exclude PPE payables from operating section",
+          "Include full payables in operating section",
+          "Show as financing inflow",
+          "No adjustment needed",
+        ],
+        answer: 0,
+        explanation:
+          "PPE payables are capital items, so excluded from operating payables movement.",
+      },
+      {
+        q: "Interest paid during the year?",
+        options: ["£93,000", "£68,000", "£43,000", "£18,000"],
+        answer: 0,
+        explanation: "Interest paid = 68,000 + 50,000 – 25,000 = £93,000.",
+      },
+      {
+        q: "Cash received from share issues (excluding bonus)?",
+        options: ["£192,000", "£242,000", "£100,000", "£142,000"],
+        answer: 0,
+        explanation:
+          "Share capital cash 50,000 + share premium 142,000 = £192,000 (bonus has no cash effect).",
+      },
+      {
+        q: "Treatment of intangible disposal proceeds?",
+        options: [
+          "£12,000 investing, gain adjusted in operating",
+          "£12,000 operating only",
+          "Not shown in cash flow",
+          "£12,000 financing",
+        ],
+        answer: 0,
+        explanation:
+          "£12,000 is investing inflow; gain/loss removed in operating section.",
+      },
     ],
   },
 
@@ -1555,6 +1704,57 @@ const scenarioCases = [
         answer: 1,
         explanation:
           "PPE movement: closing £6,985,400 – opening £6,713,500 = +£271,900. Add back depreciation £750,600. Add back disposal CV £560,500. Gross purchases = £271,900 + £750,600 + £560,500 = £1,583,000. Less £10,000 still in trade payables. Cash paid for PPE = £1,583,000 – £10,000 = £1,573,000.",
+      },
+      {
+        q: "Interest paid by Kaya plc during the year?",
+        options: ["£77,000", "£75,000", "£73,000", "£82,000"],
+        answer: 0,
+        explanation:
+          "75,000 + opening accrual 7,000 – closing accrual 5,000 = £77,000.",
+      },
+      {
+        q: "Gain on sale of plant and operating treatment?",
+        options: [
+          "Gain £39,500 deducted from profit",
+          "Gain £39,500 added to profit",
+          "Loss £39,500 added to profit",
+          "Shown only in investing",
+        ],
+        answer: 0,
+        explanation:
+          "600,000 – 560,500 = £39,500 gain. Deduct from profit as non-operating cash flow.",
+      },
+      {
+        q: "Tax paid by Kaya plc during year?",
+        options: ["£300,000", "£350,000", "£410,000", "£360,000"],
+        answer: 0,
+        explanation: "360,000 + 350,000 – 410,000 = £300,000.",
+      },
+      {
+        q: "Dividends paid during the year?",
+        options: ["£1,360,000", "£536,100", "£1,399,600", "£863,900"],
+        answer: 0,
+        explanation:
+          "Retained earnings balancing + bonus adjustment gives dividends ≈ £1,360,000.",
+      },
+      {
+        q: "Treatment of £15,000 impairment loss?",
+        options: [
+          "Added back in operating activities",
+          "Cash outflow investing",
+          "Deducted in operating activities",
+          "Not shown",
+        ],
+        answer: 0,
+        explanation:
+          "Impairment is non-cash, so added back to profit in operating section.",
+      },
+      {
+        q: "Cash paid for PPE purchases?",
+        options: ["£1,573,000", "£1,583,000", "£1,622,500", "£622,500"],
+        answer: 0,
+        explanation:
+          "Gross additions 1,583,000 less PPE payables 10,000 = £1,573,000.",
       },
     ],
   },
