@@ -256,41 +256,120 @@
     /* SCENARIO EXAM CARD */
     .scenario-exam-card {
       background: linear-gradient(135deg, #0d1b2e 0%, #0c3547 60%, #0d4f3c 100%);
-      border: none; border-radius: 20px; padding: 36px;
-      text-decoration: none; color: white; display: block;
-      transition: all 0.25s ease; position: relative;
-      overflow: hidden; grid-column: 1 / -1; margin-top: 8px;
+      border: none;
+      border-radius: 20px;
+      padding: 36px;
+      text-decoration: none;
+      color: white;
+      display: block;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      grid-column: 1 / -1;
+      margin-top: 8px;
     }
+
     .scenario-exam-card::before {
-      content: ""; position: absolute; top: -50%; right: -15%;
-      width: 280px; height: 280px; border-radius: 50%;
-      background: rgba(13, 148, 136, 0.12); pointer-events: none;
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -15%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(13, 148, 136, 0.12);
+      pointer-events: none;
     }
+
     .scenario-exam-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 60px rgba(13, 148, 136, 0.3);
     }
-    .scenario-card-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .scenario-card-left { flex: 1; }
+
+    .scenario-card-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .scenario-card-left {
+      flex: 1;
+    }
+
     .scenario-badge {
-      display: inline-block; background: rgba(13,148,136,0.25);
-      border: 1px solid rgba(20,184,166,0.5); color: #5eead4;
-      padding: 4px 14px; border-radius: 20px; font-size: 11px;
-      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px;
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.25);
+      border: 1px solid rgba(20, 184, 166, 0.5);
+      color: #5eead4;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
-    .scenario-exam-card h3 { font-family: "Playfair Display", serif; font-size: 26px; font-weight: 900; color: white; margin-bottom: 10px; }
-    .scenario-exam-card p { color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.6; max-width: 520px; }
-    .scenario-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 20px; }
-    .scenario-stat { text-align: center; }
-    .scenario-stat .n { font-family: "Playfair Display", serif; font-size: 28px; font-weight: 900; color: #5eead4; }
-    .scenario-stat .l { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+    .scenario-exam-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .scenario-exam-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .scenario-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .scenario-stat {
+      text-align: center;
+    }
+
+    .scenario-stat .n {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #5eead4;
+    }
+
+    .scenario-stat .l {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
     .btn-scenario {
-      background: linear-gradient(135deg, #0d9488, #14b8a6); color: white;
-      border: none; border-radius: 12px; padding: 14px 28px;
-      font-size: 15px; font-weight: 700; cursor: pointer;
-      font-family: "DM Sans", sans-serif; white-space: nowrap; transition: opacity 0.2s;
+      background: linear-gradient(135deg, #0d9488, #14b8a6);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: "DM Sans", sans-serif;
+      white-space: nowrap;
+      transition: opacity 0.2s;
     }
-    .btn-scenario:hover { opacity: 0.9; }
+
+    .btn-scenario:hover {
+      opacity: 0.9;
+    }
 
     /* FINAL EXAM CARD */
     .final-exam-card {
@@ -569,7 +648,7 @@
 <body>
   <div class="hero">
     <div class="hero-badge">📚 ICAEW 2019 Question Bank</div>
-    <h1>ICAB Accounting<br /><span>Exam Practice Portal</span></h1>
+    <h1>ICAB Accounting<br /><span>Exam Practice Portal developed by <br />Md Arman Hossain</span></h1>
     <p>
       Master every chapter with timed MCQ exams. 50 questions per chapter,
       instant feedback, and a comprehensive final exam.
@@ -607,7 +686,7 @@
         <ul>
           <li>20 questions randomly selected per chapter exam</li>
           <li>1.5 minutes per question (30 min per chapter exam)</li>
-          <li>50 questions randomly selected for the final exam (75 min)</li>
+          <li>50 questions randomly selected for the final exam (90 min)</li>
           <li>80% pass mark — timer auto-submits at zero</li>
           <li>Instant results with detailed explanations</li>
           <li>Questions reshuffled every attempt</li>
@@ -869,13 +948,25 @@
             <h3>Scenario Exam — Chapters 12 &amp; 13</h3>
             <p>
               Full company trial balances and all adjustments shown on screen. Answer every question
-              in context — just like the real ICAEW exam. 10 companies, 70+ questions.
+              in context — just like the real ICAB exam. 10 companies, 70+ questions.
             </p>
             <div class="scenario-stats">
-              <div class="scenario-stat"><div class="n">10</div><div class="l">Companies</div></div>
-              <div class="scenario-stat"><div class="n">100+</div><div class="l">Questions</div></div>
-              <div class="scenario-stat"><div class="n">2</div><div class="l">Chapters</div></div>
-              <div class="scenario-stat"><div class="n">70%</div><div class="l">Pass Mark</div></div>
+              <div class="scenario-stat">
+                <div class="n">10</div>
+                <div class="l">Companies</div>
+              </div>
+              <div class="scenario-stat">
+                <div class="n">100+</div>
+                <div class="l">Questions</div>
+              </div>
+              <div class="scenario-stat">
+                <div class="n">2</div>
+                <div class="l">Chapters</div>
+              </div>
+              <div class="scenario-stat">
+                <div class="n">70%</div>
+                <div class="l">Pass Mark</div>
+              </div>
             </div>
           </div>
           <button class="btn-scenario">Start Scenario Exam →</button>
@@ -890,7 +981,7 @@
             <h3>Final Exam — All Chapters</h3>
             <p>
               Test your complete knowledge across all 13 chapters. 50
-              questions randomly selected from the full question bank of 650
+              questions randomly selected from the full question bank of 750+
               questions.
             </p>
             <div class="final-stats">
@@ -899,7 +990,7 @@
                 <div class="l">Questions</div>
               </div>
               <div class="final-stat">
-                <div class="n">75</div>
+                <div class="n">90</div>
                 <div class="l">Minutes</div>
               </div>
               <div class="final-stat">
