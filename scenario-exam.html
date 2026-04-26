@@ -1,463 +1,1215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scenario Exam – ICAEW Accounting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
-      --navy:#0d1b2e; --gold:#d4a017; --gold-light:#f4c842;
-      --cream:#fdfaf4; --gray:#6b7280; --border:#e5e7eb;
-      --green:#16a34a; --red:#dc2626; --blue:#1d4ed8;
+      --navy: #0d1b2e;
+      --gold: #d4a017;
+      --gold-light: #f4c842;
+      --cream: #fdfaf4;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+      --green: #16a34a;
+      --red: #dc2626;
+      --blue: #1d4ed8;
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:#111827;min-height:100vh}
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: #111827;
+      min-height: 100vh
+    }
 
     /* ── HEADER ────────────────────────────────────────────────── */
-    .hdr{
-      background:var(--navy);height:60px;padding:0 24px;
-      display:flex;align-items:center;justify-content:space-between;
-      position:sticky;top:0;z-index:300;
+    .hdr {
+      background: var(--navy);
+      height: 60px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 300;
     }
-    .hdr-left{display:flex;align-items:center;gap:16px}
-    .back-lnk{
-      color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;
-      display:flex;align-items:center;gap:6px;transition:color .2s;
+
+    .hdr-left {
+      display: flex;
+      align-items: center;
+      gap: 16px
     }
-    .back-lnk:hover{color:#fff}
-    .hdr-title{color:#fff;font-weight:600;font-size:15px}
-    .hdr-title em{color:var(--gold-light);font-style:normal}
-    .timer-wrap{display:flex;align-items:center;gap:8px}
-    .tmr-lbl{color:rgba(255,255,255,.45);font-size:11px;text-transform:uppercase;letter-spacing:1px;display:none}
-    #tmr{
-      font-family:'Playfair Display',serif;font-size:26px;font-weight:700;
-      color:#fff;letter-spacing:2px;min-width:84px;text-align:center;display:none;
+
+    .back-lnk {
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
     }
-    #tmr.warn{color:#fbbf24;animation:blink 1s infinite}
-    #tmr.danger{color:#f87171;animation:blink .5s infinite}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+    .back-lnk:hover {
+      color: #fff
+    }
+
+    .hdr-title {
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px
+    }
+
+    .hdr-title em {
+      color: var(--gold-light);
+      font-style: normal
+    }
+
+    .timer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .tmr-lbl {
+      color: rgba(255, 255, 255, .45);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: none
+    }
+
+    #tmr {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 2px;
+      min-width: 84px;
+      text-align: center;
+      display: none;
+    }
+
+    #tmr.warn {
+      color: #fbbf24;
+      animation: blink 1s infinite
+    }
+
+    #tmr.danger {
+      color: #f87171;
+      animation: blink .5s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
 
     /* ── SCREEN MANAGEMENT ─────────────────────────────────────── */
-    .screen{display:none}
-    .screen.active{display:block}
+    .screen {
+      display: none
+    }
+
+    .screen.active {
+      display: block
+    }
 
     /* ════════════════════════════════════════════════════════════
        SCREEN 1 — PICKER
     ════════════════════════════════════════════════════════════ */
-    .picker-hero{
-      background:linear-gradient(135deg,var(--navy),#1a3a6e);
-      padding:52px 32px 60px;text-align:center;color:#fff;
-    }
-    .picker-hero h1{
-      font-family:'Playfair Display',serif;font-size:38px;font-weight:900;margin-bottom:12px;
-    }
-    .picker-hero h1 em{color:var(--gold-light);font-style:normal}
-    .picker-hero p{font-size:15px;color:rgba(255,255,255,.72);max-width:560px;margin:0 auto;line-height:1.7}
-    .hero-pills{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-    .hp{background:rgba(255,255,255,.1);border-radius:10px;padding:12px 20px;text-align:center;min-width:80px}
-    .hp .n{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
-    .hp .l{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-
-    .picker-body{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
-    .ch-label{
-      font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray);
-      display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:12px;
-      border-bottom:1px solid var(--border);
-    }
-    .ch-label span{
-      background:var(--navy);color:#fff;font-size:11px;font-weight:700;
-      padding:3px 10px;border-radius:20px;
-    }
-    .cards-grid{
-      display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
-      gap:18px;margin-bottom:44px;
+    .picker-hero {
+      background: linear-gradient(135deg, var(--navy), #1a3a6e);
+      padding: 52px 32px 60px;
+      text-align: center;
+      color: #fff;
     }
 
-    .cc{
-      background:#fff;border-radius:18px;border:1.5px solid var(--border);
-      padding:24px;cursor:pointer;text-align:left;
-      transition:transform .22s,box-shadow .22s;
-      position:relative;overflow:hidden;
+    .picker-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 12px;
     }
-    .cc:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
-    .cc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-    .cc-icon{
-      width:50px;height:50px;border-radius:14px;
-      display:flex;align-items:center;justify-content:center;font-size:22px;
+
+    .picker-hero h1 em {
+      color: var(--gold-light);
+      font-style: normal
     }
-    .cc-tags{display:flex;gap:6px;flex-wrap:wrap}
-    .cc-tag{
-      font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;
-      border:1.5px solid var(--border);color:var(--gray);background:#f9fafb;
+
+    .picker-hero p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, .72);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7
     }
-    .cc-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:3px}
-    .cc-period{font-size:12px;color:var(--gray);margin-bottom:10px}
-    .cc-intro{font-size:13px;color:#374151;line-height:1.6;margin-bottom:16px}
-    .cc-prev{font-size:12.5px;font-weight:600;margin-bottom:14px}
-    .cc-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    .cc-meta{font-size:12px;color:var(--gray)}
-    .cc-meta strong{color:var(--navy)}
-    .btn-start{
-      padding:9px 20px;border-radius:10px;border:none;color:#fff;
-      font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;
-      cursor:pointer;transition:opacity .2s;
+
+    .hero-pills {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px
     }
-    .btn-start:hover{opacity:.85}
-    .cc-ribbon{
-      position:absolute;top:14px;right:14px;
-      font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff;
-      display:none;
+
+    .hp {
+      background: rgba(255, 255, 255, .1);
+      border-radius: 10px;
+      padding: 12px 20px;
+      text-align: center;
+      min-width: 80px
     }
-    .cc-ribbon.show{display:block}
+
+    .hp .n {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700
+    }
+
+    .hp .l {
+      font-size: 10px;
+      opacity: .6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px
+    }
+
+    .picker-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px
+    }
+
+    .ch-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ch-label span {
+      background: var(--navy);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+
+    .cc {
+      background: #fff;
+      border-radius: 18px;
+      border: 1.5px solid var(--border);
+      padding: 24px;
+      cursor: pointer;
+      text-align: left;
+      transition: transform .22s, box-shadow .22s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cc:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .1)
+    }
+
+    .cc-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px
+    }
+
+    .cc-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .cc-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap
+    }
+
+    .cc-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      color: var(--gray);
+      background: #f9fafb;
+    }
+
+    .cc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px
+    }
+
+    .cc-period {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 10px
+    }
+
+    .cc-intro {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      margin-bottom: 16px
+    }
+
+    .cc-prev {
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 14px
+    }
+
+    .cc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .cc-meta {
+      font-size: 12px;
+      color: var(--gray)
+    }
+
+    .cc-meta strong {
+      color: var(--navy)
+    }
+
+    .btn-start {
+      padding: 9px 20px;
+      border-radius: 10px;
+      border: none;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+
+    .btn-start:hover {
+      opacity: .85
+    }
+
+    .cc-ribbon {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      color: #fff;
+      display: none;
+    }
+
+    .cc-ribbon.show {
+      display: block
+    }
 
     /* ════════════════════════════════════════════════════════════
        SCREEN 2 — EXAM
     ════════════════════════════════════════════════════════════ */
-    .exam-wrap{
-      display:grid;grid-template-columns:430px 1fr;
-      min-height:calc(100vh - 60px);
+    .exam-wrap {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      min-height: calc(100vh - 60px);
     }
 
     /* LEFT */
-    .sc-panel{
-      background:#fff;border-right:1px solid var(--border);
-      position:sticky;top:60px;height:calc(100vh - 60px);
-      overflow-y:auto;scrollbar-width:thin;scrollbar-color:#d1d5db transparent;
+    .sc-panel {
+      background: #fff;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 60px;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #d1d5db transparent;
     }
-    .sc-panel::-webkit-scrollbar{width:5px}
-    .sc-panel::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:3px}
 
-    .sc-hd{
-      padding:18px 22px 14px;border-bottom:1px solid var(--border);
-      position:sticky;top:0;background:#fff;z-index:10;
+    .sc-panel::-webkit-scrollbar {
+      width: 5px
     }
-    .sc-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px}
-    .sc-co{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:2px}
-    .sc-per{font-size:12px;color:var(--gray)}
-    .sc-intro{font-size:13px;color:#374151;line-height:1.6;padding:12px 22px;border-bottom:1px solid var(--border)}
 
-    .panel-sec{padding:12px 22px;border-bottom:1px solid var(--border)}
-    .panel-sec:last-child{border-bottom:none;padding-bottom:22px}
-    .psec-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:8px}
-
-    .tb{width:100%;border-collapse:collapse;font-size:11.5px}
-    .tb thead th{
-      font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
-      color:var(--gray);padding:4px 5px;text-align:right;border-bottom:2px solid var(--border);
+    .sc-panel::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 3px
     }
-    .tb thead th:first-child{text-align:left}
-    .tb tbody tr:nth-child(even){background:#f9fafb}
-    .tb td{padding:4px 5px;border-bottom:1px solid #f3f4f6;vertical-align:middle;line-height:1.4;color:#374151}
-    .tb td.num{text-align:right;font-family:monospace;white-space:nowrap;font-weight:500;color:#111827}
-    .tb td.num.cr{color:var(--blue)}
 
-    .adj-list{display:flex;flex-direction:column;gap:7px}
-    .adj-item{
-      display:flex;gap:9px;padding:9px 11px;
-      background:#f9fafb;border-radius:8px;border-left:3px solid #e5e7eb;
-      font-size:12px;line-height:1.55;color:#374151;
+    .sc-hd {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
     }
-    .adj-n{
-      width:20px;height:20px;border-radius:50%;flex-shrink:0;
-      display:flex;align-items:center;justify-content:center;
-      font-size:10px;font-weight:700;color:#fff;margin-top:1px;
+
+    .sc-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px
+    }
+
+    .sc-co {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px
+    }
+
+    .sc-per {
+      font-size: 12px;
+      color: var(--gray)
+    }
+
+    .sc-intro {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.6;
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .panel-sec {
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .panel-sec:last-child {
+      border-bottom: none;
+      padding-bottom: 22px
+    }
+
+    .psec-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+      margin-bottom: 8px
+    }
+
+    .tb {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px
+    }
+
+    .tb thead th {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--gray);
+      padding: 4px 5px;
+      text-align: right;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tb thead th:first-child {
+      text-align: left
+    }
+
+    .tb tbody tr:nth-child(even) {
+      background: #f9fafb
+    }
+
+    .tb td {
+      padding: 4px 5px;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: middle;
+      line-height: 1.4;
+      color: #374151
+    }
+
+    .tb td.num {
+      text-align: right;
+      font-family: monospace;
+      white-space: nowrap;
+      font-weight: 500;
+      color: #111827
+    }
+
+    .tb td.num.cr {
+      color: var(--blue)
+    }
+
+    .adj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px
+    }
+
+    .adj-item {
+      display: flex;
+      gap: 9px;
+      padding: 9px 11px;
+      background: #f9fafb;
+      border-radius: 8px;
+      border-left: 3px solid #e5e7eb;
+      font-size: 12px;
+      line-height: 1.55;
+      color: #374151;
+    }
+
+    .adj-n {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 1px;
     }
 
     /* RIGHT */
-    .q-panel{padding:28px 32px 120px}
-    .qp-hd{margin-bottom:22px}
-    .qp-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px}
-    .qp-meta{display:flex;gap:8px;flex-wrap:wrap}
-    .mpill{background:#f3f4f6;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--gray)}
-    .prog-bar{background:#e5e7eb;border-radius:99px;height:6px;margin-top:10px;overflow:hidden}
-    .prog-fill{height:100%;border-radius:99px;transition:width .3s}
+    .q-panel {
+      padding: 28px 32px 120px
+    }
 
-    .q-card{
-      background:#fff;border:1.5px solid var(--border);
-      border-radius:16px;padding:22px 24px;margin-bottom:18px;transition:border-color .2s;
+    .qp-hd {
+      margin-bottom: 22px
     }
-    .q-card.ok {border-color:#86efac}
-    .q-card.bad{border-color:#fca5a5}
 
-    .qc-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
-    .q-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;color:#fff;white-space:nowrap}
-    .flag-btn{
-      background:none;border:1.5px solid var(--border);border-radius:8px;
-      padding:5px 12px;font-size:12px;font-weight:600;cursor:pointer;
-      font-family:'DM Sans',sans-serif;color:var(--gray);transition:all .2s;
+    .qp-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
     }
-    .flag-btn:hover,.flag-btn.on{border-color:#f59e0b;color:#92400e;background:#fffbeb}
 
-    .q-text{font-size:15px;font-weight:500;line-height:1.65;color:#1f2937;margin-bottom:14px}
+    .qp-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
 
-    .opts{display:flex;flex-direction:column;gap:8px}
-    .opt{
-      display:flex;align-items:flex-start;gap:11px;
-      padding:12px 15px;border:2px solid var(--border);border-radius:10px;
-      cursor:pointer;background:#fff;width:100%;text-align:left;
-      font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;
-      color:#374151;transition:all .15s;
+    .mpill {
+      background: #f3f4f6;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray)
     }
-    .opt:hover:not(:disabled){border-color:#93c5fd;background:#eff6ff}
-    .opt:disabled{cursor:default}
-    .opt-lt{
-      width:24px;height:24px;border-radius:50%;border:2px solid #d1d5db;
-      display:flex;align-items:center;justify-content:center;
-      font-size:11px;font-weight:700;flex-shrink:0;color:var(--gray);transition:all .15s;
-    }
-    .opt.correct          {border-color:var(--green);background:#f0fdf4}
-    .opt.correct .opt-lt  {background:var(--green);border-color:var(--green);color:#fff}
-    .opt.wrong            {border-color:var(--red);background:#fef2f2}
-    .opt.wrong .opt-lt    {background:var(--red);border-color:var(--red);color:#fff}
-    .opt.reveal           {border-color:var(--green);background:#f0fdf4}
-    .opt.reveal .opt-lt   {border-color:var(--green);color:var(--green)}
 
-    .exp-box{
-      margin-top:12px;padding:13px 15px;border-radius:10px;
-      border-left:4px solid;font-size:13px;line-height:1.65;color:#374151;display:none;
+    .prog-bar {
+      background: #e5e7eb;
+      border-radius: 99px;
+      height: 6px;
+      margin-top: 10px;
+      overflow: hidden
     }
-    .exp-box.ok-e {border-color:var(--green);background:#f0fdf4}
-    .exp-box.bad-e{border-color:var(--red);background:#fef2f2}
-    .exp-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px}
-    .ok-e .exp-lbl{color:var(--green)}
-    .bad-e .exp-lbl{color:var(--red)}
 
-    .sub-bar{
-      position:fixed;bottom:0;left:430px;right:0;
-      background:#fff;border-top:1px solid var(--border);
-      padding:14px 28px;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;
-      box-shadow:0 -4px 24px rgba(0,0,0,.08);z-index:100;
+    .prog-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width .3s
     }
-    .sb-info{font-size:13px;color:var(--gray)}
-    .sb-info strong{color:var(--navy)}
-    .btn-sub{
-      padding:10px 26px;border-radius:10px;border:none;
-      background:linear-gradient(135deg,var(--green),#22c55e);
-      color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;
-      cursor:pointer;transition:opacity .2s;
+
+    .q-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      transition: border-color .2s;
     }
-    .btn-sub:hover{opacity:.9}
+
+    .q-card.ok {
+      border-color: #86efac
+    }
+
+    .q-card.bad {
+      border-color: #fca5a5
+    }
+
+    .qc-hd {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 10px
+    }
+
+    .q-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      color: #fff;
+      white-space: nowrap
+    }
+
+    .flag-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--gray);
+      transition: all .2s;
+    }
+
+    .flag-btn:hover,
+    .flag-btn.on {
+      border-color: #f59e0b;
+      color: #92400e;
+      background: #fffbeb
+    }
+
+    .q-text {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: #1f2937;
+      margin-bottom: 14px
+    }
+
+    .opts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 12px 15px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      background: #fff;
+      width: 100%;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #374151;
+      transition: all .15s;
+    }
+
+    .opt:hover:not(:disabled) {
+      border-color: #93c5fd;
+      background: #eff6ff
+    }
+
+    .opt:disabled {
+      cursor: default
+    }
+
+    .opt-lt {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #d1d5db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--gray);
+      transition: all .15s;
+    }
+
+    .opt.correct {
+      border-color: var(--green);
+      background: #f0fdf4
+    }
+
+    .opt.correct .opt-lt {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff
+    }
+
+    .opt.wrong {
+      border-color: var(--red);
+      background: #fef2f2
+    }
+
+    .opt.wrong .opt-lt {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff
+    }
+
+    .opt.reveal {
+      border-color: var(--green);
+      background: #f0fdf4
+    }
+
+    .opt.reveal .opt-lt {
+      border-color: var(--green);
+      color: var(--green)
+    }
+
+    .exp-box {
+      margin-top: 12px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      border-left: 4px solid;
+      font-size: 13px;
+      line-height: 1.65;
+      color: #374151;
+      display: none;
+    }
+
+    .exp-box.ok-e {
+      border-color: var(--green);
+      background: #f0fdf4
+    }
+
+    .exp-box.bad-e {
+      border-color: var(--red);
+      background: #fef2f2
+    }
+
+    .exp-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 5px
+    }
+
+    .ok-e .exp-lbl {
+      color: var(--green)
+    }
+
+    .bad-e .exp-lbl {
+      color: var(--red)
+    }
+
+    .sub-bar {
+      position: fixed;
+      bottom: 0;
+      left: 430px;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 -4px 24px rgba(0, 0, 0, .08);
+      z-index: 100;
+    }
+
+    .sb-info {
+      font-size: 13px;
+      color: var(--gray)
+    }
+
+    .sb-info strong {
+      color: var(--navy)
+    }
+
+    .btn-sub {
+      padding: 10px 26px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(135deg, var(--green), #22c55e);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+
+    .btn-sub:hover {
+      opacity: .9
+    }
 
     /* ════════════════════════════════════════════════════════════
        SCREEN 3 — RESULTS
     ════════════════════════════════════════════════════════════ */
-    .res-wrap{max-width:700px;margin:0 auto;padding:44px 24px 80px}
-    .res-hero{
-      background:linear-gradient(135deg,var(--navy),#1a3a6e);
-      border-radius:22px;padding:44px 36px;text-align:center;color:#fff;margin-bottom:28px;
+    .res-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 44px 24px 80px
     }
-    .res-emoji{font-size:52px;margin-bottom:10px}
-    .res-verdict{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:8px}
-    .res-verdict.pass{color:#86efac}
-    .res-verdict.fail{color:#fca5a5}
-    .res-score{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;line-height:1}
-    .res-score span{font-size:32px;opacity:.6}
-    .res-pct{font-size:17px;opacity:.7;margin-top:6px}
-    .res-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-    .rstat{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 18px;text-align:center;min-width:80px}
-    .rstat .n{font-size:22px;font-weight:700}
-    .rstat .l{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-    .res-acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-    .btn-retry{
-      padding:12px 26px;border-radius:10px;border:none;
-      background:var(--gold);color:var(--navy);
-      font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;
-    }
-    .btn-retry:hover{background:var(--gold-light)}
-    .btn-back{
-      padding:12px 26px;border-radius:10px;
-      border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;
-      font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;
-    }
-    .btn-back:hover{background:rgba(255,255,255,.1)}
 
-    .review-box{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden}
-    .review-hd{padding:22px 26px;border-bottom:1px solid var(--border)}
-    .review-hd h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy)}
-    .ri{padding:22px 26px;border-bottom:1px solid var(--border)}
-    .ri:last-child{border-bottom:none}
-    .ri-q{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:11px;line-height:1.5}
-    .ri-row{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:9px 12px;border-radius:8px;margin-bottom:5px}
-    .ri-w{background:#fef2f2;color:var(--red)}
-    .ri-c{background:#f0fdf4;color:var(--green)}
-    .ri-exp{
-      background:#f9fafb;border-left:3px solid #0d9488;
-      padding:12px 14px;border-radius:0 8px 8px 0;
-      font-size:13px;line-height:1.65;color:#374151;margin-top:8px;
+    .res-hero {
+      background: linear-gradient(135deg, var(--navy), #1a3a6e);
+      border-radius: 22px;
+      padding: 44px 36px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 28px;
     }
-    .ri-exp strong{display:block;margin-bottom:4px;color:var(--navy);font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+
+    .res-emoji {
+      font-size: 52px;
+      margin-bottom: 10px
+    }
+
+    .res-verdict {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .res-verdict.pass {
+      color: #86efac
+    }
+
+    .res-verdict.fail {
+      color: #fca5a5
+    }
+
+    .res-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 68px;
+      font-weight: 900;
+      line-height: 1
+    }
+
+    .res-score span {
+      font-size: 32px;
+      opacity: .6
+    }
+
+    .res-pct {
+      font-size: 17px;
+      opacity: .7;
+      margin-top: 6px
+    }
+
+    .res-stats {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px
+    }
+
+    .rstat {
+      background: rgba(255, 255, 255, .1);
+      border-radius: 12px;
+      padding: 12px 18px;
+      text-align: center;
+      min-width: 80px
+    }
+
+    .rstat .n {
+      font-size: 22px;
+      font-weight: 700
+    }
+
+    .rstat .l {
+      font-size: 10px;
+      opacity: .6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px
+    }
+
+    .res-acts {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px
+    }
+
+    .btn-retry {
+      padding: 12px 26px;
+      border-radius: 10px;
+      border: none;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-retry:hover {
+      background: var(--gold-light)
+    }
+
+    .btn-back {
+      padding: 12px 26px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, .35);
+      background: transparent;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, .1)
+    }
+
+    .review-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden
+    }
+
+    .review-hd {
+      padding: 22px 26px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .review-hd h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--navy)
+    }
+
+    .ri {
+      padding: 22px 26px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .ri:last-child {
+      border-bottom: none
+    }
+
+    .ri-q {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 11px;
+      line-height: 1.5
+    }
+
+    .ri-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      margin-bottom: 5px
+    }
+
+    .ri-w {
+      background: #fef2f2;
+      color: var(--red)
+    }
+
+    .ri-c {
+      background: #f0fdf4;
+      color: var(--green)
+    }
+
+    .ri-exp {
+      background: #f9fafb;
+      border-left: 3px solid #0d9488;
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      line-height: 1.65;
+      color: #374151;
+      margin-top: 8px;
+    }
+
+    .ri-exp strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .8px
+    }
 
     /* MOBILE */
-    @media(max-width:900px){
-      .exam-wrap{grid-template-columns:1fr}
-      .sc-panel{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}
-      .sub-bar{left:0}
-      .q-panel{padding:20px 16px 110px}
+    @media(max-width:900px) {
+      .exam-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .sc-panel {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border)
+      }
+
+      .sub-bar {
+        left: 0
+      }
+
+      .q-panel {
+        padding: 20px 16px 110px
+      }
     }
-    @media(max-width:600px){
-      .picker-hero h1{font-size:26px}
-      .cards-grid{grid-template-columns:1fr}
+
+    @media(max-width:600px) {
+      .picker-hero h1 {
+        font-size: 26px
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="hdr">
-  <div class="hdr-left">
-    <a href="index.html" class="back-lnk" id="back-lnk">← Portal</a>
-    <div class="hdr-title" id="hdr-title"><em>Scenario</em> Exam</div>
-  </div>
-  <div class="timer-wrap">
-    <div class="tmr-lbl" id="tmr-lbl">Time Left</div>
-    <div id="tmr"></div>
-  </div>
-</header>
-
-<!-- ════════════════════ SCREEN 1 — PICKER ════════════════════ -->
-<div class="screen active" id="s-picker">
-  <div class="picker-hero">
-    <h1>📋 <em>Scenario</em> Exam</h1>
-    <p>Select a company. The full trial balance and all adjustments are shown on the left — answer every question in context, just like the real ICAEW exam. 40-minute timer per company.</p>
-    <div class="hero-pills">
-      <div class="hp"><div class="n">10</div><div class="l">Companies</div></div>
-      <div class="hp"><div class="n">70+</div><div class="l">Questions</div></div>
-      <div class="hp"><div class="n">40</div><div class="l">Min / Exam</div></div>
-      <div class="hp"><div class="n">70%</div><div class="l">Pass Mark</div></div>
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-left">
+      <a href="index.html" class="back-lnk" id="back-lnk">← Portal</a>
+      <div class="hdr-title" id="hdr-title"><em>Scenario</em> Exam</div>
     </div>
-  </div>
-  <div class="picker-body">
-    <div class="ch-label"><span>Ch. 12</span> Company Financial Statements Under IFRS</div>
-    <div class="cards-grid" id="grid-12"></div>
-    <div class="ch-label"><span>Ch. 13</span> Statement of Cash Flows</div>
-    <div class="cards-grid" id="grid-13"></div>
-  </div>
-</div>
+    <div class="timer-wrap">
+      <div class="tmr-lbl" id="tmr-lbl">Time Left</div>
+      <div id="tmr"></div>
+    </div>
+  </header>
 
-<!-- ════════════════════ SCREEN 2 — EXAM ════════════════════ -->
-<div class="screen" id="s-exam">
-  <div class="exam-wrap">
-
-    <!-- LEFT: scenario data -->
-    <aside class="sc-panel" id="sc-panel">
-      <div class="sc-hd">
-        <div class="sc-tag" id="sc-tag">Chapter</div>
-        <div class="sc-co" id="sc-co">Company</div>
-        <div class="sc-per" id="sc-per">Period</div>
-      </div>
-      <p class="sc-intro" id="sc-intro"></p>
-
-      <div class="panel-sec">
-        <div class="psec-title">Trial Balance</div>
-        <table class="tb">
-          <thead><tr>
-            <th style="text-align:left;width:60%">Item</th>
-            <th>Dr £</th>
-            <th>Cr £</th>
-          </tr></thead>
-          <tbody id="tb-rows"></tbody>
-        </table>
-      </div>
-
-      <div class="panel-sec">
-        <div class="psec-title">Adjustments Required</div>
-        <div class="adj-list" id="adj-rows"></div>
-      </div>
-    </aside>
-
-    <!-- RIGHT: questions -->
-    <section class="q-panel">
-      <div class="qp-hd">
-        <div class="qp-title" id="qp-title">Questions</div>
-        <div class="qp-meta">
-          <span class="mpill" id="pill-total">0 questions</span>
-          <span class="mpill" id="pill-ans">0 answered</span>
-          <span class="mpill" id="pill-flag" style="display:none">🚩 <span id="pfn">0</span> flagged</span>
+  <!-- ════════════════════ SCREEN 1 — PICKER ════════════════════ -->
+  <div class="screen active" id="s-picker">
+    <div class="picker-hero">
+      <h1>📋 <em>Scenario</em> Exam</h1>
+      <p>Select a company. The full trial balance and all adjustments are shown on the left — answer every question in
+        context, just like the real ICAEW exam. 40-minute timer per company.</p>
+      <div class="hero-pills">
+        <div class="hp">
+          <div class="n">10</div>
+          <div class="l">Companies</div>
         </div>
-        <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
-      </div>
-      <div id="q-list"></div>
-    </section>
-
-  </div>
-  <div class="sub-bar">
-    <div class="sb-info"><strong id="sb-ans">0</strong> / <strong id="sb-tot">0</strong> answered</div>
-    <button class="btn-sub" onclick="confirmSubmit()">Submit Exam →</button>
-  </div>
-</div>
-
-<!-- ════════════════════ SCREEN 3 — RESULTS ════════════════════ -->
-<div class="screen" id="s-results">
-  <div class="res-wrap">
-    <div class="res-hero">
-      <div class="res-emoji" id="r-emoji">🎉</div>
-      <div class="res-verdict" id="r-verdict"></div>
-      <div class="res-score" id="r-score">0<span>/0</span></div>
-      <div class="res-pct" id="r-pct"></div>
-      <div class="res-stats">
-        <div class="rstat"><div class="n" id="rs-c">0</div><div class="l">Correct</div></div>
-        <div class="rstat"><div class="n" id="rs-w">0</div><div class="l">Wrong</div></div>
-        <div class="rstat"><div class="n" id="rs-t">—</div><div class="l">Time Used</div></div>
-        <div class="rstat"><div class="n" id="rs-p">0%</div><div class="l">Score</div></div>
-      </div>
-      <div class="res-acts">
-        <button class="btn-retry" onclick="retryExam()">🔄 Retry This Company</button>
-        <button class="btn-back" onclick="goPickerFromResults()">← Pick Another Company</button>
+        <div class="hp">
+          <div class="n">70+</div>
+          <div class="l">Questions</div>
+        </div>
+        <div class="hp">
+          <div class="n">40</div>
+          <div class="l">Min / Exam</div>
+        </div>
+        <div class="hp">
+          <div class="n">70%</div>
+          <div class="l">Pass Mark</div>
+        </div>
       </div>
     </div>
-    <div class="review-box">
-      <div class="review-hd"><h3 id="review-hdg">📋 Review Answers</h3></div>
-      <div id="review-rows"></div>
+    <div class="picker-body">
+      <div class="ch-label"><span>Ch. 12</span> Company Financial Statements Under IFRS</div>
+      <div class="cards-grid" id="grid-12"></div>
+      <div class="ch-label"><span>Ch. 13</span> Statement of Cash Flows</div>
+      <div class="cards-grid" id="grid-13"></div>
     </div>
   </div>
-</div>
 
-<script src="scenario-questions.js"></script>
-<script>
-/* ── constants ─────────────────────────────────────────── */
-const EXAM_SECS = 40 * 60;
-const LTR = ['A','B','C','D','E'];
+  <!-- ════════════════════ SCREEN 2 — EXAM ════════════════════ -->
+  <div class="screen" id="s-exam">
+    <div class="exam-wrap">
 
-/* ── state ─────────────────────────────────────────────── */
-let activeSc  = null;
-let answers   = [];   // null | optIdx
-let flags     = [];   // bool
-let tmrSecs   = 0;
-let tmrInt    = null;
-let t0        = null;
-let submitted = false;
-let history   = {};   // history[scId] = { correct, total, pct }
+      <!-- LEFT: scenario data -->
+      <aside class="sc-panel" id="sc-panel">
+        <div class="sc-hd">
+          <div class="sc-tag" id="sc-tag">Chapter</div>
+          <div class="sc-co" id="sc-co">Company</div>
+          <div class="sc-per" id="sc-per">Period</div>
+        </div>
+        <p class="sc-intro" id="sc-intro"></p>
 
-/* ── screen helper ─────────────────────────────────────── */
-function go(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo({ top: 0 });
-}
+        <div class="panel-sec">
+          <div class="psec-title">Trial Balance</div>
+          <table class="tb">
+            <thead>
+              <tr>
+                <th style="text-align:left;width:60%">Item</th>
+                <th>Dr £</th>
+                <th>Cr £</th>
+              </tr>
+            </thead>
+            <tbody id="tb-rows"></tbody>
+          </table>
+        </div>
 
-/* ════════════════════════════════════════════════════════
-   SCREEN 1 — PICKER
-════════════════════════════════════════════════════════ */
-function buildPicker() {
-  document.getElementById('grid-12').innerHTML = '';
-  document.getElementById('grid-13').innerHTML = '';
-  scenarioCases.forEach(sc => {
-    document.getElementById(`grid-${sc.chapter}`).appendChild(makeCard(sc));
-  });
-}
+        <div class="panel-sec">
+          <div class="psec-title">Adjustments Required</div>
+          <div class="adj-list" id="adj-rows"></div>
+        </div>
+      </aside>
 
-function makeCard(sc) {
-  const hist   = history[sc.id];
-  const done   = !!hist;
-  const passed = done && hist.pct >= 70;
+      <!-- RIGHT: questions -->
+      <section class="q-panel">
+        <div class="qp-hd">
+          <div class="qp-title" id="qp-title">Questions</div>
+          <div class="qp-meta">
+            <span class="mpill" id="pill-total">0 questions</span>
+            <span class="mpill" id="pill-ans">0 answered</span>
+            <span class="mpill" id="pill-flag" style="display:none">🚩 <span id="pfn">0</span> flagged</span>
+          </div>
+          <div class="prog-bar">
+            <div class="prog-fill" id="prog-fill" style="width:0%"></div>
+          </div>
+        </div>
+        <div id="q-list"></div>
+      </section>
 
-  const card = document.createElement('div');
-  card.className = 'cc';
-  card.style.borderTop = `4px solid ${sc.color}`;
+    </div>
+    <div class="sub-bar">
+      <div class="sb-info"><strong id="sb-ans">0</strong> / <strong id="sb-tot">0</strong> answered</div>
+      <button class="btn-sub" onclick="confirmSubmit()">Submit Exam →</button>
+    </div>
+  </div>
 
-  card.innerHTML = `
+  <!-- ════════════════════ SCREEN 3 — RESULTS ════════════════════ -->
+  <div class="screen" id="s-results">
+    <div class="res-wrap">
+      <div class="res-hero">
+        <div class="res-emoji" id="r-emoji">🎉</div>
+        <div class="res-verdict" id="r-verdict"></div>
+        <div class="res-score" id="r-score">0<span>/0</span></div>
+        <div class="res-pct" id="r-pct"></div>
+        <div class="res-stats">
+          <div class="rstat">
+            <div class="n" id="rs-c">0</div>
+            <div class="l">Correct</div>
+          </div>
+          <div class="rstat">
+            <div class="n" id="rs-w">0</div>
+            <div class="l">Wrong</div>
+          </div>
+          <div class="rstat">
+            <div class="n" id="rs-t">—</div>
+            <div class="l">Time Used</div>
+          </div>
+          <div class="rstat">
+            <div class="n" id="rs-p">0%</div>
+            <div class="l">Score</div>
+          </div>
+        </div>
+        <div class="res-acts">
+          <button class="btn-retry" onclick="retryExam()">🔄 Retry This Company</button>
+          <button class="btn-back" onclick="goPickerFromResults()">← Pick Another Company</button>
+        </div>
+      </div>
+      <div class="review-box">
+        <div class="review-hd">
+          <h3 id="review-hdg">📋 Review Answers</h3>
+        </div>
+        <div id="review-rows"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scenario-questions.js"></script>
+  <script>
+    /* ── constants ─────────────────────────────────────────── */
+    const EXAM_SECS = 40 * 60;
+    const LTR = ['A', 'B', 'C', 'D', 'E'];
+
+    /* ── state ─────────────────────────────────────────────── */
+    let activeSc = null;
+    let answers = [];   // null | optIdx
+    let flags = [];   // bool
+    let tmrSecs = 0;
+    let tmrInt = null;
+    let t0 = null;
+    let submitted = false;
+    let history = {};   // history[scId] = { correct, total, pct }
+
+    /* ── screen helper ─────────────────────────────────────── */
+    function go(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0 });
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SCREEN 1 — PICKER
+    ════════════════════════════════════════════════════════ */
+    function buildPicker() {
+      document.getElementById('grid-12').innerHTML = '';
+      document.getElementById('grid-13').innerHTML = '';
+      scenarioCases.forEach(sc => {
+        document.getElementById(`grid-${sc.chapter}`).appendChild(makeCard(sc));
+      });
+    }
+
+    function makeCard(sc) {
+      const hist = history[sc.id];
+      const done = !!hist;
+      const passed = done && hist.pct >= 70;
+
+      const card = document.createElement('div');
+      card.className = 'cc';
+      card.style.borderTop = `4px solid ${sc.color}`;
+
+      card.innerHTML = `
     <div class="cc-ribbon show" style="background:${done ? (passed ? 'var(--green)' : 'var(--red)') : 'transparent'};display:${done ? 'block' : 'none'}">
       ${done ? (passed ? '✓ Pass' : '✗ Fail') : ''}
     </div>
@@ -486,312 +1238,313 @@ function makeCard(sc) {
       </button>
     </div>`;
 
-  return card;
-}
+      return card;
+    }
 
-/* ════════════════════════════════════════════════════════
-   SCREEN 2 — EXAM
-════════════════════════════════════════════════════════ */
-function startExam(scId) {
-  activeSc  = scenarioCases.find(s => s.id === scId);
-  answers   = new Array(activeSc.questions.length).fill(null);
-  flags     = new Array(activeSc.questions.length).fill(false);
-  submitted = false;
-  tmrSecs   = EXAM_SECS;
-  t0        = Date.now();
+    /* ════════════════════════════════════════════════════════
+       SCREEN 2 — EXAM
+    ════════════════════════════════════════════════════════ */
+    function startExam(scId) {
+      activeSc = scenarioCases.find(s => s.id === scId);
+      answers = new Array(activeSc.questions.length).fill(null);
+      flags = new Array(activeSc.questions.length).fill(false);
+      submitted = false;
+      tmrSecs = EXAM_SECS;
+      t0 = Date.now();
 
-  // header
-  setHeader(`<em>${activeSc.icon} ${activeSc.company}</em> — Scenario Exam`);
-  setBackBtn('← Companies', () => {
-    if (confirm('Leave exam? Progress will be lost.')) { stopTimer(); goPickerFromExam(); }
-  });
-  showTimer(true);
+      // header
+      setHeader(`<em>${activeSc.icon} ${activeSc.company}</em> — Scenario Exam`);
+      setBackBtn('← Companies', () => {
+        if (confirm('Leave exam? Progress will be lost.')) { stopTimer(); goPickerFromExam(); }
+      });
+      showTimer(true);
 
-  // render
-  renderPanel(activeSc);
-  renderQList(activeSc);
-  updateSubBar();
-  go('s-exam');
-  startTimer();
-}
+      // render
+      renderPanel(activeSc);
+      renderQList(activeSc);
+      updateSubBar();
+      go('s-exam');
+      startTimer();
+    }
 
-/* scenario left panel */
-function renderPanel(sc) {
-  document.getElementById('sc-tag').textContent   = `Chapter ${sc.chapter}`;
-  document.getElementById('sc-tag').style.color   = sc.color;
-  document.getElementById('sc-co').textContent    = sc.company;
-  document.getElementById('sc-per').textContent   = sc.period;
-  document.getElementById('sc-intro').textContent = sc.context.intro;
+    /* scenario left panel */
+    function renderPanel(sc) {
+      document.getElementById('sc-tag').textContent = `Chapter ${sc.chapter}`;
+      document.getElementById('sc-tag').style.color = sc.color;
+      document.getElementById('sc-co').textContent = sc.company;
+      document.getElementById('sc-per').textContent = sc.period;
+      document.getElementById('sc-intro').textContent = sc.context.intro;
 
-  const tbody = document.getElementById('tb-rows');
-  tbody.innerHTML = '';
-  sc.context.trialBalance.forEach(r => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
+      const tbody = document.getElementById('tb-rows');
+      tbody.innerHTML = '';
+      sc.context.trialBalance.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
       <td style="font-size:11.5px">${r.item}</td>
       <td class="num">${r.dr || ''}</td>
       <td class="num cr">${r.cr || ''}</td>`;
-    tbody.appendChild(tr);
-  });
+        tbody.appendChild(tr);
+      });
 
-  const adjRows = document.getElementById('adj-rows');
-  adjRows.innerHTML = '';
-  sc.context.adjustments.forEach(a => {
-    const d = document.createElement('div');
-    d.className = 'adj-item';
-    d.style.borderLeftColor = sc.color + '90';
-    d.innerHTML = `
+      const adjRows = document.getElementById('adj-rows');
+      adjRows.innerHTML = '';
+      sc.context.adjustments.forEach(a => {
+        const d = document.createElement('div');
+        d.className = 'adj-item';
+        d.style.borderLeftColor = sc.color + '90';
+        d.innerHTML = `
       <div class="adj-n" style="background:${sc.color}">${a.num}</div>
       <div>${a.text}</div>`;
-    adjRows.appendChild(d);
-  });
+        adjRows.appendChild(d);
+      });
 
-  document.getElementById('sc-panel').scrollTo({ top: 0 });
-}
-
-/* question list */
-function renderQList(sc) {
-  document.getElementById('qp-title').textContent = `${sc.company} — Questions`;
-  document.getElementById('pill-total').textContent = `${sc.questions.length} questions`;
-
-  const list = document.getElementById('q-list');
-  list.innerHTML = '';
-  sc.questions.forEach((_, qi) => list.appendChild(makeQCard(sc, qi)));
-
-  updateProgress();
-}
-
-function makeQCard(sc, qi) {
-  const q  = sc.questions[qi];
-  const ua = answers[qi];
-  const fl = flags[qi];
-
-  const card = document.createElement('div');
-  card.className = 'q-card' + (ua === null ? '' : ua === q.answer ? ' ok' : ' bad');
-  card.id = `qc${qi}`;
-
-  /* header row */
-  const hd = document.createElement('div');
-  hd.className = 'qc-hd';
-
-  const badge = document.createElement('div');
-  badge.className = 'q-badge';
-  badge.style.background = sc.color;
-  badge.textContent = `Q${qi + 1}`;
-
-  const fb = document.createElement('button');
-  fb.className = 'flag-btn' + (fl ? ' on' : '');
-  fb.innerHTML = `🚩 ${fl ? 'Unflag' : 'Flag'}`;
-  fb.onclick = () => toggleFlag(sc, qi);
-
-  hd.appendChild(badge);
-  hd.appendChild(fb);
-  card.appendChild(hd);
-
-  /* question text */
-  const qt = document.createElement('div');
-  qt.className = 'q-text';
-  qt.textContent = q.q;
-  card.appendChild(qt);
-
-  /* options */
-  const opts = document.createElement('div');
-  opts.className = 'opts';
-  q.options.forEach((opt, oi) => {
-    const btn = document.createElement('button');
-    btn.className = 'opt';
-    if (ua !== null) {
-      btn.disabled = true;
-      if (oi === q.answer)              btn.classList.add('reveal');
-      if (oi === ua && ua !== q.answer) btn.classList.add('wrong');
-      if (oi === ua && ua === q.answer) { btn.classList.remove('reveal'); btn.classList.add('correct'); }
+      document.getElementById('sc-panel').scrollTo({ top: 0 });
     }
-    btn.onclick = () => pickAnswer(sc, qi, oi);
-    btn.innerHTML = `<span class="opt-lt">${LTR[oi]}</span><span>${opt}</span>`;
-    opts.appendChild(btn);
-  });
-  card.appendChild(opts);
 
-  /* explanation */
-  if (ua !== null) {
-    const cor = ua === q.answer;
-    const eb  = document.createElement('div');
-    eb.className = 'exp-box ' + (cor ? 'ok-e' : 'bad-e');
-    eb.style.display = 'block';
-    eb.innerHTML = `<div class="exp-lbl">${cor ? '✓ Correct!' : '✗ Incorrect'}</div>${q.explanation}`;
-    card.appendChild(eb);
-  }
+    /* question list */
+    function renderQList(sc) {
+      document.getElementById('qp-title').textContent = `${sc.company} — Questions`;
+      document.getElementById('pill-total').textContent = `${sc.questions.length} questions`;
 
-  return card;
-}
+      const list = document.getElementById('q-list');
+      list.innerHTML = '';
+      sc.questions.forEach((_, qi) => list.appendChild(makeQCard(sc, qi)));
 
-function pickAnswer(sc, qi, oi) {
-  if (answers[qi] !== null) return;
-  answers[qi] = oi;
-  document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
-  setTimeout(() => {
-    document.getElementById(`qc${qi}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, 40);
-  updateProgress();
-  updateSubBar();
-}
+      updateProgress();
+    }
 
-function toggleFlag(sc, qi) {
-  flags[qi] = !flags[qi];
-  document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
-  updateProgress();
-}
+    function makeQCard(sc, qi) {
+      const q = sc.questions[qi];
+      const ua = answers[qi];
+      const fl = flags[qi];
 
-function updateProgress() {
-  const total = activeSc.questions.length;
-  const done  = answers.filter(a => a !== null).length;
-  const fl    = flags.filter(Boolean).length;
-  const pct   = total ? (done / total) * 100 : 0;
+      const card = document.createElement('div');
+      card.className = 'q-card' + (ua === null ? '' : ua === q.answer ? ' ok' : ' bad');
+      card.id = `qc${qi}`;
 
-  document.getElementById('prog-fill').style.width      = pct + '%';
-  document.getElementById('prog-fill').style.background = activeSc.color;
-  document.getElementById('pill-ans').textContent       = `${done} / ${total} answered`;
+      /* header row */
+      const hd = document.createElement('div');
+      hd.className = 'qc-hd';
 
-  const pf = document.getElementById('pill-flag');
-  pf.style.display = fl ? '' : 'none';
-  document.getElementById('pfn').textContent = fl;
-}
+      const badge = document.createElement('div');
+      badge.className = 'q-badge';
+      badge.style.background = sc.color;
+      badge.textContent = `Q${qi + 1}`;
 
-function updateSubBar() {
-  const total = activeSc ? activeSc.questions.length : 0;
-  const done  = answers.filter(a => a !== null).length;
-  document.getElementById('sb-ans').textContent = done;
-  document.getElementById('sb-tot').textContent = total;
-}
+      const fb = document.createElement('button');
+      fb.className = 'flag-btn' + (fl ? ' on' : '');
+      fb.innerHTML = `🚩 ${fl ? 'Unflag' : 'Flag'}`;
+      fb.onclick = () => toggleFlag(sc, qi);
 
-/* ── submit ─────────────────────────────────────────────── */
-function confirmSubmit() {
-  const unanswered = answers.filter(a => a === null).length;
-  const nFlags     = flags.filter(Boolean).length;
-  let msg = '';
-  if (unanswered) msg += `${unanswered} question(s) unanswered. `;
-  if (nFlags)     msg += `${nFlags} flagged question(s). `;
-  if (msg && !confirm(msg + 'Submit anyway?')) return;
-  doSubmit();
-}
+      hd.appendChild(badge);
+      hd.appendChild(fb);
+      card.appendChild(hd);
 
-function doSubmit() {
-  if (submitted) return;
-  submitted = true;
-  stopTimer();
-  showResults();
-}
+      /* question text */
+      const qt = document.createElement('div');
+      qt.className = 'q-text';
+      qt.textContent = q.q;
+      card.appendChild(qt);
 
-/* ════════════════════════════════════════════════════════
-   SCREEN 3 — RESULTS
-════════════════════════════════════════════════════════ */
-function showResults() {
-  const sc      = activeSc;
-  const total   = sc.questions.length;
-  const correct = sc.questions.filter((q, i) => answers[i] === q.answer).length;
-  const pct     = Math.round((correct / total) * 100);
-  const passed  = pct >= 70;
-  const elapsed = Math.round((Date.now() - t0) / 1000);
+      /* options */
+      const opts = document.createElement('div');
+      opts.className = 'opts';
+      q.options.forEach((opt, oi) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt';
+        if (ua !== null) {
+          btn.disabled = true;
+          if (oi === q.answer) btn.classList.add('reveal');
+          if (oi === ua && ua !== q.answer) btn.classList.add('wrong');
+          if (oi === ua && ua === q.answer) { btn.classList.remove('reveal'); btn.classList.add('correct'); }
+        }
+        btn.onclick = () => pickAnswer(sc, qi, oi);
+        btn.innerHTML = `<span class="opt-lt">${LTR[oi]}</span><span>${opt}</span>`;
+        opts.appendChild(btn);
+      });
+      card.appendChild(opts);
 
-  // save history
-  const prev = history[sc.id];
-  if (!prev || correct >= prev.correct) {
-    history[sc.id] = { correct, total, pct };
-  }
+      /* explanation */
+      if (ua !== null) {
+        const cor = ua === q.answer;
+        const eb = document.createElement('div');
+        eb.className = 'exp-box ' + (cor ? 'ok-e' : 'bad-e');
+        eb.style.display = 'block';
+        eb.innerHTML = `<div class="exp-lbl">${cor ? '✓ Correct!' : '✗ Incorrect'}</div>${q.explanation}`;
+        card.appendChild(eb);
+      }
 
-  // header
-  setHeader(`Results — <em>${sc.icon} ${sc.company}</em>`);
-  setBackBtn('← Companies', () => goPickerFromResults());
-  showTimer(false);
+      return card;
+    }
 
-  // fill hero
-  document.getElementById('r-emoji').textContent   = passed ? '🎉' : '💪';
-  document.getElementById('r-verdict').textContent = passed ? 'Congratulations!' : 'Keep Practising';
-  document.getElementById('r-verdict').className   = 'res-verdict ' + (passed ? 'pass' : 'fail');
-  document.getElementById('r-score').innerHTML     = `${correct}<span>/${total}</span>`;
-  document.getElementById('r-pct').textContent     = `${pct}% — ${passed ? 'PASS ✓' : 'FAIL ✗'}`;
-  document.getElementById('rs-c').textContent      = correct;
-  document.getElementById('rs-w').textContent      = total - correct;
-  document.getElementById('rs-t').textContent      = fmtTime(elapsed);
-  document.getElementById('rs-p').textContent      = pct + '%';
+    function pickAnswer(sc, qi, oi) {
+      if (answers[qi] !== null) return;
+      answers[qi] = oi;
+      document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
+      setTimeout(() => {
+        document.getElementById(`qc${qi}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 40);
+      updateProgress();
+      updateSubBar();
+    }
 
-  // review
-  const rows = document.getElementById('review-rows');
-  rows.innerHTML = '';
-  let wrongs = 0;
+    function toggleFlag(sc, qi) {
+      flags[qi] = !flags[qi];
+      document.getElementById(`qc${qi}`).replaceWith(makeQCard(sc, qi));
+      updateProgress();
+    }
 
-  sc.questions.forEach((q, i) => {
-    const ua = answers[i];
-    if (ua === q.answer) return;
-    wrongs++;
-    const d = document.createElement('div');
-    d.className = 'ri';
-    d.innerHTML = `
+    function updateProgress() {
+      const total = activeSc.questions.length;
+      const done = answers.filter(a => a !== null).length;
+      const fl = flags.filter(Boolean).length;
+      const pct = total ? (done / total) * 100 : 0;
+
+      document.getElementById('prog-fill').style.width = pct + '%';
+      document.getElementById('prog-fill').style.background = activeSc.color;
+      document.getElementById('pill-ans').textContent = `${done} / ${total} answered`;
+
+      const pf = document.getElementById('pill-flag');
+      pf.style.display = fl ? '' : 'none';
+      document.getElementById('pfn').textContent = fl;
+    }
+
+    function updateSubBar() {
+      const total = activeSc ? activeSc.questions.length : 0;
+      const done = answers.filter(a => a !== null).length;
+      document.getElementById('sb-ans').textContent = done;
+      document.getElementById('sb-tot').textContent = total;
+    }
+
+    /* ── submit ─────────────────────────────────────────────── */
+    function confirmSubmit() {
+      const unanswered = answers.filter(a => a === null).length;
+      const nFlags = flags.filter(Boolean).length;
+      let msg = '';
+      if (unanswered) msg += `${unanswered} question(s) unanswered. `;
+      if (nFlags) msg += `${nFlags} flagged question(s). `;
+      if (msg && !confirm(msg + 'Submit anyway?')) return;
+      doSubmit();
+    }
+
+    function doSubmit() {
+      if (submitted) return;
+      submitted = true;
+      stopTimer();
+      showResults();
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SCREEN 3 — RESULTS
+    ════════════════════════════════════════════════════════ */
+    function showResults() {
+      const sc = activeSc;
+      const total = sc.questions.length;
+      const correct = sc.questions.filter((q, i) => answers[i] === q.answer).length;
+      const pct = Math.round((correct / total) * 100);
+      const passed = pct >= 70;
+      const elapsed = Math.round((Date.now() - t0) / 1000);
+
+      // save history
+      const prev = history[sc.id];
+      if (!prev || correct >= prev.correct) {
+        history[sc.id] = { correct, total, pct };
+      }
+
+      // header
+      setHeader(`Results — <em>${sc.icon} ${sc.company}</em>`);
+      setBackBtn('← Companies', () => goPickerFromResults());
+      showTimer(false);
+
+      // fill hero
+      document.getElementById('r-emoji').textContent = passed ? '🎉' : '💪';
+      document.getElementById('r-verdict').textContent = passed ? 'Congratulations!' : 'Keep Practising';
+      document.getElementById('r-verdict').className = 'res-verdict ' + (passed ? 'pass' : 'fail');
+      document.getElementById('r-score').innerHTML = `${correct}<span>/${total}</span>`;
+      document.getElementById('r-pct').textContent = `${pct}% — ${passed ? 'PASS ✓' : 'FAIL ✗'}`;
+      document.getElementById('rs-c').textContent = correct;
+      document.getElementById('rs-w').textContent = total - correct;
+      document.getElementById('rs-t').textContent = fmtTime(elapsed);
+      document.getElementById('rs-p').textContent = pct + '%';
+
+      // review
+      const rows = document.getElementById('review-rows');
+      rows.innerHTML = '';
+      let wrongs = 0;
+
+      sc.questions.forEach((q, i) => {
+        const ua = answers[i];
+        if (ua === q.answer) return;
+        wrongs++;
+        const d = document.createElement('div');
+        d.className = 'ri';
+        d.innerHTML = `
       <div class="ri-q">Q${i + 1}. ${q.q}</div>
       ${ua !== null
-        ? `<div class="ri-row ri-w">✗ Your answer: <strong>${LTR[ua]}. ${q.options[ua]}</strong></div>`
-        : `<div class="ri-row ri-w">✗ Not answered</div>`}
+            ? `<div class="ri-row ri-w">✗ Your answer: <strong>${LTR[ua]}. ${q.options[ua]}</strong></div>`
+            : `<div class="ri-row ri-w">✗ Not answered</div>`}
       <div class="ri-row ri-c">✓ Correct: <strong>${LTR[q.answer]}. ${q.options[q.answer]}</strong></div>
       <div class="ri-exp"><strong>💡 Explanation</strong>${q.explanation}</div>`;
-    rows.appendChild(d);
-  });
+        rows.appendChild(d);
+      });
 
-  if (wrongs === 0) {
-    rows.innerHTML = '<div style="padding:32px;text-align:center;color:var(--green);font-size:17px;font-weight:600;">🌟 Perfect Score! Every answer correct.</div>';
-    document.getElementById('review-hdg').textContent = '🌟 Perfect Score!';
-  } else {
-    document.getElementById('review-hdg').textContent = `📋 ${wrongs} Answer${wrongs > 1 ? 's' : ''} to Review`;
-  }
+      if (wrongs === 0) {
+        rows.innerHTML = '<div style="padding:32px;text-align:center;color:var(--green);font-size:17px;font-weight:600;">🌟 Perfect Score! Every answer correct.</div>';
+        document.getElementById('review-hdg').textContent = '🌟 Perfect Score!';
+      } else {
+        document.getElementById('review-hdg').textContent = `📋 ${wrongs} Answer${wrongs > 1 ? 's' : ''} to Review`;
+      }
 
-  go('s-results');
-}
+      go('s-results');
+    }
 
-function retryExam()         { startExam(activeSc.id); }
-function goPickerFromResults(){ setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
-function goPickerFromExam()  { setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
+    function retryExam() { startExam(activeSc.id); }
+    function goPickerFromResults() { setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
+    function goPickerFromExam() { setHeader('<em>Scenario</em> Exam'); setBackBtn('← Portal', null); buildPicker(); go('s-picker'); }
 
-/* ── timer ──────────────────────────────────────────────── */
-function startTimer() {
-  stopTimer();
-  tickTimer();
-  tmrInt = setInterval(tickTimer, 1000);
-}
-function stopTimer() { clearInterval(tmrInt); tmrInt = null; }
-function tickTimer() {
-  tmrSecs = Math.max(0, tmrSecs - 1);
-  const m = Math.floor(tmrSecs / 60);
-  const s = tmrSecs % 60;
-  const el = document.getElementById('tmr');
-  el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-  el.className = tmrSecs <= 60 ? 'danger' : tmrSecs <= 300 ? 'warn' : '';
-  if (tmrSecs === 0) { stopTimer(); alert('⏰ Time is up!'); doSubmit(); }
-}
-function showTimer(show) {
-  document.getElementById('tmr').style.display     = show ? 'block' : 'none';
-  document.getElementById('tmr-lbl').style.display = show ? 'block' : 'none';
-}
+    /* ── timer ──────────────────────────────────────────────── */
+    function startTimer() {
+      stopTimer();
+      tickTimer();
+      tmrInt = setInterval(tickTimer, 1000);
+    }
+    function stopTimer() { clearInterval(tmrInt); tmrInt = null; }
+    function tickTimer() {
+      tmrSecs = Math.max(0, tmrSecs - 1);
+      const m = Math.floor(tmrSecs / 60);
+      const s = tmrSecs % 60;
+      const el = document.getElementById('tmr');
+      el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      el.className = tmrSecs <= 60 ? 'danger' : tmrSecs <= 300 ? 'warn' : '';
+      if (tmrSecs === 0) { stopTimer(); alert('⏰ Time is up!'); doSubmit(); }
+    }
+    function showTimer(show) {
+      document.getElementById('tmr').style.display = show ? 'block' : 'none';
+      document.getElementById('tmr-lbl').style.display = show ? 'block' : 'none';
+    }
 
-/* ── header helpers ─────────────────────────────────────── */
-function setHeader(html) {
-  document.getElementById('hdr-title').innerHTML = html;
-}
-function setBackBtn(label, fn) {
-  const el = document.getElementById('back-lnk');
-  el.textContent = label;
-  if (fn) {
-    el.href = '#';
-    el.onclick = (e) => { e.preventDefault(); fn(); };
-  } else {
-    el.href = 'index.html';
-    el.onclick = null;
-  }
-}
+    /* ── header helpers ─────────────────────────────────────── */
+    function setHeader(html) {
+      document.getElementById('hdr-title').innerHTML = html;
+    }
+    function setBackBtn(label, fn) {
+      const el = document.getElementById('back-lnk');
+      el.textContent = label;
+      if (fn) {
+        el.href = '#';
+        el.onclick = (e) => { e.preventDefault(); fn(); };
+      } else {
+        el.href = 'index.html';
+        el.onclick = null;
+      }
+    }
 
-/* ── utils ─────────────────────────────────────────────── */
-function fmtTime(s) { return `${Math.floor(s/60)}m ${s%60}s`; }
+    /* ── utils ─────────────────────────────────────────────── */
+    function fmtTime(s) { return `${Math.floor(s / 60)}m ${s % 60}s`; }
 
-/* ── boot ───────────────────────────────────────────────── */
-buildPicker();
-</script>
+    /* ── boot ───────────────────────────────────────────────── */
+    buildPicker();
+  </script>
 </body>
+
 </html>

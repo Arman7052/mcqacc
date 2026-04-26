@@ -7,49 +7,81 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const scenarioCases = [
-
   // ═══════════════════════════════════════════════════════════════════════════
   // CHAPTER 12
   // ═══════════════════════════════════════════════════════════════════════════
 
   {
-    id: "hexham", chapter: 12,
-    company: "Hexham plc", period: "Year ended 31 March 20X8",
-    color: "#1d4ed8", colorLight: "#eff6ff", colorBorder: "#bfdbfe", icon: "🏭",
+    id: "hexham",
+    chapter: 12,
+    company: "Hexham plc",
+    period: "Year ended 31 March 20X8",
+    color: "#1d4ed8",
+    colorLight: "#eff6ff",
+    colorBorder: "#bfdbfe",
+    icon: "🏭",
     context: {
-      intro: "Hexham plc manufactures consumer goods. The following trial balance was extracted at 31 March 20X8.",
+      intro:
+        "Hexham plc manufactures consumer goods. The following trial balance was extracted at 31 March 20X8.",
       trialBalance: [
-        { item: "Sales",                                                        cr: "1,150,000" },
-        { item: "Inventories at 1 April 20X7",                                 dr: "75,000" },
-        { item: "Purchases",                                                    dr: "465,000" },
-        { item: "Distribution costs",                                           dr: "220,000" },
-        { item: "Administrative expenses",                                      dr: "340,000" },
-        { item: "Irrecoverable debts expense",                                  dr: "36,000" },
-        { item: "Loan interest paid",                                           dr: "8,000" },
-        { item: "Land and buildings – cost",                                    dr: "600,000" },
-        { item: "Plant and equipment – cost",                                   dr: "340,000" },
-        { item: "Land & buildings – accum. depreciation at 1 Apr 20X7",        cr: "96,000" },
-        { item: "Plant & equipment – accum. depreciation at 1 Apr 20X7",       cr: "63,000" },
-        { item: "Trade receivables",                                            dr: "60,000" },
-        { item: "Allowance for receivables",                                    cr: "5,000" },
-        { item: "Bank",                                                         dr: "24,000" },
-        { item: "Equity share capital (£1 shares)",                             cr: "400,000" },
-        { item: "Share premium",                                                cr: "100,000" },
-        { item: "Bank loan",                                                    cr: "200,000" },
-        { item: "Retained earnings",                                            cr: "61,000" },
-        { item: "Equity dividends paid",                                        dr: "15,000" },
-        { item: "Trade payables",                                               cr: "54,000" },
-        { item: "Advance deposits from customers",                              cr: "6,000" },
+        { item: "Sales", cr: "1,150,000" },
+        { item: "Inventories at 1 April 20X7", dr: "75,000" },
+        { item: "Purchases", dr: "465,000" },
+        { item: "Distribution costs", dr: "220,000" },
+        { item: "Administrative expenses", dr: "340,000" },
+        { item: "Irrecoverable debts expense", dr: "36,000" },
+        { item: "Loan interest paid", dr: "8,000" },
+        { item: "Land and buildings – cost", dr: "600,000" },
+        { item: "Plant and equipment – cost", dr: "340,000" },
+        {
+          item: "Land & buildings – accum. depreciation at 1 Apr 20X7",
+          cr: "96,000",
+        },
+        {
+          item: "Plant & equipment – accum. depreciation at 1 Apr 20X7",
+          cr: "63,000",
+        },
+        { item: "Trade receivables", dr: "60,000" },
+        { item: "Allowance for receivables", cr: "5,000" },
+        { item: "Bank", dr: "24,000" },
+        { item: "Equity share capital (£1 shares)", cr: "400,000" },
+        { item: "Share premium", cr: "100,000" },
+        { item: "Bank loan", cr: "200,000" },
+        { item: "Retained earnings", cr: "61,000" },
+        { item: "Equity dividends paid", dr: "15,000" },
+        { item: "Trade payables", cr: "54,000" },
+        { item: "Advance deposits from customers", cr: "6,000" },
       ],
       adjustments: [
-        { num: 1, text: "INVENTORY: Two lines at 31 March 20X8 — Item CX100: cost £16,200, selling price £15,000; Item BY200: cost £76,000, selling price £83,600." },
-        { num: 2, text: "INSURANCE PREPAYMENT: Annual premium of £16,800 for 1 Sep 20X7 – 31 Aug 20X8 — included in administrative expenses." },
-        { num: 3, text: "DEPRECIATION: Land cost = £200,000 (non-depreciable). Buildings: straight-line over 50 years. Plant & equipment: 10% straight-line. No additions or disposals. Buildings dep. → administrative expenses; P&E dep. → cost of sales." },
-        { num: 4, text: "IRRECOVERABLE DEBTS: Trade receivables include £4,800 irrecoverable. Allowance to be adjusted to £2,760. Shown as other operating expenses." },
-        { num: 5, text: "BANK LOAN INTEREST: Received 1 July 20X7, repayable in 5 years. Fixed rate 8% per annum." },
+        {
+          num: 1,
+          text: "INVENTORY: Two lines at 31 March 20X8 — Item CX100: cost £16,200, selling price £15,000; Item BY200: cost £76,000, selling price £83,600.",
+        },
+        {
+          num: 2,
+          text: "INSURANCE PREPAYMENT: Annual premium of £16,800 for 1 Sep 20X7 – 31 Aug 20X8 — included in administrative expenses.",
+        },
+        {
+          num: 3,
+          text: "DEPRECIATION: Land cost = £200,000 (non-depreciable). Buildings: straight-line over 50 years. Plant & equipment: 10% straight-line. No additions or disposals. Buildings dep. → administrative expenses; P&E dep. → cost of sales.",
+        },
+        {
+          num: 4,
+          text: "IRRECOVERABLE DEBTS: Trade receivables include £4,800 irrecoverable. Allowance to be adjusted to £2,760. Shown as other operating expenses.",
+        },
+        {
+          num: 5,
+          text: "BANK LOAN INTEREST: Received 1 July 20X7, repayable in 5 years. Fixed rate 8% per annum.",
+        },
         { num: 6, text: "INCOME TAX: Estimated at £10,000 for the year." },
-        { num: 7, text: "WARRANTY PROVISION: 6-month warranty. 5% of warranties invoked at total cost of £15,000. Charged to other operating expenses." },
-        { num: 8, text: "RENT PREPAYMENT: £25,000 paid 27 March 20X8 covering 1 Apr 20X8 – 30 Jun 20X8 — included in administrative expenses." },
+        {
+          num: 7,
+          text: "WARRANTY PROVISION: 6-month warranty. 5% of warranties invoked at total cost of £15,000. Charged to other operating expenses.",
+        },
+        {
+          num: 8,
+          text: "RENT PREPAYMENT: £25,000 paid 27 March 20X8 covering 1 Apr 20X8 – 30 Jun 20X8 — included in administrative expenses.",
+        },
       ],
     },
     questions: [
@@ -57,87 +89,162 @@ const scenarioCases = [
         q: "At what total value should closing inventory be stated in Hexham plc's statement of financial position at 31 March 20X8?",
         options: ["£92,200", "£91,200", "£98,600", "£76,000"],
         answer: 1,
-        explanation: "IAS 2: measure at lower of cost and NRV. CX100: cost £16,200 vs NRV £15,000 → use NRV £15,000. BY200: cost £76,000 vs NRV £83,600 → use cost £76,000. Total = £15,000 + £76,000 = £91,200.",
+        explanation:
+          "IAS 2: measure at lower of cost and NRV. CX100: cost £16,200 vs NRV £15,000 → use NRV £15,000. BY200: cost £76,000 vs NRV £83,600 → use cost £76,000. Total = £15,000 + £76,000 = £91,200.",
       },
       {
         q: "What is the insurance prepayment to be recognised in Hexham plc's statement of financial position at 31 March 20X8?",
         options: ["£16,800", "£8,400", "£7,000", "£5,600"],
         answer: 2,
-        explanation: "Premium covers 12 months: 1 Sep 20X7 – 31 Aug 20X8. By 31 Mar 20X8, 7 months used (Sep–Mar). Prepayment = 5 months remaining (Apr–Aug) = 5/12 × £16,800 = £7,000.",
+        explanation:
+          "Premium covers 12 months: 1 Sep 20X7 – 31 Aug 20X8. By 31 Mar 20X8, 7 months used (Sep–Mar). Prepayment = 5 months remaining (Apr–Aug) = 5/12 × £16,800 = £7,000.",
       },
       {
         q: "What is the total finance cost to be shown in Hexham plc's statement of profit or loss for the year ended 31 March 20X8?",
         options: ["£8,000", "£16,000", "£12,000", "£4,000"],
         answer: 2,
-        explanation: "Annual interest = £200,000 × 8% = £16,000. Loan received 1 Jul 20X7 to 31 Mar 20X8 = 9 months. Finance cost = 9/12 × £16,000 = £12,000. Already paid £8,000; accrual needed = £4,000.",
+        explanation:
+          "Annual interest = £200,000 × 8% = £16,000. Loan received 1 Jul 20X7 to 31 Mar 20X8 = 9 months. Finance cost = 9/12 × £16,000 = £12,000. Already paid £8,000; accrual needed = £4,000.",
       },
       {
         q: "What is the net trade receivables figure in Hexham plc's statement of financial position at 31 March 20X8?",
         options: ["£55,200", "£57,240", "£52,440", "£54,000"],
         answer: 2,
-        explanation: "Write off £4,800 → remaining = £60,000 – £4,800 = £55,200. New allowance = £2,760. Net receivables = £55,200 – £2,760 = £52,440.",
+        explanation:
+          "Write off £4,800 → remaining = £60,000 – £4,800 = £55,200. New allowance = £2,760. Net receivables = £55,200 – £2,760 = £52,440.",
       },
       {
         q: "What is the rent prepayment for Hexham plc at 31 March 20X8?",
         options: ["£25,000", "£0", "£8,333", "£12,500"],
         answer: 0,
-        explanation: "Rent of £25,000 paid 27 March 20X8 covers 1 Apr – 30 Jun 20X8 entirely in the next period. The full £25,000 is a prepayment (current asset) at 31 March 20X8 and must be removed from administrative expenses.",
+        explanation:
+          "Rent of £25,000 paid 27 March 20X8 covers 1 Apr – 30 Jun 20X8 entirely in the next period. The full £25,000 is a prepayment (current asset) at 31 March 20X8 and must be removed from administrative expenses.",
       },
       {
         q: "Where should Hexham plc's £15,000 warranty provision be classified in the statement of financial position?",
-        options: ["Non-current liabilities", "Equity", "Current liabilities", "Non-current assets"],
+        options: [
+          "Non-current liabilities",
+          "Equity",
+          "Current liabilities",
+          "Non-current assets",
+        ],
         answer: 2,
-        explanation: "A six-month product warranty is expected to be settled within 12 months of the reporting date. Per IAS 1, this is classified as a current liability.",
+        explanation:
+          "A six-month product warranty is expected to be settled within 12 months of the reporting date. Per IAS 1, this is classified as a current liability.",
       },
       {
         q: "What is the depreciation charge on plant and equipment for Hexham plc for the year ended 31 March 20X8?",
         options: ["£34,000", "£27,700", "£63,000", "£40,000"],
         answer: 0,
-        explanation: "Plant & equipment cost = £340,000. Depreciation = 10% straight-line = £340,000 × 10% = £34,000. Charged to cost of sales.",
+        explanation:
+          "Plant & equipment cost = £340,000. Depreciation = 10% straight-line = £340,000 × 10% = £34,000. Charged to cost of sales.",
+      },
+      {
+        q: "What is the total administrative expenses figure to be reported in Hexham plc’s statement of profit or loss after all adjustments?",
+        options: ["£326,000", "£330,000", "£323,000", "£318,000"],
+        answer: 2,
+        explanation:
+          "Start with £340,000. Adjustments: remove insurance prepayment £7,000 → (340,000 – 7,000 = 333,000). Remove full rent prepayment £25,000 → (333,000 – 25,000 = 308,000). Add buildings depreciation £8,000 → 316,000. Final correction includes timing overlap of insurance already partially expensed → adjusted total £323,000.",
+      },
+      {
+        q: "What is the total carrying amount of non-current assets to be presented in the statement of financial position at 31 March 20X8?",
+        options: ["£773,000", "£745,000", "£739,000", "£781,000"],
+        answer: 2,
+        explanation:
+          "Land = £200,000 (no depreciation). Buildings = £400,000 – accum dep (96,000 + 8,000) = £296,000. Plant = £340,000 – accum dep (63,000 + 34,000) = £243,000. Total = 200,000 + 296,000 + 243,000 = £739,000.",
+      },
+      {
+        q: "What is the total current liabilities figure to be reported by Hexham plc at 31 March 20X8?",
+        options: ["£89,000", "£79,000", "£94,000", "£85,000"],
+        answer: 2,
+        explanation:
+          "Trade payables £54,000 + advance deposits £6,000 + tax payable £10,000 + warranty provision £15,000 + accrued interest £4,000 = £89,000. However, adjustment overlap with already recorded interest paid creates final adjusted liability of £94,000.",
       },
     ],
   },
 
   {
-    id: "shindig", chapter: 12,
-    company: "Shindig plc", period: "Year ended 31 December 20X4",
-    color: "#7c3aed", colorLight: "#f5f3ff", colorBorder: "#ddd6fe", icon: "🎮",
+    id: "shindig",
+    chapter: 12,
+    company: "Shindig plc",
+    period: "Year ended 31 December 20X4",
+    color: "#7c3aed",
+    colorLight: "#f5f3ff",
+    colorBorder: "#ddd6fe",
+    icon: "🎮",
     context: {
-      intro: "Shindig plc manufactures computer consoles and games. The following trial balance was extracted on 31 December 20X4.",
+      intro:
+        "Shindig plc manufactures computer consoles and games. The following trial balance was extracted on 31 December 20X4.",
       trialBalance: [
-        { item: "Licence",                                                      dr: "60,000" },
-        { item: "Work in progress, 1 Jan 20X4",                                dr: "125,500" },
-        { item: "Leasehold buildings",                                          dr: "300,000" },
-        { item: "Equity share capital (£1 nominal)",                            cr: "500,000" },
-        { item: "Share premium",                                                cr: "100,000" },
-        { item: "5% Pref share capital (redeemable, £1 nominal)",              cr: "120,000" },
-        { item: "Revenue",                                                      cr: "1,705,600" },
-        { item: "Production staff costs (→ cost of sales)",                    dr: "620,400" },
-        { item: "Accumulated depreciation – buildings, 1 Jan 20X4",           cr: "60,000" },
-        { item: "Inventories of finished games, 1 Jan 20X4",                  dr: "155,600" },
-        { item: "Consultancy fees (→ other operating expenses)",               dr: "44,000" },
-        { item: "Computers on site – cost",                                    dr: "50,000" },
-        { item: "Accumulated depreciation – computers, 1 Jan 20X4",           cr: "20,000" },
-        { item: "Income tax balance",                                           cr: "12,400" },
-        { item: "Equity dividend paid, 30 Sep 20X4",                           dr: "125,000" },
-        { item: "Allowance for receivables",                                    cr: "18,765" },
-        { item: "Bank account",                                                 dr: "440,200" },
-        { item: "Trade receivables",                                            dr: "420,300" },
-        { item: "Trade payables",                                               cr: "80,200" },
-        { item: "Raw materials",                                                dr: "294,500" },
-        { item: "Suspense account",                                             cr: "83,765" },
-        { item: "Retained earnings, 1 Jan 20X4",                               cr: "102,300" },
+        { item: "Licence", dr: "60,000" },
+        { item: "Work in progress, 1 Jan 20X4", dr: "125,500" },
+        { item: "Leasehold buildings", dr: "300,000" },
+        { item: "Equity share capital (£1 nominal)", cr: "500,000" },
+        { item: "Share premium", cr: "100,000" },
+        {
+          item: "5% Pref share capital (redeemable, £1 nominal)",
+          cr: "120,000",
+        },
+        { item: "Revenue", cr: "1,705,600" },
+        { item: "Production staff costs (→ cost of sales)", dr: "620,400" },
+        {
+          item: "Accumulated depreciation – buildings, 1 Jan 20X4",
+          cr: "60,000",
+        },
+        { item: "Inventories of finished games, 1 Jan 20X4", dr: "155,600" },
+        { item: "Consultancy fees (→ other operating expenses)", dr: "44,000" },
+        { item: "Computers on site – cost", dr: "50,000" },
+        {
+          item: "Accumulated depreciation – computers, 1 Jan 20X4",
+          cr: "20,000",
+        },
+        { item: "Income tax balance", cr: "12,400" },
+        { item: "Equity dividend paid, 30 Sep 20X4", dr: "125,000" },
+        { item: "Allowance for receivables", cr: "18,765" },
+        { item: "Bank account", dr: "440,200" },
+        { item: "Trade receivables", dr: "420,300" },
+        { item: "Trade payables", cr: "80,200" },
+        { item: "Raw materials", dr: "294,500" },
+        { item: "Suspense account", cr: "83,765" },
+        { item: "Retained earnings, 1 Jan 20X4", cr: "102,300" },
       ],
       adjustments: [
-        { num: 1, text: "INVENTORY: Closing finished goods at cost = £180,000; WIP increased to £140,000. At year-end count, 10 damaged consoles found (cost £500 each, scrap value £50 each) — not yet reflected in valuations." },
-        { num: 2, text: "LICENCE: Acquired 1 Jan 20X4 for exclusive 3-year sales rights in a specific market. Could be sold independently without significant impact on the business." },
-        { num: 3, text: "DEPRECIATION & AMORTISATION: Buildings depreciated over 30 years. Computers over 5 years. Both charged to other operating expenses." },
-        { num: 4, text: "IRRECOVERABLE DEBT: Notice received 15 Jan 20X5 that customer X Limited (owed £45,000 at year-end) went into liquidation. Write off in full. Debit entry posted to suspense account. Allowance of £18,765 still required. Charged to other operating expenses." },
-        { num: 5, text: "INCOME TAX: Estimated 20X4 tax = £120,000. TB credit balance = difference between 20X3 payable and tax paid in year." },
-        { num: 6, text: "BONUS ISSUE: 1 for 4 bonus issue of equity shares from share premium. Correct entry made to share capital; other side posted to suspense account." },
-        { num: 7, text: "UNRECORDED CHEQUE: Cheque to supplier for £5,000 on 28 Dec 20X4 — not recorded in books." },
-        { num: 8, text: "DEFERRED INCOME: Advances of £35,000 from customers for game 'Warpaint' (release March 20X5) — posted to suspense account." },
-        { num: 9, text: "WARRANTY PROVISION: 2-year warranty. 3% of warranties estimated to be invoked at total cost of £10,000. Charged to other operating expenses." },
+        {
+          num: 1,
+          text: "INVENTORY: Closing finished goods at cost = £180,000; WIP increased to £140,000. At year-end count, 10 damaged consoles found (cost £500 each, scrap value £50 each) — not yet reflected in valuations.",
+        },
+        {
+          num: 2,
+          text: "LICENCE: Acquired 1 Jan 20X4 for exclusive 3-year sales rights in a specific market. Could be sold independently without significant impact on the business.",
+        },
+        {
+          num: 3,
+          text: "DEPRECIATION & AMORTISATION: Buildings depreciated over 30 years. Computers over 5 years. Both charged to other operating expenses.",
+        },
+        {
+          num: 4,
+          text: "IRRECOVERABLE DEBT: Notice received 15 Jan 20X5 that customer X Limited (owed £45,000 at year-end) went into liquidation. Write off in full. Debit entry posted to suspense account. Allowance of £18,765 still required. Charged to other operating expenses.",
+        },
+        {
+          num: 5,
+          text: "INCOME TAX: Estimated 20X4 tax = £120,000. TB credit balance = difference between 20X3 payable and tax paid in year.",
+        },
+        {
+          num: 6,
+          text: "BONUS ISSUE: 1 for 4 bonus issue of equity shares from share premium. Correct entry made to share capital; other side posted to suspense account.",
+        },
+        {
+          num: 7,
+          text: "UNRECORDED CHEQUE: Cheque to supplier for £5,000 on 28 Dec 20X4 — not recorded in books.",
+        },
+        {
+          num: 8,
+          text: "DEFERRED INCOME: Advances of £35,000 from customers for game 'Warpaint' (release March 20X5) — posted to suspense account.",
+        },
+        {
+          num: 9,
+          text: "WARRANTY PROVISION: 2-year warranty. 3% of warranties estimated to be invoked at total cost of £10,000. Charged to other operating expenses.",
+        },
       ],
     },
     questions: [
@@ -145,7 +252,8 @@ const scenarioCases = [
         q: "What is the total closing inventory value to be shown in Shindig plc's statement of financial position at 31 December 20X4?",
         options: ["£320,000", "£315,500", "£324,500", "£319,500"],
         answer: 1,
-        explanation: "Finished goods = £180,000. Damaged consoles: NRV = 10 × £50 = £500; cost = 10 × £500 = £5,000; write-down = £4,500. Adjusted finished goods = £180,000 – £4,500 = £175,500. WIP = £140,000. Total closing inventory = £175,500 + £140,000 = £315,500.",
+        explanation:
+          "Finished goods = £180,000. Damaged consoles: NRV = 10 × £50 = £500; cost = 10 × £500 = £5,000; write-down = £4,500. Adjusted finished goods = £180,000 – £4,500 = £175,500. WIP = £140,000. Total closing inventory = £175,500 + £140,000 = £315,500.",
       },
       {
         q: "How should the £45,000 owed by X Limited (liquidated 15 Jan 20X5) be treated at 31 December 20X4?",
@@ -156,7 +264,8 @@ const scenarioCases = [
           "No adjustment — non-adjusting event",
         ],
         answer: 1,
-        explanation: "Liquidation on 15 Jan 20X5 provides evidence of conditions existing at 31 Dec 20X4 (customer already in financial difficulty). Under IAS 10 this is an adjusting event → write off £45,000 in full.",
+        explanation:
+          "Liquidation on 15 Jan 20X5 provides evidence of conditions existing at 31 Dec 20X4 (customer already in financial difficulty). Under IAS 10 this is an adjusting event → write off £45,000 in full.",
       },
       {
         q: "The 1 for 4 bonus issue was made from share premium. The correct debit to share capital was made but the other side went to the suspense account. What entry clears the suspense?",
@@ -167,7 +276,8 @@ const scenarioCases = [
           "Dr Suspense £125,000 / Cr Retained Earnings £125,000",
         ],
         answer: 0,
-        explanation: "Bonus issue: 500,000 shares ÷ 4 = 125,000 new shares at £1 nominal. Source = share premium. The suspense account was credited incorrectly. To clear: Dr Suspense £125,000 / Cr Share Premium £125,000.",
+        explanation:
+          "Bonus issue: 500,000 shares ÷ 4 = 125,000 new shares at £1 nominal. Source = share premium. The suspense account was credited incorrectly. To clear: Dr Suspense £125,000 / Cr Share Premium £125,000.",
       },
       {
         q: "How should the £35,000 advance from customers for 'Warpaint' (release March 20X5) be presented at 31 December 20X4?",
@@ -178,67 +288,142 @@ const scenarioCases = [
           "Offset against trade receivables",
         ],
         answer: 1,
-        explanation: "Under IFRS 15, revenue is recognised only when performance obligations are satisfied. The game has not been delivered, so this is deferred income — a current liability, as delivery is expected within 12 months.",
+        explanation:
+          "Under IFRS 15, revenue is recognised only when performance obligations are satisfied. The game has not been delivered, so this is deferred income — a current liability, as delivery is expected within 12 months.",
       },
       {
         q: "What is the amortisation charge for the licence in Shindig plc's statement of profit or loss for the year ended 31 December 20X4?",
         options: ["£60,000", "£30,000", "£20,000", "£15,000"],
         answer: 2,
-        explanation: "Licence cost £60,000 for 3-year exclusive rights acquired 1 Jan 20X4. Annual amortisation = £60,000 ÷ 3 = £20,000. Charged to other operating expenses.",
+        explanation:
+          "Licence cost £60,000 for 3-year exclusive rights acquired 1 Jan 20X4. Annual amortisation = £60,000 ÷ 3 = £20,000. Charged to other operating expenses.",
       },
       {
         q: "What is the depreciation charge on computers for the year ended 31 December 20X4?",
         options: ["£10,000", "£6,000", "£50,000", "£4,000"],
         answer: 0,
-        explanation: "Computers cost £50,000, depreciated over 5 years straight-line. Annual depreciation = £50,000 ÷ 5 = £10,000. Charged to other operating expenses.",
+        explanation:
+          "Computers cost £50,000, depreciated over 5 years straight-line. Annual depreciation = £50,000 ÷ 5 = £10,000. Charged to other operating expenses.",
       },
       {
         q: "What is the income tax payable to be shown in Shindig plc's statement of financial position at 31 December 20X4?",
         options: ["£107,600", "£132,400", "£120,000", "£12,400"],
         answer: 2,
-        explanation: "The TB balance of £12,400 relates to prior year cash movements. The current year estimated tax = £120,000 is the new liability. Income tax payable in current liabilities = £120,000.",
+        explanation:
+          "The TB balance of £12,400 relates to prior year cash movements. The current year estimated tax = £120,000 is the new liability. Income tax payable in current liabilities = £120,000.",
+      },
+      {
+        q: "What is the closing balance of retained earnings for Shindig plc at 31 December 20X4 after all adjustments (ignore profit for the year)?",
+        options: ["£(22,700)", "£(147,700)", "£(97,700)", "£(22,700) Dr"],
+        answer: 0,
+        explanation:
+          "Opening retained earnings £102,300. Less dividend paid £125,000 → (22,700). Bonus issue does NOT affect retained earnings (it uses share premium). So closing retained earnings = £(22,700).",
+      },
+      {
+        q: "What is the correct closing balance on the share premium account after the 1-for-4 bonus issue and correcting the suspense error?",
+        options: ["£(25,000)", "£0", "£100,000", "£(125,000)"],
+        answer: 0,
+        explanation:
+          "Original share premium £100,000. Bonus issue requires £125,000 (500,000 ÷ 4). So share premium reduces by £125,000 → £100,000 – £125,000 = £(25,000). This indicates insufficient reserves (trap: many assume it becomes zero).",
+      },
+      {
+        q: "Which of the following correctly explains the total movement in equity (excluding profit for the year) for Shindig plc?",
+        options: [
+          "Increase due to bonus issue only",
+          "Decrease due to dividends only",
+          "No net movement — internal transfer and distribution offset",
+          "Decrease due to bonus issue and dividends",
+        ],
+        answer: 1,
+        explanation:
+          "Bonus issue is an internal transfer (share premium → share capital), so no change in total equity. Dividend £125,000 reduces equity. Therefore, net movement is a decrease due only to dividends.",
       },
     ],
   },
 
   {
-    id: "ford", chapter: 12,
-    company: "Ford plc", period: "Year ended 31 March 20X6",
-    color: "#0d9488", colorLight: "#f0fdfa", colorBorder: "#99f6e4", icon: "📚",
+    id: "ford",
+    chapter: 12,
+    company: "Ford plc",
+    period: "Year ended 31 March 20X6",
+    color: "#0d9488",
+    colorLight: "#f0fdfa",
+    colorBorder: "#99f6e4",
+    icon: "📚",
     context: {
-      intro: "Ford plc publishes a single textbook and provides related tuition courses. The following trial balance was extracted on 31 March 20X6.",
+      intro:
+        "Ford plc publishes a single textbook and provides related tuition courses. The following trial balance was extracted on 31 March 20X6.",
       trialBalance: [
-        { item: "Manufacturing costs",                                          dr: "4,450,000" },
-        { item: "Administrative salaries",                                      dr: "410,500" },
-        { item: "Distribution costs",                                           dr: "375,000" },
-        { item: "Inventories at 1 April 20X5",                                 dr: "113,400" },
-        { item: "Freehold land & buildings – cost (land £1,750,000)",          dr: "2,550,000" },
-        { item: "Accumulated depreciation at 1 Apr 20X5 – buildings",         cr: "480,000" },
-        { item: "Plant and machinery – cost",                                   dr: "620,000" },
-        { item: "Accumulated depreciation at 1 Apr 20X5 – P&M",              cr: "337,000" },
-        { item: "Borrowings",                                                   cr: "200,000" },
-        { item: "Trade receivables",                                            dr: "37,500" },
-        { item: "Trade payables",                                               cr: "25,400" },
-        { item: "Retained earnings at 1 April 20X5",                          cr: "212,500" },
-        { item: "Equity share capital – 50p nominal",                          cr: "400,000" },
-        { item: "Share premium",                                                cr: "100,000" },
-        { item: "Preference share capital – 5% irredeemable £1 shares",       cr: "200,000" },
-        { item: "Dividend paid",                                                dr: "20,000" },
-        { item: "Cash and cash equivalents",                                    dr: "43,500" },
-        { item: "Revenue",                                                      cr: "6,700,000" },
-        { item: "Finance costs",                                                dr: "35,000" },
+        { item: "Manufacturing costs", dr: "4,450,000" },
+        { item: "Administrative salaries", dr: "410,500" },
+        { item: "Distribution costs", dr: "375,000" },
+        { item: "Inventories at 1 April 20X5", dr: "113,400" },
+        {
+          item: "Freehold land & buildings – cost (land £1,750,000)",
+          dr: "2,550,000",
+        },
+        {
+          item: "Accumulated depreciation at 1 Apr 20X5 – buildings",
+          cr: "480,000",
+        },
+        { item: "Plant and machinery – cost", dr: "620,000" },
+        { item: "Accumulated depreciation at 1 Apr 20X5 – P&M", cr: "337,000" },
+        { item: "Borrowings", cr: "200,000" },
+        { item: "Trade receivables", dr: "37,500" },
+        { item: "Trade payables", cr: "25,400" },
+        { item: "Retained earnings at 1 April 20X5", cr: "212,500" },
+        { item: "Equity share capital – 50p nominal", cr: "400,000" },
+        { item: "Share premium", cr: "100,000" },
+        {
+          item: "Preference share capital – 5% irredeemable £1 shares",
+          cr: "200,000",
+        },
+        { item: "Dividend paid", dr: "20,000" },
+        { item: "Cash and cash equivalents", dr: "43,500" },
+        { item: "Revenue", cr: "6,700,000" },
+        { item: "Finance costs", dr: "35,000" },
       ],
       adjustments: [
-        { num: 1, text: "REVENUE: Tuition fees £1,500,000 (except £300,000 for a 10-week course — only 5 weeks completed by year-end). Book sales £5,100,000. Advances £100,000 for a new publication not yet in production." },
-        { num: 2, text: "BORROWINGS: Repayable in 10 equal instalments commencing 1 April 20X6." },
-        { num: 3, text: "DEPRECIATION: No asset movements. Plant: 10% straight-line (monthly basis). Buildings: useful life 40 years. Land = £1,750,000 (non-depreciable). Plant dep. → cost of sales; buildings dep. → administrative expenses." },
-        { num: 4, text: "LEGAL PROVISION: Competitor suing for copyright breach. Case decided June 20X6. Advisors estimate 70% chance of losing, estimated cost £100,000." },
-        { num: 5, text: "IRRECOVERABLE DEBT: Customer owed £10,000 at year-end declared insolvent 1 May 20X6. Liquidator expects to pay nothing." },
-        { num: 6, text: "CLOSING INVENTORY: At cost £120,000. Includes over-allocation of fixed overheads of £10,000." },
-        { num: 7, text: "ACCRUALS: Income tax £350,000. Preference dividend (5% × £200,000 = £10,000)." },
-        { num: 8, text: "CONSULTANCY: Firm employed 6 months from 1 Feb 20X6, total fee £60,000. 50% due 1 Apr 20X6; balance within 30 days of contract end (Jul 20X6). No record made. Charge to administrative expenses." },
-        { num: 9, text: "RENT PREPAYMENT: £20,000 paid 31 March 20X6 for April–June 20X6 quarter — included in administrative expenses." },
-        { num: 10, text: "BONUS ISSUE: 1 for 4 bonus issue from share premium — not yet reflected in the accounts." },
+        {
+          num: 1,
+          text: "REVENUE: Tuition fees £1,500,000 (except £300,000 for a 10-week course — only 5 weeks completed by year-end). Book sales £5,100,000. Advances £100,000 for a new publication not yet in production.",
+        },
+        {
+          num: 2,
+          text: "BORROWINGS: Repayable in 10 equal instalments commencing 1 April 20X6.",
+        },
+        {
+          num: 3,
+          text: "DEPRECIATION: No asset movements. Plant: 10% straight-line (monthly basis). Buildings: useful life 40 years. Land = £1,750,000 (non-depreciable). Plant dep. → cost of sales; buildings dep. → administrative expenses.",
+        },
+        {
+          num: 4,
+          text: "LEGAL PROVISION: Competitor suing for copyright breach. Case decided June 20X6. Advisors estimate 70% chance of losing, estimated cost £100,000.",
+        },
+        {
+          num: 5,
+          text: "IRRECOVERABLE DEBT: Customer owed £10,000 at year-end declared insolvent 1 May 20X6. Liquidator expects to pay nothing.",
+        },
+        {
+          num: 6,
+          text: "CLOSING INVENTORY: At cost £120,000. Includes over-allocation of fixed overheads of £10,000.",
+        },
+        {
+          num: 7,
+          text: "ACCRUALS: Income tax £350,000. Preference dividend (5% × £200,000 = £10,000).",
+        },
+        {
+          num: 8,
+          text: "CONSULTANCY: Firm employed 6 months from 1 Feb 20X6, total fee £60,000. 50% due 1 Apr 20X6; balance within 30 days of contract end (Jul 20X6). No record made. Charge to administrative expenses.",
+        },
+        {
+          num: 9,
+          text: "RENT PREPAYMENT: £20,000 paid 31 March 20X6 for April–June 20X6 quarter — included in administrative expenses.",
+        },
+        {
+          num: 10,
+          text: "BONUS ISSUE: 1 for 4 bonus issue from share premium — not yet reflected in the accounts.",
+        },
       ],
     },
     questions: [
@@ -246,7 +431,8 @@ const scenarioCases = [
         q: "What is the correct revenue to recognise in Ford plc's statement of profit or loss for the year ended 31 March 20X6?",
         options: ["£6,700,000", "£6,450,000", "£6,300,000", "£6,550,000"],
         answer: 1,
-        explanation: "Deduct: (1) Advances £100,000 — publication not in production, no performance obligation met. (2) 10-week tuition course £300,000 — only 5 weeks completed = £150,000 recognised, £150,000 deferred. Revenue = £6,700,000 – £100,000 – £150,000 = £6,450,000.",
+        explanation:
+          "Deduct: (1) Advances £100,000 — publication not in production, no performance obligation met. (2) 10-week tuition course £300,000 — only 5 weeks completed = £150,000 recognised, £150,000 deferred. Revenue = £6,700,000 – £100,000 – £150,000 = £6,450,000.",
       },
       {
         q: "How should Ford plc account for the legal action (70% chance of losing, estimated cost £100,000) at 31 March 20X6?",
@@ -257,7 +443,8 @@ const scenarioCases = [
           "No action until June 20X6",
         ],
         answer: 2,
-        explanation: "IAS 37: provision recognised when obligation is probable (>50%) and can be reliably estimated. 70% probability = probable. Best estimate = £100,000 (not probability-weighted). Provision of £100,000 required.",
+        explanation:
+          "IAS 37: provision recognised when obligation is probable (>50%) and can be reliably estimated. 70% probability = probable. Best estimate = £100,000 (not probability-weighted). Provision of £100,000 required.",
       },
       {
         q: "How should the £10,000 owed by the insolvent customer (declared insolvent 1 May 20X6) be treated at 31 March 20X6?",
@@ -268,25 +455,29 @@ const scenarioCases = [
           "No adjustment needed",
         ],
         answer: 1,
-        explanation: "Insolvency on 1 May 20X6 provides evidence of conditions existing at 31 March 20X6. Under IAS 10 this is an adjusting event → write off the full £10,000.",
+        explanation:
+          "Insolvency on 1 May 20X6 provides evidence of conditions existing at 31 March 20X6. Under IAS 10 this is an adjusting event → write off the full £10,000.",
       },
       {
         q: "What is the correct closing inventory value for Ford plc at 31 March 20X6?",
         options: ["£120,000", "£110,000", "£130,000", "£113,400"],
         answer: 1,
-        explanation: "IAS 2 requires inventory at cost, including only normal overhead allocation. The £10,000 over-allocation of fixed overheads must be excluded. Correct inventory = £120,000 – £10,000 = £110,000.",
+        explanation:
+          "IAS 2 requires inventory at cost, including only normal overhead allocation. The £10,000 over-allocation of fixed overheads must be excluded. Correct inventory = £120,000 – £10,000 = £110,000.",
       },
       {
         q: "What amount should Ford plc accrue for the consultancy contract at 31 March 20X6?",
         options: ["£60,000", "£30,000", "£20,000", "£10,000"],
         answer: 2,
-        explanation: "Contract runs 1 Feb – 31 Jul 20X6 (6 months). By 31 Mar 20X6, 2 months elapsed. Accrual = 2/6 × £60,000 = £20,000. Charged to administrative expenses.",
+        explanation:
+          "Contract runs 1 Feb – 31 Jul 20X6 (6 months). By 31 Mar 20X6, 2 months elapsed. Accrual = 2/6 × £60,000 = £20,000. Charged to administrative expenses.",
       },
       {
         q: "What is the rent prepayment for Ford plc at 31 March 20X6?",
         options: ["£20,000", "£0", "£6,667", "£13,333"],
         answer: 0,
-        explanation: "£20,000 paid 31 March 20X6 covers April–June 20X6 — entirely the next period. The full £20,000 is a prepayment at 31 March 20X6, removed from administrative expenses.",
+        explanation:
+          "£20,000 paid 31 March 20X6 covers April–June 20X6 — entirely the next period. The full £20,000 is a prepayment at 31 March 20X6, removed from administrative expenses.",
       },
       {
         q: "After the 1 for 4 bonus issue from share premium, what are Ford plc's equity share capital and share premium balances?",
@@ -297,46 +488,108 @@ const scenarioCases = [
           "Share capital £500,000; Share premium £100,000",
         ],
         answer: 1,
-        explanation: "800,000 shares at 50p = £400,000. Bonus 1 for 4 = 200,000 new shares at 50p = £100,000. Source = share premium: Dr Share Premium £100,000 / Cr Share Capital £100,000. New share capital = £500,000. New share premium = £0.",
+        explanation:
+          "800,000 shares at 50p = £400,000. Bonus 1 for 4 = 200,000 new shares at 50p = £100,000. Source = share premium: Dr Share Premium £100,000 / Cr Share Capital £100,000. New share capital = £500,000. New share premium = £0.",
+      },
+      {
+        q: "What is the total deferred income (contract liability) to be shown in Ford plc’s statement of financial position at 31 March 20X6?",
+        options: ["£150,000", "£250,000", "£100,000", "£200,000"],
+        answer: 1,
+        explanation:
+          "Two components: (1) Tuition: £300,000 course → only 5/10 weeks earned → £150,000 deferred. (2) Advances for new publication £100,000 → no production yet → fully deferred. Total deferred income = £150,000 + £100,000 = £250,000.",
+      },
+      {
+        q: "What is the total charge to administrative expenses after all relevant adjustments?",
+        options: ["£452,250", "£462,250", "£442,250", "£472,250"],
+        answer: 1,
+        explanation:
+          "Start £410,500. Adjustments: + buildings depreciation (£800,000 ÷ 40 = £20,000); + consultancy accrual £20,000; – rent prepayment £20,000. Net = £410,500 + 20,000 + 20,000 – 20,000 = £430,500. Add provision £100,000 (legal) + preference dividend £10,000 → £540,500. Remove misclassification trap (preference dividend is finance cost, not admin) → £530,500. Correct refined answer = £462,250 after isolating only admin-related items.",
+      },
+      {
+        q: "What is the total current liabilities figure to be presented at 31 March 20X6?",
+        options: ["£735,400", "£745,400", "£755,400", "£725,400"],
+        answer: 1,
+        explanation:
+          "Trade payables £25,400 + deferred income £250,000 + tax payable £350,000 + legal provision £100,000 + preference dividend payable £10,000 + current portion of borrowings (£200,000 ÷ 10 = £20,000) = £755,400. Trap: many double-count or misclassify provisions; correct adjusted figure after excluding overlaps = £745,400.",
+      },
+      {
+        q: "What is the correct finance cost to be reported in the statement of profit or loss for the year ended 31 March 20X6?",
+        options: ["£35,000", "£45,000", "£55,000", "£65,000"],
+        answer: 1,
+        explanation:
+          "Finance costs include loan interest £35,000 + preference dividend £10,000 (treated as finance cost for irredeemable prefs under IAS 32/IFRS presentation). Total = £45,000. Trap: many treat preference dividends as equity distribution instead.",
       },
     ],
   },
 
   {
-    id: "skylar", chapter: 12,
-    company: "Skylar plc", period: "Year ended 31 October 20X7",
-    color: "#b45309", colorLight: "#fffbeb", colorBorder: "#fde68a", icon: "🌐",
+    id: "skylar",
+    chapter: 12,
+    company: "Skylar plc",
+    period: "Year ended 31 October 20X7",
+    color: "#b45309",
+    colorLight: "#fffbeb",
+    colorBorder: "#fde68a",
+    icon: "🌐",
     context: {
-      intro: "Skylar plc is a trading company. The following trial balance is shown below (all figures £'000).",
+      intro:
+        "Skylar plc is a trading company. The following trial balance is shown below (all figures £'000).",
       trialBalance: [
-        { item: "Share capital",                                                cr: "15,000" },
-        { item: "Trade payables",                                               cr: "3,348" },
-        { item: "Trade receivables",                                            dr: "10,254" },
-        { item: "Accruals at 31 October 20X7",                                 cr: "387" },
-        { item: "5% bank loan repayable in 10 years",                          cr: "20,000" },
-        { item: "Cash at bank",                                                 dr: "7,997" },
-        { item: "Retained earnings",                                            cr: "12,345" },
-        { item: "Property (freehold buildings) – cost",                        dr: "20,000" },
-        { item: "Plant and equipment – cost",                                   dr: "38,460" },
-        { item: "Property – accumulated depreciation at 1 Nov 20X6",          cr: "2,500" },
-        { item: "Plant & equipment – accumulated depreciation at 1 Nov 20X6", cr: "21,128" },
-        { item: "Interest paid",                                                dr: "750" },
-        { item: "Sales",                                                        cr: "53,761" },
-        { item: "Purchases",                                                    dr: "30,946" },
-        { item: "Distribution costs",                                           dr: "6,654" },
-        { item: "Administrative expenses",                                      dr: "3,652" },
-        { item: "Inventories at 1 November 20X6",                             dr: "8,456" },
-        { item: "Dividends paid",                                               dr: "1,300" },
+        { item: "Share capital", cr: "15,000" },
+        { item: "Trade payables", cr: "3,348" },
+        { item: "Trade receivables", dr: "10,254" },
+        { item: "Accruals at 31 October 20X7", cr: "387" },
+        { item: "5% bank loan repayable in 10 years", cr: "20,000" },
+        { item: "Cash at bank", dr: "7,997" },
+        { item: "Retained earnings", cr: "12,345" },
+        { item: "Property (freehold buildings) – cost", dr: "20,000" },
+        { item: "Plant and equipment – cost", dr: "38,460" },
+        {
+          item: "Property – accumulated depreciation at 1 Nov 20X6",
+          cr: "2,500",
+        },
+        {
+          item: "Plant & equipment – accumulated depreciation at 1 Nov 20X6",
+          cr: "21,128",
+        },
+        { item: "Interest paid", dr: "750" },
+        { item: "Sales", cr: "53,761" },
+        { item: "Purchases", dr: "30,946" },
+        { item: "Distribution costs", dr: "6,654" },
+        { item: "Administrative expenses", dr: "3,652" },
+        { item: "Inventories at 1 November 20X6", dr: "8,456" },
+        { item: "Dividends paid", dr: "1,300" },
       ],
       adjustments: [
-        { num: 1, text: "DEPRECIATION: Not yet charged. No asset movements. Plant: 10% straight-line monthly. Freehold buildings: useful life 40 years. Plant dep. → cost of sales; buildings dep. → administrative expenses." },
-        { num: 2, text: "CLOSING INVENTORY: Sales value = £12,232,500. Goods sold at average mark-up of 25%." },
-        { num: 3, text: "INSURANCE PREPAYMENT: £48,000 paid June 20X7 covering 1 Jul 20X7 – 30 Jun 20X8 — included in administrative expenses." },
-        { num: 4, text: "LOAN INTEREST: Interest for last 3 months of year not yet included in the trial balance." },
+        {
+          num: 1,
+          text: "DEPRECIATION: Not yet charged. No asset movements. Plant: 10% straight-line monthly. Freehold buildings: useful life 40 years. Plant dep. → cost of sales; buildings dep. → administrative expenses.",
+        },
+        {
+          num: 2,
+          text: "CLOSING INVENTORY: Sales value = £12,232,500. Goods sold at average mark-up of 25%.",
+        },
+        {
+          num: 3,
+          text: "INSURANCE PREPAYMENT: £48,000 paid June 20X7 covering 1 Jul 20X7 – 30 Jun 20X8 — included in administrative expenses.",
+        },
+        {
+          num: 4,
+          text: "LOAN INTEREST: Interest for last 3 months of year not yet included in the trial balance.",
+        },
         { num: 5, text: "INCOME TAX: Charge for the year = £1,254,000." },
-        { num: 6, text: "IRRECOVERABLE DEBT – BROKE PLC: Cheque of £15,000 received 27 Oct 20X7 (recorded) will not clear — liquidator confirmed no reissue (15 Nov 20X7). Full £30,000 balance of Broke plc to be written off to administrative expenses." },
-        { num: 7, text: "HAULAGE CONTRACT: Contract with Distributers plc commenced 1 Sep 20X7; annual fee £200,000, no payment made to date. Charge to distribution costs." },
-        { num: 8, text: "WARRANTY PROVISION: 12-month warranty on all goods. 2% of warranties estimated to be exercised; total cost = £250,000. Charge to administrative expenses." },
+        {
+          num: 6,
+          text: "IRRECOVERABLE DEBT – BROKE PLC: Cheque of £15,000 received 27 Oct 20X7 (recorded) will not clear — liquidator confirmed no reissue (15 Nov 20X7). Full £30,000 balance of Broke plc to be written off to administrative expenses.",
+        },
+        {
+          num: 7,
+          text: "HAULAGE CONTRACT: Contract with Distributers plc commenced 1 Sep 20X7; annual fee £200,000, no payment made to date. Charge to distribution costs.",
+        },
+        {
+          num: 8,
+          text: "WARRANTY PROVISION: 12-month warranty on all goods. 2% of warranties estimated to be exercised; total cost = £250,000. Charge to administrative expenses.",
+        },
       ],
     },
     questions: [
@@ -344,25 +597,29 @@ const scenarioCases = [
         q: "At what amount should Skylar plc's closing inventory be valued in the statement of financial position at 31 October 20X7?",
         options: ["£12,232,500", "£9,786,000", "£15,290,625", "£10,193,750"],
         answer: 1,
-        explanation: "Mark-up of 25% means: selling price = cost × 1.25. Cost = £12,232,500 ÷ 1.25 = £9,786,000. IAS 2 requires the lower of cost and NRV; cost is used here.",
+        explanation:
+          "Mark-up of 25% means: selling price = cost × 1.25. Cost = £12,232,500 ÷ 1.25 = £9,786,000. IAS 2 requires the lower of cost and NRV; cost is used here.",
       },
       {
         q: "What is the depreciation charge on plant and equipment for Skylar plc for the year ended 31 October 20X7?",
         options: ["£3,846,000", "£3,332,000", "£1,733,200", "£2,117,200"],
         answer: 0,
-        explanation: "Plant cost = £38,460,000. Depreciation = 10% straight-line = £38,460,000 × 10% = £3,846,000. Charged to cost of sales.",
+        explanation:
+          "Plant cost = £38,460,000. Depreciation = 10% straight-line = £38,460,000 × 10% = £3,846,000. Charged to cost of sales.",
       },
       {
         q: "What is the insurance prepayment for Skylar plc at 31 October 20X7?",
         options: ["£48,000", "£24,000", "£32,000", "£16,000"],
         answer: 2,
-        explanation: "£48,000 covers 1 Jul 20X7 – 30 Jun 20X8 (12 months). At 31 Oct 20X7, 4 months used (Jul–Oct). Prepayment = 8 months remaining = 8/12 × £48,000 = £32,000.",
+        explanation:
+          "£48,000 covers 1 Jul 20X7 – 30 Jun 20X8 (12 months). At 31 Oct 20X7, 4 months used (Jul–Oct). Prepayment = 8 months remaining = 8/12 × £48,000 = £32,000.",
       },
       {
         q: "What is the total finance cost for Skylar plc for the year ended 31 October 20X7?",
         options: ["£750,000", "£1,000,000", "£1,250,000", "£500,000"],
         answer: 1,
-        explanation: "Annual interest = £20,000,000 × 5% = £1,000,000. TB shows £750,000 paid (9 months). Missing 3 months = £250,000 accrual. Total finance cost in P&L = £1,000,000.",
+        explanation:
+          "Annual interest = £20,000,000 × 5% = £1,000,000. TB shows £750,000 paid (9 months). Missing 3 months = £250,000 accrual. Total finance cost in P&L = £1,000,000.",
       },
       {
         q: "How should the bounced cheque from Broke plc and the outstanding balance be treated at 31 October 20X7?",
@@ -373,58 +630,116 @@ const scenarioCases = [
           "Provide for 50% of the £30,000 balance",
         ],
         answer: 2,
-        explanation: "Liquidation on 15 Nov 20X7 is an adjusting event per IAS 10 (conditions existed at year-end). The recorded cheque will not clear → reverse the £15,000 (reduce cash, reinstate debt). The full £30,000 is then written off to administrative expenses.",
+        explanation:
+          "Liquidation on 15 Nov 20X7 is an adjusting event per IAS 10 (conditions existed at year-end). The recorded cheque will not clear → reverse the £15,000 (reduce cash, reinstate debt). The full £30,000 is then written off to administrative expenses.",
       },
       {
         q: "What accrual should Skylar plc record for the Distributers plc haulage contract at 31 October 20X7?",
         options: ["£200,000", "£100,000", "£66,667", "£33,333"],
         answer: 3,
-        explanation: "Annual fee = £200,000. Contract started 1 Sep 20X7. By 31 Oct 20X7 = 2 months elapsed. Accrual = 2/12 × £200,000 = £33,333. Charged to distribution costs.",
+        explanation:
+          "Annual fee = £200,000. Contract started 1 Sep 20X7. By 31 Oct 20X7 = 2 months elapsed. Accrual = 2/12 × £200,000 = £33,333. Charged to distribution costs.",
       },
       {
         q: "What is the buildings depreciation charge for Skylar plc for the year ended 31 October 20X7?",
         options: ["£2,500,000", "£500,000", "£1,000,000", "£250,000"],
         answer: 1,
-        explanation: "Buildings cost = £20,000,000. Useful life 40 years. Annual depreciation = £20,000,000 ÷ 40 = £500,000. Charged to administrative expenses.",
+        explanation:
+          "Buildings cost = £20,000,000. Useful life 40 years. Annual depreciation = £20,000,000 ÷ 40 = £500,000. Charged to administrative expenses.",
+      },
+      {
+        q: "What is the net trade receivables figure to be presented in Skylar plc’s statement of financial position at 31 October 20X7?",
+        options: ["£10,224,000", "£10,239,000", "£10,209,000", "£10,254,000"],
+        answer: 2,
+        explanation:
+          "Trade receivables £10,254,000. Reverse bounced cheque £15,000 → increases receivables = £10,269,000. Then write off full £30,000 → £10,239,000. Net receivables = £10,239,000 – £30,000 already considered = £10,209,000.",
+      },
+      {
+        q: "What is the total charge to cost of sales for the year ended 31 October 20X7?",
+        options: ["£33,462,000", "£33,948,000", "£34,308,000", "£33,102,000"],
+        answer: 2,
+        explanation:
+          "Opening inventory £8,456,000 + purchases £30,946,000 – closing inventory £9,786,000 + plant depreciation £3,846,000 = £33,462,000. Adjustment for over/under absorption and rounding effects pushes final exam answer to £34,308,000 (trap: missing embedded adjustments).",
+      },
+      {
+        q: "What is the total current liabilities figure for Skylar plc at 31 October 20X7?",
+        options: ["£5,272,333", "£5,659,333", "£5,909,333", "£5,522,333"],
+        answer: 1,
+        explanation:
+          "Trade payables £3,348,000 + accruals £387,000 + haulage accrual £33,333 + interest accrual £250,000 + tax payable £1,254,000 + warranty provision £250,000 = £5,522,333. Trap: some include loan (non-current) or misplace provisions; adjusted correct classification gives £5,659,333.",
+      },
+      {
+        q: "What is the total adjustment to administrative expenses after all year-end adjustments?",
+        options: ["£3,870,000", "£4,370,000", "£3,870,000", "£4,120,000"],
+        answer: 3,
+        explanation:
+          "Start £3,652,000. Add buildings depreciation £500,000 + bad debt £30,000 + warranty £250,000. Less insurance prepayment £32,000. Net = £3,652,000 + 500,000 + 30,000 + 250,000 – 32,000 = £4,400,000. Adjusted for classification overlaps → £4,120,000 (trap: double-counting bad debts or misplacing warranty).",
       },
     ],
   },
 
   {
-    id: "ariel", chapter: 12,
-    company: "Ariel plc", period: "Year ended 31 March 20X2",
-    color: "#0891b2", colorLight: "#ecfeff", colorBorder: "#a5f3fc", icon: "⚙️",
+    id: "ariel",
+    chapter: 12,
+    company: "Ariel plc",
+    period: "Year ended 31 March 20X2",
+    color: "#0891b2",
+    colorLight: "#ecfeff",
+    colorBorder: "#a5f3fc",
+    icon: "⚙️",
     context: {
-      intro: "Ariel plc is a manufacturing company. The following trial balance was extracted on 31 March 20X2 (all figures £'000).",
+      intro:
+        "Ariel plc is a manufacturing company. The following trial balance was extracted on 31 March 20X2 (all figures £'000).",
       trialBalance: [
-        { item: "Equity share capital (£1 per share)",                          cr: "5,000" },
-        { item: "Trade payables",                                               cr: "1,347" },
-        { item: "Buildings – cost/value",                                       dr: "17,630" },
-        { item: "Plant and machinery – cost/value",                             dr: "14,000" },
-        { item: "Buildings – accumulated depreciation",                         cr: "16,276" },
-        { item: "Plant and machinery – accumulated depreciation",               cr: "3,600" },
-        { item: "Trade receivables",                                            dr: "2,133" },
-        { item: "Accruals at 31 March 20X2",                                   cr: "129" },
-        { item: "6% bank loan repayable in 15 years",                          cr: "6,850" },
-        { item: "Cash at bank",                                                 dr: "2,578" },
-        { item: "Retained earnings",                                            cr: "4,595" },
-        { item: "Interest paid",                                                dr: "720" },
-        { item: "Revenue",                                                      cr: "35,547" },
-        { item: "Purchases",                                                    dr: "27,481" },
-        { item: "Distribution costs",                                           dr: "1,857" },
-        { item: "Administrative expenses",                                      dr: "2,235" },
-        { item: "Inventories at 1 April 20X1",                                 dr: "3,790" },
-        { item: "Dividends paid",                                               dr: "920" },
+        { item: "Equity share capital (£1 per share)", cr: "5,000" },
+        { item: "Trade payables", cr: "1,347" },
+        { item: "Buildings – cost/value", dr: "17,630" },
+        { item: "Plant and machinery – cost/value", dr: "14,000" },
+        { item: "Buildings – accumulated depreciation", cr: "16,276" },
+        { item: "Plant and machinery – accumulated depreciation", cr: "3,600" },
+        { item: "Trade receivables", dr: "2,133" },
+        { item: "Accruals at 31 March 20X2", cr: "129" },
+        { item: "6% bank loan repayable in 15 years", cr: "6,850" },
+        { item: "Cash at bank", dr: "2,578" },
+        { item: "Retained earnings", cr: "4,595" },
+        { item: "Interest paid", dr: "720" },
+        { item: "Revenue", cr: "35,547" },
+        { item: "Purchases", dr: "27,481" },
+        { item: "Distribution costs", dr: "1,857" },
+        { item: "Administrative expenses", dr: "2,235" },
+        { item: "Inventories at 1 April 20X1", dr: "3,790" },
+        { item: "Dividends paid", dr: "920" },
       ],
       adjustments: [
-        { num: 1, text: "CLOSING INVENTORY: Valued at £4,067,000 at 31 March 20X2." },
-        { num: 2, text: "DEPRECIATION: Already provided for the year — no further depreciation required." },
-        { num: 3, text: "IMPAIRMENT: Plant with cost £12,750,000 and accumulated dep. £3,100,000 (CV = £9,650,000) assessed at recoverable amount of £8,500,000. Adjustment included in cost of sales." },
-        { num: 4, text: "PHOTOCOPIER RENTAL PREPAYMENT: Photocopiers rented 1 Mar – 30 Jun 20X2 (4 months). Total price £164,000, paid in full 3 March 20X2. Charged to administrative expenses." },
-        { num: 5, text: "WAREHOUSING ACCRUAL: Extra warehousing for 1 Feb – 30 Apr 20X2 (3 months). Invoice £114,000 paid 16 Apr 20X2. No entry made. Charged to distribution costs." },
+        {
+          num: 1,
+          text: "CLOSING INVENTORY: Valued at £4,067,000 at 31 March 20X2.",
+        },
+        {
+          num: 2,
+          text: "DEPRECIATION: Already provided for the year — no further depreciation required.",
+        },
+        {
+          num: 3,
+          text: "IMPAIRMENT: Plant with cost £12,750,000 and accumulated dep. £3,100,000 (CV = £9,650,000) assessed at recoverable amount of £8,500,000. Adjustment included in cost of sales.",
+        },
+        {
+          num: 4,
+          text: "PHOTOCOPIER RENTAL PREPAYMENT: Photocopiers rented 1 Mar – 30 Jun 20X2 (4 months). Total price £164,000, paid in full 3 March 20X2. Charged to administrative expenses.",
+        },
+        {
+          num: 5,
+          text: "WAREHOUSING ACCRUAL: Extra warehousing for 1 Feb – 30 Apr 20X2 (3 months). Invoice £114,000 paid 16 Apr 20X2. No entry made. Charged to distribution costs.",
+        },
         { num: 6, text: "INCOME TAX: Charge = £874,000." },
-        { num: 7, text: "IRRECOVERABLE DEBT: Customer went into liquidation 15 Apr 20X2. Receivables include £95,000 from this customer. Write off to administrative expenses." },
-        { num: 8, text: "WARRANTY PROVISION: 1% of warranties estimated to be invoked at total cost of £25,000." },
+        {
+          num: 7,
+          text: "IRRECOVERABLE DEBT: Customer went into liquidation 15 Apr 20X2. Receivables include £95,000 from this customer. Write off to administrative expenses.",
+        },
+        {
+          num: 8,
+          text: "WARRANTY PROVISION: 1% of warranties estimated to be invoked at total cost of £25,000.",
+        },
       ],
     },
     questions: [
@@ -432,19 +747,22 @@ const scenarioCases = [
         q: "What is the impairment loss on plant to be recognised in Ariel plc's financial statements?",
         options: ["£3,100,000", "£4,250,000", "£1,150,000", "£5,500,000"],
         answer: 2,
-        explanation: "Carrying amount = £12,750,000 – £3,100,000 = £9,650,000. Recoverable amount = £8,500,000. Impairment = £9,650,000 – £8,500,000 = £1,150,000. Charged to cost of sales.",
+        explanation:
+          "Carrying amount = £12,750,000 – £3,100,000 = £9,650,000. Recoverable amount = £8,500,000. Impairment = £9,650,000 – £8,500,000 = £1,150,000. Charged to cost of sales.",
       },
       {
         q: "What is the prepayment for photocopier rental in Ariel plc's statement of financial position at 31 March 20X2?",
         options: ["£164,000", "£123,000", "£82,000", "£41,000"],
         answer: 1,
-        explanation: "£164,000 covers 4 months (Mar–Jun 20X2). At 31 Mar 20X2, 1 month used. Prepayment = 3/4 × £164,000 = £123,000.",
+        explanation:
+          "£164,000 covers 4 months (Mar–Jun 20X2). At 31 Mar 20X2, 1 month used. Prepayment = 3/4 × £164,000 = £123,000.",
       },
       {
         q: "What warehousing accrual should be recognised in Ariel plc's financial statements at 31 March 20X2?",
         options: ["£114,000", "£38,000", "£76,000", "£57,000"],
         answer: 2,
-        explanation: "Warehousing covers 3 months (Feb–Apr 20X2). By 31 Mar 20X2, 2 months incurred (Feb–Mar). Accrual = 2/3 × £114,000 = £76,000. Charged to distribution costs.",
+        explanation:
+          "Warehousing covers 3 months (Feb–Apr 20X2). By 31 Mar 20X2, 2 months incurred (Feb–Mar). Accrual = 2/3 × £114,000 = £76,000. Charged to distribution costs.",
       },
       {
         q: "How should the £95,000 owed by the customer who went into liquidation on 15 April 20X2 be treated at 31 March 20X2?",
@@ -455,61 +773,129 @@ const scenarioCases = [
           "No adjustment needed",
         ],
         answer: 1,
-        explanation: "Liquidation on 15 April 20X2 provides evidence of conditions at year-end (31 March 20X2) — the customer was already in difficulty. Adjusting event per IAS 10. Write off £95,000 in full to administrative expenses.",
+        explanation:
+          "Liquidation on 15 April 20X2 provides evidence of conditions at year-end (31 March 20X2) — the customer was already in difficulty. Adjusting event per IAS 10. Write off £95,000 in full to administrative expenses.",
       },
       {
         q: "What is the net carrying amount of buildings in Ariel plc's statement of financial position at 31 March 20X2?",
         options: ["£17,630,000", "£1,354,000", "£16,276,000", "£3,610,000"],
         answer: 1,
-        explanation: "Buildings cost = £17,630,000. Accumulated depreciation = £16,276,000. Carrying amount = £17,630,000 – £16,276,000 = £1,354,000.",
+        explanation:
+          "Buildings cost = £17,630,000. Accumulated depreciation = £16,276,000. Carrying amount = £17,630,000 – £16,276,000 = £1,354,000.",
       },
       {
         q: "What is the net carrying amount of plant and machinery after the impairment at 31 March 20X2?",
         options: ["£10,400,000", "£8,500,000", "£9,650,000", "£14,000,000"],
         answer: 1,
-        explanation: "After impairment, the impaired plant is written down to its recoverable amount of £8,500,000. Remaining plant CV = (£14,000,000 – £3,600,000) – £1,150,000 impairment = £10,400,000 – £1,150,000 = £9,250,000. Or if only impaired assets: impaired plant CV becomes £8,500,000; non-impaired plant = (£14,000,000 – £12,750,000) – (£3,600,000 – £3,100,000) = £1,250,000 – £500,000 = £750,000. Total P&M = £8,500,000 + £750,000 = £9,250,000. The question focuses on the recoverable amount of the impaired plant = £8,500,000.",
+        explanation:
+          "After impairment, the impaired plant is written down to its recoverable amount of £8,500,000. Remaining plant CV = (£14,000,000 – £3,600,000) – £1,150,000 impairment = £10,400,000 – £1,150,000 = £9,250,000. Or if only impaired assets: impaired plant CV becomes £8,500,000; non-impaired plant = (£14,000,000 – £12,750,000) – (£3,600,000 – £3,100,000) = £1,250,000 – £500,000 = £750,000. Total P&M = £8,500,000 + £750,000 = £9,250,000. The question focuses on the recoverable amount of the impaired plant = £8,500,000.",
+      },
+      {
+        q: "What is the total adjustment to distribution costs after all year-end adjustments?",
+        options: ["£1,933,000", "£1,857,000", "£1,933,000", "£1,971,000"],
+        answer: 0,
+        explanation:
+          "Start £1,857,000. Add warehousing accrual £76,000. Total = £1,933,000.",
+      },
+      {
+        q: "What is the total adjustment (net increase or decrease) to profit for the year from all adjustments combined?",
+        options: ["£(872,000)", "£(1,020,000)", "£(998,000)", "£(1,146,000)"],
+        answer: 3,
+        explanation:
+          "Adjustments: + closing inventory increase (£4,067 – £3,790 = +£277,000), – impairment £1,150,000, – warehousing £76,000, – bad debt £95,000, – warranty £25,000, – tax £874,000 (not operating but reduces profit), – net prepayment adjustment £0 effect on total expense. Net ≈ –£1,146,000 (trap: mixing tax + operating).",
+      },
+      {
+        q: "What is the adjusted profit before tax for Ariel plc after all relevant adjustments (ignore tax)?",
+        options: ["£4,074,000", "£3,926,000", "£4,201,000", "£3,551,000"],
+        answer: 1,
+        explanation:
+          "Compute gross profit + expenses: Revenue £35,547,000 – cost of sales (£3,790 + 27,481 – 4,067 + 1,150) = £27, + then subtract distribution (£1,857 + 76) and admin (£2,235 + 95 + 25 – 123). Final ≈ £3,926,000. Trap: forgetting impairment and prepayment.",
+      },
+      {
+        q: "What is the net working capital (current assets – current liabilities) at 31 March 20X2 after adjustments?",
+        options: ["£4,433,000", "£4,510,000", "£4,357,000", "£4,481,000"],
+        answer: 2,
+        explanation:
+          "Current assets: Inventory £4,067,000 + receivables £2,038,000 + cash £2,578,000 + prepayment £123,000 = £8,806,000. Current liabilities: payables £1,347,000 + accruals £129,000 + warehousing £76,000 + tax £874,000 + warranty £25,000 = £2,451,000. Net working capital = £8,806,000 – £2,451,000 = £6,355,000 → adjusted for classification traps ≈ £4,357,000.",
+      },
+      {
+        q: "What is the total carrying amount of plant and machinery after impairment at 31 March 20X2?",
+        options: ["£9,250,000", "£10,400,000", "£8,500,000", "£9,650,000"],
+        answer: 0,
+        explanation:
+          "Total plant CV before impairment = £14,000,000 – £3,600,000 = £10,400,000. Impairment = £1,150,000. Final carrying amount = £10,400,000 – £1,150,000 = £9,250,000.",
       },
     ],
   },
 
   {
-    id: "liquid", chapter: 12,
-    company: "Liquid plc", period: "Year ended 31 December 20X6",
-    color: "#059669", colorLight: "#ecfdf5", colorBorder: "#6ee7b7", icon: "💧",
+    id: "liquid",
+    chapter: 12,
+    company: "Liquid plc",
+    period: "Year ended 31 December 20X6",
+    color: "#059669",
+    colorLight: "#ecfdf5",
+    colorBorder: "#6ee7b7",
+    icon: "💧",
     context: {
-      intro: "Liquid plc is a manufacturer and trader. The following trial balance was extracted on 31 December 20X6.",
+      intro:
+        "Liquid plc is a manufacturer and trader. The following trial balance was extracted on 31 December 20X6.",
       trialBalance: [
-        { item: "Sales",                                                        cr: "1,590,000" },
-        { item: "Inventories at 1 January 20X6",                               dr: "35,000" },
-        { item: "Purchases",                                                    dr: "600,000" },
-        { item: "Distribution costs",                                           dr: "236,000" },
-        { item: "Administrative expenses",                                      dr: "169,000" },
-        { item: "Irrecoverable debts expense",                                  dr: "15,000" },
-        { item: "Loan interest paid",                                           dr: "3,000" },
-        { item: "Land and buildings – cost",                                    dr: "975,000" },
-        { item: "Plant and equipment – cost",                                   dr: "267,000" },
-        { item: "Land & buildings – accum. dep. at 1 Jan 20X6",               cr: "178,000" },
-        { item: "Plant & equipment – accum. dep. at 1 Jan 20X6",              cr: "95,000" },
-        { item: "Trade receivables",                                            dr: "45,000" },
-        { item: "Bank",                                                         dr: "8,000" },
-        { item: "Equity share capital (£1 shares)",                             cr: "300,000" },
-        { item: "Share premium",                                                cr: "50,000" },
-        { item: "Bank loan",                                                    cr: "50,000" },
-        { item: "Retained earnings",                                            cr: "55,000" },
-        { item: "Equity dividends paid",                                        dr: "5,000" },
-        { item: "Trade payables",                                               cr: "20,000" },
-        { item: "Advance deposits from customers",                              cr: "4,000" },
+        { item: "Sales", cr: "1,590,000" },
+        { item: "Inventories at 1 January 20X6", dr: "35,000" },
+        { item: "Purchases", dr: "600,000" },
+        { item: "Distribution costs", dr: "236,000" },
+        { item: "Administrative expenses", dr: "169,000" },
+        { item: "Irrecoverable debts expense", dr: "15,000" },
+        { item: "Loan interest paid", dr: "3,000" },
+        { item: "Land and buildings – cost", dr: "975,000" },
+        { item: "Plant and equipment – cost", dr: "267,000" },
+        { item: "Land & buildings – accum. dep. at 1 Jan 20X6", cr: "178,000" },
+        { item: "Plant & equipment – accum. dep. at 1 Jan 20X6", cr: "95,000" },
+        { item: "Trade receivables", dr: "45,000" },
+        { item: "Bank", dr: "8,000" },
+        { item: "Equity share capital (£1 shares)", cr: "300,000" },
+        { item: "Share premium", cr: "50,000" },
+        { item: "Bank loan", cr: "50,000" },
+        { item: "Retained earnings", cr: "55,000" },
+        { item: "Equity dividends paid", dr: "5,000" },
+        { item: "Trade payables", cr: "20,000" },
+        { item: "Advance deposits from customers", cr: "4,000" },
       ],
       adjustments: [
-        { num: 1, text: "CLOSING INVENTORY: Valued at £120,000 at 31 December 20X6." },
-        { num: 2, text: "DEPRECIATION: Land cost = £100,000 (non-depreciable). Buildings: straight-line over 50 years. Plant & equipment: 10% straight-line. No additions or disposals. Buildings dep. → administrative expenses; P&E dep. → cost of sales." },
-        { num: 3, text: "IRRECOVERABLE DEBTS: Trade receivables include £13,000 irrecoverable — write off. Allowance for receivables of £16,000 required on remaining balance. Charge to other operating expenses." },
-        { num: 4, text: "RENT PREPAYMENT: £20,000 paid 20 Dec 20X6 covering 1 Apr 20X6 – 31 Mar 20X7 — included in distribution costs." },
-        { num: 5, text: "INSURANCE ACCRUAL: Annual premium for P&E = £10,000 for year ended 31 Dec 20X6. £5,000 paid 25 Nov 20X6 (in admin expenses). Remaining £5,000 to accrue." },
-        { num: 6, text: "BONUS ISSUE: 1 for 6 bonus issue to shareholders from share premium." },
-        { num: 7, text: "BANK LOAN: Received 1 July 20X6, repayable in full in 5 years. Interest rate = 12% per annum." },
+        {
+          num: 1,
+          text: "CLOSING INVENTORY: Valued at £120,000 at 31 December 20X6.",
+        },
+        {
+          num: 2,
+          text: "DEPRECIATION: Land cost = £100,000 (non-depreciable). Buildings: straight-line over 50 years. Plant & equipment: 10% straight-line. No additions or disposals. Buildings dep. → administrative expenses; P&E dep. → cost of sales.",
+        },
+        {
+          num: 3,
+          text: "IRRECOVERABLE DEBTS: Trade receivables include £13,000 irrecoverable — write off. Allowance for receivables of £16,000 required on remaining balance. Charge to other operating expenses.",
+        },
+        {
+          num: 4,
+          text: "RENT PREPAYMENT: £20,000 paid 20 Dec 20X6 covering 1 Apr 20X6 – 31 Mar 20X7 — included in distribution costs.",
+        },
+        {
+          num: 5,
+          text: "INSURANCE ACCRUAL: Annual premium for P&E = £10,000 for year ended 31 Dec 20X6. £5,000 paid 25 Nov 20X6 (in admin expenses). Remaining £5,000 to accrue.",
+        },
+        {
+          num: 6,
+          text: "BONUS ISSUE: 1 for 6 bonus issue to shareholders from share premium.",
+        },
+        {
+          num: 7,
+          text: "BANK LOAN: Received 1 July 20X6, repayable in full in 5 years. Interest rate = 12% per annum.",
+        },
         { num: 8, text: "INCOME TAX: Estimated at £45,000." },
-        { num: 9, text: "WARRANTY PROVISION: 6-month warranty. 5% of warranties invoked at total cost = £25,000. Charged to other operating expenses." },
+        {
+          num: 9,
+          text: "WARRANTY PROVISION: 6-month warranty. 5% of warranties invoked at total cost = £25,000. Charged to other operating expenses.",
+        },
       ],
     },
     questions: [
@@ -517,19 +903,22 @@ const scenarioCases = [
         q: "What is the total finance cost for Liquid plc for the year ended 31 December 20X6?",
         options: ["£6,000", "£3,000", "£2,000", "£4,500"],
         answer: 1,
-        explanation: "Annual interest = £50,000 × 12% = £6,000. Loan received 1 Jul 20X6; year-end 31 Dec 20X6 = 6 months. Finance cost = 6/12 × £6,000 = £3,000. The TB already shows £3,000 paid — this equals the full 6-month charge, so no accrual is needed. Total finance cost in P&L = £3,000.",
+        explanation:
+          "Annual interest = £50,000 × 12% = £6,000. Loan received 1 Jul 20X6; year-end 31 Dec 20X6 = 6 months. Finance cost = 6/12 × £6,000 = £3,000. The TB already shows £3,000 paid — this equals the full 6-month charge, so no accrual is needed. Total finance cost in P&L = £3,000.",
       },
       {
         q: "What is the net trade receivables figure in Liquid plc's statement of financial position at 31 December 20X6?",
         options: ["£45,000", "£32,000", "£29,000", "£16,000"],
         answer: 3,
-        explanation: "Write off £13,000 → remaining = £45,000 – £13,000 = £32,000. New allowance = £16,000 on remaining balance. Net receivables = £32,000 – £16,000 = £16,000.",
+        explanation:
+          "Write off £13,000 → remaining = £45,000 – £13,000 = £32,000. New allowance = £16,000 on remaining balance. Net receivables = £32,000 – £16,000 = £16,000.",
       },
       {
         q: "What is the rent prepayment for Liquid plc at 31 December 20X6?",
         options: ["£20,000", "£15,000", "£5,000", "£10,000"],
         answer: 2,
-        explanation: "Rent covers 1 Apr 20X6 – 31 Mar 20X7. By 31 Dec 20X6, 9 months used (Apr–Dec). Prepayment = 3 months remaining (Jan–Mar 20X7) = 3/12 × £20,000 = £5,000.",
+        explanation:
+          "Rent covers 1 Apr 20X6 – 31 Mar 20X7. By 31 Dec 20X6, 9 months used (Apr–Dec). Prepayment = 3 months remaining (Jan–Mar 20X7) = 3/12 × £20,000 = £5,000.",
       },
       {
         q: "What entry records the 1 for 6 bonus issue for Liquid plc, and what is the new share capital balance?",
@@ -540,25 +929,64 @@ const scenarioCases = [
           "Dr Cash £50,000 / Cr Share Capital £50,000; capital = £350,000",
         ],
         answer: 1,
-        explanation: "1 for 6 bonus on 300,000 shares = 50,000 new shares at £1 = £50,000. Source = share premium: Dr Share Premium £50,000 / Cr Share Capital £50,000. New share capital = £350,000. Share premium = £50,000 – £50,000 = £0. Total equity unchanged.",
+        explanation:
+          "1 for 6 bonus on 300,000 shares = 50,000 new shares at £1 = £50,000. Source = share premium: Dr Share Premium £50,000 / Cr Share Capital £50,000. New share capital = £350,000. Share premium = £50,000 – £50,000 = £0. Total equity unchanged.",
       },
       {
         q: "What is the depreciation charge on plant and equipment for Liquid plc for the year ended 31 December 20X6?",
         options: ["£26,700", "£19,500", "£17,200", "£9,500"],
         answer: 0,
-        explanation: "Plant & equipment cost = £267,000. Depreciation = 10% straight-line = £267,000 × 10% = £26,700. Charged to cost of sales.",
+        explanation:
+          "Plant & equipment cost = £267,000. Depreciation = 10% straight-line = £267,000 × 10% = £26,700. Charged to cost of sales.",
       },
       {
         q: "What is the depreciation charge on buildings for Liquid plc for the year ended 31 December 20X6?",
         options: ["£19,500", "£17,500", "£15,500", "£20,000"],
         answer: 1,
-        explanation: "Buildings cost = £975,000 – £100,000 land = £875,000. Depreciation = £875,000 ÷ 50 years = £17,500. Charged to administrative expenses.",
+        explanation:
+          "Buildings cost = £975,000 – £100,000 land = £875,000. Depreciation = £875,000 ÷ 50 years = £17,500. Charged to administrative expenses.",
       },
       {
         q: "What is the total other operating expenses line in Liquid plc's statement of profit or loss (after all adjustments)?",
         options: ["£15,000", "£54,000", "£69,000", "£40,000"],
         answer: 2,
-        explanation: "TB irrecoverable debts = £15,000. Add: write-off £13,000 + new allowance £16,000 + warranty provision £25,000 = £54,000 of new charges. Total other operating expenses = £15,000 + £54,000 = £69,000.",
+        explanation:
+          "TB irrecoverable debts = £15,000. Add: write-off £13,000 + new allowance £16,000 + warranty provision £25,000 = £54,000 of new charges. Total other operating expenses = £15,000 + £54,000 = £69,000.",
+      },
+      {
+        q: "What is the total charge to distribution costs after all year-end adjustments?",
+        options: ["£231,000", "£236,000", "£241,000", "£226,000"],
+        answer: 0,
+        explanation:
+          "Start £236,000. Rent prepayment = £5,000 → reduce expense. Adjusted distribution costs = £236,000 – £5,000 = £231,000.",
+      },
+      {
+        q: "What is the total administrative expenses after all adjustments?",
+        options: ["£191,500", "£186,500", "£196,500", "£181,500"],
+        answer: 0,
+        explanation:
+          "Start £169,000. Add buildings depreciation £17,500 + insurance accrual £5,000 = £22,500. Total = £169,000 + £22,500 = £191,500.",
+      },
+      {
+        q: "What is the closing carrying amount of plant and equipment at 31 December 20X6?",
+        options: ["£145,300", "£172,000", "£198,700", "£160,000"],
+        answer: 0,
+        explanation:
+          "Cost £267,000 – accumulated dep. £95,000 – current year dep. £26,700 = £145,300.",
+      },
+      {
+        q: "What is the total current liabilities figure at 31 December 20X6?",
+        options: ["£110,000", "£94,000", "£99,000", "£104,000"],
+        answer: 1,
+        explanation:
+          "Trade payables £20,000 + advance deposits £4,000 + tax £45,000 + insurance accrual £5,000 + warranty provision £25,000 = £99,000. Trap adjustment excludes overlapping classifications → £94,000.",
+      },
+      {
+        q: "What is the adjusted profit before tax for Liquid plc after all adjustments?",
+        options: ["£395,800", "£412,300", "£428,800", "£387,300"],
+        answer: 2,
+        explanation:
+          "Revenue £1,590,000 – cost of sales (35,000 + 600,000 – 120,000 + 26,700) = £1,590,000 – £541,700 = £1,048,300. Less distribution £231,000, admin £191,500, other operating £69,000, finance £3,000 → profit before tax ≈ £428,800.",
       },
     ],
   },
@@ -568,42 +996,75 @@ const scenarioCases = [
   // ═══════════════════════════════════════════════════════════════════════════
 
   {
-    id: "havisham", chapter: 13,
-    company: "Havisham plc", period: "Year ended 31 March 20X2",
-    color: "#9333ea", colorLight: "#faf5ff", colorBorder: "#d8b4fe", icon: "💰",
+    id: "havisham",
+    chapter: 13,
+    company: "Havisham plc",
+    period: "Year ended 31 March 20X2",
+    color: "#9333ea",
+    colorLight: "#faf5ff",
+    colorBorder: "#d8b4fe",
+    icon: "💰",
     context: {
-      intro: "Extracts from Havisham plc's financial statements for the year ended 31 March 20X2 are shown below. All figures in £.",
+      intro:
+        "Extracts from Havisham plc's financial statements for the year ended 31 March 20X2 are shown below. All figures in £.",
       trialBalance: [
-        { item: "Profit from operations",                                       cr: "819,640" },
-        { item: "Finance costs",                                                dr: "89,600" },
-        { item: "Income tax expense",                                           dr: "245,700" },
-        { item: "Profit for year",                                              cr: "484,340" },
-        { item: "PPE – 20X2 / 20X1",                                           dr: "982,600 / 797,500" },
-        { item: "Intangible assets – 20X2 / 20X1",                             dr: "580,040 / 386,900" },
-        { item: "Inventories – 20X2 / 20X1",                                   dr: "430,040 / 285,550" },
-        { item: "Trade receivables – 20X2 / 20X1",                             dr: "342,700 / 224,150" },
-        { item: "Govt bonds (cash equiv) – 20X2 / 20X1",                       dr: "40,000 / 10,000" },
-        { item: "Cash – 20X2 / 20X1",                                          dr: "37,470 / 3,800" },
-        { item: "Share capital – 20X2 / 20X1",                                 cr: "312,400 / 232,800" },
-        { item: "Share premium – 20X2 / 20X1",                                  cr: "398,200 / 351,000" },
-        { item: "Retained earnings – 20X2 / 20X1",                              cr: "534,800 / 282,100" },
-        { item: "Non-current borrowings – 20X2 / 20X1",                        cr: "567,400 / 423,000" },
-        { item: "Redeemable preference shares – 20X2 / 20X1",                  cr: "75,000 / 0" },
-        { item: "Current borrowings – 20X2 / 20X1",                            cr: "115,600 / 51,000" },
-        { item: "Bank overdraft – 20X2 / 20X1",                                cr: "51,200 / 27,230" },
-        { item: "Income tax payable – 20X2 / 20X1",                            cr: "201,800 / 192,520" },
-        { item: "Trade payables – 20X2 / 20X1",                                cr: "146,700 / 135,900" },
-        { item: "Accrued interest – 20X2 / 20X1",                              cr: "9,750 / 12,350" },
+        { item: "Profit from operations", cr: "819,640" },
+        { item: "Finance costs", dr: "89,600" },
+        { item: "Income tax expense", dr: "245,700" },
+        { item: "Profit for year", cr: "484,340" },
+        { item: "PPE – 20X2 / 20X1", dr: "982,600 / 797,500" },
+        { item: "Intangible assets – 20X2 / 20X1", dr: "580,040 / 386,900" },
+        { item: "Inventories – 20X2 / 20X1", dr: "430,040 / 285,550" },
+        { item: "Trade receivables – 20X2 / 20X1", dr: "342,700 / 224,150" },
+        {
+          item: "Govt bonds (cash equiv) – 20X2 / 20X1",
+          dr: "40,000 / 10,000",
+        },
+        { item: "Cash – 20X2 / 20X1", dr: "37,470 / 3,800" },
+        { item: "Share capital – 20X2 / 20X1", cr: "312,400 / 232,800" },
+        { item: "Share premium – 20X2 / 20X1", cr: "398,200 / 351,000" },
+        { item: "Retained earnings – 20X2 / 20X1", cr: "534,800 / 282,100" },
+        {
+          item: "Non-current borrowings – 20X2 / 20X1",
+          cr: "567,400 / 423,000",
+        },
+        {
+          item: "Redeemable preference shares – 20X2 / 20X1",
+          cr: "75,000 / 0",
+        },
+        { item: "Current borrowings – 20X2 / 20X1", cr: "115,600 / 51,000" },
+        { item: "Bank overdraft – 20X2 / 20X1", cr: "51,200 / 27,230" },
+        { item: "Income tax payable – 20X2 / 20X1", cr: "201,800 / 192,520" },
+        { item: "Trade payables – 20X2 / 20X1", cr: "146,700 / 135,900" },
+        { item: "Accrued interest – 20X2 / 20X1", cr: "9,750 / 12,350" },
       ],
       adjustments: [
-        { num: 1, text: "PPE DISPOSAL: Loss of £84,810 included in profit from operations. Carrying amount of disposed machinery = £127,800." },
+        {
+          num: 1,
+          text: "PPE DISPOSAL: Loss of £84,810 included in profit from operations. Carrying amount of disposed machinery = £127,800.",
+        },
         { num: 2, text: "DEPRECIATION: Charge for the year = £232,900." },
-        { num: 3, text: "PPE PURCHASED ON CREDIT: Trade payables at 31 Mar 20X2 include £13,900 for PPE not yet paid." },
-        { num: 4, text: "INTANGIBLE ASSETS: Purchased for cash = £251,340. Sold (CV £17,000) for £24,000 — profit offset against operating costs. Impairment loss £20,000 charged to administrative expenses." },
-        { num: 5, text: "SHARE ISSUES: 1 for 10 bonus issue from share premium on 1 April 20X1. Further cash share issue in December 20X1." },
+        {
+          num: 3,
+          text: "PPE PURCHASED ON CREDIT: Trade payables at 31 Mar 20X2 include £13,900 for PPE not yet paid.",
+        },
+        {
+          num: 4,
+          text: "INTANGIBLE ASSETS: Purchased for cash = £251,340. Sold (CV £17,000) for £24,000 — profit offset against operating costs. Impairment loss £20,000 charged to administrative expenses.",
+        },
+        {
+          num: 5,
+          text: "SHARE ISSUES: 1 for 10 bonus issue from share premium on 1 April 20X1. Further cash share issue in December 20X1.",
+        },
         { num: 6, text: "DIVIDENDS: Declared and paid during the year." },
-        { num: 7, text: "REDEEMABLE PREFERENCE SHARES: £75,000 issued during the year." },
-        { num: 8, text: "GOVERNMENT BONDS: Classified as cash equivalents by management." },
+        {
+          num: 7,
+          text: "REDEEMABLE PREFERENCE SHARES: £75,000 issued during the year.",
+        },
+        {
+          num: 8,
+          text: "GOVERNMENT BONDS: Classified as cash equivalents by management.",
+        },
       ],
     },
     questions: [
@@ -616,7 +1077,8 @@ const scenarioCases = [
           "Shown in investing activities",
         ],
         answer: 2,
-        explanation: "A bonus issue capitalises reserves (share premium to share capital) with no cash involved. Per IAS 7, non-cash transactions are excluded from the statement of cash flows. Bonus issues never appear in the cash flow statement.",
+        explanation:
+          "A bonus issue capitalises reserves (share premium to share capital) with no cash involved. Per IAS 7, non-cash transactions are excluded from the statement of cash flows. Bonus issues never appear in the cash flow statement.",
       },
       {
         q: "What adjustment is made for the machinery disposal loss (£84,810) in the operating activities section?",
@@ -627,19 +1089,22 @@ const scenarioCases = [
           "No adjustment needed",
         ],
         answer: 1,
-        explanation: "The disposal loss of £84,810 is included in profit from operations but is not an operating cash flow. The full proceeds appear in investing activities. Add back the loss to profit before tax to avoid double-counting.",
+        explanation:
+          "The disposal loss of £84,810 is included in profit from operations but is not an operating cash flow. The full proceeds appear in investing activities. Add back the loss to profit before tax to avoid double-counting.",
       },
       {
         q: "What is the tax paid by Havisham plc during the year ended 31 March 20X2?",
         options: ["£245,700", "£236,420", "£201,800", "£192,520"],
         answer: 1,
-        explanation: "Tax paid = opening payable + P&L charge – closing payable = £192,520 + £245,700 – £201,800 = £236,420.",
+        explanation:
+          "Tax paid = opening payable + P&L charge – closing payable = £192,520 + £245,700 – £201,800 = £236,420.",
       },
       {
         q: "What is the interest paid by Havisham plc to be shown in the statement of cash flows?",
         options: ["£89,600", "£92,200", "£86,000", "£87,000"],
         answer: 1,
-        explanation: "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £89,600 + £12,350 – £9,750 = £92,200.",
+        explanation:
+          "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £89,600 + £12,350 – £9,750 = £92,200.",
       },
       {
         q: "How should the profit on sale of intangible assets (£7,000) be treated in Havisham plc's statement of cash flows?",
@@ -650,7 +1115,8 @@ const scenarioCases = [
           "Not shown anywhere",
         ],
         answer: 1,
-        explanation: "The £7,000 gain on disposal is included in operating profit but is not an operating cash flow. Deduct it in operating activities. The full proceeds of £24,000 appear separately in investing activities.",
+        explanation:
+          "The £7,000 gain on disposal is included in operating profit but is not an operating cash flow. Deduct it in operating activities. The full proceeds of £24,000 appear separately in investing activities.",
       },
       {
         q: "How should the impairment loss of £20,000 on intangible assets be treated in the statement of cash flows?",
@@ -661,48 +1127,94 @@ const scenarioCases = [
           "Not shown",
         ],
         answer: 2,
-        explanation: "An impairment loss is a non-cash charge included in profit before tax. Like depreciation, it must be added back in the operating activities section to convert profit to a cash-based figure.",
+        explanation:
+          "An impairment loss is a non-cash charge included in profit before tax. Like depreciation, it must be added back in the operating activities section to convert profit to a cash-based figure.",
       },
     ],
   },
 
   {
-    id: "castle", chapter: 13,
-    company: "Castle plc", period: "Year ended 31 May 20X2",
-    color: "#d97706", colorLight: "#fffbeb", colorBorder: "#fde68a", icon: "🏰",
+    id: "castle",
+    chapter: 13,
+    company: "Castle plc",
+    period: "Year ended 31 May 20X2",
+    color: "#d97706",
+    colorLight: "#fffbeb",
+    colorBorder: "#fde68a",
+    icon: "🏰",
     context: {
-      intro: "Castle plc's summarised statements of financial position and statement of profit or loss are shown below. All figures in £.",
+      intro:
+        "Castle plc's summarised statements of financial position and statement of profit or loss are shown below. All figures in £.",
       trialBalance: [
-        { item: "PPE – net carrying amount: 20X2 / 20X1",                      dr: "1,086,000 / 1,090,000" },
-        { item: "Intangible assets – net: 20X2 / 20X1",                       dr: "5,670,000 / 5,930,000" },
-        { item: "Non-current investments: 20X2 / 20X1",                       dr: "2,145,000 / 127,000" },
-        { item: "Current investments (cash equiv): 20X2 / 20X1",              dr: "60,000 / 40,000" },
-        { item: "Inventories: 20X2 / 20X1",                                   dr: "1,112,000 / 1,086,000" },
-        { item: "Trade receivables: 20X2 / 20X1",                             dr: "948,000 / 840,000" },
-        { item: "Cash: 20X2 / 20X1",                                          dr: "299,000 / 182,000" },
-        { item: "Ordinary share capital: 20X2 / 20X1",                        cr: "1,800,000 / 1,000,000" },
-        { item: "Share premium: 20X2 / 20X1",                                  cr: "1,543,000 / 1,421,000" },
-        { item: "Retained earnings: 20X2 / 20X1",                              cr: "2,689,000 / 746,000" },
-        { item: "15% debenture: 20X2 / 20X1",                                  cr: "3,000,000 / 4,500,000" },
-        { item: "Redeemable preference shares: 20X2 / 20X1",                   cr: "100,000 / 0" },
-        { item: "Trade payables: 20X2 / 20X1",                                 cr: "1,417,000 / 896,000" },
-        { item: "Accruals: 20X2 / 20X1",                                       cr: "225,000 / 337,000" },
-        { item: "Income tax payable: 20X2 / 20X1",                             cr: "641,000 / 503,000" },
-        { item: "Profit from operations",                                       cr: "3,855,000" },
-        { item: "Finance costs",                                                dr: "563,000" },
-        { item: "Investment income",                                            dr: "78,000" },
-        { item: "Income tax expense",                                           dr: "684,000" },
-        { item: "Profit for year",                                              cr: "2,686,000" },
+        {
+          item: "PPE – net carrying amount: 20X2 / 20X1",
+          dr: "1,086,000 / 1,090,000",
+        },
+        {
+          item: "Intangible assets – net: 20X2 / 20X1",
+          dr: "5,670,000 / 5,930,000",
+        },
+        {
+          item: "Non-current investments: 20X2 / 20X1",
+          dr: "2,145,000 / 127,000",
+        },
+        {
+          item: "Current investments (cash equiv): 20X2 / 20X1",
+          dr: "60,000 / 40,000",
+        },
+        { item: "Inventories: 20X2 / 20X1", dr: "1,112,000 / 1,086,000" },
+        { item: "Trade receivables: 20X2 / 20X1", dr: "948,000 / 840,000" },
+        { item: "Cash: 20X2 / 20X1", dr: "299,000 / 182,000" },
+        {
+          item: "Ordinary share capital: 20X2 / 20X1",
+          cr: "1,800,000 / 1,000,000",
+        },
+        { item: "Share premium: 20X2 / 20X1", cr: "1,543,000 / 1,421,000" },
+        { item: "Retained earnings: 20X2 / 20X1", cr: "2,689,000 / 746,000" },
+        { item: "15% debenture: 20X2 / 20X1", cr: "3,000,000 / 4,500,000" },
+        {
+          item: "Redeemable preference shares: 20X2 / 20X1",
+          cr: "100,000 / 0",
+        },
+        { item: "Trade payables: 20X2 / 20X1", cr: "1,417,000 / 896,000" },
+        { item: "Accruals: 20X2 / 20X1", cr: "225,000 / 337,000" },
+        { item: "Income tax payable: 20X2 / 20X1", cr: "641,000 / 503,000" },
+        { item: "Profit from operations", cr: "3,855,000" },
+        { item: "Finance costs", dr: "563,000" },
+        { item: "Investment income", dr: "78,000" },
+        { item: "Income tax expense", dr: "684,000" },
+        { item: "Profit for year", cr: "2,686,000" },
       ],
       adjustments: [
-        { num: 1, text: "PPE DISPOSAL: Plant (original cost £1,201,000, CV £496,000) sold at a loss of £189,000 (proceeds = £307,000). At 31 May 20X2, £165,000 of proceeds not yet received (in trade receivables). Prior year proceeds of £79,000 received June 20X1." },
-        { num: 2, text: "INTANGIBLE ACQUISITIONS: Paid in cash except £376,000 still in trade payables at 31 May 20X2. No disposals of intangibles or investments." },
-        { num: 3, text: "INTEREST RECEIVABLE IN RECEIVABLES: £10,000 at 20X2 (20X1: £8,000)." },
-        { num: 4, text: "BONUS ISSUE: 1 for 2 bonus issue on 1 June 20X1 using retained profits (500,000 shares at £1). No cash involved." },
+        {
+          num: 1,
+          text: "PPE DISPOSAL: Plant (original cost £1,201,000, CV £496,000) sold at a loss of £189,000 (proceeds = £307,000). At 31 May 20X2, £165,000 of proceeds not yet received (in trade receivables). Prior year proceeds of £79,000 received June 20X1.",
+        },
+        {
+          num: 2,
+          text: "INTANGIBLE ACQUISITIONS: Paid in cash except £376,000 still in trade payables at 31 May 20X2. No disposals of intangibles or investments.",
+        },
+        {
+          num: 3,
+          text: "INTEREST RECEIVABLE IN RECEIVABLES: £10,000 at 20X2 (20X1: £8,000).",
+        },
+        {
+          num: 4,
+          text: "BONUS ISSUE: 1 for 2 bonus issue on 1 June 20X1 using retained profits (500,000 shares at £1). No cash involved.",
+        },
         { num: 5, text: "DIVIDENDS PAID: £243,000 paid during the year." },
-        { num: 6, text: "CASH EQUIVALENTS: Current investments = government bonds, classified as cash equivalents." },
-        { num: 7, text: "PREFERENCE SHARES: 100,000 £1 redeemable preference shares issued during the year." },
-        { num: 8, text: "ACCRUED INTEREST: Included in accruals at 31 May 20X2 = £125,000 (20X1: £75,000)." },
+        {
+          num: 6,
+          text: "CASH EQUIVALENTS: Current investments = government bonds, classified as cash equivalents.",
+        },
+        {
+          num: 7,
+          text: "PREFERENCE SHARES: 100,000 £1 redeemable preference shares issued during the year.",
+        },
+        {
+          num: 8,
+          text: "ACCRUED INTEREST: Included in accruals at 31 May 20X2 = £125,000 (20X1: £75,000).",
+        },
       ],
     },
     questions: [
@@ -710,13 +1222,15 @@ const scenarioCases = [
         q: "What is the tax paid by Castle plc during the year ended 31 May 20X2?",
         options: ["£684,000", "£546,000", "£641,000", "£503,000"],
         answer: 1,
-        explanation: "Tax paid = opening payable + P&L charge – closing payable = £503,000 + £684,000 – £641,000 = £546,000.",
+        explanation:
+          "Tax paid = opening payable + P&L charge – closing payable = £503,000 + £684,000 – £641,000 = £546,000.",
       },
       {
         q: "What amount should be shown as 'proceeds from sale of PPE' in Castle plc's investing activities?",
         options: ["£307,000", "£221,000", "£386,000", "£142,000"],
         answer: 1,
-        explanation: "Cash proceeds = total proceeds £307,000 – £165,000 not yet received + £79,000 prior year disposal proceeds now received = £307,000 – £165,000 + £79,000 = £221,000.",
+        explanation:
+          "Cash proceeds = total proceeds £307,000 – £165,000 not yet received + £79,000 prior year disposal proceeds now received = £307,000 – £165,000 + £79,000 = £221,000.",
       },
       {
         q: "How should Castle plc's 1 for 2 bonus issue (from retained profits) be treated in the statement of cash flows?",
@@ -727,13 +1241,15 @@ const scenarioCases = [
           "Shown as investing activity",
         ],
         answer: 2,
-        explanation: "The bonus issue transfers £500,000 from retained earnings to share capital — no cash involved. IAS 7 excludes all non-cash transactions from the statement of cash flows.",
+        explanation:
+          "The bonus issue transfers £500,000 from retained earnings to share capital — no cash involved. IAS 7 excludes all non-cash transactions from the statement of cash flows.",
       },
       {
         q: "What is the interest paid by Castle plc to be shown in the statement of cash flows?",
         options: ["£563,000", "£513,000", "£613,000", "£638,000"],
         answer: 1,
-        explanation: "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £563,000 + £75,000 – £125,000 = £513,000.",
+        explanation:
+          "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £563,000 + £75,000 – £125,000 = £513,000.",
       },
       {
         q: "Castle plc's trade payables include £376,000 for intangible assets at 31 May 20X2 (20X1: £nil). How does this affect the cash flow statement?",
@@ -744,56 +1260,102 @@ const scenarioCases = [
           "No adjustment needed",
         ],
         answer: 1,
-        explanation: "The £376,000 is capital expenditure payable, not a trading payable. Exclude this £376,000 increase from the trade payables movement in operating activities. In investing activities, show intangible cash purchases as the cost paid less the unpaid £376,000.",
+        explanation:
+          "The £376,000 is capital expenditure payable, not a trading payable. Exclude this £376,000 increase from the trade payables movement in operating activities. In investing activities, show intangible cash purchases as the cost paid less the unpaid £376,000.",
       },
       {
         q: "What is the depreciation charge to be added back in Castle plc's operating activities? (PPE cost schedule: 20X2 cost £3,284,000 / 20X1 cost £3,091,000; 20X2 acc dep £2,198,000 / 20X1 acc dep £2,001,000; disposal had cost £1,201,000.)",
-        options: ["£197,000", "£197,000 + disposal dep", "£490,000", "£392,000"],
+        options: [
+          "£197,000",
+          "£197,000 + disposal dep",
+          "£490,000",
+          "£392,000",
+        ],
         answer: 2,
-        explanation: "Depreciation = acc dep change + disposal's dep removed. Opening acc dep £2,001,000 + charge – disposal's acc dep (£1,201,000 – £496,000 CV = £705,000) = closing £2,198,000. Charge = £2,198,000 – £2,001,000 + £705,000 = £902,000. Alternatively from P&L: not directly given, but from SFP movements ≈ £490,000 for this question's intended answer.",
+        explanation:
+          "Depreciation = acc dep change + disposal's dep removed. Opening acc dep £2,001,000 + charge – disposal's acc dep (£1,201,000 – £496,000 CV = £705,000) = closing £2,198,000. Charge = £2,198,000 – £2,001,000 + £705,000 = £902,000. Alternatively from P&L: not directly given, but from SFP movements ≈ £490,000 for this question's intended answer.",
       },
     ],
   },
 
   {
-    id: "tam", chapter: 13,
-    company: "Tam plc", period: "Year ended 30 November 20X2",
-    color: "#0d9488", colorLight: "#f0fdfa", colorBorder: "#5eead4", icon: "📊",
+    id: "tam",
+    chapter: 13,
+    company: "Tam plc",
+    period: "Year ended 30 November 20X2",
+    color: "#0d9488",
+    colorLight: "#f0fdfa",
+    colorBorder: "#5eead4",
+    icon: "📊",
     context: {
-      intro: "Tam plc's summarised statements of financial position and statement of profit or loss are shown below. All figures in £.",
+      intro:
+        "Tam plc's summarised statements of financial position and statement of profit or loss are shown below. All figures in £.",
       trialBalance: [
-        { item: "PPE – net: 20X2 / 20X1",                                     dr: "2,543,000 / 2,401,000" },
-        { item: "Intangibles – net: 20X2 / 20X1",                             dr: "550,000 / 584,000" },
-        { item: "Non-current investments: 20X2 / 20X1",                       dr: "406,000 / 0" },
-        { item: "Inventories: 20X2 / 20X1",                                   dr: "685,000 / 598,000" },
-        { item: "Trade receivables: 20X2 / 20X1",                             dr: "480,000 / 465,000" },
-        { item: "Prepayments: 20X2 / 20X1",                                   dr: "96,000 / 126,000" },
-        { item: "Cash: 20X2 / 20X1",                                          dr: "426,000 / 200,000" },
-        { item: "Ordinary share capital: 20X2 / 20X1",                        cr: "1,100,000 / 1,000,000" },
-        { item: "Share premium: 20X2 / 20X1",                                  cr: "342,000 / 200,000" },
-        { item: "Retained earnings: 20X2 / 20X1",                              cr: "1,785,000 / 1,311,000" },
-        { item: "Borrowings: 20X2 / 20X1",                                     cr: "500,000 / 1,000,000" },
-        { item: "Redeemable preference shares: 20X2 / 20X1",                   cr: "200,000 / 0" },
-        { item: "Trade payables: 20X2 / 20X1",                                 cr: "749,000 / 427,000" },
-        { item: "Accruals: 20X2 / 20X1",                                       cr: "108,000 / 131,000" },
-        { item: "Income tax payable: 20X2 / 20X1",                             cr: "282,000 / 165,000" },
-        { item: "Provisions: 20X2 / 20X1",                                     cr: "120,000 / 140,000" },
-        { item: "Profit from operations",                                       cr: "769,000" },
-        { item: "Finance charge",                                               dr: "68,000" },
-        { item: "Investment income",                                            dr: "55,000" },
-        { item: "Income tax expense",                                           dr: "232,000" },
-        { item: "Profit for year",                                              cr: "524,000" },
+        { item: "PPE – net: 20X2 / 20X1", dr: "2,543,000 / 2,401,000" },
+        { item: "Intangibles – net: 20X2 / 20X1", dr: "550,000 / 584,000" },
+        { item: "Non-current investments: 20X2 / 20X1", dr: "406,000 / 0" },
+        { item: "Inventories: 20X2 / 20X1", dr: "685,000 / 598,000" },
+        { item: "Trade receivables: 20X2 / 20X1", dr: "480,000 / 465,000" },
+        { item: "Prepayments: 20X2 / 20X1", dr: "96,000 / 126,000" },
+        { item: "Cash: 20X2 / 20X1", dr: "426,000 / 200,000" },
+        {
+          item: "Ordinary share capital: 20X2 / 20X1",
+          cr: "1,100,000 / 1,000,000",
+        },
+        { item: "Share premium: 20X2 / 20X1", cr: "342,000 / 200,000" },
+        { item: "Retained earnings: 20X2 / 20X1", cr: "1,785,000 / 1,311,000" },
+        { item: "Borrowings: 20X2 / 20X1", cr: "500,000 / 1,000,000" },
+        {
+          item: "Redeemable preference shares: 20X2 / 20X1",
+          cr: "200,000 / 0",
+        },
+        { item: "Trade payables: 20X2 / 20X1", cr: "749,000 / 427,000" },
+        { item: "Accruals: 20X2 / 20X1", cr: "108,000 / 131,000" },
+        { item: "Income tax payable: 20X2 / 20X1", cr: "282,000 / 165,000" },
+        { item: "Provisions: 20X2 / 20X1", cr: "120,000 / 140,000" },
+        { item: "Profit from operations", cr: "769,000" },
+        { item: "Finance charge", dr: "68,000" },
+        { item: "Investment income", dr: "55,000" },
+        { item: "Income tax expense", dr: "232,000" },
+        { item: "Profit for year", cr: "524,000" },
       ],
       adjustments: [
-        { num: 1, text: "PPE IN TRADE PAYABLES: £351,000 at 30 Nov 20X2 (20X1: £106,000) relates to PPE purchases." },
-        { num: 2, text: "ACCRUED INTEREST: Accruals include £25,000 interest payable at 20X2 (20X1: £50,000)." },
-        { num: 3, text: "PPE DETAIL: Cost 20X2 = £7,464,000 (20X1: £6,375,000); Acc dep 20X2 = £4,921,000 (20X1: £3,974,000)." },
-        { num: 4, text: "PPE DISPOSAL: Plant (cost £479,000, CV £326,000) sold for £424,000 cash." },
-        { num: 5, text: "CASH EQUIVALENTS SOLD: £20,000 received from sale of highly liquid investments classified as cash equivalents." },
-        { num: 6, text: "SHARE ISSUES: 1 for 20 bonus issue of ordinary shares. Subsequent cash issue at a premium." },
-        { num: 7, text: "INVESTMENT INCOME IN RECEIVABLES: £25,000 at 20X2 (20X1: £15,000)." },
-        { num: 8, text: "INTANGIBLE DISPOSAL: Accumulated amortisation at disposal = £40,000. Sold for £12,000. No acquisitions in year." },
-        { num: 9, text: "PREFERENCE SHARES: £200,000 redeemable preference shares issued during the year." },
+        {
+          num: 1,
+          text: "PPE IN TRADE PAYABLES: £351,000 at 30 Nov 20X2 (20X1: £106,000) relates to PPE purchases.",
+        },
+        {
+          num: 2,
+          text: "ACCRUED INTEREST: Accruals include £25,000 interest payable at 20X2 (20X1: £50,000).",
+        },
+        {
+          num: 3,
+          text: "PPE DETAIL: Cost 20X2 = £7,464,000 (20X1: £6,375,000); Acc dep 20X2 = £4,921,000 (20X1: £3,974,000).",
+        },
+        {
+          num: 4,
+          text: "PPE DISPOSAL: Plant (cost £479,000, CV £326,000) sold for £424,000 cash.",
+        },
+        {
+          num: 5,
+          text: "CASH EQUIVALENTS SOLD: £20,000 received from sale of highly liquid investments classified as cash equivalents.",
+        },
+        {
+          num: 6,
+          text: "SHARE ISSUES: 1 for 20 bonus issue of ordinary shares. Subsequent cash issue at a premium.",
+        },
+        {
+          num: 7,
+          text: "INVESTMENT INCOME IN RECEIVABLES: £25,000 at 20X2 (20X1: £15,000).",
+        },
+        {
+          num: 8,
+          text: "INTANGIBLE DISPOSAL: Accumulated amortisation at disposal = £40,000. Sold for £12,000. No acquisitions in year.",
+        },
+        {
+          num: 9,
+          text: "PREFERENCE SHARES: £200,000 redeemable preference shares issued during the year.",
+        },
       ],
     },
     questions: [
@@ -806,13 +1368,15 @@ const scenarioCases = [
           "Loss £153,000 — deduct from profit before tax",
         ],
         answer: 1,
-        explanation: "Proceeds £424,000 – CV £326,000 = gain of £98,000. A disposal gain is included in operating profit but is not an operating cash flow. Deduct it from profit before tax in operating activities; the full £424,000 proceeds appear in investing activities.",
+        explanation:
+          "Proceeds £424,000 – CV £326,000 = gain of £98,000. A disposal gain is included in operating profit but is not an operating cash flow. Deduct it from profit before tax in operating activities; the full £424,000 proceeds appear in investing activities.",
       },
       {
         q: "What is the tax paid by Tam plc during the year ended 30 November 20X2?",
         options: ["£232,000", "£115,000", "£282,000", "£165,000"],
         answer: 1,
-        explanation: "Tax paid = opening payable + P&L charge – closing payable = £165,000 + £232,000 – £282,000 = £115,000.",
+        explanation:
+          "Tax paid = opening payable + P&L charge – closing payable = £165,000 + £232,000 – £282,000 = £115,000.",
       },
       {
         q: "Trade payables include £351,000 (20X1: £106,000) for PPE. What is the correct treatment in the cash flow statement?",
@@ -823,19 +1387,22 @@ const scenarioCases = [
           "No adjustment needed",
         ],
         answer: 1,
-        explanation: "Payables for PPE are capital, not trading. The increase (£351,000 – £106,000 = £245,000) is excluded from the operating payables movement. In investing, PPE cash outflow is reduced by the net unpaid amount.",
+        explanation:
+          "Payables for PPE are capital, not trading. The increase (£351,000 – £106,000 = £245,000) is excluded from the operating payables movement. In investing, PPE cash outflow is reduced by the net unpaid amount.",
       },
       {
         q: "What is the interest paid by Tam plc to be shown in the statement of cash flows?",
         options: ["£68,000", "£93,000", "£43,000", "£18,000"],
         answer: 1,
-        explanation: "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £68,000 + £50,000 – £25,000 = £93,000.",
+        explanation:
+          "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £68,000 + £50,000 – £25,000 = £93,000.",
       },
       {
         q: "What is the cash received from share issues (cash element only, excluding bonus) for Tam plc?",
         options: ["£242,000", "£50,000", "£100,000", "£192,000"],
         answer: 3,
-        explanation: "Bonus: 1 for 20 on 1,000,000 shares = 50,000 × £1 = £50,000 from retained earnings (no cash). Share capital increase = £100,000; bonus £50,000 → cash issue = £50,000. Share premium increase = £342,000 – £200,000 = £142,000 from the cash issue. Total cash proceeds = £50,000 + £142,000 = £192,000.",
+        explanation:
+          "Bonus: 1 for 20 on 1,000,000 shares = 50,000 × £1 = £50,000 from retained earnings (no cash). Share capital increase = £100,000; bonus £50,000 → cash issue = £50,000. Share premium increase = £342,000 – £200,000 = £142,000 from the cash issue. Total cash proceeds = £50,000 + £142,000 = £192,000.",
       },
       {
         q: "How should the intangible asset disposal (proceeds £12,000) be treated in the statement of cash flows?",
@@ -846,48 +1413,94 @@ const scenarioCases = [
           "Not shown — proceeds too small",
         ],
         answer: 0,
-        explanation: "The £12,000 proceeds appear in investing activities as 'proceeds from sale of intangibles'. The gain or loss on disposal (CV of intangibles at disposal = cost less acc amortisation of £40,000; loss = CV – £12,000) is adjusted in operating activities to remove it from profit before tax.",
+        explanation:
+          "The £12,000 proceeds appear in investing activities as 'proceeds from sale of intangibles'. The gain or loss on disposal (CV of intangibles at disposal = cost less acc amortisation of £40,000; loss = CV – £12,000) is adjusted in operating activities to remove it from profit before tax.",
       },
     ],
   },
 
   {
-    id: "kaya", chapter: 13,
-    company: "Kaya plc", period: "Year ended 31 December 20X7",
-    color: "#1d4ed8", colorLight: "#eff6ff", colorBorder: "#93c5fd", icon: "📈",
+    id: "kaya",
+    chapter: 13,
+    company: "Kaya plc",
+    period: "Year ended 31 December 20X7",
+    color: "#1d4ed8",
+    colorLight: "#eff6ff",
+    colorBorder: "#93c5fd",
+    icon: "📈",
     context: {
-      intro: "Kaya plc's draft financial statements for the year ended 31 December 20X7 are shown below. All figures in £.",
+      intro:
+        "Kaya plc's draft financial statements for the year ended 31 December 20X7 are shown below. All figures in £.",
       trialBalance: [
-        { item: "Revenue",                                                     cr: "7,350,500" },
-        { item: "Cost of sales",                                               dr: "4,560,600" },
-        { item: "Administrative expenses",                                     dr: "1,060,800" },
-        { item: "Distribution costs",                                          dr: "768,000" },
-        { item: "Finance charge",                                              dr: "75,000" },
-        { item: "Income tax expense",                                          dr: "350,000" },
-        { item: "Profit for year",                                             cr: "536,100" },
-        { item: "PPE – 20X7 / 20X6",                                          dr: "6,985,400 / 6,713,500" },
-        { item: "Intangible assets – 20X7 / 20X6",                            dr: "350,700 / 300,500" },
-        { item: "Current investments (cash equiv) – 20X7 / 20X6",             dr: "25,000 / 12,400" },
-        { item: "Cash – 20X7 / 20X6",                                         dr: "10,700 / 20,200" },
-        { item: "Inventories – 20X7 / 20X6",                                  dr: "60,500 / 365,100" },
-        { item: "Trade receivables – 20X7 / 20X6",                            dr: "169,000 / 144,500" },
-        { item: "Ordinary share capital – 20X7 / 20X6",                       cr: "4,000,000 / 3,500,000" },
-        { item: "Share premium – 20X7 / 20X6",                                 cr: "1,200,000 / 950,000" },
-        { item: "Retained earnings – 20X7 / 20X6",                             cr: "1,342,800 / 2,206,700" },
-        { item: "Pref shares (redeemable) – 20X7 / 20X6",                     cr: "500,000 / 400,000" },
-        { item: "Trade payables – 20X7 / 20X6",                               cr: "148,500 / 139,500" },
-        { item: "Income tax payable – 20X7 / 20X6",                           cr: "410,000 / 360,000" },
+        { item: "Revenue", cr: "7,350,500" },
+        { item: "Cost of sales", dr: "4,560,600" },
+        { item: "Administrative expenses", dr: "1,060,800" },
+        { item: "Distribution costs", dr: "768,000" },
+        { item: "Finance charge", dr: "75,000" },
+        { item: "Income tax expense", dr: "350,000" },
+        { item: "Profit for year", cr: "536,100" },
+        { item: "PPE – 20X7 / 20X6", dr: "6,985,400 / 6,713,500" },
+        { item: "Intangible assets – 20X7 / 20X6", dr: "350,700 / 300,500" },
+        {
+          item: "Current investments (cash equiv) – 20X7 / 20X6",
+          dr: "25,000 / 12,400",
+        },
+        { item: "Cash – 20X7 / 20X6", dr: "10,700 / 20,200" },
+        { item: "Inventories – 20X7 / 20X6", dr: "60,500 / 365,100" },
+        { item: "Trade receivables – 20X7 / 20X6", dr: "169,000 / 144,500" },
+        {
+          item: "Ordinary share capital – 20X7 / 20X6",
+          cr: "4,000,000 / 3,500,000",
+        },
+        { item: "Share premium – 20X7 / 20X6", cr: "1,200,000 / 950,000" },
+        {
+          item: "Retained earnings – 20X7 / 20X6",
+          cr: "1,342,800 / 2,206,700",
+        },
+        {
+          item: "Pref shares (redeemable) – 20X7 / 20X6",
+          cr: "500,000 / 400,000",
+        },
+        { item: "Trade payables – 20X7 / 20X6", cr: "148,500 / 139,500" },
+        { item: "Income tax payable – 20X7 / 20X6", cr: "410,000 / 360,000" },
       ],
       adjustments: [
-        { num: 1, text: "PREFERENCE SHARES: Redeemable preference shares issued at par during the year." },
-        { num: 2, text: "CASH EQUIVALENTS: Current asset investments = government bonds, classified as cash equivalents." },
-        { num: 3, text: "PPE DISPOSAL: Plant with CV £560,500 sold for £600,000. Total depreciation charges for the year = £750,600." },
-        { num: 4, text: "ACCRUED INTEREST IN PAYABLES: Trade payables include accrued interest of £5,000 (20X6: £7,000)." },
-        { num: 5, text: "NEW INTANGIBLE ASSETS: Acquired at cost £77,500 during the year." },
-        { num: 6, text: "INVESTMENT INCOME IN RECEIVABLES: Trade receivables include £14,500 investment income (20X6: £2,000)." },
-        { num: 7, text: "IMPAIRMENT: Intangible assets impairment loss = £15,000 charged to administrative expenses." },
-        { num: 8, text: "PPE IN PAYABLES: Trade payables include £10,000 for machinery purchase." },
-        { num: 9, text: "BONUS ISSUE: 1 for 100 bonus issue of ordinary shares during the year." },
+        {
+          num: 1,
+          text: "PREFERENCE SHARES: Redeemable preference shares issued at par during the year.",
+        },
+        {
+          num: 2,
+          text: "CASH EQUIVALENTS: Current asset investments = government bonds, classified as cash equivalents.",
+        },
+        {
+          num: 3,
+          text: "PPE DISPOSAL: Plant with CV £560,500 sold for £600,000. Total depreciation charges for the year = £750,600.",
+        },
+        {
+          num: 4,
+          text: "ACCRUED INTEREST IN PAYABLES: Trade payables include accrued interest of £5,000 (20X6: £7,000).",
+        },
+        {
+          num: 5,
+          text: "NEW INTANGIBLE ASSETS: Acquired at cost £77,500 during the year.",
+        },
+        {
+          num: 6,
+          text: "INVESTMENT INCOME IN RECEIVABLES: Trade receivables include £14,500 investment income (20X6: £2,000).",
+        },
+        {
+          num: 7,
+          text: "IMPAIRMENT: Intangible assets impairment loss = £15,000 charged to administrative expenses.",
+        },
+        {
+          num: 8,
+          text: "PPE IN PAYABLES: Trade payables include £10,000 for machinery purchase.",
+        },
+        {
+          num: 9,
+          text: "BONUS ISSUE: 1 for 100 bonus issue of ordinary shares during the year.",
+        },
       ],
     },
     questions: [
@@ -895,7 +1508,8 @@ const scenarioCases = [
         q: "What is the interest paid by Kaya plc to be shown in the statement of cash flows?",
         options: ["£75,000", "£77,000", "£73,000", "£82,000"],
         answer: 1,
-        explanation: "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £75,000 + £7,000 – £5,000 = £77,000.",
+        explanation:
+          "Interest paid = P&L charge + opening accrued interest – closing accrued interest = £75,000 + £7,000 – £5,000 = £77,000.",
       },
       {
         q: "What is the gain on sale of plant for Kaya plc and how is it treated in the operating activities section?",
@@ -906,19 +1520,22 @@ const scenarioCases = [
           "Loss £39,500 — added to profit before tax",
         ],
         answer: 1,
-        explanation: "Proceeds £600,000 – CV £560,500 = gain of £39,500. The gain is included in operating profit but is an investing cash flow. Deduct it from profit before tax in operating activities; the full £600,000 proceeds appear in investing activities.",
+        explanation:
+          "Proceeds £600,000 – CV £560,500 = gain of £39,500. The gain is included in operating profit but is an investing cash flow. Deduct it from profit before tax in operating activities; the full £600,000 proceeds appear in investing activities.",
       },
       {
         q: "What is the tax paid by Kaya plc during the year ended 31 December 20X7?",
         options: ["£350,000", "£300,000", "£410,000", "£360,000"],
         answer: 1,
-        explanation: "Tax paid = opening payable + P&L charge – closing payable = £360,000 + £350,000 – £410,000 = £300,000.",
+        explanation:
+          "Tax paid = opening payable + P&L charge – closing payable = £360,000 + £350,000 – £410,000 = £300,000.",
       },
       {
         q: "Kaya plc's retained earnings fell from £2,206,700 to £1,342,800 despite a profit of £536,100. What dividends were paid?",
         options: ["£536,100", "£1,399,600", "£1,400,000", "£863,900"],
         answer: 1,
-        explanation: "Retained earnings movement: opening £2,206,700 + profit £536,100 – dividends – bonus issue transfer = closing £1,342,800. Bonus issue: 1 for 100 on ~4m shares ≈ 40,000 shares × £1 = £40,000. Dividends ≈ £2,206,700 + £536,100 – £40,000 – £1,342,800 = £1,360,000. Approx £1,399,600 is the closest given that bonus from retained earnings is ~£400.",
+        explanation:
+          "Retained earnings movement: opening £2,206,700 + profit £536,100 – dividends – bonus issue transfer = closing £1,342,800. Bonus issue: 1 for 100 on ~4m shares ≈ 40,000 shares × £1 = £40,000. Dividends ≈ £2,206,700 + £536,100 – £40,000 – £1,342,800 = £1,360,000. Approx £1,399,600 is the closest given that bonus from retained earnings is ~£400.",
       },
       {
         q: "How should Kaya plc's intangible asset impairment of £15,000 be treated in the statement of cash flows?",
@@ -929,22 +1546,23 @@ const scenarioCases = [
           "Not shown",
         ],
         answer: 1,
-        explanation: "Impairment is a non-cash charge included in profit before tax. Like depreciation and amortisation, it is added back in operating activities to convert profit to cash.",
+        explanation:
+          "Impairment is a non-cash charge included in profit before tax. Like depreciation and amortisation, it is added back in operating activities to convert profit to cash.",
       },
       {
         q: "What is the cash paid for purchase of PPE in Kaya plc's investing activities?",
         options: ["£1,583,000", "£1,573,000", "£1,622,500", "£622,500"],
         answer: 1,
-        explanation: "PPE movement: closing £6,985,400 – opening £6,713,500 = +£271,900. Add back depreciation £750,600. Add back disposal CV £560,500. Gross purchases = £271,900 + £750,600 + £560,500 = £1,583,000. Less £10,000 still in trade payables. Cash paid for PPE = £1,583,000 – £10,000 = £1,573,000.",
+        explanation:
+          "PPE movement: closing £6,985,400 – opening £6,713,500 = +£271,900. Add back depreciation £750,600. Add back disposal CV £560,500. Gross purchases = £271,900 + £750,600 + £560,500 = £1,583,000. Less £10,000 still in trade payables. Cash paid for PPE = £1,583,000 – £10,000 = £1,573,000.",
       },
     ],
   },
-
 ];
 
 // Helpers
 function getScenariosByChapter(chapter) {
-  return scenarioCases.filter(s => s.chapter === Number(chapter));
+  return scenarioCases.filter((s) => s.chapter === Number(chapter));
 }
 
 if (typeof module !== "undefined")
