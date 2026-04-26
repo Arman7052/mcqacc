@@ -158,14 +158,42 @@
       transition: width 0.3s ease;
     }
 
+    /* MAIN LAYOUT */
+    .exam-layout {
+      display: flex;
+      min-height: calc(100vh - 64px);
+    }
+
+    .exam-main {
+      flex: 2;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exam-sidebar {
+      flex: 1;
+      max-width: 33.333%;
+      background: white;
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+
     /* DOT NAV */
     .dot-nav {
       background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 12px 24px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(5, 28px);
+      gap: 8px;
+      justify-content: center;
+      border-bottom: none;
     }
 
     .dot {
@@ -267,11 +295,23 @@
     .dot-legend {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 6px 24px 10px;
+      gap: 12px;
+      padding: 8px 16px 16px;
       background: white;
-      border-bottom: 1px solid var(--border);
       flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .sidebar-title {
+      padding: 16px 16px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+      text-align: center;
     }
 
     .legend-item {
@@ -312,9 +352,8 @@
 
     /* EXAM BODY */
     .exam-body {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 40px 24px 120px;
+      padding: 32px 24px 120px;
+      flex: 1;
     }
 
     .question-card {
@@ -489,7 +528,7 @@
       position: fixed;
       bottom: 0;
       left: 0;
-      right: 0;
+      right: 33.333%;
       background: white;
       border-top: 1px solid var(--border);
       padding: 16px 24px;
@@ -558,8 +597,6 @@
     /* RESULTS */
     #results-page {
       display: none;
-      max-width: 720px;
-      margin: 0 auto;
       padding: 60px 24px;
     }
 
@@ -793,6 +830,22 @@
     }
 
     @media (max-width: 600px) {
+      .exam-layout {
+        flex-direction: column-reverse;
+      }
+
+      .exam-sidebar {
+        max-width: 100%;
+        position: static;
+        height: auto;
+        border-left: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .bottom-nav {
+        right: 0;
+      }
+
       .question-card {
         padding: 24px 18px;
       }
@@ -838,87 +891,96 @@
     </div>
   </div>
 
-  <div class="progress-section">
-    <div class="progress-info">
-      <span>Question <span id="current-q-num">1</span> of <span id="total-q">20</span></span>
-      <span id="answered-info">0 answered</span>
-    </div>
-    <div class="progress-bar-outer">
-      <div class="progress-bar-inner" id="progress-bar" style="width:5%"></div>
-    </div>
-  </div>
-
-  <div class="dot-nav" id="dot-nav"></div>
-  <div class="dot-legend">
-    <div class="legend-item">
-      <div class="legend-dot l-current"></div> Current
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot l-answered"></div> Answered
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot l-unanswered"></div> Unanswered
-    </div>
-    <div class="legend-item">
-      <div class="legend-dot l-flagged"></div> 🚩 Flagged
-    </div>
-  </div>
-
-  <div class="exam-body" id="exam-body">
-    <div class="question-card" id="question-card">
-      <div class="question-header" style="justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <div style="display:flex; align-items:flex-start; gap:16px; flex:1;">
-          <div class="q-number" id="q-num-badge">Q1</div>
-          <div class="q-text" id="q-text">Loading question...</div>
+  <div class="exam-layout">
+    <!-- LEFT: Main content (2/3) -->
+    <div class="exam-main">
+      <div class="progress-section">
+        <div class="progress-info">
+          <span>Question <span id="current-q-num">1</span> of <span id="total-q">20</span></span>
+          <span id="answered-info">0 answered</span>
         </div>
-        <button class="flag-btn" id="flag-btn" onclick="toggleFlag()">
-          <span class="flag-label">Flag</span><span class="unflag-label">Unflag</span>
-        </button>
+        <div class="progress-bar-outer">
+          <div class="progress-bar-inner" id="progress-bar" style="width:5%"></div>
+        </div>
       </div>
-      <div class="options-list" id="options-list"></div>
-      <div class="explanation-box" id="explanation-box">
-        <div class="exp-label" id="exp-label">Explanation</div>
-        <div class="exp-text" id="exp-text"></div>
+
+      <div class="exam-body" id="exam-body">
+        <div class="question-card" id="question-card">
+          <div class="question-header" style="justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display:flex; align-items:flex-start; gap:16px; flex:1;">
+              <div class="q-number" id="q-num-badge">Q1</div>
+              <div class="q-text" id="q-text">Loading question...</div>
+            </div>
+            <button class="flag-btn" id="flag-btn" onclick="toggleFlag()">
+              <span class="flag-label">Flag</span><span class="unflag-label">Unflag</span>
+            </button>
+          </div>
+          <div class="options-list" id="options-list"></div>
+          <div class="explanation-box" id="explanation-box">
+            <div class="exp-label" id="exp-label">Explanation</div>
+            <div class="exp-text" id="exp-text"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="results-page">
+        <div class="result-card">
+          <span class="result-emoji" id="result-emoji">🎉</span>
+          <div class="result-verdict" id="result-verdict">Congratulations!</div>
+          <div class="result-score" id="result-score">–/–</div>
+          <div class="result-pct" id="result-pct">–%</div>
+          <div class="result-stats">
+            <div class="result-stat correct-stat">
+              <div class="num" id="stat-correct">–</div>
+              <div class="lbl">✓ Correct</div>
+            </div>
+            <div class="result-stat wrong-stat">
+              <div class="num" id="stat-wrong">–</div>
+              <div class="lbl">✗ Incorrect</div>
+            </div>
+            <div class="result-stat time-stat">
+              <div class="num" id="stat-time">–</div>
+              <div class="lbl">⏱ Time Used</div>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="action-btn action-retry" onclick="retryExam()">🔄 Retry This Exam</button>
+            <a href="index.html" class="action-btn action-home">🏠 All Chapters</a>
+          </div>
+        </div>
+        <div class="review-section">
+          <h2 id="review-title">📋 Answer Review</h2>
+          <div id="review-list"></div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- RIGHT: Dot Nav Sidebar (1/3) -->
+    <div class="exam-sidebar">
+      <div class="sidebar-title">Question Navigator</div>
+      <div class="dot-nav" id="dot-nav"></div>
+      <div class="dot-legend">
+        <div class="legend-item">
+          <div class="legend-dot l-current"></div> Current
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot l-answered"></div> Answered
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot l-unanswered"></div> Unanswered
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot l-flagged"></div> 🚩 Flagged
+        </div>
+      </div>
+    </div>
+  </div><!-- end exam-layout -->
 
   <div class="bottom-nav" id="bottom-nav">
     <button class="nav-btn btn-prev" id="btn-prev" onclick="navigate(-1)">← Previous</button>
     <div class="answered-count"><strong id="answered-count-nav">0</strong>/<span id="total-count-nav">20</span> answered
     </div>
     <button class="nav-btn btn-next" id="btn-next" onclick="navigate(1)">Next →</button>
-  </div>
-
-  <div id="results-page">
-    <div class="result-card">
-      <span class="result-emoji" id="result-emoji">🎉</span>
-      <div class="result-verdict" id="result-verdict">Congratulations!</div>
-      <div class="result-score" id="result-score">–/–</div>
-      <div class="result-pct" id="result-pct">–%</div>
-      <div class="result-stats">
-        <div class="result-stat correct-stat">
-          <div class="num" id="stat-correct">–</div>
-          <div class="lbl">✓ Correct</div>
-        </div>
-        <div class="result-stat wrong-stat">
-          <div class="num" id="stat-wrong">–</div>
-          <div class="lbl">✗ Incorrect</div>
-        </div>
-        <div class="result-stat time-stat">
-          <div class="num" id="stat-time">–</div>
-          <div class="lbl">⏱ Time Used</div>
-        </div>
-      </div>
-      <div class="result-actions">
-        <button class="action-btn action-retry" onclick="retryExam()">🔄 Retry This Exam</button>
-        <a href="index.html" class="action-btn action-home">🏠 All Chapters</a>
-      </div>
-    </div>
-    <div class="review-section">
-      <h2 id="review-title">📋 Answer Review</h2>
-      <div id="review-list"></div>
-    </div>
   </div>
 
   <script src="questions.js"></script>
