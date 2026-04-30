@@ -6683,6 +6683,563 @@ const questionBank = {
         answer: 1,
         explanation: "More cash generated than used.",
       },
+
+      {
+        q: "Which of the following is treated as an operating cash flow under IAS 7 (default treatment)?",
+        options: [
+          "Interest received",
+          "Dividend paid",
+          "Purchase of PPE",
+          "Issue of shares",
+        ],
+        answer: 0,
+        explanation:
+          "Under IAS 7, interest received is generally classified as operating cash flow (especially for non-financial entities) because it affects profit. However, IAS 7 allows flexibility, so it may also be classified as investing depending on policy.",
+      },
+      {
+        q: "A company acquires machinery by issuing shares. How is it reported?",
+        options: [
+          "Operating",
+          "Investing",
+          "Financing",
+          "Non-cash transaction",
+        ],
+        answer: 3,
+        explanation:
+          "Since no cash is involved, this is a non-cash investing and financing transaction. IAS 7 requires such transactions to be disclosed separately, not included in the main cash flow statement.",
+      },
+      {
+        q: "Which of the following will increase operating cash flow (indirect method)?",
+        options: [
+          "Increase in receivables",
+          "Decrease in payables",
+          "Decrease in inventory",
+          "Increase in prepaid expenses",
+        ],
+        answer: 2,
+        explanation:
+          "A decrease in inventory means goods are sold without purchasing new stock, resulting in cash inflow. Other options either reduce cash or indicate cash outflow.",
+      },
+      {
+        q: "Which item is adjusted in operating activities under indirect method?",
+        options: [
+          "Issue of shares",
+          "Depreciation",
+          "Purchase of land",
+          "Loan repayment",
+        ],
+        answer: 1,
+        explanation:
+          "Depreciation is a non-cash expense deducted in profit but not involving cash, so it must be added back in the operating section under the indirect method.",
+      },
+      {
+        q: "Which of the following is NOT included in cash flows?",
+        options: [
+          "Cash receipts",
+          "Cash payments",
+          "Depreciation",
+          "Bank overdraft (if part of cash equivalents)",
+        ],
+        answer: 2,
+        explanation:
+          "Depreciation is a non-cash expense and does not involve actual cash movement, so it is excluded from the cash flow statement.",
+      },
+      {
+        q: "A decrease in accrued expenses will:",
+        options: [
+          "Increase cash",
+          "Decrease cash",
+          "No effect",
+          "Increase profit",
+        ],
+        answer: 1,
+        explanation:
+          "A decrease in accrued expenses means the company has paid off liabilities previously recognized, resulting in a cash outflow and reduction in cash.",
+      },
+      {
+        q: "Which activity best reflects investing cash inflow?",
+        options: [
+          "Cash from customers",
+          "Sale of equipment",
+          "Issue of shares",
+          "Loan repayment",
+        ],
+        answer: 1,
+        explanation:
+          "Sale of equipment represents disposal of a non-current asset, which is an investing activity and results in cash inflow.",
+      },
+      {
+        q: "Why is profit adjusted for working capital changes?",
+        options: [
+          "To calculate tax",
+          "To remove accrual effects",
+          "To find equity",
+          "To calculate depreciation",
+        ],
+        answer: 1,
+        explanation:
+          "Profit includes accrual-based items (like receivables and payables). Adjusting for working capital changes converts accrual profit into actual cash flow.",
+      },
+      {
+        q: "Which of the following decreases operating cash flow?",
+        options: [
+          "Increase in payables",
+          "Decrease in receivables",
+          "Increase in inventory",
+          "Depreciation",
+        ],
+        answer: 2,
+        explanation:
+          "An increase in inventory means cash is used to purchase more goods, reducing available cash and lowering operating cash flow.",
+      },
+      {
+        q: "Which is an example of financing cash outflow?",
+        options: [
+          "Purchase of equipment",
+          "Dividend paid",
+          "Cash sales",
+          "Interest received",
+        ],
+        answer: 1,
+        explanation:
+          "Dividend paid represents distribution of profits to shareholders, which reduces equity and is classified as financing cash outflow.",
+      },
+      {
+        q: "Bank overdraft is included in cash equivalents when:",
+        options: [
+          "It is long-term",
+          "It is repayable on demand",
+          "It earns interest",
+          "It is secured",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 7 allows bank overdrafts to be included in cash equivalents if they are repayable on demand and form an integral part of cash management.",
+      },
+      {
+        q: "Which of the following is treated as investing activity?",
+        options: [
+          "Interest paid",
+          "Dividend received",
+          "Wages paid",
+          "Inventory purchase",
+        ],
+        answer: 1,
+        explanation:
+          "Dividend received is often classified as investing because it represents return on investments. However, IAS 7 allows flexibility depending on policy.",
+      },
+      {
+        q: "Why is gain on sale of asset deducted in operating section?",
+        options: [
+          "It is cash outflow",
+          "It is included in investing",
+          "It increases liability",
+          "It is tax adjustment",
+        ],
+        answer: 1,
+        explanation:
+          "Gain on sale is included in profit but the actual cash proceeds are shown under investing activities. To avoid double counting, the gain is deducted in operating section.",
+      },
+      {
+        q: "Which item will NOT affect cash flow?",
+        options: [
+          "Bad debts written off",
+          "Cash sales",
+          "Loan received",
+          "Asset purchase",
+        ],
+        answer: 0,
+        explanation:
+          "Bad debts written off is a non-cash accounting adjustment reducing receivables, but it does not involve any actual cash movement.",
+      },
+      {
+        q: "Which scenario results in higher operating cash flow than profit?",
+        options: [
+          "Increase in receivables",
+          "Decrease in payables",
+          "Increase in inventory",
+          "Increase in payables",
+        ],
+        answer: 3,
+        explanation:
+          "An increase in payables means expenses are recorded but not yet paid, so cash is conserved, making operating cash flow higher than profit.",
+      },
+      {
+        q: "Which is the correct classification of tax paid related to investing gain?",
+        options: ["Operating", "Investing", "Financing", "Non-cash"],
+        answer: 0,
+        explanation:
+          "IAS 7 generally classifies tax paid as operating unless it can be specifically linked to investing or financing activities, which is rare in practice.",
+      },
+      {
+        q: "Which of the following represents free cash flow conceptually?",
+        options: [
+          "Profit minus tax",
+          "Operating cash minus capital expenditure",
+          "Revenue minus expenses",
+          "Cash plus receivables",
+        ],
+        answer: 1,
+        explanation:
+          "Free cash flow represents the cash available after maintaining or expanding asset base. It is calculated as operating cash flow minus capital expenditure.",
+      },
+      {
+        q: "What is the main limitation of profit compared to cash flow?",
+        options: [
+          "Profit ignores revenue",
+          "Profit includes accruals",
+          "Profit ignores expenses",
+          "Profit is always lower",
+        ],
+        answer: 1,
+        explanation:
+          "Profit is based on accrual accounting and includes non-cash items like depreciation and credit sales, making it less reliable for assessing liquidity than cash flow.",
+      },
+      {
+        q: "Which of the following improves cash flow but not profit?",
+        options: [
+          "Cash sales",
+          "Increase in receivables",
+          "Increase in payables",
+          "Depreciation",
+        ],
+        answer: 2,
+        explanation:
+          "An increase in payables delays cash payment, improving cash flow. However, it does not affect profit since expenses are already recognized.",
+      },
+      {
+        q: "Why is cash flow statement important for auditors?",
+        options: [
+          "To check profit accuracy",
+          "To verify liquidity and going concern",
+          "To calculate tax",
+          "To measure inventory",
+        ],
+        answer: 1,
+        explanation:
+          "Auditors use cash flow statements to assess whether a company can generate enough cash to meet obligations, which is critical for evaluating going concern assumption.",
+      },
+
+      {
+        q: "Which transaction affects BOTH investing and financing sections but not operating?",
+        options: [
+          "Cash sales",
+          "Purchase of inventory",
+          "Issue of shares to buy equipment",
+          "Wages paid",
+        ],
+        answer: 2,
+        explanation:
+          "Issuing shares to acquire equipment involves financing (shares issued) and investing (asset acquired), but since no cash is exchanged, it is disclosed as a non-cash transaction outside the main statement.",
+      },
+      {
+        q: "Which adjustment is required when using indirect method?",
+        options: [
+          "Add cash sales",
+          "Deduct cash purchases",
+          "Adjust non-cash expenses",
+          "Add loan proceeds",
+        ],
+        answer: 2,
+        explanation:
+          "The indirect method adjusts profit for non-cash items such as depreciation and amortization to convert accrual-based profit into cash-based figure.",
+      },
+      {
+        q: "If receivables increase by 10,000, the effect on cash is:",
+        options: [
+          "Increase 10,000",
+          "Decrease 10,000",
+          "No effect",
+          "Increase profit",
+        ],
+        answer: 1,
+        explanation:
+          "Increase in receivables means revenue recognized but not yet received in cash, so it reduces actual cash inflow.",
+      },
+      {
+        q: "Which item is most likely classified differently by different companies?",
+        options: ["Cash sales", "Inventory purchase", "Interest paid", "Wages"],
+        answer: 2,
+        explanation:
+          "IAS 7 allows flexibility for interest paid (operating or financing). This makes it a common exam trap as classification depends on accounting policy.",
+      },
+      {
+        q: "Which situation indicates strong liquidity?",
+        options: [
+          "High profit but low cash",
+          "Low profit but high cash",
+          "Negative cash flow",
+          "High inventory",
+        ],
+        answer: 1,
+        explanation:
+          "Liquidity depends on cash, not profit. A company with strong cash inflows can meet obligations even if accounting profit is low.",
+      },
+      {
+        q: "Which is NOT adjusted in operating activities?",
+        options: [
+          "Depreciation",
+          "Increase in payables",
+          "Loan repayment",
+          "Decrease in inventory",
+        ],
+        answer: 2,
+        explanation:
+          "Loan repayment is a financing activity, not part of operating cash flow adjustments.",
+      },
+      {
+        q: "Which transaction increases cash but not revenue?",
+        options: [
+          "Cash sales",
+          "Loan received",
+          "Credit sales",
+          "Interest income",
+        ],
+        answer: 1,
+        explanation:
+          "Loan received increases cash but does not affect revenue since it creates a liability, not income.",
+      },
+      {
+        q: "Which transaction reduces profit but not cash?",
+        options: [
+          "Wages paid",
+          "Depreciation",
+          "Loan repayment",
+          "Inventory purchase",
+        ],
+        answer: 1,
+        explanation:
+          "Depreciation reduces accounting profit but has no cash impact, making it a non-cash expense.",
+      },
+      {
+        q: "Which item creates difference between profit and cash?",
+        options: ["Cash sales", "Accruals", "Cash purchase", "Loan received"],
+        answer: 1,
+        explanation:
+          "Accruals record income/expenses without cash movement, causing differences between profit and cash flow.",
+      },
+      {
+        q: "Which activity is most relevant for long-term growth?",
+        options: ["Operating", "Investing", "Financing", "Non-cash"],
+        answer: 1,
+        explanation:
+          "Investing activities show how much a company spends on assets for future growth, such as machinery and infrastructure.",
+      },
+      {
+        q: "Which is an example of operating inflow under direct method?",
+        options: [
+          "Issue of shares",
+          "Cash received from customers",
+          "Sale of land",
+          "Loan received",
+        ],
+        answer: 1,
+        explanation:
+          "Direct method lists actual operating cash flows, and customer receipts are the main operating inflow.",
+      },
+      {
+        q: "Which is NOT part of cash equivalents criteria?",
+        options: [
+          "Short-term",
+          "Highly liquid",
+          "High risk",
+          "Easily convertible",
+        ],
+        answer: 2,
+        explanation:
+          "Cash equivalents must have low risk of value change. High-risk investments cannot qualify.",
+      },
+      {
+        q: "What happens if prepaid expenses increase?",
+        options: [
+          "Cash increases",
+          "Cash decreases",
+          "Profit increases",
+          "No effect",
+        ],
+        answer: 1,
+        explanation:
+          "Increase in prepaid expenses means cash is paid in advance, reducing available cash.",
+      },
+      {
+        q: "Which activity reflects capital structure decision?",
+        options: ["Operating", "Investing", "Financing", "Working capital"],
+        answer: 2,
+        explanation:
+          "Financing activities involve decisions about equity and debt, which define capital structure.",
+      },
+      {
+        q: "Which indicates inefficient cash management?",
+        options: [
+          "High receivables",
+          "Low payables",
+          "High cash balance",
+          "Fast collection",
+        ],
+        answer: 0,
+        explanation:
+          "High receivables indicate slow collection from customers, tying up cash and reducing liquidity.",
+      },
+      {
+        q: "Which item is added back in indirect method?",
+        options: [
+          "Gain on sale",
+          "Depreciation",
+          "Cash sales",
+          "Interest received",
+        ],
+        answer: 1,
+        explanation:
+          "Depreciation is a non-cash expense, so it is added back to profit to calculate operating cash flow.",
+      },
+      {
+        q: "Which reduces operating cash flow?",
+        options: [
+          "Increase in payables",
+          "Decrease in receivables",
+          "Increase in inventory",
+          "Depreciation",
+        ],
+        answer: 2,
+        explanation:
+          "Increase in inventory uses cash to purchase goods, reducing operating cash flow.",
+      },
+      {
+        q: "Which improves cash flow but reduces profit?",
+        options: [
+          "Depreciation",
+          "Loan received",
+          "Cash sales",
+          "Increase in payables",
+        ],
+        answer: 0,
+        explanation:
+          "Depreciation lowers profit but has no cash impact, making cash flow appear stronger relative to profit.",
+      },
+      {
+        q: "Which item belongs to investing activity?",
+        options: ["Wages", "Tax paid", "Purchase of land", "Dividend paid"],
+        answer: 2,
+        explanation:
+          "Purchase of land is acquisition of a non-current asset, classified as investing activity.",
+      },
+      {
+        q: "Which item belongs to financing activity?",
+        options: [
+          "Inventory purchase",
+          "Loan repayment",
+          "Sales",
+          "Depreciation",
+        ],
+        answer: 1,
+        explanation:
+          "Loan repayment reduces borrowings, so it is a financing cash outflow.",
+      },
+      {
+        q: "Which is TRUE about indirect method?",
+        options: [
+          "Shows only cash",
+          "Starts with profit",
+          "Ignores working capital",
+          "Shows equity",
+        ],
+        answer: 1,
+        explanation:
+          "Indirect method starts with accounting profit and adjusts it to derive actual cash flow.",
+      },
+      {
+        q: "Which scenario increases cash without affecting profit?",
+        options: [
+          "Cash sales",
+          "Loan received",
+          "Depreciation",
+          "Inventory purchase",
+        ],
+        answer: 1,
+        explanation:
+          "Loan received increases cash but does not impact profit since it creates a liability.",
+      },
+      {
+        q: "Which transaction affects only balance sheet, not cash flow?",
+        options: ["Depreciation", "Cash sales", "Loan received", "Wages paid"],
+        answer: 0,
+        explanation:
+          "Depreciation reduces asset value but does not involve any cash movement.",
+      },
+      {
+        q: "Which ratio is best assessed using cash flow statement?",
+        options: ["Profit margin", "Liquidity ratio", "EPS", "ROE"],
+        answer: 1,
+        explanation:
+          "Cash flow helps assess liquidity, i.e., the ability to meet short-term obligations.",
+      },
+      {
+        q: "Which item is deducted in indirect method?",
+        options: [
+          "Loss on sale",
+          "Depreciation",
+          "Increase in payables",
+          "Gain on sale",
+        ],
+        answer: 3,
+        explanation:
+          "Gain on sale is included in profit but not operating cash flow, so it is deducted to avoid double counting.",
+      },
+      {
+        q: "Which indicates possible cash problem?",
+        options: [
+          "High operating cash",
+          "Negative operating cash",
+          "High investing cash",
+          "High financing cash",
+        ],
+        answer: 1,
+        explanation:
+          "Negative operating cash flow suggests the business cannot generate enough cash from operations, indicating liquidity risk.",
+      },
+      {
+        q: "Which item is NOT operating cash flow?",
+        options: [
+          "Cash from customers",
+          "Cash to suppliers",
+          "Tax paid",
+          "Loan received",
+        ],
+        answer: 3,
+        explanation:
+          "Loan received is financing activity, not related to core operations.",
+      },
+      {
+        q: "Which improves working capital?",
+        options: [
+          "Increase inventory",
+          "Decrease receivables",
+          "Decrease payables",
+          "Increase expenses",
+        ],
+        answer: 1,
+        explanation:
+          "Decrease in receivables means faster cash collection, improving working capital and liquidity.",
+      },
+      {
+        q: "Which is example of cash equivalent?",
+        options: [
+          "Equity shares",
+          "Long-term bonds",
+          "3-month treasury bill",
+          "Inventory",
+        ],
+        answer: 2,
+        explanation:
+          "Treasury bills with maturity ≤ 3 months are highly liquid and qualify as cash equivalents.",
+      },
+      {
+        q: "Which section shows sustainability of business?",
+        options: ["Operating", "Investing", "Financing", "Non-cash"],
+        answer: 0,
+        explanation:
+          "Operating cash flow reflects core business performance and ability to generate sustainable cash.",
+      },
     ],
   },
 };
