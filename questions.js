@@ -605,6 +605,608 @@ const questionBank = {
         explanation:
           "Faithful representation requires information to be complete (nothing omitted), neutral (free from bias) and free from error (no inaccuracies).",
       },
+
+      {
+        q: "A business paints its factory walls as part of routine maintenance. The painting also makes the factory look more attractive to potential buyers. How should this be treated?",
+        options: [
+          "Capital expenditure, as it increases the asset's value to potential buyers",
+          "Revenue expenditure, as it is routine maintenance restoring the asset to its original condition",
+          "Split: 50% capital and 50% revenue",
+          "Capital expenditure, as it improves the overall appearance of the factory",
+        ],
+        answer: 1,
+        explanation:
+          "Routine maintenance that merely restores an asset to its original working condition is revenue expenditure, regardless of any incidental benefit such as appearance. Capital expenditure requires enhancement of earning capacity beyond the original level — painting does not extend useful life or improve output.",
+      },
+      {
+        q: "Under the IASB Conceptual Framework, which of the following statements about the cost constraint is CORRECT?",
+        options: [
+          "The cost of providing information must never exceed the benefit derived from it",
+          "The cost constraint is a fundamental qualitative characteristic",
+          "Cost is a pervasive constraint that means the benefits of reporting financial information must justify the costs",
+          "The cost constraint applies only to enhancing qualitative characteristics",
+        ],
+        answer: 2,
+        explanation:
+          "Cost is a pervasive constraint, not a qualitative characteristic. The Framework acknowledges that benefits of financial reporting must justify the costs of providing it. Options A and B misclassify cost: it is not an absolute ceiling nor a qualitative characteristic.",
+      },
+      {
+        q: "A business sells goods on credit for £10,000. Under the accruals concept, when should revenue be recognised?",
+        options: [
+          "When cash is received from the customer",
+          "When the order is placed by the customer",
+          "When the goods are delivered and the performance obligation is satisfied",
+          "When the invoice is raised, regardless of delivery",
+        ],
+        answer: 2,
+        explanation:
+          "Under the accruals concept (and IFRS 15), revenue is recognised when the performance obligation is satisfied — typically on delivery of goods. Raising an invoice before delivery does not satisfy the performance obligation; recognition at cash receipt would be cash accounting, not accruals.",
+      },
+      {
+        q: "Which of the following is the CORRECT classification of the three components of faithful representation?",
+        options: [
+          "Completeness, neutrality, accuracy",
+          "Completeness, neutrality, free from error",
+          "Completeness, prudence, free from error",
+          "Reliability, neutrality, free from error",
+        ],
+        answer: 1,
+        explanation:
+          "The IASB Conceptual Framework states faithful representation requires information to be complete, neutral, and free from error. 'Accuracy' and 'reliability' are commonly confused with these terms but are not the correct Framework terminology. 'Prudence' supports neutrality but is not itself a component of faithful representation.",
+      },
+      {
+        q: "An entity borrows £500,000 at an interest rate of 6% per annum to construct a qualifying asset over 18 months. Under IAS 23, how should the £45,000 interest accrued during construction be treated?",
+        options: [
+          "Expensed immediately in the statement of profit or loss",
+          "Capitalised as part of the cost of the asset",
+          "Deferred and released over the useful life of the asset",
+          "Recognised as a financing cost only when paid",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 23 Borrowing Costs requires that borrowing costs directly attributable to the acquisition, construction, or production of a qualifying asset must be capitalised as part of the cost of that asset. A qualifying asset is one that necessarily takes a substantial period of time to be ready for use.",
+      },
+      {
+        q: "Which of the following statements about the going concern assumption is MOST accurate?",
+        options: [
+          "If going concern is in doubt, assets must be restated at liquidation values immediately",
+          "Going concern is only relevant to companies, not sole traders",
+          "Management must assess going concern; if material uncertainty exists, it must be disclosed",
+          "Going concern assumption means the entity will be in existence for at least five years",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 1 requires management to assess going concern. If material uncertainty exists, disclosure is required — but assets are not automatically restated until going concern is concluded to be inappropriate. The five-year assumption is a common misconception; the Framework uses 'foreseeable future', typically at least 12 months from the reporting date.",
+      },
+      {
+        q: "A professional accountant discovers that a client has been under-reporting VAT. The accountant does not report this to HMRC, as the client insists it was an error. Which fundamental ethical principle is MOST at risk?",
+        options: [
+          "Professional competence and due care",
+          "Objectivity",
+          "Confidentiality",
+          "Integrity",
+        ],
+        answer: 3,
+        explanation:
+          "Integrity requires professional accountants to be straightforward and honest. Knowingly allowing a client to continue filing incorrect returns — even if originally an 'error' — without taking appropriate action compromises integrity. While confidentiality may create tension, integrity takes precedence when there is a legal obligation to act.",
+      },
+      {
+        q: "Under GAAP, land is not depreciated. Which accounting concept PRIMARILY supports this treatment?",
+        options: [
+          "Prudence — land values are volatile",
+          "Historical cost — land is recorded at original cost permanently",
+          "Accruals — the cost of land is not consumed over time",
+          "Going concern — land will be held indefinitely",
+        ],
+        answer: 2,
+        explanation:
+          "Depreciation matches the cost of an asset to the periods that benefit from its use (the accruals/matching concept). Land has an indefinite useful life and is not consumed in operations, so there is nothing to spread over accounting periods. This is an application of the accruals concept, not simply going concern.",
+      },
+      {
+        q: "A company purchases a machine for £50,000. It pays £2,000 to have the machine installed and £500 for staff training on how to use it. What is the correct capitalised cost?",
+        options: [
+          "£50,000",
+          "£52,000",
+          "£52,500",
+          "£50,500",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 16 allows capitalisation of costs directly attributable to bringing an asset to working condition, including installation. However, training costs are specifically excluded by IAS 16 because they relate to employees, not the asset itself. Therefore £50,000 + £2,000 = £52,000 is capitalised; £500 training is expensed.",
+      },
+      {
+        q: "Which of the following BEST describes the difference between a rules-based and a principles-based approach to ethics?",
+        options: [
+          "Rules-based provides explicit requirements; principles-based requires judgment to apply broad guidelines",
+          "Principles-based provides explicit requirements; rules-based requires judgment",
+          "Rules-based applies only to large firms; principles-based applies to small firms",
+          "Both approaches lead to identical outcomes in practice",
+        ],
+        answer: 0,
+        explanation:
+          "A rules-based approach provides specific, prescriptive rules to follow (as in US GAAP historically). A principles-based approach (like IFRS and the IESBA Code) establishes broad principles requiring the accountant to exercise professional judgment. The ICAEW Code is principles-based.",
+      },
+      {
+        q: "The management of Triton Ltd deliberately omits a material contingent liability from the financial statements. Which qualitative characteristic is DIRECTLY violated?",
+        options: [
+          "Timeliness",
+          "Comparability",
+          "Faithful representation (completeness)",
+          "Understandability",
+        ],
+        answer: 2,
+        explanation:
+          "Faithful representation requires information to be complete — nothing material should be omitted. A deliberate omission of a material contingent liability directly violates completeness (a component of faithful representation). Timeliness and comparability are enhancing characteristics not primarily at issue here.",
+      },
+      {
+        q: "Which of the following is NOT a purpose of the IASB's Conceptual Framework?",
+        options: [
+          "To assist preparers of financial statements when no specific standard covers a transaction",
+          "To assist the IASB in developing consistent accounting standards",
+          "To override IFRS standards where conflict arises",
+          "To assist auditors in forming opinions on financial statements",
+        ],
+        answer: 2,
+        explanation:
+          "The Conceptual Framework explicitly states it is NOT an IFRS standard — it does not override any IFRS. Where conflict exists between the Framework and an IFRS, the IFRS standard prevails. The other options are legitimate purposes of the Framework.",
+      },
+      {
+        q: "A sole trader's drawings for the year were £15,000. How does this affect the accounting equation?",
+        options: [
+          "Liabilities increase by £15,000; assets decrease by £15,000",
+          "Capital decreases by £15,000; assets decrease by £15,000",
+          "Expenses increase by £15,000; assets decrease by £15,000",
+          "Capital decreases by £15,000; liabilities increase by £15,000",
+        ],
+        answer: 1,
+        explanation:
+          "Drawings represent a withdrawal of capital by the owner — they are NOT an expense of the business. The double entry is Debit Drawings (reducing capital) and Credit Cash/Bank (reducing assets), so the accounting equation remains balanced: assets and capital both fall by £15,000.",
+      },
+      {
+        q: "Which of the following statements about materiality is INCORRECT?",
+        options: [
+          "An item is material if its omission or misstatement could influence users' economic decisions",
+          "Materiality is assessed by reference to both size and nature of the item",
+          "Immaterial items can always be omitted from disclosures without any consequence",
+          "Materiality thresholds can vary between entities based on their size and circumstances",
+        ],
+        answer: 2,
+        explanation:
+          "Option C is incorrect because even immaterial items may be required by specific IFRS disclosures, and their omission could still mislead. Materiality is not an absolute exemption from all disclosures. Options A, B, and D are all correct statements about materiality.",
+      },
+      {
+        q: "A new IFRS is issued requiring companies to recognise a new type of liability. The Conceptual Framework definition of a liability requires:",
+        options: [
+          "A present obligation arising from a past event, expected to result in an outflow of economic benefits",
+          "A probable future obligation arising from a current event",
+          "Any amount owed to a third party at the reporting date",
+          "A legal obligation confirmed by contract or legislation",
+        ],
+        answer: 0,
+        explanation:
+          "The Conceptual Framework defines a liability as a present obligation of the entity arising from past events, the settlement of which is expected to result in an outflow of resources embodying economic benefits. It does not need to be a legal obligation — constructive obligations also qualify.",
+      },
+      {
+        q: "Verifiability as an enhancing qualitative characteristic means that:",
+        options: [
+          "Financial information can be confirmed as accurate by management",
+          "Different knowledgeable and independent observers could reach consensus that the depiction is faithful",
+          "Financial information can be verified by auditors to be free from fraud",
+          "The same accounting treatment is applied consistently from period to period",
+        ],
+        answer: 1,
+        explanation:
+          "Verifiability (per the Conceptual Framework) means different knowledgeable, independent observers can reach general consensus that information faithfully represents what it purports to represent. This is different from audit verification (which checks accuracy) and consistency (which is comparability).",
+      },
+      {
+        q: "Which of the following would lead to a self-review threat to objectivity for a professional accountant in public practice?",
+        options: [
+          "Receiving a gift from a client worth £50",
+          "Being asked to audit financial statements that the same firm helped to prepare",
+          "Disagreeing with a manager about an accounting treatment",
+          "Providing tax advice to a long-standing client",
+        ],
+        answer: 1,
+        explanation:
+          "A self-review threat occurs when an accountant is required to evaluate their own previous work. Auditing financial statements that the same firm prepared creates a situation where the auditor reviews their own output, threatening objectivity. Gifts below modest thresholds and tax advice are generally managed by other safeguards.",
+      },
+      {
+        q: "Which of the following combinations correctly identifies the TWO fundamental qualitative characteristics under the IASB Conceptual Framework?",
+        options: [
+          "Comparability and verifiability",
+          "Relevance and faithful representation",
+          "Relevance and understandability",
+          "Timeliness and faithful representation",
+        ],
+        answer: 1,
+        explanation:
+          "The IASB Conceptual Framework identifies relevance and faithful representation as the two fundamental qualitative characteristics. Comparability, verifiability, timeliness, and understandability are the four enhancing qualitative characteristics. This distinction is a common exam trap.",
+      },
+      {
+        q: "A company pays £60,000 for a three-year software licence. Which statement about its treatment is CORRECT?",
+        options: [
+          "Revenue expenditure; all £60,000 expensed immediately",
+          "Capital expenditure; depreciated over three years",
+          "Capital expenditure; expensed immediately as it is not a physical asset",
+          "Revenue expenditure; spread evenly over three years as a prepayment",
+        ],
+        answer: 1,
+        explanation:
+          "A multi-year software licence provides economic benefits over more than one accounting period, qualifying as capital expenditure (an intangible asset under IAS 38). It should be amortised over its useful life of three years. Spreading it as a prepayment misclassifies it as a current asset rather than a non-current intangible.",
+      },
+      {
+        q: "Neutral financial information, as defined in the IASB Conceptual Framework, means information that:",
+        options: [
+          "Presents a middle ground between optimistic and pessimistic forecasts",
+          "Is without bias in selection or presentation and does not influence decisions in a predetermined direction",
+          "Is prepared by an independent third party with no connection to the entity",
+          "Does not include any judgments or estimates by management",
+        ],
+        answer: 1,
+        explanation:
+          "Neutrality means financial information is free from bias — it does not slant the presentation to achieve a predetermined result or influence users in a particular direction. Neutrality does not mean avoiding judgment; estimates can still be neutral if they are unbiased.",
+      },
+      {
+        q: "An accountant notices a significant error in the financial statements but is asked by management not to correct it as 'it is not material'. The accountant believes it is material. Which ethical principle is MOST threatened if the accountant complies?",
+        options: [
+          "Professional competence and due care",
+          "Confidentiality",
+          "Integrity",
+          "Professional behaviour",
+        ],
+        answer: 2,
+        explanation:
+          "Integrity requires accountants to be straightforward and honest, even when under pressure from management. Allowing a known material error to remain in financial statements to satisfy management is dishonest and directly violates integrity. Professional behaviour is also relevant, but integrity is the primary principle at stake.",
+      },
+      {
+        q: "Which of the following transactions increases both assets and liabilities?",
+        options: [
+          "Owner introduces capital of £10,000 cash",
+          "A business buys inventory for cash",
+          "A business purchases a van on credit",
+          "A business pays off a supplier",
+        ],
+        answer: 2,
+        explanation:
+          "Buying a van on credit: Dr Van (asset increases) Cr Payables (liability increases). Owner introducing capital: Dr Cash (asset), Cr Capital (equity not liability). Buying inventory for cash: Dr Inventory, Cr Cash (assets swap, no change in total). Paying a supplier: Dr Payables, Cr Cash (both sides reduce).",
+      },
+      {
+        q: "Which of the following BEST describes the objective of general purpose financial reporting as stated in the IASB Conceptual Framework?",
+        options: [
+          "To ensure all entities pay the correct amount of tax",
+          "To provide financial information useful to existing and potential investors, lenders and other creditors in making decisions about providing resources to the entity",
+          "To provide information on management performance to shareholders only",
+          "To ensure that all financial transactions are recorded accurately in ledger accounts",
+        ],
+        answer: 1,
+        explanation:
+          "The objective of general purpose financial reporting (GPFR) per the Conceptual Framework is to provide financial information useful to existing and potential investors, lenders, and other creditors for resource allocation decisions. It does not focus solely on shareholders or management performance, nor does it relate to tax compliance.",
+      },
+      {
+        q: "Which of the following costs should be EXCLUDED from the initial measurement of property, plant and equipment under IAS 16?",
+        options: [
+          "Import duties on a machine purchased from overseas",
+          "Cost of site preparation directly attributable to the asset",
+          "Administration and general overhead costs",
+          "Estimated costs of dismantling the asset at the end of its useful life",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 16 specifically excludes general administrative and overhead costs from the capitalised cost of PPE. Import duties, directly attributable site preparation, and decommissioning costs (IAS 37 provision) are all permitted inclusions in cost. This is a favourite exam trap question.",
+      },
+      {
+        q: "A business has total assets of £200,000, total liabilities of £80,000 and owner's capital of £120,000. The owner introduces £30,000 additional cash. Which answer CORRECTLY states the new balances?",
+        options: [
+          "Assets £230,000; liabilities £80,000; capital £150,000",
+          "Assets £230,000; liabilities £110,000; capital £120,000",
+          "Assets £200,000; liabilities £80,000; capital £120,000 (no change)",
+          "Assets £230,000; liabilities £80,000; capital £120,000",
+        ],
+        answer: 0,
+        explanation:
+          "Introducing capital: Dr Cash (assets +£30,000) Cr Capital (equity +£30,000). Liabilities remain unchanged. New totals: Assets £230,000; Liabilities £80,000; Capital £150,000. Option D is a trap — it increases assets without increasing capital.",
+      },
+      {
+        q: "The accruals concept states that:",
+        options: [
+          "Expenses should be recognised only when cash is paid",
+          "Income and expenditure should be recognised in the period to which they relate, regardless of when cash is received or paid",
+          "Assets should be recognised only when the purchase price is fully paid",
+          "Revenue should be deferred until all legal conditions are met",
+        ],
+        answer: 1,
+        explanation:
+          "The accruals (or matching) concept requires income and expenses to be matched to the period in which they are earned or incurred, not when cash changes hands. This is a cornerstone of financial accounting and distinguishes it from cash-basis accounting.",
+      },
+      {
+        q: "A client asks their accountant to backdate a journal entry to avoid showing a loss in the current financial year. Which TWO ethical principles does this MOST directly violate?",
+        options: [
+          "Integrity and professional competence",
+          "Integrity and objectivity",
+          "Confidentiality and professional behaviour",
+          "Professional behaviour and professional competence",
+        ],
+        answer: 1,
+        explanation:
+          "Backdating journal entries is dishonest, violating integrity (being straightforward and honest). It also compromises objectivity (allowing the client's interests to bias professional judgment). Competence and confidentiality are not the primary principles at risk in this scenario.",
+      },
+      {
+        q: "Which of the following items would be classified as revenue expenditure?",
+        options: [
+          "Cost of a new factory building",
+          "Legal costs of purchasing land",
+          "Annual service and maintenance of a machine",
+          "Installation of a new assembly line",
+        ],
+        answer: 2,
+        explanation:
+          "Annual maintenance is revenue expenditure as it maintains the asset in its current working condition without extending its life or improving its earning capacity. The other options all involve acquiring or improving non-current assets, making them capital expenditure.",
+      },
+      {
+        q: "Which concept would PRIMARILY prevent a business from recording its owner's personal car as a business asset?",
+        options: [
+          "Going concern",
+          "Historical cost",
+          "Business entity",
+          "Consistency",
+        ],
+        answer: 2,
+        explanation:
+          "The business entity concept treats the business as separate from its owner(s). Personal assets of the owner cannot be recorded as business assets. Going concern and historical cost are unrelated to this principle.",
+      },
+      {
+        q: "Financial statements are intended to be used by a wide range of users. Which of the following is NOT identified as a primary user group under the IASB Conceptual Framework?",
+        options: [
+          "Existing investors",
+          "Potential lenders",
+          "Government regulators",
+          "Existing creditors",
+        ],
+        answer: 2,
+        explanation:
+          "The IASB Conceptual Framework identifies existing and potential investors, lenders, and other creditors as the primary user group. Government regulators, employees, and the public are acknowledged as having interests in financial information but are not designated as primary users.",
+      },
+      {
+        q: "A company spends £15,000 extending its factory and £3,000 repairing a leaking roof. How should these be treated?",
+        options: [
+          "Both capital expenditure",
+          "Both revenue expenditure",
+          "Extension: capital; repair: revenue",
+          "Extension: revenue; repair: capital",
+        ],
+        answer: 2,
+        explanation:
+          "An extension to a factory improves its earning capacity and adds economic value beyond the original asset — this is capital expenditure. Repairing a leaking roof restores the asset to its original condition without improving it — this is revenue expenditure. The distinction turns on improvement vs. maintenance.",
+      },
+      {
+        q: "Which of the following transactions would be recorded in the books of a sole trader as BOTH a debit and a credit to asset accounts?",
+        options: [
+          "Purchasing inventory on credit",
+          "Paying a trade payable by cheque",
+          "Receiving cash from a credit customer",
+          "The owner withdrawing cash for personal use",
+        ],
+        answer: 2,
+        explanation:
+          "Receiving cash from a credit customer: Dr Bank (asset increases) Cr Trade Receivables (asset decreases) — both entries are to asset accounts. Purchasing on credit: Dr Inventory (asset), Cr Payables (liability). Paying a payable: Dr Payables (liability), Cr Bank (asset). Drawings: Dr Drawings (capital), Cr Bank (asset).",
+      },
+      {
+        q: "Which qualitative characteristic is MOST compromised when a company presents its pension obligation using assumptions that consistently understate the liability?",
+        options: [
+          "Timeliness",
+          "Comparability",
+          "Neutrality",
+          "Understandability",
+        ],
+        answer: 2,
+        explanation:
+          "Consistently understating a liability through biased assumptions violates neutrality — information is being skewed to achieve a preferred outcome (a lower liability). Faithful representation requires neutral presentation, and biased estimates directly undermine this.",
+      },
+      {
+        q: "Which of the following CORRECTLY describes the term 'asset' as defined in the IASB Conceptual Framework?",
+        options: [
+          "A resource owned by the entity with a positive fair value",
+          "A present economic resource controlled by the entity as a result of past events",
+          "Any item recorded on the debit side of the statement of financial position",
+          "A tangible item purchased by the entity for use in operations",
+        ],
+        answer: 1,
+        explanation:
+          "The IASB Conceptual Framework (2018 revision) defines an asset as a present economic resource controlled by the entity as a result of past events. Control (not legal ownership) is the key concept, and assets need not be tangible — intangible assets such as patents also qualify.",
+      },
+      {
+        q: "A business fails to accrue £5,000 of electricity expense at year-end. What is the effect on the financial statements?",
+        options: [
+          "Profit overstated; liabilities understated",
+          "Profit understated; liabilities overstated",
+          "Profit overstated; assets understated",
+          "Profit understated; assets overstated",
+        ],
+        answer: 0,
+        explanation:
+          "Failing to accrue an expense means the expense is not recorded, overstating profit. The liability (accrual) is also missing, understating current liabilities. This is a classic accruals-error question — always remember: missing accrual → profit too high, liabilities too low.",
+      },
+      {
+        q: "The IESBA Code of Ethics is described as principles-based because it:",
+        options: [
+          "Only applies to ICAEW members",
+          "Contains a list of specific rules that members must comply with",
+          "Provides a conceptual framework requiring accountants to apply judgment to identify and manage threats",
+          "Prohibits all actions that could possibly compromise independence",
+        ],
+        answer: 2,
+        explanation:
+          "The IESBA Code is principles-based: it provides a framework of fundamental principles and a conceptual approach for identifying, evaluating, and addressing threats to compliance. It does not list every possible prohibited action but relies on professional judgment, unlike a rules-based approach.",
+      },
+      {
+        q: "An entity incurs £20,000 of research costs and £30,000 of development costs that meet the IAS 38 capitalisation criteria. Which treatment is CORRECT?",
+        options: [
+          "Both expensed immediately",
+          "Both capitalised as intangible assets",
+          "Research expensed; development capitalised",
+          "Research capitalised; development expensed",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 38 requires all research costs to be expensed as incurred because the outcome is uncertain. Development costs that meet six specific criteria (technical feasibility, intention to complete, ability to use/sell, etc.) can be capitalised. This distinction is a frequent exam trap.",
+      },
+      {
+        q: "The consistency concept requires that:",
+        options: [
+          "All entities in the same industry use the same accounting policies",
+          "An entity does not change its accounting policies from period to period without justification",
+          "Financial statements are prepared consistently with international standards",
+          "Expenses are consistently matched to revenues in the same period",
+        ],
+        answer: 1,
+        explanation:
+          "The consistency concept requires an entity to apply the same accounting policies from one period to the next, enabling comparability over time. Policies can be changed when required by a new IFRS or when a change provides more reliable information. It does not require uniformity across different entities.",
+      },
+      {
+        q: "Which of the following is an example of a familiarity threat to a professional accountant's independence?",
+        options: [
+          "Being offered shares in a client company",
+          "Reviewing work performed by a close personal friend who works at the client",
+          "Being threatened with litigation by a client over professional advice",
+          "Providing both audit and tax services to the same client",
+        ],
+        answer: 1,
+        explanation:
+          "A familiarity threat arises when an accountant becomes too sympathetic to a client's interests due to close relationships. Reviewing work by a close friend impairs objectivity. Being offered shares is a self-interest threat; litigation is an intimidation threat; dual services create a self-review threat.",
+      },
+      {
+        q: "A company's draft profit for the year is £100,000. It is discovered that £8,000 of revenue expenditure was incorrectly capitalised. What is the correct profit?",
+        options: [
+          "£108,000",
+          "£92,000",
+          "£100,000 (no change — the asset is still on the balance sheet)",
+          "£84,000",
+        ],
+        answer: 1,
+        explanation:
+          "If £8,000 of revenue expenditure was incorrectly capitalised, the expense was not charged in the P&L, so profit is overstated by £8,000. The correct profit is £100,000 − £8,000 = £92,000. (Note: any depreciation on the wrongly capitalised amount would partially offset this, but absent that information, the full £8,000 must be expensed.)",
+      },
+      {
+        q: "Which of the following BEST explains why financial statements are prepared on the historical cost basis rather than current value?",
+        options: [
+          "Historical cost is always more relevant than current value",
+          "Historical cost is verifiable and objective, reducing the scope for manipulation",
+          "Current value is prohibited by IFRS in all circumstances",
+          "Historical cost better reflects the going concern of the business",
+        ],
+        answer: 1,
+        explanation:
+          "Historical cost is favoured for its verifiability and objectivity — it is based on actual transaction prices that can be independently confirmed. Current value, while often more relevant, involves estimates and judgment that can be manipulated. IFRS does permit current value (e.g., IAS 40 fair value model for investment property), so Option C is incorrect.",
+      },
+      {
+        q: "In the context of the IASB Conceptual Framework, what is the definition of 'equity'?",
+        options: [
+          "The net assets of the entity after deducting all long-term liabilities",
+          "The residual interest in the assets of the entity after deducting all its liabilities",
+          "The total capital contributed by owners plus retained earnings",
+          "The market value of the entity's shares",
+        ],
+        answer: 1,
+        explanation:
+          "Equity is defined as the residual interest in the assets of the entity after deducting all liabilities (Assets − Liabilities = Equity). It is a residual, not a fixed amount. While retained earnings form part of equity, Option C is not the Framework's definition; Option A incorrectly limits the deduction to long-term liabilities.",
+      },
+      {
+        q: "Which of the following statements about the IASB is CORRECT?",
+        options: [
+          "The IASB is a UK government body responsible for setting UK accounting standards",
+          "The IASB issues International Financial Reporting Standards which are legally enforceable in all countries",
+          "The IASB is an independent standard-setting body that develops IFRS for global use, but adoption by individual countries is voluntary",
+          "The IASB replaced the FASB as the global accounting standard setter in 2001",
+        ],
+        answer: 2,
+        explanation:
+          "The IASB is an independent body that develops IFRS. However, adoption is decided by individual jurisdictions — it is not automatic or legally enforceable globally. The FASB still exists as the US standard setter; the IASB did not replace it. The IASB is not a UK government body.",
+      },
+      {
+        q: "A professional accountant preparing tax returns discovers information suggesting the client may be committing fraud. Under the IESBA Code, the accountant should FIRST:",
+        options: [
+          "Immediately report the matter to the relevant authority without informing the client",
+          "Discuss the matter with the client and, if not resolved, consider withdrawing from the engagement",
+          "Ignore it as the preparation of tax returns does not require consideration of fraud",
+          "Disclose to the client's bank as a precautionary measure",
+        ],
+        answer: 1,
+        explanation:
+          "The IESBA Code requires a professional accountant to raise concerns internally (with management or those charged with governance) before taking further action. If the issue is not resolved, the accountant should consider withdrawing from the engagement and, where laws permit, reporting to authorities. Immediate external disclosure without first raising with management is generally not the first step.",
+      },
+      {
+        q: "Under IAS 1, which of the following is NOT a required component of a complete set of financial statements?",
+        options: [
+          "Statement of financial position",
+          "Statement of profit or loss and other comprehensive income",
+          "Statement of directors' remuneration",
+          "Notes to the financial statements",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 1 requires: statement of financial position, statement of P&L and OCI, statement of changes in equity, statement of cash flows, and notes. A statement of directors' remuneration is a corporate governance disclosure (required by UK company law and the Companies Act for quoted companies) but is NOT part of the IAS 1 complete set.",
+      },
+      {
+        q: "Timeliness as an enhancing qualitative characteristic means that:",
+        options: [
+          "Financial statements must be filed within 30 days of the year end",
+          "Information is available to decision-makers before it loses its capacity to influence decisions",
+          "Financial information must be updated every quarter",
+          "Management accounts must be prepared monthly",
+        ],
+        answer: 1,
+        explanation:
+          "Timeliness means providing information in time for it to be capable of influencing decisions. The Framework does not specify a particular deadline (30 days or monthly); the appropriate timing depends on the information's relevance. Old information, even if accurate, may lose its value if provided too late.",
+      },
+      {
+        q: "Which of the following statements about the prudence concept is CORRECT under the revised IASB Conceptual Framework (2018)?",
+        options: [
+          "Prudence requires deliberate understatement of assets and overstatement of liabilities",
+          "Prudence has been removed entirely from the revised Conceptual Framework",
+          "Prudence, as caution under uncertainty, supports neutrality and is included in the 2018 Framework",
+          "Prudence takes precedence over neutrality when there is conflict between them",
+        ],
+        answer: 2,
+        explanation:
+          "The 2018 Conceptual Framework re-introduced prudence as caution in exercising judgment under uncertainty, supporting neutrality. It does NOT mean deliberate understatement (which would violate neutrality). Prudence was controversially removed in the 2010 Framework but restored in 2018 — a common exam area.",
+      },
+      {
+        q: "A business spends £2,000 replacing broken windows in its factory with standard glass and £5,000 replacing standard windows with high-specification soundproofed glass. How should these costs be classified?",
+        options: [
+          "Both revenue expenditure",
+          "Both capital expenditure",
+          "£2,000 revenue; £5,000 capital",
+          "£2,000 capital; £5,000 revenue",
+        ],
+        answer: 2,
+        explanation:
+          "Replacing broken windows with equivalent glass is restoring the asset to its original condition — revenue expenditure. Replacing standard windows with superior soundproofed glass improves the asset's earning capacity beyond its original state — capital expenditure. The key test is whether the work improves beyond the original specification.",
+      },
+      {
+        q: "Which of the following is an example of a liability as defined by the IASB Conceptual Framework?",
+        options: [
+          "A contingent asset where inflow is probable",
+          "A provision for a legal claim that is probable and can be reliably estimated",
+          "Share capital issued by the entity",
+          "Proposed dividends not yet declared",
+        ],
+        answer: 1,
+        explanation:
+          "A probable legal claim that can be reliably estimated meets the definition and recognition criteria of a liability (IAS 37). Contingent assets are not liabilities; share capital is equity; proposed but not yet declared dividends do not create a present obligation (IAS 10).",
+      },
+      {
+        q: "Which of the following CORRECTLY identifies an intimidation threat to a professional accountant?",
+        options: [
+          "Being asked to audit work prepared by a colleague in the same firm",
+          "Having a financial interest in a client's business",
+          "A client threatening to remove the accountant if they do not agree to a favourable accounting treatment",
+          "Providing advice in an area outside the accountant's expertise",
+        ],
+        answer: 2,
+        explanation:
+          "An intimidation threat arises when an accountant is deterred from acting objectively by actual or perceived threats. A client threatening to remove the accountant unless a favourable treatment is adopted is a classic intimidation threat. Self-review, self-interest, and competence threats correspond to the other options respectively.",
+      },
+
     ],
   },
 
@@ -1167,6 +1769,7 @@ const questionBank = {
         explanation:
           "Closing capital = £30,000 + £12,000 + £5,000 – £7,000 = £40,000.",
       },
+      
     ],
   },
 
