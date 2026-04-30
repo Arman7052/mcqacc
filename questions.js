@@ -5784,6 +5784,406 @@ const questionBank = {
         explanation:
           "Dividend is a distribution of profit. It is not treated as an expense. It reduces retained earnings.",
       },
+
+      {
+        q: "A company issues 10,000 shares of 50p at £1 each. What is share premium?",
+        options: ["£5,000", "£10,000", "£15,000", "£20,000"],
+        answer: 0,
+        explanation:
+          "Nominal value per share = £0.50, issue price = £1. Premium per share = £0.50. Total premium = 10,000 × 0.50 = £5,000. Only excess over nominal is recorded as share premium.",
+      },
+      {
+        q: "If dividend is declared but not yet paid, it is:",
+        options: ["Expense", "Liability", "Equity", "Asset"],
+        answer: 1,
+        explanation:
+          "Once declared, dividend becomes a legal obligation. It is shown as a current liability until paid. It is not an expense because it is an appropriation of profit.",
+      },
+      {
+        q: "Which transaction does NOT change total equity?",
+        options: [
+          "Profit earned",
+          "Dividend paid",
+          "Bonus issue",
+          "Rights issue",
+        ],
+        answer: 2,
+        explanation:
+          "Bonus issue transfers reserves to share capital. Total equity remains same, only composition changes. Others either increase or decrease equity.",
+      },
+      {
+        q: "If revenue is recognized before control transfer:",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Assets understated",
+        ],
+        answer: 0,
+        explanation:
+          "Revenue should only be recognized when control passes. Early recognition inflates income, leading to overstated profit and possibly overstated receivables.",
+      },
+      {
+        q: "Rights issue at discount leads to:",
+        options: ["Loss", "Increase equity", "Decrease assets", "No effect"],
+        answer: 1,
+        explanation:
+          "Even if issued at discount to market value, shares still bring in cash. Equity increases by share capital + premium received. No accounting loss is recognized.",
+      },
+      {
+        q: "Provision differs from accrual because:",
+        options: [
+          "Provision is asset",
+          "Provision uncertain",
+          "Accrual uncertain",
+          "No difference",
+        ],
+        answer: 1,
+        explanation:
+          "Provisions involve uncertainty in amount or timing (e.g., warranty). Accruals are certain obligations but unpaid. This distinction is key under IAS 37.",
+      },
+      {
+        q: "Deferred tax liability arises when:",
+        options: [
+          "Tax > accounting profit",
+          "Tax < accounting profit",
+          "Cash paid",
+          "Revenue recognized",
+        ],
+        answer: 1,
+        explanation:
+          "If accounting profit is higher than taxable profit due to timing differences, tax will be paid later. This creates a deferred tax liability.",
+      },
+      {
+        q: "If dividend is paid from capital:",
+        options: ["Allowed", "Illegal", "Expense", "Income"],
+        answer: 1,
+        explanation:
+          "Dividends must be paid from distributable profits. Paying from capital reduces shareholder protection and is generally not allowed.",
+      },
+      {
+        q: "Share capital is:",
+        options: ["Variable", "Fixed nominal value", "Expense", "Liability"],
+        answer: 1,
+        explanation:
+          "Share capital is recorded at nominal value. It remains fixed unless new shares are issued or reduced. It is part of equity, not liability.",
+      },
+      {
+        q: "If control transfers over time:",
+        options: [
+          "Revenue at end",
+          "Revenue gradually",
+          "No revenue",
+          "Cash basis",
+        ],
+        answer: 1,
+        explanation:
+          "IFRS 15 allows revenue recognition over time if performance obligation is satisfied gradually. This matches revenue with progress of work.",
+      },
+      {
+        q: "Finance cost increases:",
+        options: ["Profit", "Expense", "Asset", "Equity"],
+        answer: 1,
+        explanation:
+          "Finance cost (interest) is an expense. It reduces profit and retained earnings. It does not create asset.",
+      },
+      {
+        q: "Which increases retained earnings?",
+        options: ["Dividend", "Loss", "Profit", "Bonus issue"],
+        answer: 2,
+        explanation:
+          "Profit increases retained earnings. Dividend reduces it, and bonus issue transfers it to share capital.",
+      },
+      {
+        q: "Loan notes classified as:",
+        options: ["Equity", "Debt", "Revenue", "Expense"],
+        answer: 1,
+        explanation:
+          "Loan notes are borrowings. They carry interest and must be repaid. Therefore, they are classified as debt.",
+      },
+      {
+        q: "Provision is recognized when:",
+        options: ["Certain", "Possible", "Probable", "Remote"],
+        answer: 2,
+        explanation:
+          "IAS 37 requires recognition when obligation is probable and measurable. If only possible, disclosure is made instead.",
+      },
+      {
+        q: "Warranty provision affects:",
+        options: ["Assets only", "Liability + expense", "Equity only", "Cash"],
+        answer: 1,
+        explanation:
+          "Provision creates liability and matching expense. This follows matching principle by recognizing expected future costs.",
+      },
+      {
+        q: "Revenue recognition ignores:",
+        options: ["Control", "Performance", "Cash timing", "Contract"],
+        answer: 2,
+        explanation:
+          "Revenue is based on performance obligations and transfer of control, not when cash is received.",
+      },
+      {
+        q: "Bonus issue source:",
+        options: ["Cash", "Loan", "Reserves", "Revenue"],
+        answer: 2,
+        explanation:
+          "Bonus shares are issued from reserves like retained earnings or share premium. No external funds involved.",
+      },
+      {
+        q: "Rights issue effect on EPS:",
+        options: ["Increase", "Decrease", "No effect", "Double"],
+        answer: 1,
+        explanation:
+          "More shares dilute earnings per share unless profit increases proportionately. Therefore EPS usually decreases.",
+      },
+      {
+        q: "Dividend reduces retained earnings but:",
+        options: [
+          "Increases cash",
+          "Decreases cash",
+          "No effect on cash",
+          "Increases assets",
+        ],
+        answer: 1,
+        explanation:
+          "Dividend payment reduces cash and retained earnings simultaneously. Both asset and equity decrease.",
+      },
+      {
+        q: "Which is NOT equity?",
+        options: [
+          "Share capital",
+          "Retained earnings",
+          "Loan notes",
+          "Share premium",
+        ],
+        answer: 2,
+        explanation:
+          "Loan notes are liabilities (debt), not equity. Equity includes share capital and reserves.",
+      },
+      {
+        q: "Materiality affects:",
+        options: ["Recognition", "Presentation", "Disclosure", "All"],
+        answer: 3,
+        explanation:
+          "Materiality influences how items are recognized, measured, and disclosed. Immaterial items may be simplified.",
+      },
+      {
+        q: "Consistency change allowed when:",
+        options: ["Never", "Always", "Better presentation", "Profit increases"],
+        answer: 2,
+        explanation:
+          "Accounting policies can change if it results in more relevant and reliable information. Must be disclosed.",
+      },
+      {
+        q: "Prudence leads to:",
+        options: [
+          "Overstated assets",
+          "Understated liabilities",
+          "Conservative estimates",
+          "Ignore losses",
+        ],
+        answer: 2,
+        explanation:
+          "Prudence ensures caution. It avoids overstatement of assets and income, recognizing losses earlier.",
+      },
+      {
+        q: "Break-up basis applies when:",
+        options: ["Going concern", "Liquidation", "Profit high", "Assets low"],
+        answer: 1,
+        explanation:
+          "When business is not a going concern, assets are valued at liquidation (resale) value instead of cost.",
+      },
+      {
+        q: "Trade payables arise from:",
+        options: ["Sales", "Purchases", "Loans", "Equity"],
+        answer: 1,
+        explanation:
+          "Trade payables result from credit purchases from suppliers. They are short-term liabilities.",
+      },
+      {
+        q: "Accrued expense increases:",
+        options: ["Assets", "Liabilities", "Equity", "Revenue"],
+        answer: 1,
+        explanation:
+          "Accrued expense is unpaid obligation. It increases liabilities and reduces profit.",
+      },
+      {
+        q: "Prepaid expense increases:",
+        options: ["Liability", "Asset", "Expense", "Equity"],
+        answer: 1,
+        explanation:
+          "Prepayment represents future benefit. It is recorded as asset and reduces current expense.",
+      },
+      {
+        q: "Share premium can be used for:",
+        options: ["Dividend", "Bonus issue", "Expense", "Loan repayment"],
+        answer: 1,
+        explanation:
+          "Share premium is restricted reserve. It can be used for bonus issue but not for dividend distribution.",
+      },
+      {
+        q: "Dividend declared but unpaid affects:",
+        options: ["Cash", "Liability", "Expense", "Revenue"],
+        answer: 1,
+        explanation:
+          "It creates liability until payment. Cash is unaffected until actual payment.",
+      },
+      {
+        q: "Revenue from services recognized when:",
+        options: [
+          "Cash received",
+          "Service performed",
+          "Invoice issued",
+          "Contract signed",
+        ],
+        answer: 1,
+        explanation:
+          "Revenue recognized when service obligation is satisfied. Cash timing is irrelevant.",
+      },
+      {
+        q: "Equity increases when:",
+        options: ["Expense", "Loss", "Share issue", "Dividend"],
+        answer: 2,
+        explanation:
+          "Share issue brings new funds from owners, increasing equity.",
+      },
+      {
+        q: "Deferred tax asset arises when:",
+        options: [
+          "Future tax payable",
+          "Future tax saving",
+          "Cash flow",
+          "Revenue",
+        ],
+        answer: 1,
+        explanation:
+          "Deferred tax asset arises when tax paid early can be recovered in future.",
+      },
+      {
+        q: "Finance cost shown in:",
+        options: ["SFP", "P&L", "Cash flow only", "Equity"],
+        answer: 1,
+        explanation:
+          "Finance cost is expense shown in profit or loss statement.",
+      },
+      {
+        q: "Share capital reduction leads to:",
+        options: [
+          "Increase equity",
+          "Decrease equity",
+          "No effect",
+          "Increase liability",
+        ],
+        answer: 1,
+        explanation:
+          "Reducing share capital decreases equity as owners’ investment reduces.",
+      },
+      {
+        q: "Revenue recognized too late causes:",
+        options: [
+          "Overstated profit",
+          "Understated profit",
+          "No effect",
+          "Asset increase",
+        ],
+        answer: 1,
+        explanation:
+          "Delaying revenue reduces income for the period, understating profit.",
+      },
+      {
+        q: "Loan notes interest unpaid is:",
+        options: ["Expense", "Liability", "Asset", "Equity"],
+        answer: 1,
+        explanation: "Unpaid interest becomes accrued expense (liability).",
+      },
+      {
+        q: "Equity =",
+        options: [
+          "Assets – Liabilities",
+          "Assets + Liabilities",
+          "Profit + Expense",
+          "Cash – Debt",
+        ],
+        answer: 0,
+        explanation:
+          "Equity is residual interest after liabilities are deducted from assets.",
+      },
+      {
+        q: "Dividend declared reduces:",
+        options: ["Profit", "Revenue", "Cash", "Assets"],
+        answer: 0,
+        explanation:
+          "Dividend is appropriation of profit, reducing retained earnings.",
+      },
+      {
+        q: "Provision reversed leads to:",
+        options: ["Expense", "Income", "Asset", "Liability"],
+        answer: 1,
+        explanation:
+          "If provision overestimated, reversal increases profit as income.",
+      },
+      {
+        q: "Going concern affects:",
+        options: ["Cash", "Valuation", "Revenue", "Expense"],
+        answer: 1,
+        explanation:
+          "Assumes business continues, so assets valued at cost not liquidation value.",
+      },
+      {
+        q: "Rights issue vs bonus issue key difference:",
+        options: ["Cash inflow", "Equity", "Assets", "Liabilities"],
+        answer: 0,
+        explanation:
+          "Rights issue brings cash, bonus issue does not. Both increase share capital.",
+      },
+      {
+        q: "Revenue recognized but cash not received:",
+        options: ["Asset", "Liability", "Expense", "Equity"],
+        answer: 0,
+        explanation:
+          "Creates receivable (asset). Revenue recognized on accrual basis.",
+      },
+      {
+        q: "Dividend paid is:",
+        options: ["Expense", "Appropriation", "Asset", "Income"],
+        answer: 1,
+        explanation: "Dividend is distribution of profit, not expense.",
+      },
+      {
+        q: "Share issue below nominal value:",
+        options: ["Allowed", "Illegal", "Expense", "Income"],
+        answer: 1,
+        explanation:
+          "Shares cannot be issued below nominal value (discount prohibited).",
+      },
+      {
+        q: "Revenue recognized increases:",
+        options: ["Liability", "Asset/Equity", "Expense", "Loss"],
+        answer: 1,
+        explanation:
+          "Revenue increases profit (equity) and usually receivable (asset).",
+      },
+      {
+        q: "Deferred tax classified as:",
+        options: ["Asset/liability", "Revenue", "Expense", "Equity"],
+        answer: 0,
+        explanation:
+          "Deferred tax may be asset or liability depending on timing differences.",
+      },
+      {
+        q: "Dividend policy affects:",
+        options: ["Liquidity", "Equity", "Cash", "All"],
+        answer: 3,
+        explanation:
+          "Dividend reduces cash, equity and impacts liquidity. It affects overall financial position.",
+      },
+      {
+        q: "Equity holders bear:",
+        options: ["Fixed return", "Risk", "Interest", "Tax"],
+        answer: 1,
+        explanation:
+          "Equity holders bear business risk and receive residual returns.",
+      },
     ],
   },
 
