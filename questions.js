@@ -3907,6 +3907,544 @@ const questionBank = {
         explanation:
           "Refund from supplier: Dr Cash (asset increases) and Cr Purchases returns (cost of purchases decreases).",
       },
+
+      {
+        q: "Which of the following correctly describes a debit entry in double-entry bookkeeping?",
+        options: [
+          "A debit always represents money received",
+          "A debit increases assets and expenses, and decreases liabilities, equity and income",
+          "A debit always represents a positive amount",
+          "A debit is always an entry on the right side of a T-account",
+        ],
+        answer: 1,
+        explanation:
+          "In double-entry bookkeeping: debits increase assets and expenses, and decrease liabilities, equity, and income. Debits are on the LEFT side of a T-account. The misconception that 'debit = money in' is a common and dangerous exam trap.",
+      },
+      {
+        q: "A business pays £3,600 by BACS to a supplier for goods purchased on credit last month. What is the correct double entry?",
+        options: [
+          "Dr Trade payables £3,600; Cr Bank £3,600",
+          "Dr Bank £3,600; Cr Trade payables £3,600",
+          "Dr Purchases £3,600; Cr Bank £3,600",
+          "Dr Trade payables £3,600; Cr Purchases £3,600",
+        ],
+        answer: 0,
+        explanation:
+          "Paying a supplier: the liability (trade payables) decreases (debit), and the bank (asset) decreases (credit). The purchase was already recorded when the goods arrived. Dr Trade payables £3,600; Cr Bank £3,600. Option B reverses the entry. Option C re-records the purchase incorrectly.",
+      },
+      {
+        q: "A business sells goods for £4,200 on credit. Later the customer returns £600 of goods. What are the entries for the return?",
+        options: [
+          "Dr Trade receivables £600; Cr Sales returns £600",
+          "Dr Sales returns £600; Cr Trade receivables £600",
+          "Dr Bank £600; Cr Trade receivables £600",
+          "Dr Purchases returns £600; Cr Trade receivables £600",
+        ],
+        answer: 1,
+        explanation:
+          "When a customer returns goods (returns inwards / sales returns): Dr Sales returns £600 (reduces net sales — debit reduces revenue); Cr Trade receivables £600 (reduces the amount the customer owes). Option A reverses the entry. Option D uses the wrong returns account.",
+      },
+      {
+        q: "What is the double entry for recording depreciation of £2,500 on a machine?",
+        options: [
+          "Dr Machine cost £2,500; Cr Accumulated depreciation £2,500",
+          "Dr Depreciation expense £2,500; Cr Machine cost £2,500",
+          "Dr Depreciation expense £2,500; Cr Accumulated depreciation £2,500",
+          "Dr Accumulated depreciation £2,500; Cr Depreciation expense £2,500",
+        ],
+        answer: 2,
+        explanation:
+          "Depreciation: Dr Depreciation expense £2,500 (P&L charge); Cr Accumulated depreciation £2,500 (contra asset on balance sheet). The cost account is NOT credited — depreciation is charged to a separate accumulated depreciation account. This preserves the historical cost information.",
+      },
+      {
+        q: "A business receives a £1,200 bank loan. The correct double entry is:",
+        options: [
+          "Dr Bank loan £1,200; Cr Bank £1,200",
+          "Dr Bank £1,200; Cr Bank loan £1,200",
+          "Dr Capital £1,200; Cr Bank £1,200",
+          "Dr Bank £1,200; Cr Capital £1,200",
+        ],
+        answer: 1,
+        explanation:
+          "Receiving a bank loan: Dr Bank (asset increases — cash received); Cr Bank loan payable (liability increases — money owed to bank). Capital/equity is unaffected — a loan is a liability, not the owner's equity.",
+      },
+      {
+        q: "Which of the following accounts would normally have a CREDIT balance?",
+        options: [
+          "Purchases",
+          "Trade receivables",
+          "Discount allowed",
+          "Trade payables",
+        ],
+        answer: 3,
+        explanation:
+          "Trade payables is a liability account and normally carries a credit balance (money owed to suppliers). Purchases, trade receivables, and discount allowed are all accounts that normally carry debit balances (costs/assets/expenses).",
+      },
+      {
+        q: "A business writes off an irrecoverable debt of £850. What is the correct double entry?",
+        options: [
+          "Dr Trade receivables £850; Cr Irrecoverable debts expense £850",
+          "Dr Irrecoverable debts expense £850; Cr Trade receivables £850",
+          "Dr Bank £850; Cr Trade receivables £850",
+          "Dr Irrecoverable debts expense £850; Cr Bank £850",
+        ],
+        answer: 1,
+        explanation:
+          "Writing off a bad debt: Dr Irrecoverable debts expense (recognises the loss in P&L); Cr Trade receivables (removes the uncollectable debt from assets). No cash changes hands. Option A reverses the entry. Option C would apply if a customer actually paid.",
+      },
+      {
+        q: "The owner of a business introduces a motor vehicle worth £8,000 as capital. The correct double entry is:",
+        options: [
+          "Dr Motor vehicle £8,000; Cr Capital £8,000",
+          "Dr Capital £8,000; Cr Motor vehicle £8,000",
+          "Dr Motor vehicle £8,000; Cr Bank £8,000",
+          "Dr Drawings £8,000; Cr Motor vehicle £8,000",
+        ],
+        answer: 0,
+        explanation:
+          "When the owner introduces a non-cash asset: Dr Motor vehicle (asset into business increases); Cr Capital (owner's equity increases). No bank transaction occurs. Option B reverses the entry. Option D would apply if the owner was taking an asset OUT of the business.",
+      },
+      {
+        q: "A business purchases equipment for £15,000, paying £5,000 in cash and the balance on credit. What are the correct entries?",
+        options: [
+          "Dr Equipment £15,000; Cr Bank £15,000",
+          "Dr Equipment £15,000; Cr Bank £5,000; Cr Trade payables £10,000",
+          "Dr Bank £5,000; Dr Trade payables £10,000; Cr Equipment £15,000",
+          "Dr Equipment £5,000; Dr Purchases £10,000; Cr Bank £5,000; Cr Trade payables £10,000",
+        ],
+        answer: 1,
+        explanation:
+          "Equipment costs £15,000 total: £5,000 cash (Cr Bank) and £10,000 on credit (Cr Trade payables). Dr Equipment £15,000 captures the full asset cost. Option A only records cash. Option C reverses the equipment entry. Option D incorrectly splits the asset.",
+      },
+      {
+        q: "What is the double entry for a cash sale of £400?",
+        options: [
+          "Dr Sales £400; Cr Bank £400",
+          "Dr Bank £400; Cr Trade receivables £400",
+          "Dr Bank £400; Cr Sales £400",
+          "Dr Trade receivables £400; Cr Sales £400",
+        ],
+        answer: 2,
+        explanation:
+          "For a cash sale: Dr Bank (asset — cash received); Cr Sales (income — revenue earned). No trade receivables are involved in a cash sale. Option D would be correct for a credit sale. Option A reverses the entry.",
+      },
+      {
+        q: "A business receives £500 interest on its bank account. The double entry is:",
+        options: [
+          "Dr Bank £500; Cr Interest income £500",
+          "Dr Interest income £500; Cr Bank £500",
+          "Dr Bank £500; Cr Capital £500",
+          "Dr Interest expense £500; Cr Bank £500",
+        ],
+        answer: 0,
+        explanation:
+          "Receiving bank interest: Dr Bank (asset increases — cash received); Cr Interest income (income in P&L increases). Option B records interest as a payment/expense. Option D is for interest paid on a loan (expense), not received.",
+      },
+      {
+        q: "Which of the following would be a debit entry in the VAT account?",
+        options: [
+          "VAT charged on sales invoices",
+          "VAT charged on purchases invoices",
+          "The net amount due to HMRC at quarter end",
+          "Cash received from customers including VAT",
+        ],
+        answer: 1,
+        explanation:
+          "VAT paid on purchases (input VAT) is debited to the VAT account — it is a recoverable amount (like a debtor from HMRC). Output VAT on sales is credited. At quarter end, if output exceeds input, the net credit balance is the amount due to HMRC.",
+      },
+      {
+        q: "A business accrues telephone expense of £320 at year end. The correct double entry is:",
+        options: [
+          "Dr Telephone expense £320; Cr Bank £320",
+          "Dr Accruals £320; Cr Telephone expense £320",
+          "Dr Telephone expense £320; Cr Accruals £320",
+          "Dr Prepayments £320; Cr Telephone expense £320",
+        ],
+        answer: 2,
+        explanation:
+          "An accrual is for an expense incurred but not yet paid. Dr Telephone expense (P&L charge increases); Cr Accruals (current liability — amount owed). Option B reverses the entry. Option D confuses accruals with prepayments.",
+      },
+      {
+        q: "A business records the disposal of a fully depreciated machine (cost £6,000; accumulated depreciation £6,000) for scrap at nil proceeds. What is the accounting entry?",
+        options: [
+          "Dr Accumulated depreciation £6,000; Cr Machine cost £6,000",
+          "Dr Disposal account £6,000; Cr Machine cost £6,000; then Dr Accumulated depreciation £6,000; Cr Disposal £6,000",
+          "Dr Machine cost £6,000; Cr Accumulated depreciation £6,000",
+          "No entry required as the asset has zero carrying amount",
+        ],
+        answer: 1,
+        explanation:
+          "Even when the carrying amount is nil, a formal disposal entry must be made: (1) transfer cost to disposal account: Dr Disposal, Cr Machine cost; (2) transfer accumulated depreciation: Dr Acc. dep., Cr Disposal. These cancel out, leaving no gain or loss. Option A combines both steps but incompletely.",
+      },
+      {
+        q: "A business issues 5,000 ordinary shares at £1 each (nominal value 50p). What is the correct double entry?",
+        options: [
+          "Dr Bank £5,000; Cr Share capital £5,000",
+          "Dr Bank £5,000; Cr Share capital £2,500; Cr Share premium £2,500",
+          "Dr Share capital £5,000; Cr Bank £5,000",
+          "Dr Bank £2,500; Cr Share capital £2,500; Dr Share premium £2,500; Cr Bank £2,500",
+        ],
+        answer: 1,
+        explanation:
+          "Issue price = £1; nominal value = £0.50 per share. Proceeds = 5,000 × £1 = £5,000. Share capital = 5,000 × £0.50 = £2,500. Share premium (excess over nominal) = £2,500. Dr Bank £5,000; Cr Share capital £2,500; Cr Share premium £2,500.",
+      },
+      {
+        q: "A business receives a £2,000 deposit from a customer for future work. The correct double entry is:",
+        options: [
+          "Dr Bank £2,000; Cr Sales £2,000",
+          "Dr Bank £2,000; Cr Deferred income £2,000",
+          "Dr Trade receivables £2,000; Cr Sales £2,000",
+          "Dr Bank £2,000; Cr Capital £2,000",
+        ],
+        answer: 1,
+        explanation:
+          "A deposit received in advance is not revenue yet — it is deferred income (a liability) until the performance obligation is met. Dr Bank (cash received); Cr Deferred income (liability). When the work is done, Dr Deferred income; Cr Sales.",
+      },
+      {
+        q: "What is the double entry when a business pays corporation tax of £15,000?",
+        options: [
+          "Dr Corporation tax payable £15,000; Cr Bank £15,000",
+          "Dr Bank £15,000; Cr Corporation tax payable £15,000",
+          "Dr Corporation tax expense £15,000; Cr Bank £15,000",
+          "Dr Corporation tax expense £15,000; Cr Corporation tax payable £15,000",
+        ],
+        answer: 0,
+        explanation:
+          "When TAX is PAID: Dr Corporation tax payable (settles the liability); Cr Bank (cash leaves). The expense and liability were recognised earlier (at year end): Dr Tax expense; Cr Tax payable. When paying, only the balance sheet liability and asset change.",
+      },
+      {
+        q: "A business draws a cheque for £900 to pay wages. The correct entry is:",
+        options: [
+          "Dr Bank £900; Cr Wages £900",
+          "Dr Wages £900; Cr Bank £900",
+          "Dr Drawings £900; Cr Bank £900",
+          "Dr Wages £900; Cr Drawings £900",
+        ],
+        answer: 1,
+        explanation:
+          "Paying wages: Dr Wages expense (cost to business P&L increases); Cr Bank (cash leaves). Drawings only applies when the OWNER withdraws funds for personal use — staff wages are a business expense.",
+      },
+      {
+        q: "A sole trader pays £600 for business insurance but includes it in their personal (drawings) account by mistake. This is an error of:",
+        options: ["Omission", "Principle", "Commission", "Transposition"],
+        answer: 1,
+        explanation:
+          "An error of principle occurs when a transaction is recorded in the wrong CLASS of account — here, an expense (insurance) has been recorded as drawings (a capital/equity reduction). The correct amount was used, but the wrong type of account was debited.",
+      },
+      {
+        q: "Which of the following is the correct entry to record the owner's drawings of £1,500 cash?",
+        options: [
+          "Dr Bank £1,500; Cr Drawings £1,500",
+          "Dr Drawings £1,500; Cr Bank £1,500",
+          "Dr Expenses £1,500; Cr Bank £1,500",
+          "Dr Capital £1,500; Cr Bank £1,500",
+        ],
+        answer: 1,
+        explanation:
+          "Drawings: Dr Drawings £1,500 (reduces capital at year end); Cr Bank £1,500 (cash leaves business). Drawings is a temporary account that is deducted from capital when preparing the capital account. It is NOT an expense of the business.",
+      },
+      {
+        q: "A business transfers profit at year end to the capital account. The correct entry is:",
+        options: [
+          "Dr Capital £X; Cr Profit and loss account £X",
+          "Dr Profit and loss account £X; Cr Capital £X",
+          "Dr Retained earnings £X; Cr Capital £X",
+          "Dr Sales £X; Cr Capital £X",
+        ],
+        answer: 1,
+        explanation:
+          "At year end, the profit (net credit balance in the P&L account) is transferred to capital: Dr Profit and loss account (clears the P&L); Cr Capital (adds profit to owner's equity). This closing entry 'resets' the P&L for the next period.",
+      },
+      {
+        q: "Which of the following T-account entries is INCORRECT for trade payables?",
+        options: [
+          "Debit: payments to suppliers",
+          "Credit: credit purchase invoices received",
+          "Debit: discount received from suppliers",
+          "Credit: goods returned to suppliers",
+        ],
+        answer: 3,
+        explanation:
+          "When goods are returned to a supplier, the payable DECREASES — it should be debited (Dr Trade payables; Cr Purchases returns). Crediting trade payables for returns would incorrectly increase the liability. Options A, B, and C are all correct T-account entries.",
+      },
+      {
+        q: "A business receives a refund of £240 from HMRC for overpaid VAT. The correct entry is:",
+        options: [
+          "Dr Bank £240; Cr VAT £240",
+          "Dr VAT £240; Cr Bank £240",
+          "Dr Bank £240; Cr Income £240",
+          "Dr HMRC £240; Cr Bank £240",
+        ],
+        answer: 0,
+        explanation:
+          "Receiving a VAT refund: Dr Bank (cash received); Cr VAT account (clearing the debit balance representing overpaid input VAT). It is not income — it is the recovery of an asset (overpaid VAT). Option B would record a payment of VAT.",
+      },
+      {
+        q: "A business settles a £2,000 trade payable by issuing a promissory note (IOU). What is the accounting entry?",
+        options: [
+          "Dr Trade payables £2,000; Cr Bank £2,000",
+          "Dr Trade payables £2,000; Cr Notes payable £2,000",
+          "Dr Notes payable £2,000; Cr Trade payables £2,000",
+          "No entry — IOU is not a legal document",
+        ],
+        answer: 1,
+        explanation:
+          "A promissory note converts a trade payable into a formal note (loan-type liability). Dr Trade payables £2,000 (removes the trade payable); Cr Notes payable £2,000 (creates a new formal liability). The total liabilities don't change — one liability type replaces another.",
+      },
+      {
+        q: "A business records depreciation on a delivery van of £3,000. In which ledger accounts does this appear?",
+        options: [
+          "Dr Van at cost; Cr Depreciation expense",
+          "Dr Depreciation expense (P&L); Cr Accumulated depreciation (SFP)",
+          "Dr Accumulated depreciation; Cr Van at cost",
+          "Dr Depreciation expense; Cr Bank",
+        ],
+        answer: 1,
+        explanation:
+          "Depreciation: Dr Depreciation expense (charged to P&L, reducing profit); Cr Accumulated depreciation (a contra asset on the SFP, reducing the carrying amount of the van). The cost account is untouched — historical cost information is preserved separately from accumulated depreciation.",
+      },
+      {
+        q: "A business converts £10,000 of a long-term loan into ordinary share capital. The correct entry is:",
+        options: [
+          "Dr Bank £10,000; Cr Share capital £10,000",
+          "Dr Loan payable £10,000; Cr Share capital £10,000",
+          "Dr Share capital £10,000; Cr Loan payable £10,000",
+          "No entry — this is not a cash transaction",
+        ],
+        answer: 1,
+        explanation:
+          "A debt-to-equity conversion: the loan (liability) is extinguished and share capital (equity) is created in its place. Dr Loan payable £10,000 (liability decreases); Cr Share capital £10,000 (equity increases). No cash changes hands — this is a non-cash capital transaction but must still be recorded.",
+      },
+      {
+        q: "Which of the following accounts would have a DEBIT balance in the trial balance of a sole trader?",
+        options: ["Sales", "Capital", "Accruals", "Drawings"],
+        answer: 3,
+        explanation:
+          "Drawings reduces capital and carries a DEBIT balance (opposite to capital's credit balance). Sales and capital have credit balances. Accruals (an unpaid expense liability) also have a credit balance.",
+      },
+      {
+        q: "A business issues a credit note to a customer for £350. The correct double entry is:",
+        options: [
+          "Dr Trade receivables £350; Cr Sales returns £350",
+          "Dr Sales returns £350; Cr Trade receivables £350",
+          "Dr Bank £350; Cr Trade receivables £350",
+          "Dr Trade payables £350; Cr Sales returns £350",
+        ],
+        answer: 1,
+        explanation:
+          "Issuing a credit note to a customer (for returned goods): Dr Sales returns £350 (reduces net sales); Cr Trade receivables £350 (reduces what the customer owes). Option A reverses the entry. Option C would apply if giving a cash refund.",
+      },
+      {
+        q: "Which of the following describes the 'nominal ledger'?",
+        options: [
+          "The ledger containing individual customer accounts",
+          "The main double-entry ledger containing all income, expense, asset, liability, and capital accounts",
+          "The ledger of petty cash transactions",
+          "The ledger containing all supplier accounts",
+        ],
+        answer: 1,
+        explanation:
+          "The nominal (general) ledger contains all accounts used in double entry: assets, liabilities, capital, income, and expenses. The sales ledger contains individual customer accounts; the purchase ledger contains supplier accounts. Both are subsidiary ledgers summarised in control accounts within the nominal ledger.",
+      },
+      {
+        q: "A business pays rent of £6,000 that covers the next 6 months. The year end is in 2 months. What is the prepayment?",
+        options: ["£4,000", "£2,000", "£6,000", "£3,000"],
+        answer: 0,
+        explanation:
+          "Rent of £6,000 covers 6 months; 2 months fall in the current year, 4 months are prepaid. Expense = £6,000 × 2/6 = £2,000. Prepayment = £6,000 × 4/6 = £4,000. The prepayment is a current asset at year end. A common trap is to calculate the expense and call it the prepayment.",
+      },
+      {
+        q: "What type of account is 'discount allowed'?",
+        options: [
+          "An income account with a credit balance",
+          "An expense account with a debit balance",
+          "A liability account with a credit balance",
+          "A contra-revenue account with a credit balance",
+        ],
+        answer: 1,
+        explanation:
+          "Discount allowed (given to customers for early payment) is an expense (or contra-revenue) — it is debited when the discount is given and reduces gross profit. It carries a debit balance. Discount received (from suppliers) is income with a credit balance — the two are commonly confused.",
+      },
+      {
+        q: "A business receives £5,000 cash from a credit customer. The correct double entry is:",
+        options: [
+          "Dr Bank £5,000; Cr Sales £5,000",
+          "Dr Bank £5,000; Cr Trade receivables £5,000",
+          "Dr Trade receivables £5,000; Cr Bank £5,000",
+          "Dr Sales £5,000; Cr Bank £5,000",
+        ],
+        answer: 1,
+        explanation:
+          "Receiving cash from a credit customer: Dr Bank (cash received, asset up); Cr Trade receivables (debt collected, asset down). The sale was already recorded when the credit sale occurred. Option A would double-count the revenue.",
+      },
+      {
+        q: "A business disposes of a machine: cost £20,000, accumulated depreciation £14,000, sale proceeds £7,500. What is the profit or loss on disposal?",
+        options: [
+          "Profit £1,500",
+          "Loss £6,500",
+          "Profit £7,500",
+          "Loss £12,500",
+        ],
+        answer: 0,
+        explanation:
+          "Carrying amount = £20,000 – £14,000 = £6,000. Proceeds = £7,500. Profit on disposal = £7,500 – £6,000 = £1,500. The profit is NOT calculated against original cost (trap: £7,500 – £20,000 = –£12,500). Disposal profit/loss compares proceeds to carrying amount.",
+      },
+      {
+        q: "A business receives a bank statement charge of £45 for account maintenance. This has not yet been entered in the cash book. The correct entry in the cash book is:",
+        options: [
+          "Dr Bank £45; Cr Bank charges expense £45",
+          "Dr Bank charges expense £45; Cr Bank £45",
+          "Dr Bank £45; only",
+          "No entry until the next bank statement",
+        ],
+        answer: 1,
+        explanation:
+          "Bank charges: Dr Bank charges expense (cost to business); Cr Bank (reduces cash balance in the cash book). This entry is made when updating the cash book during bank reconciliation. Option A reverses the entry, which would increase the cash balance incorrectly.",
+      },
+      {
+        q: "A business purchases a vehicle for £18,000, trading in an old vehicle (book value £2,000, agreed part-exchange price £3,500) and paying the balance by cheque. What is the accounting entry for the part exchange?",
+        options: [
+          "Dr New vehicle £18,000; Cr Bank £14,500; Cr Old vehicle cost £3,500",
+          "Dr New vehicle £18,000; Cr Bank £14,500; Cr Old vehicle (carrying amount) £2,000; Cr Profit on disposal £1,500",
+          "Dr New vehicle £18,000; Cr Bank £18,000",
+          "Dr New vehicle £15,500; Cr Bank £14,500; Cr Old vehicle £1,000",
+        ],
+        answer: 1,
+        explanation:
+          "New vehicle: full cost £18,000 debited. Cash paid: £18,000 – £3,500 = £14,500 credited to bank. Old vehicle removed at carrying amount £2,000 (Cr). Difference between part-exchange price £3,500 and carrying amount £2,000 = £1,500 profit on disposal (Cr).",
+      },
+      {
+        q: "A business has rent receivable of £1,200 for the year. By year end, £300 is still owed. What is the double entry for the accrued income?",
+        options: [
+          "Dr Rent receivable £300; Cr Accrued income £300",
+          "Dr Accrued income £300; Cr Rent receivable £300",
+          "Dr Rent income £300; Cr Accrued income £300",
+          "Dr Accrued income £300; Cr Rent income £300",
+        ],
+        answer: 3,
+        explanation:
+          "Accrued income (income earned but not yet received): Dr Accrued income (current asset); Cr Rent income (increases income in P&L). The accrued income asset recognises the right to receive cash. Option A confuses accrued income with rent receivable naming. Option C reverses the P&L effect.",
+      },
+      {
+        q: "At year end, a prepayment of £800 for insurance is brought forward. At the start of the next period, this must be:",
+        options: [
+          "Debited to insurance expense to reverse the prepayment",
+          "Left in the prepayment account permanently",
+          "Credited to insurance expense and debited to prepayments",
+          "No action required — it automatically becomes an expense",
+        ],
+        answer: 0,
+        explanation:
+          "The prepayment (debit in prepayments account) is reversed at the start of the next period: Dr Insurance expense; Cr Prepayments. This restores the full amount to expenses so the accruals basis is maintained for the new period. It does NOT automatically become an expense without a journal entry.",
+      },
+      {
+        q: "In a company's books, dividends declared but not yet paid are treated as:",
+        options: [
+          "A debit to retained earnings and a credit to dividends payable",
+          "A debit to dividends expense and a credit to bank",
+          "A debit to bank and a credit to retained earnings",
+          "No entry until dividends are paid",
+        ],
+        answer: 0,
+        explanation:
+          "When dividends are declared: Dr Retained earnings (equity decreases); Cr Dividends payable (liability — amount owed to shareholders). When paid: Dr Dividends payable; Cr Bank. Option D is incorrect — IFRS requires recognition on declaration, not payment.",
+      },
+      {
+        q: "Which of the following is the correct double entry for a dishonoured cheque received from a customer?",
+        options: [
+          "Dr Bank £X; Cr Trade receivables £X",
+          "Dr Trade receivables £X; Cr Bank £X",
+          "Dr Irrecoverable debts £X; Cr Bank £X",
+          "Dr Bank £X; Cr Irrecoverable debts £X",
+        ],
+        answer: 1,
+        explanation:
+          "When a cheque bounces: the original receipt entry must be reversed. The amount is removed from the bank (Cr Bank — cash returns to being owed) and the customer's debt is reinstated (Dr Trade receivables). This is NOT yet treated as irrecoverable.",
+      },
+      {
+        q: "What is the double entry for writing back a previously written-off bad debt (the customer has now paid)?",
+        options: [
+          "Dr Bank £X; Cr Trade receivables £X",
+          "Dr Trade receivables £X; Cr Irrecoverable debts recovered £X; then Dr Bank £X; Cr Trade receivables £X",
+          "Dr Irrecoverable debts £X; Cr Bank £X",
+          "Dr Bank £X; Cr Bad debts expense £X",
+        ],
+        answer: 1,
+        explanation:
+          "To record a recovered bad debt: (1) reinstate the receivable: Dr Trade receivables, Cr Bad debts recovered (income); (2) record cash receipt: Dr Bank, Cr Trade receivables. Option A only records cash but misses the income recognition. Option D combines both steps but skips the receivables reinstatement.",
+      },
+      {
+        q: "Which of the following is the correct entry for recording the payment of employer's NIC of £1,200?",
+        options: [
+          "Dr Bank £1,200; Cr Employer NIC payable £1,200",
+          "Dr Employer NIC payable £1,200; Cr Bank £1,200",
+          "Dr Wages expense £1,200; Cr Bank £1,200",
+          "Dr Employer NIC expense £1,200; Cr Employer NIC payable £1,200",
+        ],
+        answer: 1,
+        explanation:
+          "When the previously accrued employer NIC liability is paid: Dr Employer NIC payable (liability cleared); Cr Bank (cash paid). The expense and liability were already recorded in the payroll journal. Option D would apply when recording the payroll charge — not the payment.",
+      },
+      {
+        q: "A business charges a customer £1,440 including VAT (20%). What are the correct entries?",
+        options: [
+          "Dr Trade receivables £1,440; Cr Sales £1,440",
+          "Dr Trade receivables £1,440; Cr Sales £1,200; Cr VAT £240",
+          "Dr Trade receivables £1,200; Cr Sales £1,200",
+          "Dr Trade receivables £1,440; Cr Sales £1,440; Dr VAT £240; Cr Sales £240",
+        ],
+        answer: 1,
+        explanation:
+          "Invoice includes VAT: Net = £1,440/1.20 = £1,200; VAT = £240. The full £1,440 is owed by the customer (debit receivables), but only £1,200 is revenue (credit sales); £240 is a liability to HMRC (credit VAT). Option A records the gross as revenue, incorrectly including VAT in sales.",
+      },
+      {
+        q: "A business records a purchase of goods: Dr Purchases £5,000; Dr VAT £1,000; Cr Trade payables £6,000. What happens when the goods are paid for?",
+        options: [
+          "Dr Trade payables £6,000; Cr Bank £6,000",
+          "Dr Purchases £5,000; Dr VAT £1,000; Cr Bank £6,000",
+          "Dr Bank £6,000; Cr Trade payables £6,000",
+          "Dr Trade payables £5,000; Dr VAT £1,000; Cr Bank £6,000",
+        ],
+        answer: 0,
+        explanation:
+          "When paying the trade payable: Dr Trade payables £6,000 (clears the full liability); Cr Bank £6,000 (cash paid). The purchases and VAT entries were already made when the goods were received. There is no need to re-debit purchases or VAT at the point of payment.",
+      },
+      {
+        q: "Which of the following would NOT appear in the double-entry bookkeeping system?",
+        options: [
+          "Allowance for receivables",
+          "Memorandum records of individual customer balances",
+          "Depreciation expense",
+          "Trade payables",
+        ],
+        answer: 1,
+        explanation:
+          "Individual customer accounts in the sales (subsidiary) ledger are memorandum records only — they do NOT form part of the double-entry system. The double entry is in the nominal ledger via the sales ledger control account. All other options ARE part of the double-entry system.",
+      },
+      {
+        q: "A business receives a £3,000 loan and immediately uses it to buy inventory. Which of the following statements about the accounting equation is correct?",
+        options: [
+          "Assets increase by £3,000; liabilities increase by £6,000",
+          "Assets increase by £3,000; liabilities increase by £3,000",
+          "Assets remain the same; liabilities increase by £3,000",
+          "Assets increase by £6,000; liabilities increase by £3,000",
+        ],
+        answer: 1,
+        explanation:
+          "Step 1: Receive loan — Dr Bank £3,000, Cr Loan £3,000 (assets +£3,000, liabilities +£3,000). Step 2: Buy inventory — Dr Inventory £3,000, Cr Bank £3,000 (asset swap — no net change). Net overall: Inventory +£3,000 (replacing bank), Loan +£3,000. Assets net +£3,000; liabilities +£3,000.",
+      },
+      {
+        q: "A trial balance lists all ledger accounts with their balances. Which of the following would cause it NOT to balance?",
+        options: [
+          "A purchase of £1,000 recorded as £1,000 debit and £1,000 credit",
+          "A sale of £500 posted to both the debit of sales and the debit of bank",
+          "A payment of £200 not recorded at all",
+          "A payment of £300 credited to the wrong supplier's account",
+        ],
+        answer: 1,
+        explanation:
+          "Posting a £500 sale as a debit to both sales and bank means total debits increase by £1,000 and total credits do not increase at all — the trial balance will be out of balance by £1,000. Option B (complete omission) keeps debits=credits. Options A and D preserve the balance even if incorrectly recorded.",
+      },
     ],
   },
 
