@@ -6248,6 +6248,392 @@ const questionBank = {
         explanation:
           "Expenses matched with revenue. Gives true profit. Core principle.",
       },
+
+      {
+        q: "If an expense of 5,000 is prepaid at year end but not adjusted, profit will be:",
+        options: ["Overstated", "Understated", "Correct", "No effect"],
+        answer: 1,
+        explanation:
+          "If prepayment is not deducted, the full expense is charged to profit instead of reducing it. This results in higher expenses and therefore profit is understated. Also, assets (prepayment) are understated.",
+      },
+      {
+        q: "If accrued expense is not recorded, what is the effect?",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Assets overstated",
+        ],
+        answer: 0,
+        explanation:
+          "Accrued expenses should be added to expenses. If omitted, expenses are understated and profit becomes overstated. Liabilities are also understated.",
+      },
+      {
+        q: "Closing inventory is omitted from accounts. Effect?",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Assets overstated",
+        ],
+        answer: 1,
+        explanation:
+          "Closing inventory reduces cost of sales. If omitted, cost of sales is higher, reducing profit. Also, assets are understated.",
+      },
+      {
+        q: "If purchases are overstated, profit will be:",
+        options: ["Overstated", "Understated", "No effect", "Doubled"],
+        answer: 1,
+        explanation:
+          "Higher purchases increase cost of sales, reducing gross profit and net profit. Therefore, profit is understated.",
+      },
+      {
+        q: "If sales are recorded twice, profit is:",
+        options: ["Understated", "Overstated", "Correct", "No effect"],
+        answer: 1,
+        explanation:
+          "Double recording increases revenue incorrectly. This inflates profit and overstates income.",
+      },
+      {
+        q: "Which error does NOT affect trial balance?",
+        options: [
+          "Error of omission",
+          "Single entry error",
+          "Casting error",
+          "Balancing error",
+        ],
+        answer: 0,
+        explanation:
+          "Error of omission means transaction is not recorded at all. Since both debit and credit are missing, trial balance still agrees.",
+      },
+      {
+        q: "Wrong posting to correct side but wrong account is:",
+        options: ["Principle", "Commission", "Omission", "Compensating"],
+        answer: 1,
+        explanation:
+          "Error of commission occurs when correct amount is recorded but in wrong account of same class. Trial balance still agrees.",
+      },
+      {
+        q: "Capital expenditure wrongly treated as revenue will:",
+        options: [
+          "Overstate profit",
+          "Understate profit",
+          "No effect",
+          "Increase assets",
+        ],
+        answer: 1,
+        explanation:
+          "Capital expenditure should be capitalized, but if expensed fully, expenses increase and profit is understated. Assets are also understated.",
+      },
+      {
+        q: "Revenue expenditure treated as capital will:",
+        options: [
+          "Overstate profit",
+          "Understate profit",
+          "No effect",
+          "Reduce assets",
+        ],
+        answer: 0,
+        explanation:
+          "Revenue expense should be charged fully, but if capitalized, expenses are understated and profit is overstated. Assets are overstated.",
+      },
+      {
+        q: "If depreciation is not recorded, effect is:",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Liability increases",
+        ],
+        answer: 0,
+        explanation:
+          "Depreciation is an expense. If omitted, expenses are understated and profit is overstated. Asset value is also overstated.",
+      },
+      {
+        q: "Increase in allowance for receivables results in:",
+        options: [
+          "Higher profit",
+          "Lower profit",
+          "No effect",
+          "Higher assets",
+        ],
+        answer: 1,
+        explanation:
+          "Increase in allowance means expected bad debts increase. It is charged as expense, reducing profit and receivables value.",
+      },
+      {
+        q: "If bad debts are not written off, receivables will be:",
+        options: ["Understated", "Overstated", "Correct", "Reduced"],
+        answer: 1,
+        explanation:
+          "Bad debts should reduce receivables. If not written off, receivables are overstated and assets are inflated.",
+      },
+      {
+        q: "If accrued income is omitted, profit is:",
+        options: ["Overstated", "Understated", "Correct", "No effect"],
+        answer: 1,
+        explanation:
+          "Accrued income should be added. If omitted, income is understated, reducing profit. Assets are also understated.",
+      },
+      {
+        q: "Income received in advance wrongly recorded as income leads to:",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Liability overstated",
+        ],
+        answer: 0,
+        explanation:
+          "Income received in advance is a liability. If treated as income, profit is overstated and liability is understated.",
+      },
+      {
+        q: "Which error affects profit?",
+        options: ["Omission", "Commission", "Principle", "All"],
+        answer: 3,
+        explanation:
+          "All types can affect profit depending on nature. Especially principle errors affect classification and profit significantly.",
+      },
+      {
+        q: "Suspense account balance cleared means:",
+        options: [
+          "All errors corrected",
+          "Profit calculated",
+          "Cash balanced",
+          "Assets verified",
+        ],
+        answer: 0,
+        explanation:
+          "Suspense account is temporary. When cleared, it means all errors causing imbalance are identified and corrected.",
+      },
+      {
+        q: "Which concept ensures expenses matched with revenue?",
+        options: ["Prudence", "Matching", "Going concern", "Consistency"],
+        answer: 1,
+        explanation:
+          "Matching concept ensures expenses are recorded in same period as related revenue to determine correct profit.",
+      },
+      {
+        q: "NRV lower than cost implies:",
+        options: [
+          "Profit increase",
+          "Inventory write-down",
+          "Asset increase",
+          "No effect",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 2 requires inventory at lower of cost and NRV. If NRV is lower, inventory is reduced, resulting in expense and lower profit.",
+      },
+      {
+        q: "Carriage inwards increases:",
+        options: ["Expenses", "Cost of sales", "Income", "Assets"],
+        answer: 1,
+        explanation:
+          "Carriage inwards is part of cost of bringing goods to business. It is included in cost of sales calculation.",
+      },
+      {
+        q: "Carriage outwards affects:",
+        options: ["Cost of sales", "Operating expense", "Asset", "Liability"],
+        answer: 1,
+        explanation:
+          "Carriage outwards is delivery expense. It is not part of cost of sales but an operating expense.",
+      },
+      {
+        q: "If inventory is overvalued, profit is:",
+        options: ["Understated", "Overstated", "Correct", "Reduced"],
+        answer: 1,
+        explanation:
+          "Higher closing inventory reduces cost of sales artificially, increasing profit. Assets are also overstated.",
+      },
+      {
+        q: "If opening inventory is overstated:",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Assets overstated",
+        ],
+        answer: 1,
+        explanation:
+          "Opening inventory increases cost of sales. If overstated, cost of sales rises and profit is understated.",
+      },
+      {
+        q: "Double entry ensures:",
+        options: ["Profit", "Balance", "Cash", "Assets"],
+        answer: 1,
+        explanation:
+          "Every debit has a credit, ensuring accounts remain balanced and trial balance agrees.",
+      },
+      {
+        q: "Ledger balances are used to prepare:",
+        options: ["Journal", "Trial balance", "Cash book", "Invoice"],
+        answer: 1,
+        explanation:
+          "Ledger contains all account balances, which are summarized in trial balance for further financial statements.",
+      },
+      {
+        q: "Journal entry records:",
+        options: ["Summary", "First record", "Final accounts", "Assets"],
+        answer: 1,
+        explanation:
+          "Journal is book of original entry where transactions are first recorded before posting to ledger.",
+      },
+      {
+        q: "Drawings treated as expense will:",
+        options: [
+          "Overstate profit",
+          "Understate profit",
+          "No effect",
+          "Reduce assets",
+        ],
+        answer: 1,
+        explanation:
+          "Drawings are not business expense. If treated as expense, profit is understated and equity reduced incorrectly.",
+      },
+      {
+        q: "Capital introduced treated as income:",
+        options: [
+          "Profit overstated",
+          "Profit understated",
+          "No effect",
+          "Assets reduced",
+        ],
+        answer: 0,
+        explanation:
+          "Capital is equity, not income. Treating it as income inflates profit incorrectly.",
+      },
+      {
+        q: "Trade discount treatment:",
+        options: ["Recorded separately", "Not recorded", "Expense", "Income"],
+        answer: 1,
+        explanation:
+          "Trade discount is deducted before recording transaction. Only net amount is recorded in accounts.",
+      },
+      {
+        q: "Cash discount allowed is:",
+        options: ["Income", "Expense", "Asset", "Liability"],
+        answer: 1,
+        explanation:
+          "Discount allowed reduces revenue received, so it is treated as expense.",
+      },
+      {
+        q: "Cash discount received is:",
+        options: ["Expense", "Income", "Asset", "Liability"],
+        answer: 1,
+        explanation:
+          "Discount received reduces expense payable, so it is treated as income.",
+      },
+      {
+        q: "Balance sheet equation:",
+        options: [
+          "Assets = Liabilities + Equity",
+          "Assets = Income",
+          "Profit = Assets",
+          "Cash = Equity",
+        ],
+        answer: 0,
+        explanation:
+          "Fundamental accounting equation ensures balance sheet balances. Assets are financed by liabilities and equity.",
+      },
+      {
+        q: "Profit increases equity because:",
+        options: [
+          "Cash increases",
+          "Liability reduces",
+          "Owner’s claim increases",
+          "Assets reduce",
+        ],
+        answer: 2,
+        explanation:
+          "Profit belongs to owner and increases retained earnings, which is part of equity.",
+      },
+      {
+        q: "Loss leads to:",
+        options: [
+          "Increase equity",
+          "Decrease equity",
+          "No effect",
+          "Increase assets",
+        ],
+        answer: 1,
+        explanation:
+          "Loss reduces retained earnings, decreasing overall equity.",
+      },
+      {
+        q: "Going concern assumption affects:",
+        options: ["Valuation", "Cash only", "Profit only", "Liability only"],
+        answer: 0,
+        explanation:
+          "Assets are valued assuming business continues. Without it, liquidation values would be used.",
+      },
+      {
+        q: "Consistency concept ensures:",
+        options: [
+          "Same method used",
+          "Higher profit",
+          "Lower cost",
+          "More assets",
+        ],
+        answer: 0,
+        explanation:
+          "Consistency ensures comparability by using same accounting methods over time.",
+      },
+      {
+        q: "Prudence concept requires:",
+        options: [
+          "Overstate profit",
+          "Understate assets",
+          "Caution in estimates",
+          "Ignore losses",
+        ],
+        answer: 2,
+        explanation:
+          "Prudence requires recognizing losses early and not overstating assets or income.",
+      },
+      {
+        q: "Which reduces gross profit?",
+        options: [
+          "Increase sales",
+          "Increase COS",
+          "Decrease expenses",
+          "Increase assets",
+        ],
+        answer: 1,
+        explanation:
+          "Gross profit = Sales – COS. Higher COS directly reduces gross profit.",
+      },
+      {
+        q: "Which does NOT affect gross profit?",
+        options: [
+          "Sales",
+          "Purchases",
+          "Carriage inwards",
+          "Administrative expense",
+        ],
+        answer: 3,
+        explanation:
+          "Administrative expenses are below gross profit line. They affect net profit, not gross profit.",
+      },
+      {
+        q: "Net profit includes:",
+        options: [
+          "Only sales",
+          "Only expenses",
+          "All income & expenses",
+          "Only COS",
+        ],
+        answer: 2,
+        explanation:
+          "Net profit considers all operating and non-operating income and expenses.",
+      },
+      {
+        q: "Accumulated depreciation shown:",
+        options: ["Asset", "Deduction from asset", "Liability", "Income"],
+        answer: 1,
+        explanation:
+          "It reduces carrying amount of asset and is shown as deduction.",
+      },
     ],
   },
 
