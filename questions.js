@@ -3,7 +3,7 @@
 
 const questionBank = {
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 1 – Introduction to Accounting (50 questions)
+  // CHAPTER 1 – Introduction to Accounting Questions
   // ─────────────────────────────────────────────────────────────────
   1: {
     title: "Introduction to Accounting",
@@ -1205,7 +1205,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 2 – The Accounting Equation (50 questions)
+  // CHAPTER 2 – The Accounting Equation Questions
   // ─────────────────────────────────────────────────────────────────
   2: {
     title: "The Accounting Equation",
@@ -2258,7 +2258,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 3 – Recording Financial Transactions (50 questions)
+  // CHAPTER 3 – Recording Financial Transactions Questions
   // ─────────────────────────────────────────────────────────────────
   3: {
     title: "Recording Financial Transactions",
@@ -3327,7 +3327,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 4 – Ledger Accounting and Double Entry (50 questions)
+  // CHAPTER 4 – Ledger Accounting and Double Entry Questions
   // ─────────────────────────────────────────────────────────────────
   4: {
     title: "Ledger Accounting and Double Entry",
@@ -4449,7 +4449,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 5 – Preparing Basic Financial Statements (50 questions)
+  // CHAPTER 5 – Preparing Basic Financial Statements Questions
   // ─────────────────────────────────────────────────────────────────
   5: {
     title: "Preparing Basic Financial Statements",
@@ -5458,7 +5458,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 6 – Errors and Corrections (50 questions)
+  // CHAPTER 6 – Errors and Corrections Questions
   // ─────────────────────────────────────────────────────────────────
   6: {
     title: "Errors and Corrections",
@@ -6639,7 +6639,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 7 – Cost of Sales and Inventories (50 questions)
+  // CHAPTER 7 – Cost of Sales and Inventories Questions
   // ─────────────────────────────────────────────────────────────────
   7: {
     title: "Cost of Sales and Inventories",
@@ -7637,7 +7637,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 8 – Irrecoverable Debts and Allowance for Receivables (50 questions)
+  // CHAPTER 8 – Irrecoverable Debts and Allowance for Receivables Questions
   // ─────────────────────────────────────────────────────────────────
   8: {
     title: "Irrecoverable Debts and Allowance for Receivables",
@@ -8554,7 +8554,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 9 – Accruals and Prepayments (50 questions)
+  // CHAPTER 9 – Accruals and Prepayments Questions
   // ─────────────────────────────────────────────────────────────────
   9: {
     title: "Accruals and Prepayments",
@@ -9518,7 +9518,7 @@ const questionBank = {
   },
 
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 10 – Non-Current Assets and Depreciation (50 questions)
+  // CHAPTER 10 – Non-Current Assets and Depreciation Questions
   // ─────────────────────────────────────────────────────────────────
   10: {
     title: "Non-Current Assets and Depreciation",
@@ -10314,7 +10314,7 @@ const questionBank = {
     ],
   },
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 11 – Company Financial Statements (50 questions)
+  // CHAPTER 11 – Company Financial Statements Questions
   // ─────────────────────────────────────────────────────────────────
 
   11: {
