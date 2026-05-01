@@ -10321,870 +10321,1194 @@ const questionBank = {
     title: "Company Financial Statements",
     questions: [
       {
-        q: "A company's share capital consists of 20,000 25p shares. What is the share capital?",
-        options: ["£5,000", "£6,000", "£14,000", "£24,000"],
+        q: "Zenith Ltd has 50,000 ordinary shares of 25p each in issue. A new investor asks: what is the total share capital on the balance sheet?",
+        options: ["£12,500", "£50,000", "£25,000", "£6,250"],
         answer: 0,
         explanation:
-          "Each share is worth £0.25. Multiply 20,000 × 0.25 to get total share capital. This gives £5,000.",
+          "Share capital = number of shares × nominal value = 50,000 × £0.25 = £12,500. Only the nominal (par) value goes to share capital, not market price.",
       },
 
       {
-        q: "Which may appear as current liabilities?",
-        options: [
-          "Loan due within one year",
-          "Taxation",
-          "Warranty provision",
-          "All",
-        ],
-        answer: 3,
-        explanation:
-          "All listed items are obligations payable within one year. Loans due soon, tax, and provisions are all current liabilities. Hence, all are correct.",
-      },
-
-      {
-        q: "A 1 for 2 bonus issue increases share capital using:",
-        options: ["Cash", "Loan", "Share premium", "Revenue"],
+        q: "Apex plc issues 8,000 shares at £2 each with a nominal value of 50p. The accountant needs to split the proceeds. How much goes to share premium?",
+        options: ["£4,000", "£16,000", "£12,000", "£8,000"],
         answer: 2,
         explanation:
-          "Bonus issues use reserves such as share premium or retained earnings. No cash is involved in the transaction. It increases share capital only.",
+          "Cash received = 8,000 × £2 = £16,000. Share capital = 8,000 × £0.50 = £4,000. Share premium = £16,000 − £4,000 = £12,000.",
       },
 
       {
-        q: "Journal for share issue at premium:",
+        q: "Horizon plc declares a dividend of 20p per share on 100,000 shares but has not yet paid it at year end. How should the finance team record this?",
         options: [
-          "Dr Cash, Cr Share capital & premium",
-          "Dr Share capital, Cr Cash",
-          "Dr Expense, Cr Cash",
-          "Dr Cash, Cr Revenue",
-        ],
-        answer: 0,
-        explanation:
-          "Cash received is debited as an asset. Share capital is credited at nominal value and premium separately. This reflects equity increase.",
-      },
-
-      {
-        q: "Rights issue means:",
-        options: [
-          "Free shares",
-          "Public issue",
-          "Offer to existing shareholders",
-          "Debt issue",
+          "Debit retained earnings, Credit bank",
+          "Debit dividends payable, Credit bank",
+          "Debit retained earnings, Credit dividends payable",
+          "Ignore until paid",
         ],
         answer: 2,
         explanation:
-          "A rights issue offers shares to existing shareholders first. It is usually at a discounted price. This helps raise new capital.",
+          "A declared but unpaid dividend creates a liability. Dr Retained earnings (reduces equity) and Cr Dividends payable (current liability). Cash only moves when paid.",
       },
 
       {
-        q: "Dividend is paid from:",
-        options: ["Share capital", "Retained earnings", "Loans", "Assets"],
-        answer: 1,
-        explanation:
-          "Dividends are distributions of profit. They are paid from retained earnings, not capital. This protects shareholders’ capital.",
-      },
-
-      {
-        q: "Revenue is recognized when:",
+        q: "Crest Ltd is making a 1-for-4 bonus issue when it has 200,000 shares in issue and a share premium account of £80,000. How many new shares are issued and from which source?",
         options: [
-          "Cash received",
-          "Goods ordered",
-          "Control transferred",
-          "Invoice issued",
-        ],
-        answer: 2,
-        explanation:
-          "Revenue is recognized when control passes to the customer. This is per IFRS 15. Cash timing is not the main factor.",
-      },
-
-      {
-        q: "Retained earnings increase due to:",
-        options: ["Loss", "Dividend", "Profit", "Expense"],
-        answer: 2,
-        explanation:
-          "Retained earnings accumulate profits. When profit is earned, it increases retained earnings. Dividends reduce it.",
-      },
-
-      {
-        q: "Share premium arises when:",
-        options: [
-          "Shares issued above nominal value",
-          "Below cost",
-          "Revaluation",
-          "Dividend",
-        ],
-        answer: 0,
-        explanation:
-          "Share premium is the excess over nominal value. If shares are issued above face value, the difference is credited. It forms part of equity.",
-      },
-
-      {
-        q: "Bonus issue effect:",
-        options: [
-          "Increase equity",
-          "Decrease equity",
-          "No change",
-          "Increase liability",
-        ],
-        answer: 2,
-        explanation:
-          "A bonus issue transfers reserves to share capital. Total equity does not change. Only its composition changes.",
-      },
-
-      {
-        q: "Dividend paid reduces:",
-        options: ["Assets only", "Equity", "Liabilities", "Revenue"],
-        answer: 1,
-        explanation:
-          "Dividends reduce retained earnings, which is part of equity. Cash also reduces when paid. Hence equity decreases.",
-      },
-
-      {
-        q: "Revenue not recognized if:",
-        options: [
-          "Cash received",
-          "Goods delivered",
-          "Control not transferred",
-          "Invoice issued",
-        ],
-        answer: 2,
-        explanation:
-          "Revenue depends on transfer of control. If control is not transferred, revenue cannot be recognized. Timing of cash is irrelevant.",
-      },
-
-      {
-        q: "Prepayment is:",
-        options: ["Liability", "Asset", "Expense", "Income"],
-        answer: 1,
-        explanation:
-          "Prepayment is an expense paid in advance. It provides future economic benefit. Therefore, it is recorded as an asset.",
-      },
-
-      {
-        q: "Accrued expense is:",
-        options: ["Paid expense", "Unpaid expense", "Income", "Asset"],
-        answer: 1,
-        explanation:
-          "An accrued expense is incurred but unpaid. It represents an obligation. Hence, it is a liability.",
-      },
-
-      {
-        q: "Provision is:",
-        options: [
-          "Certain liability",
-          "Uncertain liability",
-          "Asset",
-          "Income",
+          "50,000 shares from cash",
+          "50,000 shares from share premium",
+          "25,000 shares from retained earnings",
+          "50,000 shares from long-term loans",
         ],
         answer: 1,
         explanation:
-          "A provision is a liability with uncertain timing or amount. It is recognized when probable. IAS 37 applies.",
+          "1-for-4 means 200,000 ÷ 4 = 50,000 new shares. Bonus issues are funded from reserves such as share premium, not from cash.",
       },
 
       {
-        q: "Warranty provision treatment:",
-        options: ["Ignore", "Expense + liability", "Asset", "Equity"],
-        answer: 1,
-        explanation:
-          "Warranty creates a future obligation. It is recognized as both an expense and a provision. This matches cost with revenue.",
-      },
-
-      {
-        q: "Going concern assumption:",
+        q: "The audit team at Delta plc finds revenue from a long-term construction contract was recognized in full upon signing, before any work began. What is the impact on this year's profit?",
         options: [
-          "Business closing",
-          "Continue operations",
-          "Sell assets",
-          "No profit",
-        ],
-        answer: 1,
-        explanation:
-          "Going concern assumes business continues. Assets are not valued at liquidation value. It is a fundamental principle.",
-      },
-
-      {
-        q: "Break-up basis uses:",
-        options: ["Cost", "NBV", "Resale value", "Historical"],
-        answer: 2,
-        explanation:
-          "Break-up basis applies when business is not a going concern. Assets are valued at resale value. This reflects liquidation.",
-      },
-
-      {
-        q: "Trade payables:",
-        options: ["Customers", "Suppliers", "Owners", "Investors"],
-        answer: 1,
-        explanation:
-          "Trade payables arise from credit purchases. They represent amounts owed to suppliers. They are current liabilities.",
-      },
-
-      {
-        q: "Finance cost includes:",
-        options: ["Wages", "Interest", "Tax", "Depreciation"],
-        answer: 1,
-        explanation:
-          "Finance costs include interest on borrowings. It is shown in profit or loss. It excludes operating costs.",
-      },
-
-      {
-        q: "Income tax expense includes:",
-        options: ["Paid only", "Payable only", "Current + deferred", "None"],
-        answer: 2,
-        explanation:
-          "Income tax expense includes current tax and deferred tax. Deferred tax arises from timing differences. Both are included.",
-      },
-
-      {
-        q: "Share capital represents:",
-        options: ["Debt", "Equity invested", "Expense", "Asset"],
-        answer: 1,
-        explanation:
-          "Share capital is the owners' investment. It represents equity funding. It is not repayable like debt.",
-      },
-
-      {
-        q: "Retained earnings represent:",
-        options: ["Cash", "Accumulated profit", "Liability", "Expense"],
-        answer: 1,
-        explanation:
-          "Retained earnings are accumulated profits kept in the business. They are not cash. They are part of equity.",
-      },
-
-      {
-        q: "Rights issue increases:",
-        options: ["Assets only", "Equity", "Liabilities", "Expenses"],
-        answer: 1,
-        explanation:
-          "A rights issue brings in new cash. This increases assets and equity. It does not affect liabilities.",
-      },
-
-      {
-        q: "Bonus issue decreases:",
-        options: ["Share capital", "Reserves", "Assets", "Liabilities"],
-        answer: 1,
-        explanation:
-          "Bonus issue reduces reserves. It increases share capital instead. Total equity remains unchanged.",
-      },
-
-      {
-        q: "Dividend declared creates:",
-        options: ["Asset", "Liability", "Income", "Expense"],
-        answer: 1,
-        explanation:
-          "When declared, dividend becomes payable. This creates a liability. It is not an expense.",
-      },
-
-      {
-        q: "Revenue from goods recognized when:",
-        options: [
-          "Cash received",
-          "Control transferred",
-          "Produced",
-          "Ordered",
-        ],
-        answer: 1,
-        explanation:
-          "Revenue is recognized when control passes. This may differ from cash receipt. IFRS 15 applies.",
-      },
-
-      {
-        q: "Accruals concept ensures:",
-        options: ["Cash basis", "Matching", "Prudence", "Consistency"],
-        answer: 1,
-        explanation:
-          "Accruals match income with related expenses. It ensures accurate profit measurement. It ignores cash timing.",
-      },
-
-      {
-        q: "Consistency concept ensures:",
-        options: [
-          "Same method used",
-          "Profit maximized",
-          "Tax minimized",
-          "Assets valued",
-        ],
-        answer: 0,
-        explanation:
-          "Consistency requires same accounting methods each year. This improves comparability. Changes must be justified.",
-      },
-
-      {
-        q: "Prudence concept means:",
-        options: [
-          "Overstate profit",
-          "Understate liabilities",
-          "Avoid overstatement",
-          "Ignore losses",
-        ],
-        answer: 2,
-        explanation:
-          "Prudence avoids overstating assets or income. It ensures caution in estimates. Losses are recognized early.",
-      },
-
-      {
-        q: "Materiality concept means:",
-        options: [
-          "Ignore small items",
-          "Record all",
-          "Only cash items",
-          "Ignore expenses",
-        ],
-        answer: 0,
-        explanation:
-          "Materiality focuses on significant items. Small items may be ignored. It improves efficiency.",
-      },
-
-      {
-        q: "Loan notes interest is:",
-        options: ["Dividend", "Finance cost", "Asset", "Equity"],
-        answer: 1,
-        explanation:
-          "Interest on loan notes is a finance cost. It is recorded in profit or loss. It is not a dividend.",
-      },
-
-      {
-        q: "Share premium is:",
-        options: ["Liability", "Equity reserve", "Expense", "Asset"],
-        answer: 1,
-        explanation:
-          "Share premium is part of equity. It arises from issuing shares above nominal value. It is a reserve.",
-      },
-
-      {
-        q: "Equity includes:",
-        options: ["Share capital", "Reserves", "Retained earnings", "All"],
-        answer: 3,
-        explanation:
-          "Equity includes share capital, reserves, and retained earnings. All are components of owners’ funds. Hence all are correct.",
-      },
-
-      {
-        q: "Tax payable is:",
-        options: ["Asset", "Liability", "Expense", "Income"],
-        answer: 1,
-        explanation:
-          "Tax payable is an obligation to tax authorities. It represents unpaid tax. Therefore, it is a liability.",
-      },
-
-      {
-        q: "Cash dividend reduces:",
-        options: ["Assets + equity", "Assets only", "Equity only", "Liability"],
-        answer: 0,
-        explanation:
-          "Cash decreases when dividend is paid. Retained earnings also reduce. So both assets and equity decrease.",
-      },
-
-      {
-        q: "Revenue recognition principle:",
-        options: ["Cash basis", "Accrual basis", "Tax basis", "Market basis"],
-        answer: 1,
-        explanation:
-          "Revenue is recognized on accrual basis. It depends on earning, not cash. This improves accuracy.",
-      },
-
-      {
-        q: "Statement of financial position shows:",
-        options: [
-          "Profit",
-          "Cash flow",
-          "Assets/liabilities/equity",
-          "Revenue",
-        ],
-        answer: 2,
-        explanation:
-          "SFP shows financial position at a point in time. It includes assets, liabilities, and equity. It is not about performance.",
-      },
-
-      {
-        q: "Statement of profit or loss shows:",
-        options: ["Assets", "Profit", "Equity", "Cash"],
-        answer: 1,
-        explanation:
-          "Profit or loss statement shows performance over a period. It reports income and expenses. Final result is profit or loss.",
-      },
-
-      {
-        q: "Share issue increases:",
-        options: ["Expense", "Equity", "Liability", "Loss"],
-        answer: 1,
-        explanation:
-          "Share issue raises funds from owners. This increases equity. It is not an expense or liability.",
-      },
-
-      {
-        q: "Dividend payment reduces:",
-        options: ["Profit", "Equity", "Revenue", "Assets only"],
-        answer: 1,
-        explanation:
-          "Dividend reduces retained earnings. This reduces total equity. Cash also decreases.",
-      },
-
-      {
-        q: "Bonus issue increases:",
-        options: ["Liability", "Share capital", "Cash", "Expense"],
-        answer: 1,
-        explanation:
-          "Bonus issue increases share capital. It is funded from reserves. No cash is involved.",
-      },
-
-      {
-        q: "Provision vs accrual:",
-        options: [
-          "Same",
-          "Provision uncertain",
-          "Accrual uncertain",
-          "Both assets",
-        ],
-        answer: 1,
-        explanation:
-          "Provision involves uncertainty in timing or amount. Accruals are certain but unpaid. This is the key difference.",
-      },
-
-      {
-        q: "Deferred tax arises due to:",
-        options: ["Cash flow", "Timing differences", "Revenue", "Expense"],
-        answer: 1,
-        explanation:
-          "Deferred tax arises due to timing differences. Accounting and tax treatments differ temporarily. It reverses later.",
-      },
-
-      {
-        q: "Equity holders are:",
-        options: ["Creditors", "Owners", "Suppliers", "Employees"],
-        answer: 1,
-        explanation:
-          "Equity holders are owners of the company. They bear risks and receive residual profits. They are not creditors.",
-      },
-
-      {
-        q: "Loan notes are:",
-        options: ["Equity", "Debt", "Revenue", "Asset"],
-        answer: 1,
-        explanation:
-          "Loan notes represent borrowed funds. They must be repaid with interest. Therefore, they are debt.",
-      },
-
-      {
-        q: "Rights issue increases cash:",
-        options: ["Yes", "No"],
-        answer: 0,
-        explanation:
-          "Rights issue brings new funds into the company. Shareholders pay cash for shares. Hence, cash increases.",
-      },
-
-      {
-        q: "Bonus issue increases cash:",
-        options: ["Yes", "No"],
-        answer: 1,
-        explanation:
-          "Bonus issue does not involve cash. It only reallocates reserves. Therefore, cash remains unchanged.",
-      },
-
-      {
-        q: "Dividend is appropriation of:",
-        options: ["Profit", "Expense", "Asset", "Liability"],
-        answer: 0,
-        explanation:
-          "Dividend is a distribution of profit. It is not treated as an expense. It reduces retained earnings.",
-      },
-
-      {
-        q: "A company issues 10,000 shares of 50p at £1 each. What is share premium?",
-        options: ["£5,000", "£10,000", "£15,000", "£20,000"],
-        answer: 0,
-        explanation:
-          "Nominal value per share = £0.50, issue price = £1. Premium per share = £0.50. Total premium = 10,000 × 0.50 = £5,000. Only excess over nominal is recorded as share premium.",
-      },
-      {
-        q: "If dividend is declared but not yet paid, it is:",
-        options: ["Expense", "Liability", "Equity", "Asset"],
-        answer: 1,
-        explanation:
-          "Once declared, dividend becomes a legal obligation. It is shown as a current liability until paid. It is not an expense because it is an appropriation of profit.",
-      },
-      {
-        q: "Which transaction does NOT change total equity?",
-        options: [
-          "Profit earned",
-          "Dividend paid",
-          "Bonus issue",
-          "Rights issue",
-        ],
-        answer: 2,
-        explanation:
-          "Bonus issue transfers reserves to share capital. Total equity remains same, only composition changes. Others either increase or decrease equity.",
-      },
-      {
-        q: "If revenue is recognized before control transfer:",
-        options: [
-          "Profit overstated",
           "Profit understated",
-          "No effect",
-          "Assets understated",
+          "Profit correctly stated",
+          "Profit overstated",
+          "No impact on profit",
+        ],
+        answer: 2,
+        explanation:
+          "Under IFRS 15, revenue is recognized only when performance obligations are satisfied. Recognizing it at contract signing overstates revenue and therefore overstates profit.",
+      },
+
+      {
+        q: "Sigma Ltd sells equipment worth £50,000 on 1 January and receives payment on 31 March. Goods were delivered and control passed on 1 January. When should revenue be recognized?",
+        options: [
+          "31 March — when cash received",
+          "1 January — when control transferred",
+          "Over three months equally",
+          "When invoice issued",
+        ],
+        answer: 1,
+        explanation:
+          "IFRS 15: revenue is recognized when control of the good transfers to the customer, which is 1 January. The cash receipt date is irrelevant.",
+      },
+
+      {
+        q: "Maple Corp sells washing machines with a 2-year warranty. The finance director wants to defer all warranty costs until claims arise. Is this acceptable?",
+        options: [
+          "Yes, only cash outflows matter",
+          "Yes, wait for claims",
+          "No, a provision must be recognized at sale",
+          "No, warranty costs are ignored",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 37 requires a provision when an obligation is probable and can be reliably estimated. Warranty costs must be matched to the period of sale — deferring them violates the matching principle.",
+      },
+
+      {
+        q: "Nova Ltd's year-end bank balance is £200,000. However, £500,000 of loans are repayable in 8 months and creditors are refusing to extend terms. The auditor questions the basis of preparation. Why?",
+        options: [
+          "Going concern assumption may not hold",
+          "Accruals basis is incorrect",
+          "Consistency has been breached",
+          "Materiality threshold exceeded",
         ],
         answer: 0,
         explanation:
-          "Revenue should only be recognized when control passes. Early recognition inflates income, leading to overstated profit and possibly overstated receivables.",
+          "When a business cannot meet its obligations and continuation is in doubt, the going concern assumption may not be appropriate. Assets and liabilities should then be valued on a break-up (liquidation) basis.",
       },
+
       {
-        q: "Rights issue at discount leads to:",
-        options: ["Loss", "Increase equity", "Decrease assets", "No effect"],
-        answer: 1,
+        q: "Prism plc changes its depreciation method from straight-line to reducing balance mid-year without explanation in the notes. Which accounting concept is violated?",
+        options: ["Going concern", "Prudence", "Consistency", "Materiality"],
+        answer: 2,
         explanation:
-          "Even if issued at discount to market value, shares still bring in cash. Equity increases by share capital + premium received. No accounting loss is recognized.",
+          "Consistency requires the same accounting methods to be applied from period to period. Changes must be justified and disclosed. Unexplained changes impair comparability.",
       },
+
       {
-        q: "Provision differs from accrual because:",
+        q: "Ridge Ltd receives £6,000 insurance premium on 1 October for 12 months' cover. The year end is 31 December. What asset should appear in the SFP?",
         options: [
-          "Provision is asset",
-          "Provision uncertain",
-          "Accrual uncertain",
-          "No difference",
+          "£6,000 expense",
+          "£4,500 prepayment",
+          "£1,500 prepayment",
+          "£4,500 accrual",
         ],
         answer: 1,
         explanation:
-          "Provisions involve uncertainty in amount or timing (e.g., warranty). Accruals are certain obligations but unpaid. This distinction is key under IAS 37.",
+          "Only 3 months of cover (Oct–Dec) relates to this year: £6,000 × 3/12 = £1,500 expense. The remaining 9 months = £6,000 × 9/12 = £4,500 is a prepayment (asset) in the SFP.",
       },
+
       {
-        q: "Deferred tax liability arises when:",
+        q: "Storm plc receives an electricity bill of £3,600 on 5 January for the quarter ending 31 December (year end). The bill was not accrued. What is the effect on profit?",
         options: [
-          "Tax > accounting profit",
-          "Tax < accounting profit",
-          "Cash paid",
-          "Revenue recognized",
+          "Profit overstated by £3,600",
+          "Profit understated by £3,600",
+          "No effect",
+          "Profit understated by £1,200",
+        ],
+        answer: 0,
+        explanation:
+          "Failing to accrue an expense that relates to the current period means the expense is understated, so profit is overstated by £3,600.",
+      },
+
+      {
+        q: "Fleet Ltd is being sued by a customer. Legal advisors say there is a 70% chance the company will lose and pay £40,000. How should this be treated?",
+        options: [
+          "Disclose only — too uncertain",
+          "Ignore — not certain",
+          "Recognize a provision of £40,000",
+          "Recognize a contingent asset",
+        ],
+        answer: 2,
+        explanation:
+          "Under IAS 37, a provision is recognized when: (1) a present obligation exists, (2) an outflow is probable (>50%), and (3) the amount can be reliably estimated. All three conditions are met here.",
+      },
+
+      {
+        q: "Peak Corp makes a 2-for-5 rights issue at £3 per share when the market price is £5 and it has 500,000 shares. What is the primary accounting effect?",
+        options: [
+          "Decrease in equity",
+          "Increase in liability",
+          "Increase in equity and cash",
+          "No change in equity",
+        ],
+        answer: 2,
+        explanation:
+          "Rights issue = (500,000 × 2/5) = 200,000 new shares × £3 = £600,000 cash received. Both cash (asset) and equity increase. Even issued below market price, no accounting loss arises.",
+      },
+
+      {
+        q: "Swift Ltd repays a £200,000 loan. What is the effect on the statement of financial position?",
+        options: [
+          "Assets increase, liabilities unchanged",
+          "Assets decrease, liabilities decrease",
+          "Assets decrease, equity decreases",
+          "Liabilities increase, equity decreases",
         ],
         answer: 1,
         explanation:
-          "If accounting profit is higher than taxable profit due to timing differences, tax will be paid later. This creates a deferred tax liability.",
+          "Repaying a loan reduces cash (asset) and reduces the loan (liability) by the same amount. Equity is unaffected if no interest is involved.",
       },
+
       {
-        q: "If dividend is paid from capital:",
-        options: ["Allowed", "Illegal", "Expense", "Income"],
-        answer: 1,
+        q: "Bright Ltd's SFP shows total assets of £850,000 and total liabilities of £320,000. What is shareholders' equity?",
+        options: ["£1,170,000", "£320,000", "£530,000", "£850,000"],
+        answer: 2,
         explanation:
-          "Dividends must be paid from distributable profits. Paying from capital reduces shareholder protection and is generally not allowed.",
+          "Equity = Assets − Liabilities = £850,000 − £320,000 = £530,000. This is the fundamental accounting equation rearranged.",
       },
+
       {
-        q: "Share capital is:",
-        options: ["Variable", "Fixed nominal value", "Expense", "Liability"],
-        answer: 1,
-        explanation:
-          "Share capital is recorded at nominal value. It remains fixed unless new shares are issued or reduced. It is part of equity, not liability.",
-      },
-      {
-        q: "If control transfers over time:",
+        q: "A customer pays Globe Ltd £12,000 in advance for a 6-month software licence starting 1 November. Year end is 31 December. How should Globe Ltd treat this?",
         options: [
-          "Revenue at end",
-          "Revenue gradually",
-          "No revenue",
-          "Cash basis",
+          "Recognize £12,000 revenue immediately",
+          "Recognize £4,000 revenue, £8,000 deferred income",
+          "Recognize £12,000 as a liability",
+          "Recognize £2,000 revenue, £10,000 deferred income",
         ],
         answer: 1,
         explanation:
-          "IFRS 15 allows revenue recognition over time if performance obligation is satisfied gradually. This matches revenue with progress of work.",
+          "Revenue earned = 2 months (Nov–Dec) out of 6 = £12,000 × 2/6 = £4,000. The remaining £8,000 is deferred income (a liability) as performance obligations are not yet met.",
       },
+
       {
-        q: "Finance cost increases:",
-        options: ["Profit", "Expense", "Asset", "Equity"],
-        answer: 1,
-        explanation:
-          "Finance cost (interest) is an expense. It reduces profit and retained earnings. It does not create asset.",
-      },
-      {
-        q: "Which increases retained earnings?",
-        options: ["Dividend", "Loss", "Profit", "Bonus issue"],
-        answer: 2,
-        explanation:
-          "Profit increases retained earnings. Dividend reduces it, and bonus issue transfers it to share capital.",
-      },
-      {
-        q: "Loan notes classified as:",
-        options: ["Equity", "Debt", "Revenue", "Expense"],
-        answer: 1,
-        explanation:
-          "Loan notes are borrowings. They carry interest and must be repaid. Therefore, they are classified as debt.",
-      },
-      {
-        q: "Provision is recognized when:",
-        options: ["Certain", "Possible", "Probable", "Remote"],
-        answer: 2,
-        explanation:
-          "IAS 37 requires recognition when obligation is probable and measurable. If only possible, disclosure is made instead.",
-      },
-      {
-        q: "Warranty provision affects:",
-        options: ["Assets only", "Liability + expense", "Equity only", "Cash"],
-        answer: 1,
-        explanation:
-          "Provision creates liability and matching expense. This follows matching principle by recognizing expected future costs.",
-      },
-      {
-        q: "Revenue recognition ignores:",
-        options: ["Control", "Performance", "Cash timing", "Contract"],
-        answer: 2,
-        explanation:
-          "Revenue is based on performance obligations and transfer of control, not when cash is received.",
-      },
-      {
-        q: "Bonus issue source:",
-        options: ["Cash", "Loan", "Reserves", "Revenue"],
-        answer: 2,
-        explanation:
-          "Bonus shares are issued from reserves like retained earnings or share premium. No external funds involved.",
-      },
-      {
-        q: "Rights issue effect on EPS:",
-        options: ["Increase", "Decrease", "No effect", "Double"],
-        answer: 1,
-        explanation:
-          "More shares dilute earnings per share unless profit increases proportionately. Therefore EPS usually decreases.",
-      },
-      {
-        q: "Dividend reduces retained earnings but:",
+        q: "Cliff Ltd issues 50,000 shares of £1 nominal at 75p each. What should the company do?",
         options: [
-          "Increases cash",
-          "Decreases cash",
-          "No effect on cash",
-          "Increases assets",
+          "Issue proceeds recorded at £37,500",
+          "Issue at £0.75 — record share premium loss",
+          "This issue is illegal",
+          "Record share premium of £12,500",
+        ],
+        answer: 2,
+        explanation:
+          "Shares cannot legally be issued below their nominal value (at a discount). Companies Act prohibits this to protect creditors. The issue would need to be at least £1 per share.",
+      },
+
+      {
+        q: "Quartz plc pays a final dividend of £80,000 to shareholders. How does this affect the SFP?",
+        options: [
+          "Cash down £80,000, liabilities down £80,000",
+          "Cash down £80,000, retained earnings down £80,000",
+          "Retained earnings down £80,000, no cash impact",
+          "No effect on SFP",
         ],
         answer: 1,
         explanation:
-          "Dividend payment reduces cash and retained earnings simultaneously. Both asset and equity decrease.",
+          "When the dividend is paid, cash (asset) decreases and retained earnings (equity) decreases by the same £80,000. Total assets and equity both fall.",
       },
+
       {
-        q: "Which is NOT equity?",
+        q: "Bolt plc's tax computation shows taxable profit of £100,000 but accounting profit is £130,000, due to accelerated tax depreciation. This creates what?",
         options: [
-          "Share capital",
-          "Retained earnings",
-          "Loan notes",
+          "Deferred tax asset",
+          "Deferred tax liability",
+          "Current tax only",
+          "No deferred tax",
+        ],
+        answer: 1,
+        explanation:
+          "When accounting profit exceeds taxable profit due to timing differences (e.g. accelerated depreciation), more tax will become payable in future — a deferred tax liability arises.",
+      },
+
+      {
+        q: "Atlas Ltd's trade payables are £75,000 at year end. The purchasing manager asks: should these be classified as current or non-current liabilities?",
+        options: [
+          "Non-current — long-term obligations",
+          "Current — due within one year",
+          "Either — management discretion",
+          "Equity — owed to suppliers",
+        ],
+        answer: 1,
+        explanation:
+          "Trade payables arise from credit purchases and are typically settled within 30–90 days. They are classified as current liabilities as they fall due within one year.",
+      },
+
+      {
+        q: "Vantage plc's profit before tax is £500,000. Current tax is £80,000 and deferred tax movement is £20,000 (liability increase). What is total income tax expense in P&L?",
+        options: ["£80,000", "£100,000", "£20,000", "£60,000"],
+        answer: 1,
+        explanation:
+          "Total income tax expense = current tax + deferred tax movement = £80,000 + £20,000 = £100,000. Both components appear in profit or loss per IAS 12.",
+      },
+
+      {
+        q: "Redwood Ltd's retained earnings at 1 Jan were £200,000. Profit for the year was £90,000. Dividends paid were £30,000. What are retained earnings at 31 Dec?",
+        options: ["£290,000", "£260,000", "£170,000", "£230,000"],
+        answer: 1,
+        explanation:
+          "Retained earnings = £200,000 + £90,000 profit − £30,000 dividends = £260,000. Retained earnings accumulate profit after distributions.",
+      },
+
+      {
+        q: "Tidal Ltd changed its inventory valuation policy from FIFO to weighted average cost. Profit increased by £45,000 as a result. What must be disclosed?",
+        options: [
+          "Nothing — discretion of directors",
+          "The change and its effect on profit",
+          "Only if auditors require it",
+          "The change in a press release",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 8 requires disclosure of any change in accounting policy, reason for the change, and its effect on current and prior periods. This ensures transparency and comparability.",
+      },
+
+      {
+        q: "Flint Ltd provides cleaning services under a 12-month contract worth £36,000. After 3 months the customer cancels. Flint has performed 3 months of work. How much revenue should be recognized?",
+        options: ["£36,000", "£9,000", "£0", "£27,000"],
+        answer: 1,
+        explanation:
+          "Revenue is recognized based on performance completed. 3/12 × £36,000 = £9,000. Only the obligation satisfied can be recognized — the cancelled portion is not earned.",
+      },
+
+      {
+        q: "Marsh Ltd's loan note carries 6% interest p.a. on £200,000. Interest for the year has not been paid. What should appear in the SFP at year end?",
+        options: [
+          "Nothing until paid",
+          "£12,000 accrued liability",
+          "£12,000 prepayment",
+          "£200,000 in equity",
+        ],
+        answer: 1,
+        explanation:
+          "Under the accruals concept, £200,000 × 6% = £12,000 interest is incurred for the year. It must be accrued as an expense in P&L and a current liability (accrued interest) in the SFP.",
+      },
+
+      {
+        q: "A supplier sues Carve Ltd for breach of contract. Legal counsel says the chance of losing is 20%. How should this be treated?",
+        options: [
+          "Provision recognized",
+          "No provision, disclose as contingent liability",
+          "Ignore completely",
+          "Recognize as income",
+        ],
+        answer: 1,
+        explanation:
+          "When outflow is possible (not probable), IAS 37 requires only disclosure as a contingent liability — no provision is recognized. Probability must exceed 50% to recognize a provision.",
+      },
+
+      {
+        q: "Ember Corp sells machinery for £150,000. The carrying value (NBV) is £90,000. What is the profit on disposal and where does it appear?",
+        options: [
+          "£90,000 in SFP",
+          "£60,000 in profit or loss",
+          "£150,000 in equity",
+          "£60,000 as a liability",
+        ],
+        answer: 1,
+        explanation:
+          "Profit on disposal = proceeds − NBV = £150,000 − £90,000 = £60,000. Gains/losses on disposal are recognized in profit or loss, not on the SFP.",
+      },
+
+      {
+        q: "Luster plc has 1,000,000 shares at 10p nominal. It makes a 1-for-10 bonus issue funded from share premium. What is the journal entry?",
+        options: [
+          "Dr Cash £10,000, Cr Share capital £10,000",
+          "Dr Share premium £10,000, Cr Share capital £10,000",
+          "Dr Retained earnings £10,000, Cr Cash £10,000",
+          "Dr Share capital £10,000, Cr Share premium £10,000",
+        ],
+        answer: 1,
+        explanation:
+          "Bonus issue: 1,000,000 ÷ 10 = 100,000 new shares × 10p = £10,000. Dr Share premium £10,000, Cr Share capital £10,000. No cash is involved — reserves are capitalised.",
+      },
+
+      {
+        q: "Glade Ltd has opening equity of £1.2m. During the year: profit = £300,000; rights issue raises £200,000; dividends paid = £100,000. What is closing equity?",
+        options: ["£1,600,000", "£1,500,000", "£1,400,000", "£1,700,000"],
+        answer: 0,
+        explanation:
+          "Closing equity = £1,200,000 + £300,000 + £200,000 − £100,000 = £1,600,000. Rights issue increases equity, profit increases it, dividends reduce it.",
+      },
+
+      {
+        q: "Crane plc has £500,000 in share premium. It uses £200,000 of this to pay a cash dividend. Is this acceptable?",
+        options: [
+          "Yes — share premium is distributable",
+          "No — share premium cannot fund dividends",
+          "Yes — with shareholder approval",
+          "No — only retained earnings can be used",
+        ],
+        answer: 1,
+        explanation:
+          "Share premium is a non-distributable reserve. Companies Act prohibits using it to pay dividends. Only distributable profits (retained earnings) may be used for dividend payments.",
+      },
+
+      {
+        q: "Pixel Ltd invoices a client £24,000 for annual software support starting 1 July. Pixel's year end is 31 March. How much revenue is recognized in the current year?",
+        options: ["£24,000", "£18,000", "£12,000", "£6,000"],
+        answer: 1,
+        explanation:
+          "Period July to March = 9 months. Revenue = £24,000 × 9/12 = £18,000. The remaining £6,000 (April–June) is deferred income.",
+      },
+
+      {
+        q: "Dune Ltd sells goods on 30 November for £40,000 with a 30-day right of return. Year end is 31 December. Historically 5% of goods are returned. How much revenue should be recognized?",
+        options: ["£40,000", "£0", "£38,000", "£2,000"],
+        answer: 2,
+        explanation:
+          "IFRS 15 requires a refund liability for expected returns. Revenue = £40,000 × 95% = £38,000. A refund liability of £2,000 is also recorded.",
+      },
+
+      {
+        q: "Fold Ltd's directors want to classify a £400,000 bank loan (repayable in 18 months) as non-current. Is this appropriate?",
+        options: [
+          "Yes — over 12 months",
+          "Yes — director discretion",
+          "No — repayable within 2 years so current",
+          "It depends on the interest rate",
+        ],
+        answer: 0,
+        explanation:
+          "Non-current liabilities are those due after more than 12 months from the reporting date. A loan repayable in 18 months is correctly classified as non-current.",
+      },
+
+      {
+        q: "Torrent plc has 400,000 shares and makes £80,000 profit (EPS = 20p). A rights issue of 100,000 shares is made at year end. What is next year's EPS if profit stays flat?",
+        options: ["20p", "16p", "25p", "14p"],
+        answer: 1,
+        explanation:
+          "New share count = 400,000 + 100,000 = 500,000. EPS = £80,000 ÷ 500,000 = 16p. Rights issue dilutes EPS when profit doesn't increase proportionately.",
+      },
+
+      {
+        q: "Frost Ltd built its own factory costing £1.8m over 18 months. It borrowed £600,000 specifically for the project at 5% per annum. How much interest can be capitalized per year?",
+        options: [
+          "None — interest is always expensed",
+          "£30,000 per year — capitalized during construction",
+          "£30,000 total",
+          "All interest ever paid",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 23 permits capitalization of borrowing costs directly attributable to constructing qualifying assets. £600,000 × 5% = £30,000/year can be capitalized during the construction period.",
+      },
+
+      {
+        q: "Arch Ltd has a tax loss of £50,000 which can be carried forward against future profits. Future profits are virtually certain. What should the company recognize?",
+        options: [
+          "Nothing — only realized gains",
+          "A deferred tax asset",
+          "A deferred tax liability",
+          "Contingent asset only",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 12 permits recognition of a deferred tax asset for tax losses carried forward when future taxable profit is probable. The asset represents future tax savings.",
+      },
+
+      {
+        q: "Reef Ltd's cash flow statement shows operating cash flow of £200,000, investing outflow of £300,000 and financing inflow of £150,000. What is the net change in cash?",
+        options: [
+          "£50,000 decrease",
+          "£50,000 increase",
+          "£650,000",
+          "£300,000 increase",
+        ],
+        answer: 0,
+        explanation:
+          "Net change = £200,000 − £300,000 + £150,000 = −£50,000 (decrease). Operating + investing + financing activities sum to the period's net cash movement.",
+      },
+
+      {
+        q: "Blaze Ltd acquires 100% of a subsidiary for £2m. The subsidiary's net identifiable assets are £1.5m at fair value. What is the £500,000 difference?",
+        options: [
+          "Expense immediately",
+          "Goodwill — tested for impairment annually",
           "Share premium",
+          "Revenue in P&L",
+        ],
+        answer: 1,
+        explanation:
+          "The excess of purchase price over fair value of net assets = £500,000 goodwill (IFRS 3). Goodwill is capitalized and tested for impairment annually, not amortized under IFRS.",
+      },
+
+      {
+        q: "Cascade Ltd's year-end inventory is counted at £80,000 cost. Net realizable value (NRV) is £65,000. What figure should appear in the financial statements?",
+        options: ["£80,000", "£65,000", "£72,500 — average", "Either"],
+        answer: 1,
+        explanation:
+          "IAS 2 requires inventory to be stated at the lower of cost and NRV. Since NRV (£65,000) < cost (£80,000), inventory is written down to £65,000 and a £15,000 write-down expense is recognized.",
+      },
+
+      {
+        q: "Cliff Corp's trade receivables are £180,000. Historical experience shows 3% become irrecoverable. What should the allowance for doubtful debts be?",
+        options: ["£0 — too uncertain", "£5,400", "£180,000", "£174,600"],
+        answer: 1,
+        explanation:
+          "Allowance = £180,000 × 3% = £5,400. The net receivable shown in SFP = £180,000 − £5,400 = £174,600. This applies prudence to the credit risk on trade receivables.",
+      },
+
+      {
+        q: "Tower Ltd sells a machine for £30,000 cash. Cost was £80,000 and accumulated depreciation was £55,000. What profit or loss arises?",
+        options: [
+          "£5,000 profit",
+          "£50,000 loss",
+          "£25,000 profit",
+          "£5,000 loss",
+        ],
+        answer: 0,
+        explanation:
+          "NBV = £80,000 − £55,000 = £25,000. Profit on disposal = £30,000 − £25,000 = £5,000. Recognized in profit or loss statement.",
+      },
+
+      {
+        q: "Lynx Ltd prepays rent of £18,000 on 1 October for the following 12 months. Year end is 31 December. What appears in P&L as rent expense?",
+        options: ["£18,000", "£4,500", "£13,500", "£0"],
+        answer: 1,
+        explanation:
+          "Expense for Oct–Dec = 3/12 × £18,000 = £4,500. The remaining £13,500 is a prepayment (asset) in the SFP, not yet expensed.",
+      },
+
+      {
+        q: "Stone plc's non-current assets include a building at £500,000. Directors want to show it at current market value of £700,000. Which standard allows this?",
+        options: [
+          "None — not permitted",
+          "IAS 16 revaluation model",
+          "IFRS 9",
+          "IAS 38",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 16 allows companies to choose the revaluation model for PPE. The increase of £200,000 is recognized in other comprehensive income (OCI) and accumulated in a revaluation reserve in equity.",
+      },
+
+      {
+        q: "Petal Ltd's accountant records rent received in advance of £8,000 as revenue immediately. What is the impact?",
+        options: [
+          "No effect",
+          "Liabilities understated, revenue overstated",
+          "Assets understated",
+          "Equity understated",
+        ],
+        answer: 1,
+        explanation:
+          "Rent received in advance should be deferred income (liability), not revenue. Recording it as revenue overstates revenue and profit and understates liabilities.",
+      },
+
+      {
+        q: "Spring Ltd recognizes a £25,000 provision for a legal claim but the case settles for only £18,000. What happens to the remaining £7,000?",
+        options: [
+          "Remains as provision indefinitely",
+          "Reversed to profit or loss as income",
+          "Written off to equity",
+          "Ignored",
+        ],
+        answer: 1,
+        explanation:
+          "When a provision is no longer required in full, the excess is reversed through profit or loss. The £7,000 reversal is recognized as income in the period.",
+      },
+
+      {
+        q: "Vale plc issues 200,000 preference shares of £1 carrying a fixed 6% dividend, redeemable in 5 years. How should they be classified?",
+        options: [
+          "Equity",
+          "Liability",
+          "Contingent liability",
+          "Non-current asset",
+        ],
+        answer: 1,
+        explanation:
+          "Redeemable preference shares with mandatory payments are classified as financial liabilities under IAS 32. The substance, not legal form, determines classification.",
+      },
+
+      {
+        q: "Drift Ltd has non-current assets of £400,000, current assets of £100,000, non-current liabilities of £150,000 and current liabilities of £80,000. What is net assets?",
+        options: ["£270,000", "£420,000", "£500,000", "£350,000"],
+        answer: 0,
+        explanation:
+          "Net assets = (£400,000 + £100,000) − (£150,000 + £80,000) = £500,000 − £230,000 = £270,000. Net assets equals equity.",
+      },
+
+      {
+        q: "Crest Insurance Ltd receives a claim payment of £30,000 for flood damage. The carrying value of the damaged asset was £20,000. What is the accounting treatment?",
+        options: [
+          "Ignore the insurance receipt",
+          "Recognize £30,000 revenue",
+          "Recognize £10,000 gain, remove damaged asset",
+          "Reduce repairs expense only",
         ],
         answer: 2,
         explanation:
-          "Loan notes are liabilities (debt), not equity. Equity includes share capital and reserves.",
+          "The damaged asset (£20,000) is derecognized. Insurance proceeds (£30,000) are recognized. Net gain = £10,000 in profit or loss. This is a separate income item, not netted against repairs.",
       },
+
       {
-        q: "Materiality affects:",
-        options: ["Recognition", "Presentation", "Disclosure", "All"],
+        q: "Bright Ltd receives a government grant of £60,000 toward equipment costing £200,000 (10-year life). Under IAS 20 deferred income approach, what is deferred income after year 1?",
+        options: ["£60,000", "£54,000", "£6,000", "£0"],
+        answer: 1,
+        explanation:
+          "£6,000 released to P&L each year (£60,000 ÷ 10). After year 1, deferred income balance = £60,000 − £6,000 = £54,000 still in SFP as liability.",
+      },
+
+      {
+        q: "Lunar Ltd purchases inventory of £50,000. At year end £12,000 remains unsold. Cost of sales for the period is:",
+        options: ["£50,000", "£12,000", "£38,000", "£62,000"],
+        answer: 2,
+        explanation:
+          "Cost of sales = goods available for sale − closing inventory = £50,000 − £12,000 = £38,000. The £12,000 unsold inventory remains as an asset in the SFP.",
+      },
+
+      {
+        q: "Rustic Ltd depreciates its factory on straight-line over 25 years. Cost = £500,000, residual value = £0. What is the annual depreciation charge?",
+        options: ["£25,000", "£20,000", "£10,000", "£500,000"],
+        answer: 1,
+        explanation:
+          "Annual depreciation = (£500,000 − £0) ÷ 25 = £20,000. This reduces the carrying value each year and is charged to profit or loss.",
+      },
+
+      {
+        q: "Frost plc's equity is £800,000: share capital £200,000, share premium £150,000, retained earnings £350,000, revaluation reserve £100,000. Which reserves are distributable as dividends?",
+        options: ["All £800,000", "£350,000 only", "£500,000", "£650,000"],
+        answer: 1,
+        explanation:
+          "Only retained earnings are distributable as dividends. Share premium and revaluation reserves are non-distributable. So only £350,000 can be paid as dividends.",
+      },
+
+      {
+        q: "Cobalt plc estimates its decommissioning liability in 20 years at £5,000,000. The discount rate is 5%. What present value provision should be recognized now?",
+        options: ["£5,000,000", "£1,884,447", "£2,500,000", "£4,750,000"],
+        answer: 1,
+        explanation:
+          "PV = £5,000,000 ÷ (1.05)^20 ≈ £1,884,447. IAS 37 requires provisions to be discounted when the time value of money is material. The unwinding of the discount is a finance cost each year.",
+      },
+
+      {
+        q: "Quill Ltd has a finance lease. Annual payments are £20,000 for 5 years. The interest element is £8,000 in year 1. How much reduces the lease liability in year 1?",
+        options: ["£20,000", "£8,000", "£12,000", "£28,000"],
+        answer: 2,
+        explanation:
+          "Lease payment = capital repayment + interest. Capital repayment = £20,000 − £8,000 = £12,000. Only the capital element reduces the liability; the £8,000 interest is expensed in P&L.",
+      },
+
+      {
+        q: "Gem Ltd's profit before tax is £300,000. Depreciation (non-cash) is £40,000 and there's a £25,000 increase in trade receivables. What is operating cash flow (indirect method)?",
+        options: ["£315,000", "£265,000", "£300,000", "£340,000"],
+        answer: 0,
+        explanation:
+          "Operating CF = £300,000 + £40,000 (add back depreciation) − £25,000 (increase in receivables) = £315,000. Receivable increase uses cash; depreciation is non-cash.",
+      },
+
+      {
+        q: "Mosaic Ltd's borrowing covenant requires gearing (debt/equity) to remain below 1.5. Debt = £900,000, equity = £700,000. Is the covenant breached?",
+        options: [
+          "No — gearing = 1.29, below 1.5",
+          "Yes — gearing = 1.29 exceeds limit",
+          "No — gearing = 0.78",
+          "Yes — gearing = 1.5 exactly",
+        ],
+        answer: 0,
+        explanation:
+          "Gearing = £900,000 ÷ £700,000 = 1.286. This is below the 1.5 threshold, so the covenant is not breached.",
+      },
+
+      {
+        q: "Harbor Ltd acquires a patent for £200,000 with a 10-year legal life. Under IAS 38, how should it be treated?",
+        options: [
+          "Expensed immediately",
+          "Capitalized and amortized over useful life",
+          "Capitalized, never amortized",
+          "Revalued annually",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 38: purchased intangibles are capitalized and amortized over their useful life. The patent is amortized over 10 years (or shorter if useful life < legal life).",
+      },
+
+      {
+        q: "Crane Ltd's equity is £1,000,000. Share capital is 500,000 shares at £1 nominal. The company makes a 3-for-5 bonus issue. After the bonus issue, share capital is:",
+        options: ["£800,000", "£500,000", "£300,000", "£1,300,000"],
+        answer: 0,
+        explanation:
+          "New shares = 500,000 × 3/5 = 300,000 at £1 = £300,000 transferred from reserves. New share capital = £500,000 + £300,000 = £800,000. Total equity unchanged at £1,000,000.",
+      },
+
+      {
+        q: "Pole Ltd issues 100,000 convertible bonds at £100 each with no interest, convertible to shares in 3 years. IAS 32 requires this to be split into:",
+        options: [
+          "All liability",
+          "All equity",
+          "Liability component + equity component",
+          "Current and non-current",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 32: compound financial instruments are split. The liability component = PV of cash flows if no conversion. The equity component = residual (total proceeds − liability). Both are recognized separately.",
+      },
+
+      {
+        q: "Mint Ltd's trade receivables days increased from 35 to 55. What does this signal to the finance team?",
+        options: [
+          "Improved credit control",
+          "Customers paying faster",
+          "Deteriorating cash collection",
+          "Higher sales volume",
+        ],
+        answer: 2,
+        explanation:
+          "Higher debtor days mean customers are taking longer to pay. This signals potential credit control problems, cash flow pressure and possible impairment of receivables.",
+      },
+
+      {
+        q: "Ash Corp's gross profit margin fell from 40% to 30% despite higher revenue. What is the most likely cause?",
+        options: [
+          "Overhead increase",
+          "Cost of sales rose faster than revenue",
+          "Tax rate increased",
+          "Dividends increased",
+        ],
+        answer: 1,
+        explanation:
+          "Gross profit margin = (Revenue − Cost of sales) ÷ Revenue. A fall in GP margin despite revenue growth indicates cost of sales has grown proportionally faster — e.g., higher input costs.",
+      },
+
+      {
+        q: "Rim Ltd's directors are considering revaluing land upward by £500,000. What is the accounting entry?",
+        options: [
+          "Dr Land £500,000, Cr P&L £500,000",
+          "Dr Land £500,000, Cr Revaluation reserve £500,000",
+          "Dr P&L £500,000, Cr Land £500,000",
+          "Dr Cash £500,000, Cr Land £500,000",
+        ],
+        answer: 1,
+        explanation:
+          "Under IAS 16 revaluation model: upward revaluation goes to OCI, accumulated in the revaluation reserve (equity). It does not go through profit or loss unless reversing a previous downward revaluation.",
+      },
+
+      {
+        q: "Oxide Ltd makes a downward revaluation of equipment by £80,000 but has no existing revaluation surplus for this asset. Where is the loss recognized?",
+        options: [
+          "Revaluation reserve",
+          "Other comprehensive income",
+          "Profit or loss",
+          "Equity directly",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 16: a downward revaluation is charged to profit or loss unless it reverses a previous surplus in the revaluation reserve for that same asset.",
+      },
+
+      {
+        q: "Fuse Ltd sells a product on 1 December for £10,000. The customer has a 60-day right of return. Year end 31 December. Historically 10% is returned. What does Fuse record?",
+        options: [
+          "£10,000 revenue",
+          "£9,000 revenue + £1,000 refund liability",
+          "£0 revenue — right of return",
+          "£10,000 liability",
+        ],
+        answer: 1,
+        explanation:
+          "IFRS 15: revenue = £10,000 × 90% = £9,000. A refund liability of £1,000 is recognized for expected returns. The right to recover returned goods is also an asset.",
+      },
+
+      {
+        q: "Silk Ltd has current assets of £120,000 and current liabilities of £80,000. Its current ratio is:",
+        options: ["0.67", "2.0", "1.5", "1.0"],
+        answer: 2,
+        explanation:
+          "Current ratio = current assets ÷ current liabilities = £120,000 ÷ £80,000 = 1.5. A ratio above 1.0 means current assets exceed current liabilities, indicating liquidity.",
+      },
+
+      {
+        q: "Cork Ltd has cash of £30,000, receivables of £50,000, inventory of £40,000 and current liabilities of £60,000. What is the quick (acid test) ratio?",
+        options: ["2.0", "1.33", "1.0", "0.83"],
+        answer: 1,
+        explanation:
+          "Quick ratio = (cash + receivables) ÷ current liabilities = (£30,000 + £50,000) ÷ £60,000 = 1.33. Inventory is excluded as it is the least liquid current asset.",
+      },
+
+      {
+        q: "Bolt plc's operating profit is £400,000 and finance costs are £60,000. What is interest cover?",
+        options: ["6.67", "0.15", "5.0", "8.33"],
+        answer: 0,
+        explanation:
+          "Interest cover = operating profit ÷ finance costs = £400,000 ÷ £60,000 = 6.67 times. This measures ability to service debt. Below 2× is typically a warning sign.",
+      },
+
+      {
+        q: "Dawn Corp's inventory turnover is 8 times per year. Cost of sales = £640,000. What is average inventory?",
+        options: ["£80,000", "£5,000,000", "£640,000", "£8,000"],
+        answer: 0,
+        explanation:
+          "Inventory turnover = cost of sales ÷ average inventory. Average inventory = £640,000 ÷ 8 = £80,000. Higher turnover generally indicates efficient inventory management.",
+      },
+
+      {
+        q: "Rook Ltd's year-end receivables are £90,000 and annual revenue is £540,000. What are receivables days?",
+        options: ["60 days", "6 days", "30 days", "90 days"],
+        answer: 0,
+        explanation:
+          "Debtor days = (receivables ÷ revenue) × 365 = (£90,000 ÷ £540,000) × 365 ≈ 60 days.",
+      },
+
+      {
+        q: "Acre Ltd's return on equity (ROE) is 15%. Profit after tax = £90,000. What is equity?",
+        options: ["£1,350,000", "£13,500", "£600,000", "£90,000"],
+        answer: 2,
+        explanation:
+          "ROE = PAT ÷ Equity. Equity = PAT ÷ ROE = £90,000 ÷ 15% = £600,000.",
+      },
+
+      {
+        q: "Flint Ltd reports EBITDA of £500,000 and total debt of £2,000,000. The bank's covenant requires debt/EBITDA ≤ 5x. Is Flint compliant?",
+        options: [
+          "Yes — ratio = 4",
+          "No — ratio = 8",
+          "Yes — ratio = 2",
+          "No — ratio = 5.5",
+        ],
+        answer: 0,
+        explanation:
+          "Debt/EBITDA = £2,000,000 ÷ £500,000 = 4. This is below the 5x covenant threshold, so Flint is compliant.",
+      },
+
+      {
+        q: "Cape Ltd writes off a receivable of £5,000 as irrecoverable. An allowance of £5,000 already existed for this debt. What is the impact on profit?",
+        options: [
+          "£5,000 loss in P&L",
+          "No impact — allowance absorbs write-off",
+          "£10,000 loss",
+          "£5,000 reduction in equity",
+        ],
+        answer: 1,
+        explanation:
+          "The write-off reduces both the receivable and the allowance by £5,000. Since the allowance was already established (expense already recognized), there is no further P&L impact at write-off.",
+      },
+
+      {
+        q: "Jade Ltd's consolidated accounts include intra-group sales of £80,000 between subsidiaries. What must happen in consolidation?",
+        options: [
+          "Include in group revenue",
+          "Eliminate against cost of sales",
+          "Treat as third-party sales",
+          "Add to goodwill",
+        ],
+        answer: 1,
+        explanation:
+          "IFRS 10: intra-group transactions must be eliminated on consolidation. The £80,000 seller's revenue and the buyer's cost of sales are both eliminated to avoid double-counting.",
+      },
+
+      {
+        q: "Haze Ltd's pension fund shows: scheme assets £1.2m, defined benefit obligation £1.5m. What appears on the SFP?",
+        options: [
+          "Asset of £300,000",
+          "Liability of £300,000",
+          "Nothing — off-balance sheet",
+          "Asset of £1.2m",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 19: net pension liability = DBO − scheme assets = £1,500,000 − £1,200,000 = £300,000 recognized as a non-current liability on the SFP.",
+      },
+
+      {
+        q: "Mast Ltd earns £800,000 revenue. Cost of sales = £480,000, admin expenses = £120,000, finance costs = £40,000, tax = £50,000. What is profit after tax?",
+        options: ["£160,000", "£110,000", "£320,000", "£210,000"],
+        answer: 1,
+        explanation:
+          "Gross profit = £800,000 − £480,000 = £320,000. Operating profit = £320,000 − £120,000 = £200,000. PBT = £200,000 − £40,000 = £160,000. PAT = £160,000 − £50,000 = £110,000.",
+      },
+
+      {
+        q: "Beam Ltd acquires assets for £750,000; net assets at fair value = £600,000. After 3 years, goodwill impairment of £50,000 is identified. What is the journal entry?",
+        options: [
+          "Dr Goodwill £50,000",
+          "Dr Impairment loss £50,000, Cr Goodwill £50,000",
+          "Dr Equity £50,000",
+          "Dr Reserves £50,000, Cr Goodwill £50,000",
+        ],
+        answer: 1,
+        explanation:
+          "Goodwill impairment: Dr Impairment loss (P&L expense) £50,000, Cr Goodwill (reduces carrying value) £50,000. Goodwill is not amortized under IFRS but tested annually for impairment.",
+      },
+
+      {
+        q: "Tusk Ltd recognizes a deferred tax liability of £30,000 due to an accelerated capital allowance. In the following year the timing difference reverses. What happens?",
+        options: [
+          "DTL increases",
+          "DTL is released to P&L as a reduction in tax expense",
+          "DTL stays unchanged",
+          "Write off to equity",
+        ],
+        answer: 1,
+        explanation:
+          "When the timing difference reverses, the deferred tax liability unwinds — it is credited (released) through the tax charge in P&L, reducing that year's income tax expense.",
+      },
+
+      {
+        q: "Silt Ltd is 90% owned by Titan plc. Silt sells goods at cost+25% to Titan (£500,000 total). Half the goods remain in Titan's inventory at year end. What unrealized profit must be eliminated?",
+        options: ["£125,000", "£50,000", "£100,000", "£62,500"],
+        answer: 1,
+        explanation:
+          "Goods unsold = £250,000. Profit margin = 25/125 = 20%. Unrealized profit = £250,000 × 20% = £50,000. This is eliminated against group profit and inventory in consolidation.",
+      },
+
+      {
+        q: "Arch plc's shares trade at £4.50. EPS = 30p. What is the P/E ratio?",
+        options: [
+          "15 — how many years to recoup investment",
+          "0.067 — earnings yield",
+          "£135 — share value",
+          "30 — market growth",
+        ],
+        answer: 0,
+        explanation:
+          "P/E ratio = market price ÷ EPS = £4.50 ÷ £0.30 = 15 times. It represents how many years of current earnings it would take to recoup the share price — a measure of growth expectations.",
+      },
+
+      {
+        q: "Rind Ltd has retained earnings of £300,000. A bonus issue uses £120,000 of retained earnings. After the bonus issue, retained earnings are:",
+        options: ["£420,000", "£180,000", "£300,000", "£120,000"],
+        answer: 1,
+        explanation:
+          "Bonus issue deducts from retained earnings: £300,000 − £120,000 = £180,000. The equivalent amount is transferred to share capital. Total equity remains unchanged.",
+      },
+
+      {
+        q: "Glide Ltd sells a 3-year consultancy contract for £90,000. After year 1, the client cancels. Glide has completed 40% of the work. How much cumulative revenue should be recognized?",
+        options: ["£90,000", "£36,000", "£0", "£30,000"],
+        answer: 1,
+        explanation:
+          "Revenue recognized = 40% × £90,000 = £36,000 based on percentage of completion (IFRS 15). Only performance obligations satisfied can be recognized regardless of cancellation.",
+      },
+
+      {
+        q: "Strand Ltd revalues its building from £300,000 to £420,000. Three years later it is sold for £380,000. What loss appears in P&L on disposal?",
+        options: ["£80,000 loss", "£40,000 loss", "£0", "£38,000 profit"],
+        answer: 1,
+        explanation:
+          "Carrying value at disposal = £420,000. Proceeds = £380,000. Loss on disposal = £40,000 recognized in P&L. The revaluation reserve of £120,000 is transferred to retained earnings (not through P&L).",
+      },
+
+      {
+        q: "Flock Ltd values inventory using FIFO. Due to price decreases, LIFO would give higher profit. Can Flock switch to LIFO?",
+        options: [
+          "Yes — management choice",
+          "Yes — if better matching",
+          "No — LIFO not permitted under IFRS",
+          "No — only once per year",
+        ],
+        answer: 2,
+        explanation:
+          "LIFO is not permitted under IAS 2. Companies must use FIFO or weighted average cost. Switching to LIFO is not an option regardless of profit impact.",
+      },
+
+      {
+        q: "Mesh plc has retained earnings of £350,000 and share premium of £400,000. The directors propose a £450,000 dividend. Is this valid?",
+        options: [
+          "Yes — total reserves cover it",
+          "No — share premium is not distributable",
+          "Yes — with court approval",
+          "No — dividend exceeds profit",
+        ],
+        answer: 1,
+        explanation:
+          "Only retained earnings (£350,000) are distributable. Share premium cannot fund dividends. The maximum distributable dividend is £350,000 — the £450,000 proposal is invalid.",
+      },
+
+      {
+        q: "Drift plc's audit committee discovers a material error from 3 years ago: £200,000 of revenue was double-counted. Under IAS 8, how must this be corrected?",
+        options: [
+          "Adjust current year P&L",
+          "Restate prior period comparative figures and opening retained earnings",
+          "Disclose only",
+          "Charge to equity in current year",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 8: material prior period errors must be corrected retrospectively — restate comparative figures and the opening balance of affected equity components. It should not flow through the current year P&L.",
+      },
+
+      {
+        q: "Hail Ltd wants to recognize a £500,000 contingent asset from a pending insurance claim where recovery is 'virtually certain'. Is this appropriate?",
+        options: [
+          "No — contingent assets never recognized",
+          "Yes — when virtually certain, recognize as asset",
+          "Disclose only — never recognize",
+          "Recognize at 50% probability",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 37: contingent assets are not recognized unless inflow is virtually certain — in which case it is no longer contingent and should be recognized as an asset. Merely probable = disclosure only.",
+      },
+
+      {
+        q: "Spark plc issues a £500,000 10-year bond at 5% coupon when the market rate is 7%. Was the bond issued at par, premium, or discount?",
+        options: ["At par", "At premium", "At discount", "Cannot determine"],
+        answer: 2,
+        explanation:
+          "When the coupon rate (5%) < market rate (7%), investors pay less than face value to achieve the market yield. The bond is issued at a discount and the carrying value is amortized up to par over 10 years.",
+      },
+
+      {
+        q: "Blaze Ltd has operating profit of £200,000 and total capital employed of £800,000. What is ROCE?",
+        options: ["25%", "5%", "40%", "20%"],
+        answer: 0,
+        explanation:
+          "ROCE = operating profit ÷ capital employed = £200,000 ÷ £800,000 = 25%. ROCE measures how efficiently a business uses its capital to generate profit.",
+      },
+
+      {
+        q: "Ore plc has EPS of 40p and dividends per share of 24p. What is the dividend cover?",
+        options: ["1.67", "0.60", "2.5", "0.24"],
+        answer: 0,
+        explanation:
+          "Dividend cover = EPS ÷ DPS = 40p ÷ 24p = 1.67 times. This shows how many times over dividends could be paid from earnings. Above 1.5× is generally considered comfortable.",
+      },
+
+      {
+        q: "Lava Ltd's payables days increased from 40 to 65. What might the finance team conclude?",
+        options: [
+          "Company is paying suppliers faster",
+          "Company is taking longer to pay — possible cash strain",
+          "Improved profitability",
+          "Better credit terms negotiated only",
+        ],
+        answer: 1,
+        explanation:
+          "Higher payables days means the company is delaying payments to suppliers. This may indicate cash flow pressure, but could also reflect favorable renegotiated credit terms.",
+      },
+
+      {
+        q: "Ripe Ltd sells goods worth £200,000 including VAT at 20%. What revenue should be recognized in the P&L?",
+        options: ["£200,000", "£166,667", "£240,000", "£180,000"],
+        answer: 1,
+        explanation:
+          "Revenue is recognized net of VAT (which is collected on behalf of tax authorities). Revenue = £200,000 ÷ 1.20 = £166,667. VAT is not income for the company.",
+      },
+
+      {
+        q: "Bluff Ltd acquires 25% of Sable Ltd's shares and has significant influence. How should this investment be classified?",
+        options: [
+          "Subsidiary — consolidate",
+          "Associate — equity method",
+          "Financial asset at fair value",
+          "Joint venture",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 28: an investment giving significant influence (typically 20–50%) is an associate, accounted for using the equity method. It is not a subsidiary (no control) and not just a financial asset.",
+      },
+
+      {
+        q: "Tide Corp holds investment properties at fair value under IAS 40. The property increased in value by £250,000. Where is this gain recorded?",
+        options: [
+          "Other comprehensive income",
+          "Directly in equity",
+          "Profit or loss",
+          "Revaluation reserve",
+        ],
+        answer: 2,
+        explanation:
+          "IAS 40 fair value model: fair value gains/losses on investment property go through profit or loss (not OCI). This differs from IAS 16 owner-occupied property where gains go through OCI.",
+      },
+
+      {
+        q: "Port Ltd has a defined contribution pension plan. The company contributes 5% of salaries. Monthly salary bill is £200,000. What is the monthly pension expense in P&L?",
+        options: [
+          "£10,000",
+          "£200,000",
+          "£0 — off balance sheet",
+          "5% of profit",
+        ],
+        answer: 0,
+        explanation:
+          "Defined contribution: pension expense = contribution made = 5% × £200,000 = £10,000 per month. There is no actuarial liability — the employer's obligation is simply to make the specified contribution.",
+      },
+
+      {
+        q: "Moss Ltd's net asset value per share = £3.20, market price per share = £2.10. What does this indicate?",
+        options: [
+          "Shares are overvalued",
+          "Shares trading at discount to NAV",
+          "Book value matches market",
+          "Company is loss-making",
+        ],
+        answer: 1,
+        explanation:
+          "When market price (£2.10) < NAV per share (£3.20), shares trade at a discount to net asset value. This may indicate market pessimism about future earnings or asset quality concerns.",
+      },
+
+      {
+        q: "Gilt Ltd has long-term debt of £600,000 and equity of £400,000. What is the debt-to-equity ratio and how might a banker view it?",
+        options: [
+          "1.5 — moderate-to-high risk",
+          "0.67 — low risk",
+          "2.4 — high risk",
+          "6.0 — extreme risk",
+        ],
+        answer: 0,
+        explanation:
+          "D/E ratio = £600,000 ÷ £400,000 = 1.5. The company has £1.50 of debt for every £1 of equity. A ratio above 1 is considered elevated; a banker may see this as moderate-to-high financial risk.",
+      },
+
+      {
+        q: "Tarn Ltd's finance director wants to improve the current ratio by factoring £80,000 of receivables (receiving cash immediately). What happens to the ratio?",
+        options: [
+          "Improves — cash replaces receivables",
+          "No change — both are current assets",
+          "Worsens — liabilities increase",
+          "Cannot determine",
+        ],
+        answer: 1,
+        explanation:
+          "Factoring converts receivables to cash — both are current assets. Total current assets and the current ratio are unchanged. The composition shifts but the ratio is not directly improved.",
+      },
+
+      {
+        q: "Hatch Ltd's management asks: should employee share options be expensed? Under IFRS 2, what is the answer?",
+        options: [
+          "No — no cash cost",
+          "No — only when exercised",
+          "Yes — fair value at grant date expensed over vesting period",
+          "Yes — market value at exercise date",
+        ],
+        answer: 2,
+        explanation:
+          "IFRS 2: share-based payments are recognized as an expense measured at fair value at grant date, spread over the vesting period. A corresponding credit goes to equity. It is a real economic cost.",
+      },
+
+      {
+        q: "Crag Ltd's projections show the business will exhaust cash in 6 months with no financing secured. The auditors are concerned about the basis of preparation. What should the audit opinion address?",
+        options: [
+          "No modification needed",
+          "Emphasis of matter or modified opinion regarding going concern",
+          "Qualified opinion on revenue",
+          "Adverse opinion on depreciation",
+        ],
+        answer: 1,
+        explanation:
+          "When significant doubt exists about going concern, ISA 570 requires auditors to consider whether an emphasis of matter paragraph or a modified opinion is needed.",
+      },
+
+      {
+        q: "Shell plc has 500,000 shares and makes £125,000 profit. It does a 2-for-1 stock split. What is the restated EPS?",
+        options: ["50p", "25p", "12.5p", "£1.00"],
+        answer: 2,
+        explanation:
+          "A 2-for-1 split doubles shares to 1,000,000. Restated EPS = £125,000 ÷ 1,000,000 = 12.5p. IAS 33 requires retrospective restatement of EPS for stock splits.",
+      },
+
+      {
+        q: "Cove Ltd's financial statements achieve fair presentation but depart from one specific IFRS requirement. Under IAS 1, is this ever permitted?",
+        options: [
+          "No — IFRS must always be followed",
+          "Yes — true and fair override exists in rare circumstances",
+          "Yes — at directors' discretion",
+          "No — must restate previous years",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 1 (para 19-20): in extremely rare circumstances where compliance would be misleading, an entity may depart from a requirement and disclose the departure, reason, and financial effect — the 'true and fair override'.",
+      },
+
+      {
+        q: "Wool plc has a 5-year interest-free loan of £1,000,000 from its parent company. Under IFRS 9, how should this be recorded?",
+        options: [
+          "At face value £1,000,000",
+          "At present value using a market rate",
+          "As equity",
+          "Off balance sheet",
+        ],
+        answer: 1,
+        explanation:
+          "IFRS 9 requires financial liabilities to be initially measured at fair value. An interest-free loan must be discounted using a market rate. The difference is recognized as an equity contribution from the parent.",
+      },
+
+      {
+        q: "Spire Ltd leases equipment and provides maintenance under the same contract. How should revenue be recognized?",
+        options: [
+          "All as lease income",
+          "All as service income",
+          "Allocate to each performance obligation separately",
+          "Defer all until contract ends",
+        ],
+        answer: 2,
+        explanation:
+          "IFRS 15 requires identification of distinct performance obligations. The lease and maintenance are separate obligations — revenue must be allocated to each based on standalone selling prices.",
+      },
+
+      {
+        q: "Crest Ltd receives a £100,000 R&D grant. Under IAS 20 deferred income approach, £20,000 is released annually. After 2 years what balance remains in deferred income?",
+        options: ["£60,000", "£80,000", "£100,000", "£40,000"],
+        answer: 0,
+        explanation:
+          "After 2 years: £20,000 × 2 = £40,000 released. Remaining deferred income = £100,000 − £40,000 = £60,000.",
+      },
+
+      {
+        q: "Wave Ltd recognizes £500,000 in revenue for a project that is 50% complete. Total contract price is £800,000. Is this correct?",
+        options: [
+          "Yes — percentage of completion",
+          "No — recognize full £800,000",
+          "No — recognize £0",
+          "No — recognize £400,000 only",
+        ],
         answer: 3,
         explanation:
-          "Materiality influences how items are recognized, measured, and disclosed. Immaterial items may be simplified.",
+          "Under IFRS 15, revenue recognized = 50% × £800,000 = £400,000, not £500,000. Recognizing £500,000 overstates revenue. Revenue must follow actual progress completed.",
       },
+
       {
-        q: "Consistency change allowed when:",
-        options: ["Never", "Always", "Better presentation", "Profit increases"],
-        answer: 2,
-        explanation:
-          "Accounting policies can change if it results in more relevant and reliable information. Must be disclosed.",
-      },
-      {
-        q: "Prudence leads to:",
+        q: "Peak Ltd's managing director takes a personal loan from the company at below-market rate. Why must this be disclosed?",
         options: [
-          "Overstated assets",
-          "Understated liabilities",
-          "Conservative estimates",
-          "Ignore losses",
+          "It involves cash",
+          "The MD is a related party under IAS 24",
+          "It's a loan agreement",
+          "It reduces profit",
+        ],
+        answer: 1,
+        explanation:
+          "IAS 24 requires disclosure of related party transactions. A director is key management — a related party. The below-market rate loan must be disclosed as it may not be at arm's length.",
+      },
+
+      {
+        q: "Grove plc's subsidiary recognizes goodwill impairment of £70,000 in its individual accounts. In group consolidation, what happens?",
+        options: [
+          "Included twice",
+          "Eliminated as intra-group",
+          "Group tests its own goodwill separately under IAS 36",
+          "Ignored",
         ],
         answer: 2,
         explanation:
-          "Prudence ensures caution. It avoids overstatement of assets and income, recognizing losses earlier.",
-      },
-      {
-        q: "Break-up basis applies when:",
-        options: ["Going concern", "Liquidation", "Profit high", "Assets low"],
-        answer: 1,
-        explanation:
-          "When business is not a going concern, assets are valued at liquidation (resale) value instead of cost.",
-      },
-      {
-        q: "Trade payables arise from:",
-        options: ["Sales", "Purchases", "Loans", "Equity"],
-        answer: 1,
-        explanation:
-          "Trade payables result from credit purchases from suppliers. They are short-term liabilities.",
-      },
-      {
-        q: "Accrued expense increases:",
-        options: ["Assets", "Liabilities", "Equity", "Revenue"],
-        answer: 1,
-        explanation:
-          "Accrued expense is unpaid obligation. It increases liabilities and reduces profit.",
-      },
-      {
-        q: "Prepaid expense increases:",
-        options: ["Liability", "Asset", "Expense", "Equity"],
-        answer: 1,
-        explanation:
-          "Prepayment represents future benefit. It is recorded as asset and reduces current expense.",
-      },
-      {
-        q: "Share premium can be used for:",
-        options: ["Dividend", "Bonus issue", "Expense", "Loan repayment"],
-        answer: 1,
-        explanation:
-          "Share premium is restricted reserve. It can be used for bonus issue but not for dividend distribution.",
-      },
-      {
-        q: "Dividend declared but unpaid affects:",
-        options: ["Cash", "Liability", "Expense", "Revenue"],
-        answer: 1,
-        explanation:
-          "It creates liability until payment. Cash is unaffected until actual payment.",
-      },
-      {
-        q: "Revenue from services recognized when:",
-        options: [
-          "Cash received",
-          "Service performed",
-          "Invoice issued",
-          "Contract signed",
-        ],
-        answer: 1,
-        explanation:
-          "Revenue recognized when service obligation is satisfied. Cash timing is irrelevant.",
-      },
-      {
-        q: "Equity increases when:",
-        options: ["Expense", "Loss", "Share issue", "Dividend"],
-        answer: 2,
-        explanation:
-          "Share issue brings new funds from owners, increasing equity.",
-      },
-      {
-        q: "Deferred tax asset arises when:",
-        options: [
-          "Future tax payable",
-          "Future tax saving",
-          "Cash flow",
-          "Revenue",
-        ],
-        answer: 1,
-        explanation:
-          "Deferred tax asset arises when tax paid early can be recovered in future.",
-      },
-      {
-        q: "Finance cost shown in:",
-        options: ["SFP", "P&L", "Cash flow only", "Equity"],
-        answer: 1,
-        explanation:
-          "Finance cost is expense shown in profit or loss statement.",
-      },
-      {
-        q: "Share capital reduction leads to:",
-        options: [
-          "Increase equity",
-          "Decrease equity",
-          "No effect",
-          "Increase liability",
-        ],
-        answer: 1,
-        explanation:
-          "Reducing share capital decreases equity as owners’ investment reduces.",
-      },
-      {
-        q: "Revenue recognized too late causes:",
-        options: [
-          "Overstated profit",
-          "Understated profit",
-          "No effect",
-          "Asset increase",
-        ],
-        answer: 1,
-        explanation:
-          "Delaying revenue reduces income for the period, understating profit.",
-      },
-      {
-        q: "Loan notes interest unpaid is:",
-        options: ["Expense", "Liability", "Asset", "Equity"],
-        answer: 1,
-        explanation: "Unpaid interest becomes accrued expense (liability).",
-      },
-      {
-        q: "Equity =",
-        options: [
-          "Assets – Liabilities",
-          "Assets + Liabilities",
-          "Profit + Expense",
-          "Cash – Debt",
-        ],
-        answer: 0,
-        explanation:
-          "Equity is residual interest after liabilities are deducted from assets.",
-      },
-      {
-        q: "Dividend declared reduces:",
-        options: ["Profit", "Revenue", "Cash", "Assets"],
-        answer: 0,
-        explanation:
-          "Dividend is appropriation of profit, reducing retained earnings.",
-      },
-      {
-        q: "Provision reversed leads to:",
-        options: ["Expense", "Income", "Asset", "Liability"],
-        answer: 1,
-        explanation:
-          "If provision overestimated, reversal increases profit as income.",
-      },
-      {
-        q: "Going concern affects:",
-        options: ["Cash", "Valuation", "Revenue", "Expense"],
-        answer: 1,
-        explanation:
-          "Assumes business continues, so assets valued at cost not liquidation value.",
-      },
-      {
-        q: "Rights issue vs bonus issue key difference:",
-        options: ["Cash inflow", "Equity", "Assets", "Liabilities"],
-        answer: 0,
-        explanation:
-          "Rights issue brings cash, bonus issue does not. Both increase share capital.",
-      },
-      {
-        q: "Revenue recognized but cash not received:",
-        options: ["Asset", "Liability", "Expense", "Equity"],
-        answer: 0,
-        explanation:
-          "Creates receivable (asset). Revenue recognized on accrual basis.",
-      },
-      {
-        q: "Dividend paid is:",
-        options: ["Expense", "Appropriation", "Asset", "Income"],
-        answer: 1,
-        explanation: "Dividend is distribution of profit, not expense.",
-      },
-      {
-        q: "Share issue below nominal value:",
-        options: ["Allowed", "Illegal", "Expense", "Income"],
-        answer: 1,
-        explanation:
-          "Shares cannot be issued below nominal value (discount prohibited).",
-      },
-      {
-        q: "Revenue recognized increases:",
-        options: ["Liability", "Asset/Equity", "Expense", "Loss"],
-        answer: 1,
-        explanation:
-          "Revenue increases profit (equity) and usually receivable (asset).",
-      },
-      {
-        q: "Deferred tax classified as:",
-        options: ["Asset/liability", "Revenue", "Expense", "Equity"],
-        answer: 0,
-        explanation:
-          "Deferred tax may be asset or liability depending on timing differences.",
-      },
-      {
-        q: "Dividend policy affects:",
-        options: ["Liquidity", "Equity", "Cash", "All"],
-        answer: 3,
-        explanation:
-          "Dividend reduces cash, equity and impacts liquidity. It affects overall financial position.",
-      },
-      {
-        q: "Equity holders bear:",
-        options: ["Fixed return", "Risk", "Interest", "Tax"],
-        answer: 1,
-        explanation:
-          "Equity holders bear business risk and receive residual returns.",
+          "Goodwill is recognized only in consolidated accounts. The group tests its own consolidated goodwill for impairment under IAS 36. Any impairment in the subsidiary's own accounts is eliminated and replaced with group-level impairment testing.",
       },
     ],
   },
