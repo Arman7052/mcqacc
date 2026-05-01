@@ -10314,7 +10314,7 @@ const questionBank = {
     ],
   },
   // ─────────────────────────────────────────────────────────────────
-  // CHAPTER 11 –- Company Financial Statements Questions
+  // CHAPTER 11 – Company Financial Statements Questions
   // ─────────────────────────────────────────────────────────────────
 
   11: {
